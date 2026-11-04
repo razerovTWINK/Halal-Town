@@ -229,9 +229,10 @@
 
 	if(isliving(src))
 		var/mob/living/L = src
-		if(L.client)
+		if(L.client?.hidden_images)
 			for(var/image/HI in L.client.hidden_images)
-				HI.glide_size = target
+				if(HI)
+					HI.glide_size = target
 ////////////////////////////////////////
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion

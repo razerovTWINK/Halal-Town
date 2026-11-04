@@ -222,3 +222,5 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /data/triumphs.sav
 
 .autopilot/serve.*
+
+.workbuddy-ai/

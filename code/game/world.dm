@@ -441,7 +441,8 @@ GLOBAL_VAR(restart_counter)
 	on_tickrate_change()
 
 
-/world/proc/change_tick_lag(new_value = 0.5)
+// Default must match world.fps = 60 (tick_lag = 10 / fps), not the old 20 FPS value.
+/world/proc/change_tick_lag(new_value = (10 / 60))
 	if(new_value <= 0)
 		CRASH("change_tick_lag() called with [new_value] new_value.")
 	if(tick_lag == new_value)

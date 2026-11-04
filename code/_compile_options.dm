@@ -43,7 +43,18 @@
 #endif								//	1 to use the default behaviour;
 									//	2 for preloading absolutely everything;
 
-#ifdef LOWMEMORYMODE
+// ---------------------------------------------------------------------------
+// FASTBUILD: лёгкий билд для локальной разработки (dm.exe -DFASTBUILD roguetown.dme).
+// Полный билд без этого define остаётся прежним: DEBUG, PRELOAD_RSC 2, полная карта.
+// Не используем PRELOAD_RSC 0: config/external_rsc_urls.txt содержит внешний URL,
+// который подставится в client.preload_rsc и сломает загрузку ресурсов клиентом.
+#ifdef FASTBUILD
+	#undef PRELOAD_RSC
+	#define PRELOAD_RSC		1		// не отдавать клиенту весь .rsc (88 МБ) при входе
+	#define LOWMEMORYMODE			// не создавать руины, away-миссии, VR и лишние z-уровни
+#endif
+
+#if defined(LOWMEMORYMODE) && !defined(FASTBUILD)
 #define FORCE_MAP "_maps/runtimestation.json"
 #endif
 

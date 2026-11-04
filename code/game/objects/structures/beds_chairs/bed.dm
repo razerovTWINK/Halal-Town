@@ -48,7 +48,7 @@
  * Roller beds
  */
 /obj/structure/bed/roller
-	name = "roller bed"
+	name = "каталка"
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = FALSE
@@ -105,7 +105,7 @@
 //	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
 
 /obj/item/roller
-	name = "roller bed"
+	name = "каталка"
 	desc = ""
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
@@ -140,7 +140,7 @@
 	qdel(src)
 
 /obj/item/roller/robo //ROLLER ROBO DA!
-	name = "roller bed dock"
+	name = "крепление каталки"
 	desc = ""
 	var/obj/structure/bed/roller/loaded = null
 
@@ -163,7 +163,7 @@
 //Dog bed
 
 /obj/structure/bed/dogbed
-	name = "dog bed"
+	name = "лежанка для собаки"
 	icon_state = "dogbed"
 	desc = ""
 	anchored = FALSE
@@ -201,6 +201,6 @@
 	update_owner(M)
 
 /obj/structure/bed/alien
-	name = "resting contraption"
+	name = "приспособление для отдыха"
 	desc = ""
 	icon_state = "abed"

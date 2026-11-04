@@ -124,9 +124,6 @@ There are several things that need to be remembered:
 		var/list/legdam_overlays = list()
 		var/list/armdam_overlays = list()
 		var/obj/item/bodypart/BP = X
-		var/g = BP.offset
-		if(gender == FEMALE || dna.species.use_f)
-			g = BP.offset_f
 		if(BP.body_zone == BODY_ZONE_HEAD)
 			update_hair()
 		if(BP.brutestate && !BP.skeletonized)
@@ -222,24 +219,26 @@ There are several things that need to be remembered:
 					armdam_overlays += armdam_overlay
 
 		var/used_offset = BP.offset
-		if(gender == FEMALE)
+		if(gender == FEMALE || dna.species.use_f)
 			used_offset = BP.offset_f
 
+		var/list/offset_val = dna.species.offset_features[used_offset]
+		var/has_offset = islist(offset_val) && (offset_val.len >= 2)
 
 		for(var/mutable_appearance/M in damage_overlays)
-			if(used_offset in dna.species.offset_features)
-				M.pixel_x += dna.species.offset_features[g][1]
-				M.pixel_y += dna.species.offset_features[g][2]
+			if(has_offset)
+				M.pixel_x += offset_val[1]
+				M.pixel_y += offset_val[2]
 			limb_overlaysa += M
 		for(var/mutable_appearance/M in legdam_overlays)
-			if(used_offset in dna.species.offset_features)
-				M.pixel_x += dna.species.offset_features[g][1]
-				M.pixel_y += dna.species.offset_features[g][2]
+			if(has_offset)
+				M.pixel_x += offset_val[1]
+				M.pixel_y += offset_val[2]
 			limb_overlaysb += M
 		for(var/mutable_appearance/M in armdam_overlays)
-			if(used_offset in dna.species.offset_features)
-				M.pixel_x += dna.species.offset_features[g][1]
-				M.pixel_y += dna.species.offset_features[g][2]
+			if(has_offset)
+				M.pixel_x += offset_val[1]
+				M.pixel_y += offset_val[2]
 			limb_overlaysc += M
 
 	overlays_standing[DAMAGE_LAYER] = limb_overlaysa

@@ -16,3 +16,10 @@ GLOBAL_VAR_INIT(glide_size_multiplier, 1.0)
 /// The whole result is then clamped to within the range above.
 /// Not very readable but it works
 #define DELAY_TO_GLIDE_SIZE(delay) (clamp(((world.icon_size / max((delay) / world.tick_lag, 1)) * GLOB.glide_size_multiplier), MIN_GLIDE_SIZE, MAX_GLIDE_SIZE))
+
+// Snap a movement delay (deciseconds) up to a whole number of server ticks.
+// At 60 FPS tick_lag is 0.16, so WALK_DELAY 3 is 18.75 ticks. world.time only
+// advances in whole ticks, so an unaligned move_delay makes consecutive steps
+// alternate between 18 and 19 ticks: holding a key feels jerky. Aligned delays
+// also keep glide_size in sync with the number of ticks per tile.
+#define TICK_ALIGN_DELAY(delay) (max(world.tick_lag, CEILING((delay), world.tick_lag)))

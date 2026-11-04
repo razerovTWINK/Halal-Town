@@ -64,14 +64,14 @@
 
 	if(allmig)
 		return FALSE
-//		if(ttime >= 99 MINUTES)
+/*		if(ttime >= 99 MINUTES)
 			for(var/mob/living/carbon/human/H in GLOB.human_list)
 				if(H.stat != DEAD)
 					if(H.allmig_reward && H.key)
 						H.adjust_triumphs(H.allmig_reward)
 						H.allmig_reward = 0
 			return TRUE
-		return FALSE* /
+		return FALSE*/
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
@@ -271,10 +271,10 @@
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Town Guard","Veteran","Castle Guard","Sheriff")
-//	var/num_vampires = rand(1,3)
+/*	var/num_vampires = rand(1,3)
 #ifdef TESTSERVER
 	num_vampires = 100
-#endif* /
+#endif*/
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
 	if(antag_candidates.len)
 		var/datum/mind/vampire = pick(antag_candidates)
@@ -298,10 +298,10 @@
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	restricted_jobs = list("Acolyte","Priest","Adventurer","Confessor","Town Guard","Veteran","Castle Guard","Sheriff")
-//	var/num_werewolves = rand(1,3)
+/*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100
-#endif* /
+#endif*/
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
 	if(antag_candidates.len)
 		var/datum/mind/werewolf = pick(antag_candidates)

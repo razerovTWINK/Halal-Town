@@ -38,8 +38,12 @@ SUBSYSTEM_DEF(time_track)
 		time_dilation_avg_fast = MC_AVERAGE_FAST(time_dilation_avg_fast, time_dilation_current)
 		time_dilation_avg = MC_AVERAGE(time_dilation_avg, time_dilation_avg_fast)
 		time_dilation_avg_slow = MC_AVERAGE_SLOW(time_dilation_avg_slow, time_dilation_avg)
-		var/ratio = (current_realtime - last_tick_realtime) > 0 ? (current_byondtime - last_tick_byond_time) / (current_realtime - last_tick_realtime) : 1.0
-		GLOB.glide_size_multiplier = clamp(ratio, 0.75, 1.25)
+		// Intentionally do NOT derive GLOB.glide_size_multiplier from the tick
+		// ratio here. It used to jump between 0.75 and 1.25 every 10 seconds;
+		// DELAY_TO_GLIDE_SIZE() reads it on every step, so walking visibly sped
+		// up and slowed down while move_delay stayed constant. Time dilation is
+		// still measured/recorded above as telemetry; glide stays deterministic
+		// at 1.0 now that step delays are aligned to whole ticks (TICK_ALIGN_DELAY).
 	else
 		first_run = FALSE
 		GLOB.glide_size_multiplier = 1.0

@@ -56,7 +56,7 @@
 	blockscharging = TRUE
 
 /client/MouseDown(object, location, control, params)
-	if(mob.incapacitated())
+	if(!mob || mob.incapacitated())
 		return
 
 	tcompare = object
@@ -163,6 +163,8 @@
 	var/datum/intent/curplaying
 
 /client/MouseUp(object, location, control, params)
+	if(!mob)
+		return
 	charging = 0
 //	mob.update_warning()
 

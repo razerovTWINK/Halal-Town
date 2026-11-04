@@ -231,7 +231,7 @@
  * Glass tables
  */
 /obj/structure/table/glass
-	name = "glass table"
+	name = "стеклянный стол"
 	desc = ""
 	icon = 'icons/obj/smooth_structures/glass_table.dmi'
 	icon_state = "glass_table"
@@ -463,7 +463,7 @@
  * Reinforced tables
  */
 /obj/structure/table/reinforced
-	name = "reinforced table"
+	name = "укрепленный стол"
 	desc = ""
 	icon = 'icons/obj/smooth_structures/reinforced_table.dmi'
 	icon_state = "r_table"
@@ -499,7 +499,7 @@
 		. = ..()
 
 /obj/structure/table/bronze
-	name = "bronze table"
+	name = "бронзовый стол"
 	desc = ""
 	icon = 'icons/obj/smooth_structures/brass_table.dmi'
 	icon_state = "brass_table"
@@ -516,7 +516,7 @@
  */
 
 /obj/structure/table/optable
-	name = "operating table"
+	name = "операционный стол"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "optable"

@@ -256,8 +256,17 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
-	// Set world options.
-	world.change_fps(CONFIG_GET(number/fps))
+	// Set world options. Keep config/config.txt (FPS/TICKLAG) in sync with
+	// world.fps: a mismatch silently changes the tickrate at runtime and
+	// desyncs SS_TICKER input, movement delays, glide_size and timers.
+	var/configured_fps = CONFIG_GET(number/fps)
+	// BYOND quantizes tick_lag to 0.01, so FPS 60 really runs at
+	// tick_lag 0.16 (~62.5 FPS, reported as 63). Compare tick_lag, not world.fps.
+	var/tick_diff = world.tick_lag - (10 / configured_fps)
+	if(tick_diff > 0.02 || tick_diff < -0.02)
+		log_world("WARNING: config number/fps ([configured_fps]) does not match world tickrate ([world.fps] FPS, tick_lag [world.tick_lag]). Check FPS/TICKLAG in config/config.txt; applying configured value.")
+	world.change_fps(configured_fps)
+	log_world("MC tickrate: [world.fps] FPS (tick_lag [world.tick_lag]), configured [configured_fps] FPS.")
 	var/initialized_tod = REALTIMEOFDAY
 
 	if(sleep_offline_after_initializations)
@@ -350,7 +359,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	iteration = 1
 	var/error_level = 0
-	var/sleep_delta = 1
 	var/list/subsystems_to_check
 	//the actual loop.
 
@@ -363,24 +371,13 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			continue
 
 		//Anti-tick-contention heuristics:
-		//if there are mutiple sleeping procs running before us hogging the cpu, we have to run later.
-		//	(because sleeps are processed in the order received, longer sleeps are more likely to run first)
-		if (starting_tick_usage > TICK_LIMIT_MC) //if there isn't enough time to bother doing anything this tick, sleep a bit.
-			sleep_delta = clamp(sleep_delta * 2, 1, 3)
+		//At 60 FPS, Master must fire every single tick to service SS_TICKER
+		//(SSinput, SSincone, SStimer). Skipping a whole MC tick makes held
+		//movement keys stutter, so on a busy tick we only halve the budget for
+		//heavier subsystems instead of sleeping through the tick entirely.
+		if (starting_tick_usage > TICK_LIMIT_MC)
 			current_ticklimit = TICK_LIMIT_RUNNING * 0.5
-			sleep(world.tick_lag * (processing * sleep_delta))
-			continue
 
-		//Byond resumed us late. assume it might have to do the same next tick
-		if (last_run + CEILING(world.tick_lag * (processing * sleep_delta), world.tick_lag) + (world.tick_lag * 0.5) < world.time)
-			sleep_delta += 1
-		sleep_delta = clamp(sleep_delta, 1, 3)
-
-		sleep_delta = MC_AVERAGE_FAST(sleep_delta, 1) //decay sleep_delta
-
-		if (starting_tick_usage > (TICK_LIMIT_MC*0.75)) //we ran 3/4 of the way into the tick
-			sleep_delta += 1
-		sleep_delta = clamp(sleep_delta, 1, 3)
 
 		//debug
 		if (make_runtime)
@@ -437,11 +434,11 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 		iteration++
 		last_run = world.time
-		src.sleep_delta = clamp(MC_AVERAGE_FAST(src.sleep_delta, sleep_delta), 1, 3)
+		src.sleep_delta = 1
 		current_ticklimit = TICK_LIMIT_RUNNING
-		if (processing * sleep_delta <= world.tick_lag)
+		if (processing <= world.tick_lag)
 			current_ticklimit -= (TICK_LIMIT_RUNNING * 0.25) //reserve the tail 1/4 of the next tick for the mc if we plan on running next tick
-		sleep(world.tick_lag * (processing * sleep_delta))
+		sleep(world.tick_lag * processing)
 
 
 

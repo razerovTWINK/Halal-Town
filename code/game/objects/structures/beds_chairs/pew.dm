@@ -1,5 +1,5 @@
 /obj/structure/chair/pew
-	name = "wooden pew"
+	name = "церковная скамья"
 	desc = ""
 	icon = 'icons/obj/sofa.dmi'
 	icon_state = "pewmiddle"
@@ -10,7 +10,7 @@
 	item_chair = null
 
 /obj/structure/chair/pew/left
-	name = "left wooden pew end"
+	name = "край церковной скамьи"
 	icon_state = "pewend_left"
 	var/mutable_appearance/leftpewarmrest
 
@@ -41,7 +41,7 @@
 	update_leftpewarmrest()
 
 /obj/structure/chair/pew/right
-	name = "left wooden pew end"
+	name = "край церковной скамьи"
 	icon_state = "pewend_right"
 	var/mutable_appearance/rightpewarmrest
 

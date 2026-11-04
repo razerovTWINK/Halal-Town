@@ -82,13 +82,16 @@ client/
 				hud_used.fov.dir = src.dir
 			if(hud_used.fov_blocker)
 				hud_used.fov_blocker.dir = src.dir
-		for(var/image/I in client.hidden_images)
-			if(I.loc == src)
-				I.dir = dir
-			else if(buckled && I.loc == buckled)
-				I.dir = buckled.dir
-			else if(pulling && I.loc == pulling)
-				I.dir = pulling.dir
+		if(client.hidden_images)
+			for(var/image/I in client.hidden_images)
+				if(!I)
+					continue
+				if(I.loc == src)
+					I.dir = dir
+				else if(buckled && !QDELETED(buckled) && I.loc == buckled)
+					I.dir = buckled.dir
+				else if(pulling && !QDELETED(pulling) && I.loc == pulling)
+					I.dir = pulling.dir
 		START_PROCESSING(SSincone, client)
 
 /client/proc/update_cone()
@@ -104,68 +107,75 @@ client/
 	var/image/IP = null
 	var/list/to_remove = null
 
-	for(var/image/I in client.hidden_images)
-		if(I.loc == src)
-			if(!img)
-				img = I
+	if(client.hidden_images)
+		for(var/image/I in client.hidden_images)
+			if(!I)
+				LAZYADD(to_remove, I)
+				continue
+			if(I.loc == src)
+				if(!img)
+					img = I
+				else
+					LAZYADD(to_remove, I)
+			else if(buckled && !QDELETED(buckled) && I.loc == buckled)
+				if(!IB)
+					IB = I
+				else
+					LAZYADD(to_remove, I)
+			else if(pulling && !QDELETED(pulling) && I.loc == pulling)
+				if(!IP)
+					IP = I
+				else
+					LAZYADD(to_remove, I)
 			else
 				LAZYADD(to_remove, I)
-		else if(buckled && I.loc == buckled)
-			if(!IB)
-				IB = I
-			else
-				LAZYADD(to_remove, I)
-		else if(pulling && I.loc == pulling)
-			if(!IP)
-				IP = I
-			else
-				LAZYADD(to_remove, I)
-		else
-			LAZYADD(to_remove, I)
 
-	if(to_remove)
+	if(to_remove && client)
 		client.images -= to_remove
 		client.hidden_images -= to_remove
 
 	if(flags_1 & OVERLAY_QUEUED_1)
 		COMPILE_OVERLAYS(src)
 
-	if(!img)
+	if(!img && client)
 		img = image(loc = src)
 		client.images += img
 		client.hidden_images += img
 
-	img.appearance = src.appearance
-	img.plane = GAME_PLANE_UPPER
-	img.override = 1
-	img.glide_size = glide_size
-	img.dir = dir
+	if(img)
+		img.appearance = src.appearance
+		img.plane = GAME_PLANE_UPPER
+		img.override = 1
+		img.glide_size = glide_size
+		img.dir = dir
 
-	if(buckled)
+	if(buckled && !QDELETED(buckled) && client)
 		if(buckled.flags_1 & OVERLAY_QUEUED_1)
 			COMPILE_OVERLAYS(buckled)
 		if(!IB)
 			IB = image(loc = buckled)
 			client.images += IB
 			client.hidden_images += IB
-		IB.appearance = buckled.appearance
-		IB.plane = GAME_PLANE_UPPER
-		IB.override = 1
-		IB.glide_size = buckled.glide_size
-		IB.dir = buckled.dir
+		if(IB)
+			IB.appearance = buckled.appearance
+			IB.plane = GAME_PLANE_UPPER
+			IB.override = 1
+			IB.glide_size = buckled.glide_size
+			IB.dir = buckled.dir
 
-	if(pulling)
+	if(pulling && !QDELETED(pulling) && client)
 		if(pulling.flags_1 & OVERLAY_QUEUED_1)
 			COMPILE_OVERLAYS(pulling)
 		if(!IP)
 			IP = image(loc = pulling)
 			client.images += IP
 			client.hidden_images += IP
-		IP.appearance = pulling.appearance
-		IP.plane = GAME_PLANE_UPPER
-		IP.override = 1
-		IP.glide_size = pulling.glide_size
-		IP.dir = pulling.dir
+		if(IP)
+			IP.appearance = pulling.appearance
+			IP.plane = GAME_PLANE_UPPER
+			IP.override = 1
+			IP.glide_size = pulling.glide_size
+			IP.dir = pulling.dir
 /*	if(hud_used && hud_used.fov_blocker)
 		fov_blocker
 
@@ -368,8 +378,9 @@ client/
 			hud_used.fov.alpha = 255
 		if(hud_used.fov_blocker)
 			hud_used.fov_blocker.alpha = 255
-	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
-	PM?.backdrop(src)
+	if(client.screen)
+		var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
+		PM?.backdrop(src)
 	update_cone()
 
 /mob/proc/hide_cone()
@@ -380,8 +391,9 @@ client/
 			hud_used.fov.alpha = 0
 		if(hud_used.fov_blocker)
 			hud_used.fov_blocker.alpha = 0
-	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
-	PM?.backdrop(src)
+	if(client.screen)
+		var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
+		PM?.backdrop(src)
 
 /obj/screen/fov_blocker
 	icon = 'icons/mob/vision_cone.dmi'

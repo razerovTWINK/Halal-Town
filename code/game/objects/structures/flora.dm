@@ -265,6 +265,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/lavendergrass
+	name = "лаванда"
 	icon_state = "lavendergrass_1"
 
 /obj/structure/flora/ausbushes/lavendergrass/Initialize()
@@ -272,6 +273,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/ywflowers
+	name = "желтые цветы"
 	icon_state = "ywflowers_1"
 
 /obj/structure/flora/ausbushes/ywflowers/Initialize()
@@ -279,6 +281,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/brflowers
+	name = "красные цветы"
 	icon_state = "brflowers_1"
 
 /obj/structure/flora/ausbushes/brflowers/Initialize()
@@ -286,6 +289,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/ppflowers
+	name = "фиолетовые цветы"
 	icon_state = "ppflowers_1"
 
 /obj/structure/flora/ausbushes/ppflowers/Initialize()
@@ -293,6 +297,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/sparsegrass
+	name = "редкая трава"
 	icon_state = "sparsegrass_1"
 
 /obj/structure/flora/ausbushes/sparsegrass/Initialize()
@@ -300,6 +305,7 @@
 	. = ..()
 
 /obj/structure/flora/ausbushes/fullgrass
+	name = "густая трава"
 	icon_state = "fullgrass_1"
 
 /obj/structure/flora/ausbushes/fullgrass/Initialize()
@@ -349,12 +355,12 @@
 
 
 /obj/item/twohanded/required/kirbyplants/dead
-	name = "RD's potted plant"
+	name = "засохшее растение"
 	desc = ""
 	icon_state = "plant-25"
 
 /obj/item/twohanded/required/kirbyplants/photosynthetic
-	name = "photosynthetic potted plant"
+	name = "светящееся растение"
 	desc = ""
 	icon_state = "plant-09"
 	light_color = "#2cb2e8"
@@ -365,6 +371,7 @@
 //and now these defines
 
 /obj/structure/flora/rock
+	name = "камень"
 	icon_state = "basalt"
 	desc = ""
 	icon = 'icons/obj/flora/rocks.dmi'
@@ -434,7 +441,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 
 /obj/structure/flora/rock/pile/largejungle
-	name = "rocks"
+	name = "камни"
 	icon_state = "rocks"
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	density = FALSE

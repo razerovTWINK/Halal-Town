@@ -77,6 +77,8 @@
 	facepull = FALSE
 
 /client/Move(n, direct)
+	if(!n || !direct || !mob || !mob.loc)
+		return FALSE
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
 	else
@@ -84,10 +86,6 @@
 		next_move_dir_sub = 0
 	var/old_move_delay = move_delay
 	move_delay = world.time + world.tick_lag //this is here because Move() can now be called mutiple times per tick
-	if(!mob || !mob.loc)
-		return FALSE
-	if(!n || !direct)
-		return FALSE
 	if(mob.notransform)
 		return FALSE	//This is sota the goto stop mobs from moving var
 	if(mob.control_object)
@@ -135,7 +133,9 @@
 	if(!mob.Process_Spacemove(direct))
 		return FALSE
 	//We are now going to move
-	var/add_delay = mob.cached_multiplicative_slowdown
+	// Align the base delay to whole ticks (see TICK_ALIGN_DELAY). "|| 2" matches
+	// /mob/living/Login() and protects against a mob with no movespeed modifiers.
+	var/add_delay = TICK_ALIGN_DELAY(mob.cached_multiplicative_slowdown || 2)
 	if(old_move_delay + (add_delay*MOVEMENT_DELAY_BUFFER_DELTA) + MOVEMENT_DELAY_BUFFER > world.time)
 		move_delay = old_move_delay
 	else
@@ -161,12 +161,17 @@
 
 	if(direct & (direct - 1))
 		add_delay *= 2
+	// fixedeye (+2) and other additions above are not tick-aligned; realign
+	// before it becomes move_delay so every step takes an exact number of ticks.
+	add_delay = TICK_ALIGN_DELAY(add_delay)
 	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
 
 	. = ..()
 
 	move_delay += add_delay
-	if(.) // If mob is null here, we deserve the runtime
+	if(!mob)
+		return .
+	if(.)
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
 

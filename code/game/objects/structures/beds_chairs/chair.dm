@@ -149,7 +149,7 @@
 	item_chair = /obj/item/chair/wood/wings
 
 /obj/structure/chair/comfy
-	name = "comfy chair"
+	name = "удобное кресло"
 	desc = ""
 	icon_state = "comfychair"
 	color = rgb(255,255,255)
@@ -202,7 +202,7 @@
 	color = rgb(255,251,0)
 
 /obj/structure/chair/comfy/shuttle
-	name = "shuttle seat"
+	name = "сиденье"
 	desc = ""
 	icon_state = "shuttle_chair"
 
@@ -227,7 +227,7 @@
 //Stool
 
 /obj/structure/chair/stool
-	name = "stool"
+	name = "табурет"
 	desc = ""
 	icon_state = "stool"
 	can_buckle = 0
@@ -253,7 +253,7 @@
 		qdel(src)
 
 /obj/structure/chair/stool/bar
-	name = "bar stool"
+	name = "барный табурет"
 	desc = ""
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
@@ -350,14 +350,14 @@
 	origin_type = /obj/structure/chair/greyscale
 
 /obj/item/chair/stool
-	name = "stool"
+	name = "табурет"
 	icon_state = "stool_toppled"
 	item_state = "stool"
 	origin_type = /obj/structure/chair/stool
 	break_chance = 0 //It's too sturdy.
 
 /obj/item/chair/stool/bar
-	name = "bar stool"
+	name = "барный табурет"
 	icon_state = "bar_toppled"
 	item_state = "stool_bar"
 	origin_type = /obj/structure/chair/stool/bar
@@ -366,7 +366,7 @@
 	return //sturdy enough to ignore a god
 
 /obj/item/chair/wood
-	name = "wooden chair"
+	name = "деревянный стул"
 	icon_state = "wooden_chair_toppled"
 	item_state = "woodenchair"
 	resistance_flags = FLAMMABLE
@@ -384,13 +384,13 @@
 	origin_type = /obj/structure/chair/wood/wings
 
 /obj/structure/chair/old
-	name = "strange chair"
+	name = "странный стул"
 	desc = ""
 	icon_state = "chairold"
 	item_chair = null
 
 /obj/structure/chair/bronze
-	name = "brass chair"
+	name = "латунный стул"
 	desc = ""
 	anchored = FALSE
 	icon_state = "brass_chair"
@@ -429,7 +429,7 @@
 		STOP_PROCESSING(SSfastprocess, src)
 
 /obj/structure/chair/mime
-	name = "invisible chair"
+	name = "невидимый стул"
 	desc = ""
 	anchored = FALSE
 	icon_state = null
@@ -447,7 +447,7 @@
 
 /obj/structure/chair/plastic
 	icon_state = "plastic_chair"
-	name = "folding plastic chair"
+	name = "складной стул"
 	desc = ""
 	resistance_flags = FLAMMABLE
 	max_integrity = 50
@@ -473,7 +473,7 @@
 			qdel(src)
 
 /obj/item/chair/plastic
-	name = "folding plastic chair"
+	name = "складной стул"
 	desc = ""
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "folded_chair"

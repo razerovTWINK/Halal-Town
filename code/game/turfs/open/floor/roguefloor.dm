@@ -115,7 +115,6 @@
 
 /turf/open/floor/rogue/grass
 	name = "трава"
-	name = "пол"
 	desc = ""
 	icon_state = "grass"
 	layer = MID_TURF_LAYER
@@ -134,7 +133,6 @@
 
 /turf/open/floor/rogue/dirt/ambush
 	name = "земля"
-	name = "пол"
 	desc = ""
 	icon_state = "dirt"
 	layer = MID_TURF_LAYER
@@ -150,7 +148,6 @@
 
 /turf/open/floor/rogue/dirt
 	name = "земля"
-	name = "пол"
 	desc = ""
 	icon_state = "dirt"
 	layer = MID_TURF_LAYER
@@ -286,7 +283,6 @@
 
 /turf/open/floor/rogue/dirt/road
 	name = "земля"
-	name = "пол"
 	desc = ""
 	icon_state = "road"
 	layer = MID_TURF_LAYER
@@ -384,8 +380,7 @@
 	. = ..()
 
 /turf/open/floor/rogue/underworld/road
-	name = "ash"
-	name = "пол"
+	name = "пепел"
 	desc = ""
 	icon_state = "ash"
 	layer = MID_TURF_LAYER
@@ -404,7 +399,6 @@
 
 /turf/open/floor/rogue/volcanic
 	name = "земля"
-	name = "пол"
 	desc = ""
 	icon_state = "lavafloor"
 	layer = MID_TURF_LAYER
@@ -620,8 +614,7 @@
 	roguesmooth(adjacencies)
 
 /obj/effect/decal/cobbleedge
-	name = ""
-	name = "пол"
+	name = "край брусчатки"
 	desc = ""
 	icon = 'icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone_edges"

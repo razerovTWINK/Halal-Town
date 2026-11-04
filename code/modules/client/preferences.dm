@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
-			if(check_nameban(C.ckey) || (C.blacklisted() == 1))
+			if(C && (check_nameban(C.ckey) || (C.blacklisted() == 1)))
 				real_name = pref_species.random_name(gender,1)
 			return
 	//we couldn't load character data so just randomize the character appearance + name
@@ -166,7 +166,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		charflaw = GLOB.character_flaws[charflaw]
 		charflaw = new charflaw()
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
-	C.update_movement_keys()
+	C?.update_movement_keys()
 	real_name = pref_species.random_name(gender,1)
 	if(!loaded_preferences_successfully)
 		save_preferences()
@@ -1525,7 +1525,7 @@ Slots: [job.spawn_positions]</span>
 				key_bindings[full_key] = sortList(key_bindings[full_key])
 
 				user << browse(null, "window=capturekeypress")
-				user.client.update_movement_keys()
+				user?.client?.update_movement_keys()
 				save_preferences()
 				SetKeybinds(user)
 
@@ -1536,7 +1536,7 @@ Slots: [job.spawn_positions]</span>
 					return
 				hotkeys = (choice == "Do It")
 				key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
-				user.client.update_movement_keys()
+				user?.client?.update_movement_keys()
 				SetKeybinds(user)
 			else
 				SetKeybinds(user)
@@ -2121,7 +2121,7 @@ Slots: [job.spawn_positions]</span>
 					key_bindings[full_key] = sortList(key_bindings[full_key])
 
 					user << browse(null, "window=capturekeypress")
-					user.client.update_movement_keys()
+					user?.client?.update_movement_keys()
 					save_preferences()
 
 				if("keybindings_reset")
@@ -2131,7 +2131,7 @@ Slots: [job.spawn_positions]</span>
 						return
 					hotkeys = (choice == "Do It")
 					key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
-					user.client.update_movement_keys()*/
+					user?.client?.update_movement_keys()*/
 				if("chat_on_map")
 					chat_on_map = !chat_on_map
 				if("see_chat_non_mob")

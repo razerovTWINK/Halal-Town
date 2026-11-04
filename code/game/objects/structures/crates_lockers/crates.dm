@@ -100,12 +100,12 @@
 
 /obj/structure/closet/crate/internals
 	desc = ""
-	name = "internals crate"
+	name = "ящик снаряжения"
 	icon_state = "o2crate"
 
 /obj/structure/closet/crate/trashcart
 	desc = ""
-	name = "trash cart"
+	name = "тележка для мусора"
 	icon_state = "trashcart"
 
 /obj/structure/closet/crate/medical
@@ -174,11 +174,11 @@
 
 /obj/structure/closet/crate/radiation
 	desc = ""
-	name = "radiation crate"
+	name = "радиационный ящик"
 	icon_state = "radiation"
 
 /obj/structure/closet/crate/hydroponics
-	name = "hydroponics crate"
+	name = "ящик гидропоники"
 	desc = ""
 	icon_state = "hydrocrate"
 

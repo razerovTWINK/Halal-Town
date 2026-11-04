@@ -52,4 +52,5 @@
 			movement_dir &= ~(NORTH|SOUTH)
 		if((movement_dir & EAST) && (movement_dir & WEST))
 			movement_dir &= ~(EAST|WEST)
-		user.Move(get_step(src, movement_dir), movement_dir)
+		if(movement_dir)
+			user.Move(get_step(src, movement_dir), movement_dir)
