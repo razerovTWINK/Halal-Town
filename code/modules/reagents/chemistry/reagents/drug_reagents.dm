@@ -1,7 +1,7 @@
 /datum/reagent/drug
-	name = "Drug"
+	name = "Наркотик"
 	metabolization_rate = 0.1
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	var/trippy = TRUE //Does this drug make you trip?
 
 /datum/reagent/drug/on_mob_end_metabolize(mob/living/M)
@@ -9,7 +9,7 @@
 		SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "[type]_high")
 
 /datum/reagent/drug/space_drugs
-	name = "Space drugs"
+	name = "Космические наркотики"
 	description = "An illegal chemical compound used as drug."
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
@@ -60,7 +60,7 @@
 	filters += filter(type="angular_blur",x=5,y=5,size=1)
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
-	to_chat(M, "<span class='danger'>I start tripping hard!</span>")
+	to_chat(M, "<span class='danger'>У меня начинаются сильные галлюцинации!</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/drug/space_drugs/overdose_process(mob/living/M)
@@ -69,12 +69,12 @@
 	..()
 
 /datum/reagent/drug/nicotine
-	name = "Nicotine"
+	name = "Никотин"
 	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
 	reagent_state = LIQUID
 	color = "#60A584" // rgb: 96, 165, 132
 	addiction_threshold = 999
-	taste_description = "smoke"
+	taste_description = "дым"
 	trippy = FALSE
 	overdose_threshold=999
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
@@ -188,12 +188,12 @@
 
 /datum/reagent/drug/krokodil/addiction_act_stage2(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>My skin feels loose...</span>")
+		to_chat(M, "<span class='danger'>Кожа будто отстаёт...</span>")
 	..()
 
 /datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>My skin starts to peel away...</span>")
+		to_chat(M, "<span class='danger'>Кожа начинает слезать...</span>")
 	M.adjustBruteLoss(3*REM, 0)
 	..()
 	. = 1
@@ -251,7 +251,7 @@
 	if(prob(20))
 		M.emote("laugh")
 	if(prob(33))
-		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+		M.visible_message("<span class='danger'>Руки [M] дёргаются и разлетаются во все стороны!</span>")
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
@@ -300,7 +300,7 @@
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 10
-	taste_description = "salt" // because they're bathsalts?
+	taste_description = "соль" // because they're bathsalts?
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 
 /datum/reagent/drug/bath_salts/on_mob_metabolize(mob/living/L)

@@ -24,21 +24,21 @@
 // 7.12x82mm (SAW)
 
 /obj/projectile/bullet/mm712x82
-	name = "7.12x82mm bullet"
+	name = "пуля 7.12x82мм"
 	damage = 45
 	armor_penetration = 5
 
 /obj/projectile/bullet/mm712x82_ap
-	name = "7.12x82mm armor-piercing bullet"
+	name = "бронебойная пуля 7.12x82мм"
 	damage = 40
 	armor_penetration = 75
 
 /obj/projectile/bullet/mm712x82_hp
-	name = "7.12x82mm hollow-point bullet"
+	name = "экспансивная пуля 7.12x82мм"
 	damage = 60
 	armor_penetration = -60
 
 /obj/projectile/bullet/incendiary/mm712x82
-	name = "7.12x82mm incendiary bullet"
+	name = "зажигательная пуля 7.12x82мм"
 	damage = 20
 	fire_stacks = 3

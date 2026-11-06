@@ -48,7 +48,7 @@
 	foodtype = TOXIC | SUGAR
 
 /obj/item/reagent_containers/food/snacks/soup/blood
-	name = "tomato soup"
+	name = "томатный суп"
 	desc = ""
 	icon_state = "tomatosoup"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
@@ -134,7 +134,7 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/soup/tomato
-	name = "tomato soup"
+	name = "томатный суп"
 	desc = ""
 	icon_state = "tomatosoup"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 10, /datum/reagent/consumable/nutriment/vitamin = 3)

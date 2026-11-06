@@ -10,7 +10,7 @@
 	name = "Helbital"
 	description = "Named after the norse goddess Hel, this medicine heals the patient's bruises the closer they are to death. Burns, toxins, and asphyxition will increase healing but these damages must be maintained while the drug is being metabolized or the drug will react negatively."
 	color = "#9400D3"
-	taste_description = "cold and lifeless"
+	taste_description = "холод и безжизненность"
 	overdose_threshold = 35
 	reagent_state = SOLID
 	var/helbent = FALSE
@@ -339,7 +339,7 @@
 			var/burnies = min(Carbies.getFireLoss(),Carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
 			Carbies.adjustToxLoss((harmies+burnies)*0.66)
 			if(show_message)
-				to_chat(Carbies, "<span class='danger'>I feel your burns and bruises healing! It stings like hell!</span>")
+				to_chat(Carbies, "<span class='danger'>Ожоги и синяки заживают! Чертовски щиплет!</span>")
 			SEND_SIGNAL(Carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 	return TRUE

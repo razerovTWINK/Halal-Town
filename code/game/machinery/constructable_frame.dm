@@ -78,7 +78,7 @@
 				to_chat(user, "<span class='warning'>The frame needs wiring first!</span>")
 				return
 			else if(istype(P, /obj/item/circuitboard))
-				to_chat(user, "<span class='warning'>This frame does not accept circuit boards of this type!</span>")
+				to_chat(user, "<span class='warning'>Эта рама не принимает платы такого типа!</span>")
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
 				if(!P.tool_start_check(user, amount=5))
@@ -135,7 +135,7 @@
 				return
 
 			else if(istype(P, /obj/item/circuitboard))
-				to_chat(user, "<span class='warning'>This frame does not accept circuit boards of this type!</span>")
+				to_chat(user, "<span class='warning'>Эта рама не принимает платы такого типа!</span>")
 				return
 
 			if(P.tool_behaviour == TOOL_WIRECUTTER)

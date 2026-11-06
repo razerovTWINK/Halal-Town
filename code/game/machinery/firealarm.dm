@@ -237,7 +237,7 @@
 					var/obj/item/electroadaptive_pseudocircuit/P = W
 					if(!P.adapt_circuit(user, 15))
 						return
-					user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
+					user.visible_message("<span class='notice'>[user] изготавливает плату и помещает её в [src].</span>", \
 					"<span class='notice'>I adapt a fire alarm circuit and slot it into the assembly.</span>")
 					buildstage = 1
 					update_icon()
@@ -262,7 +262,7 @@
 /obj/machinery/firealarm/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_UPGRADE_SIMPLE_CIRCUITS)
-			user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
+			user.visible_message("<span class='notice'>[user] изготавливает плату и помещает её в [src].</span>", \
 			"<span class='notice'>I adapt a fire alarm circuit and slot it into the assembly.</span>")
 			buildstage = 1
 			update_icon()

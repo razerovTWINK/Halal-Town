@@ -88,7 +88,10 @@ NO_INTERCEPT_REPORT
 ## Default probablity is 1, increase to make that mode more likely to be picked.
 ## Set to 0 to disable that mode.
 
-PROBABILITY CHAOSMODE 99
+## Раньше здесь был несуществующий тег CHAOSMODE (объявления режима закомментированы),
+## из-за чего при каждом запуске падала валидация: "Failed to validate setting ... for probability".
+## Рабочий режим Rogue Town имеет config_tag = "roguemode" (code/game/gamemodes/roguetown/roguetown.dm).
+PROBABILITY ROGUEMODE 99
 PROBABILITY TRAITOR 0
 PROBABILITY TRAITORBRO 0
 PROBABILITY TRAITORCHAN 0

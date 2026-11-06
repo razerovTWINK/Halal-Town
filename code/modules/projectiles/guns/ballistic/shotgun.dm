@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/shotgun
-	name = "shotgun"
+	name = "ружье"
 	desc = ""
 	icon_state = "shotgun"
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
@@ -40,7 +40,7 @@
 // RIOT SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "riot shotgun"
+	name = "полицейский дробовик"
 	desc = ""
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
@@ -56,7 +56,7 @@
 	src.rack()
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
-	name = "combat shotgun"
+	name = "боевой дробовик"
 	desc = ""
 	icon_state = "cshotgun"
 	item_state = "shotgun_combat"
@@ -65,7 +65,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
-	name = "compact combat shotgun"
+	name = "компактный боевой дробовик"
 	desc = ""
 	icon_state = "cshotgunc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
@@ -74,7 +74,7 @@
 //Dual Feed Shotgun
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube
-	name = "cycler shotgun"
+	name = "помповый дробовик"
 	desc = ""
 	icon_state = "cycler"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
@@ -85,7 +85,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
+	. += "<span class='notice'>Alt-клик, чтобы передернуть цевьё.</span>"
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -105,9 +105,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, "<span class='notice'>I switch to tube B.</span>")
+		to_chat(user, "<span class='notice'>Ты переключаешься на магазинную трубку Б.</span>")
 	else
-		to_chat(user, "<span class='notice'>I switch to tube A.</span>")
+		to_chat(user, "<span class='notice'>Ты переключаешься на магазинную трубку А.</span>")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -117,7 +117,7 @@
 // Bulldog shotgun //
 
 /obj/item/gun/ballistic/shotgun/bulldog
-	name = "\improper Bulldog Shotgun"
+	name = "\improper автоматический дробовик Bulldog"
 	desc = ""
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -150,7 +150,7 @@
 /////////////////////////////
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
-	name = "double-barreled shotgun"
+	name = "двуствольное ружье"
 	desc = ""
 	icon_state = "dshotgun"
 	item_state = "shotgun_db"
@@ -188,7 +188,7 @@
 // IMPROVISED SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
-	name = "improvised shotgun"
+	name = "кустарный дробовик"
 	desc = ""
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
@@ -206,11 +206,11 @@
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>I tie the lengths of cable to the shotgun, making a sling.</span>")
+			to_chat(user, "<span class='notice'>Ты привязываешь куски кабеля к дробовику, делая оружейный ремень.</span>")
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>I need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, "<span class='warning'>Нужно не менее десяти кусков кабеля, чтобы сделать ремень!</span>")
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon()
 	..()
@@ -226,7 +226,7 @@
 		update_icon()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
-	name = "sawn-off improvised shotgun"
+	name = "кустарный обрез"
 	desc = ""
 	icon_state = "ishotgun_sawn"
 	item_state = "ishotgun_sawn"
@@ -235,7 +235,7 @@
 	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook
-	name = "hook modified sawn-off shotgun"
+	name = "обрез с крюком"
 	desc = ""
 	icon_state = "hookshotgun"
 	item_state = "shotgun"
@@ -259,19 +259,19 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(toggled)
-		to_chat(user,"<span class='notice'>I switch to the shotgun.</span>")
+		to_chat(user,"<span class='notice'>Ты переключаешься на стрельбу.</span>")
 		fire_sound = initial(fire_sound)
 	else
-		to_chat(user,"<span class='notice'>I switch to the hook.</span>")
+		to_chat(user,"<span class='notice'>Ты переключаешься на крюк.</span>")
 		fire_sound = 'sound/blank.ogg'
 	toggled = !toggled
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/examine(mob/user)
 	. = ..()
 	if(toggled)
-		. += "<span class='notice'>Alt-click to switch to the shotgun.</span>"
+		. += "<span class='notice'>Alt-клик, чтобы переключиться на стрельбу.</span>"
 	else
-		. += "<span class='notice'>Alt-click to switch to the hook.</span>"
+		. += "<span class='notice'>Alt-клик, чтобы переключиться на крюк.</span>"
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/afterattack(atom/target, mob/living/user, flag, params)
 	if(toggled)

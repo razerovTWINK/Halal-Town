@@ -24,7 +24,7 @@
 				wounds -= D
 				qdel(D)
 				skipcheck = TRUE
-				owner.next_attack_msg += " <span class='rose'>The wound gushes with blood!</span>"
+				owner.next_attack_msg += " <span class='rose'>Из раны хлещет кровь!</span>"
 				break*/
 //	if(!wounds.len || (wounds.len < 5) || skipcheck)
 	var/datum/wound/NW = new W(src)
@@ -54,8 +54,8 @@
 			if(is_disabled() == BODYPART_DISABLED_FALL)
 				if(brute_dam < max_damage)
 					return
-				var/list/phrases = list("The bone shatters!", "The bone is broken!", "The [src.name] is mauled!", "The bone snaps through the skin!")
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
+				var/list/phrases = list("Кость раздроблена!", "Кость сломана!", "[capitalize(src.name)] изувечена!", "Кость пробивает кожу наружу!")
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [pick(phrases)]</span>"
 				add_wound(/datum/wound/fracture)
 				if(prob(3))
 					playsound(owner, pick('sound/combat/tf2crit.ogg'), 100, FALSE)
@@ -66,8 +66,8 @@
 				shake_camera(owner, 2, 2)
 				set_disabled(BODYPART_DISABLED_CRIT)
 			else
-				var/list/phrases = list("The [src] jolts painfully!", "The [src] is disabled!")
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
+				var/list/phrases = list("[capitalize(src.name)] пронзает мучительная боль!", "[capitalize(src.name)] теряет подвижность!")
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [pick(phrases)]</span>"
 				owner.emote("paincrit", TRUE)
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
@@ -82,8 +82,8 @@
 			if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 30
 		if(prob(round( max(dam / 3, 1), 1)) )
-			var/list/phrases = list("The bone shatters!", "The bone is broken!", "The [src.name] is mauled!", "The bone snaps through the skin!")
-			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
+			var/list/phrases = list("Кость раздроблена!", "Кость сломана!", "[capitalize(src.name)] изувечена!", "Кость пробивает кожу наружу!")
+			owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [pick(phrases)]</span>"
 			add_wound(/datum/wound/fracture)
 			if(prob(3))
 				playsound(owner, pick('sound/combat/tf2crit.ogg'), 100, FALSE)
@@ -111,7 +111,7 @@
 				return FALSE
 			playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
 			owner.emote("paincrit", TRUE)
-			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s [src.name]!</span>"
+			owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Кровь хлещет из [src.name] [owner]!</span>"
 			add_wound(/datum/wound/artery)
 			set_disabled(BODYPART_DISABLED_CRIT)
 			owner.Slowdown(20)
@@ -140,8 +140,8 @@
 		if(brute_dam)
 			dam += round(max((brute_dam / max_damage)*20, 1), 1)
 		if(prob(round(max(dam / 3, 1), 1)))
-			var/list/phrases = list("The ribs shatter in a splendid way!", "The ribs are smashed!", "The chest is mauled!", "The chest caves in!")
-			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
+			var/list/phrases = list("Рёбра с треском ломаются!", "Рёбра раздроблены!", "Грудь изувечена!", "Грудная клетка проломлена!")
+			owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [pick(phrases)]</span>"
 			add_wound(/datum/wound/fracture)
 			owner.emote("paincrit", TRUE)
 			if(prob(3))
@@ -175,7 +175,7 @@
 					playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
 				add_wound(/datum/wound/artery)
 				owner.emote("paincrit", TRUE)
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s [src.name]!</span>"
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Кровь хлещет из [src.name] [owner]!</span>"
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
 				if(owner.mind && owner.mind.has_antag_datum(/datum/antagonist/zombie))
@@ -192,7 +192,7 @@
 					if(zone_precise == BODY_ZONE_CHEST)
 						owner.vomit(blood = TRUE)
 						owner.death()
-						owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s [src.name]!</span>"
+						owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Кровь хлещет из [src.name] [owner]!</span>"
 						return TRUE
 		if(prob(round(max(dam / 4, 1), 1)))
 			if(skeletonized)
@@ -222,7 +222,7 @@
 				if(organ_spilled)
 					shake_camera(owner, 2, 2)
 					owner.death()
-					owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [owner] spills [owner.p_their()] organs!</span>"
+					owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Из [owner] вываливаются внутренности!</span>"
 				return TRUE
 
 /obj/item/bodypart/head/try_crit(bclass,dam,mob/living/user,zone_precise)
@@ -240,7 +240,7 @@
 				used = 0
 			if(prob(used))
 				playsound(owner, "fracturedry", 100, FALSE)
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> The neck is broken!</span>"
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Шея сломана!</span>"
 				add_wound(/datum/wound/necksnap)
 				shake_camera(owner, 2, 2)
 				owner.death()
@@ -255,7 +255,7 @@
 /*		if(!owner.stat)
 			if(can_bloody_wound())
 				if(prob(used) || (brute_dam >= max_damage))
-					owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [owner] is knocked out!</span>"
+					owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [owner] теряет сознание!</span>"
 					owner.flash_fullscreen("whiteflash3")
 					owner.Unconscious(300)
 					if(owner.client)
@@ -265,8 +265,8 @@
 		for(var/datum/wound/fracture/W in wounds)
 			return FALSE
 		if(prob(used) && (brute_dam / max_damage >= 0.9))
-			var/list/phrases = list("The skull shatters in a gruesome way!", "The head is smashed!", "The skull is broken!", "The skull caves in!")
-			owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> [pick(phrases)]</span>"
+			var/list/phrases = list("Череп жутко раскалывается!", "Голова разбита!", "Череп проломлен!", "Кости черепа вдавлены внутрь!")
+			owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> [pick(phrases)]</span>"
 			add_wound(/datum/wound/fracture)
 			if(prob(3))
 				playsound(owner, 'sound/combat/tf2crit.ogg', 100, FALSE)
@@ -297,7 +297,7 @@
 				playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
 				if(owner.stat != DEAD)
 					playsound(owner, pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE)
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s throat!</span>"
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Кровь брызжет из горла [owner]!</span>"
 				add_wound(/datum/wound/artery/throat)
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
@@ -321,7 +321,7 @@
 					return FALSE
 				playsound(owner, pick('sound/combat/crit.ogg'), 100, FALSE)
 				owner.emote("paincrit", TRUE)
-				owner.next_attack_msg += " <span class='crit'><b>Critical hit!</b> Blood sprays from [owner]'s [src.name]!</span>"
+				owner.next_attack_msg += " <span class='crit'><b>Критический удар!</b> Кровь хлещет из [src.name] [owner]!</span>"
 				add_wound(/datum/wound/artery)
 				owner.Slowdown(20)
 				shake_camera(owner, 2, 2)
@@ -449,7 +449,7 @@
 	if(!bandage)
 		return
 	if(owner.stat != DEAD)
-		to_chat(owner, "<span class='warning'>Blood soaks through the bandage on my [name].</span>")
+		to_chat(owner, "<span class='warning'>Кровь просачивается сквозь повязку на [name].</span>")
 	bandage.add_mob_blood(owner)
 //	owner.update_damage_overlays()
 

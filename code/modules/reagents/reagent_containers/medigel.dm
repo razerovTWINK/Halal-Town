@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/medigel
-	name = "medical gel"
+	name = "медицинский гель"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "medigel"
@@ -34,7 +34,7 @@
 
 /obj/item/reagent_containers/medigel/attack(mob/M, mob/user, def_zone)
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 		return
 
 	if(M == user)
@@ -48,13 +48,13 @@
 
 	else
 		log_combat(user, M, "attempted to apply", src, reagents.log_list())
-		M.visible_message("<span class='danger'>[user] attempts to [apply_method] [src] on [M].</span>", \
+		M.visible_message("<span class='danger'>[user] пытается [apply_method] [src] на [M].</span>", \
 							"<span class='danger'>[user] attempts to [apply_method] [src] on you.</span>")
 		if(!do_mob(user, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return
-		M.visible_message("<span class='danger'>[user] [apply_method]s [M] down with [src].</span>", \
+		M.visible_message("<span class='danger'>[user] [apply_method] [M] при помощи [src].</span>", \
 							"<span class='danger'>[user] [apply_method]s you down with [src].</span>")
 
 	if(!reagents || !reagents.total_volume)

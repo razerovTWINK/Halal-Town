@@ -3,7 +3,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = ""
-	name = "grenade launcher"
+	name = "гранатомет"
 	icon_state = "dshotgun_sawn"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
@@ -22,7 +22,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	desc = ""
-	name = "multi grenade launcher"
+	name = "многозарядный гранатомет"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
@@ -32,7 +32,7 @@
 	return
 
 /obj/item/gun/ballistic/automatic/gyropistol
-	name = "gyrojet pistol"
+	name = "гироджет-пистолет"
 	desc = ""
 	icon_state = "gyropistol"
 	fire_sound = 'sound/blank.ogg'
@@ -43,7 +43,7 @@
 	casing_ejector = FALSE
 
 /obj/item/gun/ballistic/rocketlauncher
-	name = "\improper PML-9"
+	name = "\improper ракетница PML-9"
 	desc = ""
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
@@ -73,8 +73,8 @@
 	return //too difficult to remove the rocket with TK
 
 /obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message("<span class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!</span>", \
-		"<span class='danger'>I aim [src] at the ground to perform a bisnasty rocket jump...</span>")
+	user.visible_message("<span class='warning'>[user] направляет [src] в землю! Кажется, [user.p_theyre()] собирается сделать крутой рокет-джамп!</span>", \
+		"<span class='danger'>Ты направляешь [src] в землю, чтобы совершить сумасшедший рокет-джамп...</span>")
 	if(can_shoot())
 		user.notransform = TRUE
 		playsound(src, 'sound/blank.ogg', 80, TRUE, 5)
@@ -91,8 +91,8 @@
 		sleep(5)
 		shoot_with_empty_chamber(user)
 		sleep(20)
-		user.visible_message("<span class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
-			"<span class='danger'>I look around after realizing you're still here, then proceed to choke myself to death with [src]!</span>")
+		user.visible_message("<span class='warning'>[user] оглядывает комнату и понимает, что [user.p_theyre()] всё ещё здесь. [user.p_they(TRUE)] заталкивает [src] себе в глотку и задыхается!</span>", \
+			"<span class='danger'>Ты оглядываешься и понимаешь, что всё ещё здесь, а затем насмерть давишься [src]!</span>")
 		sleep(20)
 		return OXYLOSS
 

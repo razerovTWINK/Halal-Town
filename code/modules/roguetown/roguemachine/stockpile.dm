@@ -40,10 +40,10 @@
 		if(D.withdraw_disabled)
 			return
 		if(D.held_items <= 0)
-			say("Insufficient stock.")
+			say("Недостаточно запасов.")
 			return
 		if(D.withdraw_price > budget)
-			say("Insufficient mammon.")
+			say("Недостаточно маммон.")
 		else
 			D.held_items--
 			budget -= D.withdraw_price
@@ -70,17 +70,17 @@
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
-	contents += "<center>TOWN STOCKPILE<BR>"
+	contents += "<center>ГОРОДСКОЙ СКЛАД<BR>"
 	contents += "--------------<BR>"
-	contents += "<a href='?src=[REF(src)];change=1'>Stored Mammon: [budget]</a></center><BR>"
+	contents += "<a href='?src=[REF(src)];change=1'>Хранимый Маммон: [budget]</a></center><BR>"
 	for(var/datum/roguestock/stockpile/A in SStreasury.stockpile_datums)
 		contents += "[A.name]<BR>"
 		contents += "[A.desc]<BR>"
-		contents += "Stockpiled Amount: [A.held_items]<BR>"
+		contents += "Количество на Складе: [A.held_items]<BR>"
 		if(!A.withdraw_disabled)
-			contents += "<a href='?src=[REF(src)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\]</a><BR><BR>"
+			contents += "<a href='?src=[REF(src)];withdraw=[REF(A)]'>\[Забрать ([A.withdraw_price])\]</a><BR><BR>"
 		else
-			contents += "Withdrawing Disabled...<BR><BR>"
+			contents += "Снятие Отключено...<BR><BR>"
 	if(!canread)
 		contents = stars(contents)
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)

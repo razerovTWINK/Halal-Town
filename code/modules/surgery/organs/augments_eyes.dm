@@ -1,5 +1,5 @@
 /obj/item/organ/cyberimp/eyes
-	name = "cybernetic eye implant"
+	name = "кибернетический глазной имплант"
 	desc = ""
 	icon_state = "eye_implant"
 	implant_overlay = "eye_implant_overlay"
@@ -9,7 +9,7 @@
 
 // HUD implants
 /obj/item/organ/cyberimp/eyes/hud
-	name = "HUD implant"
+	name = "визорный имплант"
 	desc = ""
 	slot = ORGAN_SLOT_HUD
 	var/HUD_type = 0
@@ -32,23 +32,23 @@
 	..()
 
 /obj/item/organ/cyberimp/eyes/hud/medical
-	name = "Medical HUD implant"
+	name = "медицинский визорный имплант"
 	desc = ""
 	HUD_type = DATA_HUD_MEDICAL_ADVANCED
 	HUD_trait = TRAIT_MEDICAL_HUD
 
 /obj/item/organ/cyberimp/eyes/hud/security
-	name = "Security HUD implant"
+	name = "охранный визорный имплант"
 	desc = ""
 	HUD_type = DATA_HUD_SECURITY_ADVANCED
 	HUD_trait = TRAIT_SECURITY_HUD
 
 /obj/item/organ/cyberimp/eyes/hud/diagnostic
-	name = "Diagnostic HUD implant"
+	name = "диагностический визорный имплант"
 	desc = ""
 	HUD_type = DATA_HUD_DIAGNOSTIC_ADVANCED
 
 /obj/item/organ/cyberimp/eyes/hud/security/syndicate
-	name = "Contraband Security HUD Implant"
+	name = "контрабандный охранный визорный имплант"
 	desc = ""
 	syndicate_implant = TRUE

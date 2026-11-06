@@ -8,7 +8,7 @@
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/burger/plain
-	name = "burger"
+	name = "бургер"
 	desc = ""
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | MEAT
@@ -78,7 +78,7 @@
 	foodtype = GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/burger/roburger
-	name = "roburger"
+	name = "робургер"
 	desc = ""
 	icon_state = "roburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/nanomachines = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -87,7 +87,7 @@
 	foodtype = GRAIN | TOXIC
 
 /obj/item/reagent_containers/food/snacks/burger/roburgerbig
-	name = "roburger"
+	name = "робургер"
 	desc = ""
 	icon_state = "roburger"
 	volume = 120

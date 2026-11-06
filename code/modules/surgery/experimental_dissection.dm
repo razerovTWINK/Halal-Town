@@ -1,10 +1,10 @@
 #define BASE_HUMAN_REWARD 500
-#define EXPDIS_FAIL_MSG "<span class='notice'>I dissect [target], but do not find anything particularly interesting.</span>"
+#define EXPDIS_FAIL_MSG "<span class='notice'>Ты препарируешь [target], но не находишь ничего особо интересного.</span>"
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
 
 /datum/surgery/advanced/experimental_dissection
-	name = "Dissection"
+	name = "вскрытие"
 	desc = ""
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
@@ -26,14 +26,14 @@
 		return FALSE
 
 /datum/surgery_step/dissection
-	name = "dissection"
+	name = "вскрытие"
 	implements = list(/obj/item/scalpel/augment = 75, /obj/item/scalpel/advanced = 60, TOOL_SCALPEL = 45, /obj/item/kitchen/knife = 20, /obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE
 	repeatable = TRUE
 
 /datum/surgery_step/dissection/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("<span class='notice'>[user] starts dissecting [target].</span>", "<span class='notice'>I start dissecting [target].</span>")
+	user.visible_message("<span class='notice'>[user] начинает вскрытие [target].</span>", "<span class='notice'>Ты начинаешь вскрытие [target].</span>")
 
 /datum/surgery_step/dissection/proc/check_value(mob/living/target, datum/surgery/advanced/experimental_dissection/ED)
 	var/cost = BASE_HUMAN_REWARD
@@ -74,7 +74,7 @@
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = check_value(target, surgery)
-	user.visible_message("<span class='notice'>[user] dissects [target], discovering [points_earned] point\s of data!</span>", "<span class='notice'>I dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes.</span>")
+	user.visible_message("<span class='notice'>[user] проводит вскрытие [target], получая данные ([points_earned] очк.)!</span>", "<span class='notice'>Ты проводишь вскрытие [target], получая новые сведения ([points_earned] очк.), и делаешь записи.</span>")
 
 	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned*PUBLIC_TECHWEB_GAIN))
 	new /obj/item/research_notes(user.loc, points_earned*PRIVATE_TECHWEB_GAIN, "biology")
@@ -87,7 +87,7 @@
 
 /datum/surgery_step/dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = round(check_value(target, surgery) * 0.01)
-	user.visible_message("<span class='notice'>[user] dissects [target]!</span>", EXPDIS_FAIL_MSG)
+	user.visible_message("<span class='notice'>[user] вскрывает [target]!</span>", EXPDIS_FAIL_MSG)
 
 	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned*PUBLIC_TECHWEB_GAIN))
 	new /obj/item/research_notes(user.loc, points_earned*PRIVATE_TECHWEB_GAIN, "biology")
@@ -97,19 +97,19 @@
 	return TRUE
 
 /datum/surgery/advanced/experimental_dissection/adv
-	name = "Thorough Dissection"
+	name = "тщательное вскрытие"
 	value_multiplier = 2
 	replaced_by = /datum/surgery/advanced/experimental_dissection/exp
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/exp
-	name = "Experimental Dissection"
+	name = "экспериментальное вскрытие"
 	value_multiplier = 5
 	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/alien
-	name = "Extraterrestrial Dissection"
+	name = "вскрытие ксеноморфа"
 	value_multiplier = 10
 	requires_tech = TRUE
 	replaced_by = null

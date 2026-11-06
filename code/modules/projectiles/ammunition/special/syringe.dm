@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/syringegun
-	name = "syringe gun spring"
+	name = "пружина шприцемета"
 	desc = ""
 	projectile_type = /obj/projectile/bullet/dart/syringe
 	firing_effect_type = null
@@ -23,7 +23,7 @@
 	..()
 
 /obj/item/ammo_casing/chemgun
-	name = "dart synthesiser"
+	name = "синтезатор дротиков"
 	desc = ""
 	projectile_type = /obj/projectile/bullet/dart
 	firing_effect_type = null
@@ -36,12 +36,12 @@
 		if(CG.syringes_left <= 0)
 			return
 		CG.reagents.trans_to(BB, 15, transfered_by = user)
-		BB.name = "chemical dart"
+		BB.name = "химический дротик"
 		CG.syringes_left--
 	..()
 
 /obj/item/ammo_casing/dnainjector
-	name = "rigged syringe gun spring"
+	name = "взломанная пружина шприцемета"
 	desc = ""
 	projectile_type = /obj/projectile/bullet/dnainjector
 	firing_effect_type = null

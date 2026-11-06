@@ -16,7 +16,7 @@
 	item_state = "pwig"
 
 /obj/item/clothing/head/that
-	name = "top-hat"
+	name = "цилиндр"
 	desc = ""
 	icon_state = "tophat"
 	item_state = "that"
@@ -40,7 +40,7 @@
 	desc = ""
 
 /obj/item/clothing/head/plaguedoctorhat
-	name = "plague doctor's hat"
+	name = "шляпа чумного доктора"
 	desc = ""
 	icon_state = "plaguedoctor"
 	permeability_coefficient = 0.01
@@ -112,7 +112,7 @@
 	item_state = "justicepink"
 
 /obj/item/clothing/head/rabbitears
-	name = "rabbit ears"
+	name = "кроличьи уши"
 	desc = ""
 	icon_state = "bunny"
 	dynamic_hair_suffix = ""
@@ -120,7 +120,7 @@
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
 /obj/item/clothing/head/pirate
-	name = "pirate hat"
+	name = "пиратская шляпа"
 	desc = ""
 	icon_state = "pirate"
 	item_state = "pirate"
@@ -151,7 +151,7 @@
 	item_state = "hgpiratecap"
 
 /obj/item/clothing/head/bandana
-	name = "pirate bandana"
+	name = "пиратская бандана"
 	desc = ""
 	icon_state = "bandana"
 	item_state = "bandana"
@@ -203,7 +203,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 
 /obj/item/clothing/head/fedora
-	name = "fedora"
+	name = "федора"
 	icon_state = "fedora"
 	item_state = "fedora"
 	desc = ""
@@ -220,7 +220,7 @@
 	return(BRUTELOSS)
 
 /obj/item/clothing/head/sombrero
-	name = "sombrero"
+	name = "сомбреро"
 	icon_state = "sombrero"
 	item_state = "sombrero"
 	desc = ""
@@ -277,7 +277,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/santa
-	name = "santa hat"
+	name = "шапка Санты"
 	desc = ""
 	icon_state = "santahatnorm"
 	item_state = "that"
@@ -286,7 +286,7 @@
 	dog_fashion = /datum/dog_fashion/head/santa
 
 /obj/item/clothing/head/jester
-	name = "jester hat"
+	name = "колпак шута"
 	desc = ""
 	icon_state = "jester_hat"
 	dynamic_hair_suffix = ""
@@ -314,7 +314,7 @@
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 
 /obj/item/clothing/head/crown
-	name = "crown"
+	name = "корона"
 	desc = ""
 	icon_state = "crown"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -322,7 +322,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/crown/fancy
-	name = "magnificent crown"
+	name = "великолепная корона"
 	desc = ""
 	icon_state = "fancycrown"
 
@@ -351,7 +351,7 @@
 	item_state = "pharoah_hat"
 
 /obj/item/clothing/head/jester/alt
-	name = "jester hat"
+	name = "колпак шута"
 	desc = ""
 	icon_state = "jester_hat"
 	dynamic_hair_suffix = ""

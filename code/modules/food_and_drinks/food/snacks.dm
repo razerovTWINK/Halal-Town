@@ -29,7 +29,7 @@ Here is an example of the new formatting for anyone who wants to add more food i
 All foods are distributed among various categories. Use common sense.
 */
 /obj/item/reagent_containers/food/snacks
-	name = "snack"
+	name = "закуска"
 	desc = ""
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = null
@@ -140,7 +140,7 @@ All foods are distributed among various categories. Use common sense.
 		color = "#6c6897"
 		var/mutable_appearance/rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
 		add_overlay(rotflies)
-		name = "rotten [initial(name)]"
+		name = "гнилой [initial(name)]"
 		eat_effect = /datum/status_effect/debuff/rotfood
 		slices_num = 0
 		slice_path = null
@@ -196,7 +196,7 @@ All foods are distributed among various categories. Use common sense.
 		if(eat_effect != /datum/status_effect/debuff/burnedfood)
 			if(burning >= burntime)
 				color = burned_color
-				name = "burned [name]"
+				name = "подгоревший [name]"
 				slice_path = null
 				eat_effect = /datum/status_effect/debuff/burnedfood
 		if(burning > (burntime * 2))
@@ -288,14 +288,14 @@ All foods are distributed among various categories. Use common sense.
 										"<span class='warning'>[user] cannot force any more of [src] down your throat!</span>")
 					return FALSE
 				else
-					M.visible_message("<span class='danger'>[user] tries to feed [M] [src].</span>", \
+					M.visible_message("<span class='danger'>[user] пытается скормить [M] [src].</span>", \
 										"<span class='danger'>[user] tries to feed me [src].</span>")
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
 					var/obj/item/bodypart/CH = C.get_bodypart(BODY_ZONE_HEAD)
 					if(C.cmode)
 						if(!CH.grabbedby)
-							to_chat(user, "<span class='info'>[C.p_they(TRUE)] steals [C.p_their()] face from it.</span>")
+							to_chat(user, "<span class='info'>[C.p_they(TRUE)] крадёт с него [C.p_their()] лицо.</span>")
 							return FALSE
 				if(!do_mob(user, M))
 					return
@@ -357,7 +357,7 @@ All foods are distributed among various categories. Use common sense.
 				to_chat(user, "<span class='warning'>[src] can't be filled with [S]!</span>")
 				return 0
 			if(contents.len >= 20)
-				to_chat(user, "<span class='warning'>I can't add more ingredients to [src]!</span>")
+				to_chat(user, "<span class='warning'>Больше ингредиентов в [src] не влезет!</span>")
 				return 0
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
 			C.initialize_custom_food(src, S, user)
@@ -538,7 +538,7 @@ All foods are distributed among various categories. Use common sense.
 		if(!M.reagents.total_volume)
 			to_chat(user, "<span class='warning'>[M] is empty!</span>")
 		else
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src] полон!</span>")
 
 // //////////////////////////////////////////////Store////////////////////////////////////////
 /// All the food items that can store an item inside itself, like bread or cake.
@@ -556,7 +556,7 @@ All foods are distributed among various categories. Use common sense.
 		if(!iscarbon(user))
 			return 0
 		if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'>[src] полон.</span>")
 			return 0
 		to_chat(user, "<span class='notice'>I slip [W] inside [src].</span>")
 		user.transferItemToLoc(W, src)

@@ -6,7 +6,7 @@
 
 //Chef
 /obj/item/clothing/head/chefhat
-	name = "chef's hat"
+	name = "поварской колпак"
 	item_state = "chef"
 	icon_state = "chef"
 	desc = ""
@@ -26,7 +26,7 @@
 
 //Captain
 /obj/item/clothing/head/caphat
-	name = "captain's hat"
+	name = "капитанская фуражка"
 	desc = ""
 	icon_state = "captain"
 	item_state = "that"
@@ -54,7 +54,7 @@
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
-	name = "nun hood"
+	name = "капюшон монахини"
 	desc = ""
 	icon_state = "nun_hood"
 	flags_inv = HIDEHAIR
@@ -67,7 +67,7 @@
 
 //Detective
 /obj/item/clothing/head/fedora/det_hat
-	name = "detective's fedora"
+	name = "федора детектива"
 	desc = ""
 	armor = list("melee" = 25, "bullet" = 5, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 50)
 	icon_state = "detective"
@@ -98,7 +98,7 @@
 
 //Mime
 /obj/item/clothing/head/beret
-	name = "beret"
+	name = "берет"
 	desc = ""
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
@@ -131,7 +131,7 @@
 
 /obj/item/clothing/head/beret/durathread
 	name = "durathread beret"
-	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
+	desc =  "Берет из прочного волокна, упругие нити немного защищают владельца."
 	icon_state = "beretdurathread"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
 

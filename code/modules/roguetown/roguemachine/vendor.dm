@@ -26,7 +26,7 @@
 			update_icon()
 			return attack_hand(user)
 		else
-			to_chat(user, "<span class='warning'>Wrong key.</span>")
+			to_chat(user, "<span class='warning'>Не тот ключ.</span>")
 			return
 	if(istype(P, /obj/item/keyring))
 		var/obj/item/keyring/K = P
@@ -53,7 +53,7 @@
 				playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 				return attack_hand(user)
 			else
-				to_chat(user, "<span class='warning'>Full.</span>")
+				to_chat(user, "<span class='warning'>Полон.</span>")
 				return
 	..()
 
@@ -72,7 +72,7 @@
 					budget -= held_items[O]["PRICE"]
 					wgain += held_items[O]["PRICE"]
 				else
-					say("NO MONEY NO HONEY!")
+					say("НЕТ ДЕНЕГ — НЕТ КОНФЕТ!")
 					return
 			held_items -= O
 			if(!usr.put_in_hands(O))
@@ -113,7 +113,7 @@
 			var/prename
 			if(held_items[O]["NAME"])
 				prename = held_items[O]["NAME"]
-			var/newname = input(usr, "SET A NEW NAME FOR THIS PRODUCT", src, prename)
+			var/newname = input(usr, "ЗАДАЙ НОВОЕ ИМЯ ДЛЯ ЭТОГО ТОВАРА", src, prename)
 			if(newname)
 				held_items[O]["NAME"] = newname
 	if(href_list["setprice"])
@@ -126,7 +126,7 @@
 			var/preprice
 			if(held_items[O]["PRICE"])
 				preprice = held_items[O]["PRICE"]
-			var/newprice = input(usr, "SET A NEW PRICE FOR THIS PRODUCT", src, preprice) as null|num
+			var/newprice = input(usr, "ЗАДАЙ НОВУЮ ЦЕНУ ДЛЯ ЭТОГО ТОВАРА", src, preprice) as null|num
 			if(newprice)
 				if(findtext(num2text(newprice), "."))
 					return attack_hand(usr)
@@ -142,17 +142,17 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	if(canread)
-		contents = "<center>THE PEDDLER, THIRD ITERATION<BR>"
+		contents = "<center>ТОРГОВЕЦ, ТРЕТЬЯ ИТЕРАЦИЯ<BR>"
 		if(locked)
-			contents += "<a href='?src=[REF(src)];change=1'>Stored Mammon:</a> [budget]<BR>"
+			contents += "<a href='?src=[REF(src)];change=1'>Хранимый Маммон:</a> [budget]<BR>"
 		else
-			contents += "<a href='?src=[REF(src)];withdrawgain=1'>Stored Profits:</a> [wgain]<BR>"
+			contents += "<a href='?src=[REF(src)];withdrawgain=1'>Накопленная Прибыль:</a> [wgain]<BR>"
 	else
-		contents = "<center>[stars("THE PEDDLER, THIRD ITERATION")]<BR>"
+		contents = "<center>[stars("ТОРГОВЕЦ, ТРЕТЬЯ ИТЕРАЦИЯ")]<BR>"
 		if(locked)
-			contents += "<a href='?src=[REF(src)];change=1'>[stars("Stored Mammon:")]</a> [budget]<BR>"
+			contents += "<a href='?src=[REF(src)];change=1'>[stars("Хранимый Маммон:")]</a> [budget]<BR>"
 		else
-			contents += "<a href='?src=[REF(src)];withdrawgain=1'>[stars("Stored Profits:")]</a> [wgain]<BR>"
+			contents += "<a href='?src=[REF(src)];withdrawgain=1'>[stars("Накопленная Прибыль:")]</a> [wgain]<BR>"
 
 	contents += "</center>"
 
@@ -166,14 +166,14 @@
 			namer = "thing"
 		if(locked)
 			if(canread)
-				contents += "[icon2html(I, user)] [namer] - [price] <a href='?src=[REF(src)];buy=[REF(I)]'>BUY</a>"
+				contents += "[icon2html(I, user)] [namer] - [price] <a href='?src=[REF(src)];buy=[REF(I)]'>КУПИТЬ</a>"
 			else
-				contents += "[icon2html(I, user)] [stars(namer)] - [price] <a href='?src=[REF(src)];buy=[REF(I)]'>[stars("BUY")]</a>"
+				contents += "[icon2html(I, user)] [stars(namer)] - [price] <a href='?src=[REF(src)];buy=[REF(I)]'>[stars("КУПИТЬ")]</a>"
 		else
 			if(canread)
-				contents += "[icon2html(I, user)] <a href='?src=[REF(src)];setname=[REF(I)]'>[namer]</a> - <a href='?src=[REF(src)];setprice=[REF(I)]'>[price]</a> <a href='?src=[REF(src)];retrieve=[REF(I)]'>TAKE</a>"
+				contents += "[icon2html(I, user)] <a href='?src=[REF(src)];setname=[REF(I)]'>[namer]</a> - <a href='?src=[REF(src)];setprice=[REF(I)]'>[price]</a> <a href='?src=[REF(src)];retrieve=[REF(I)]'>ВЗЯТЬ</a>"
 			else
-				contents += "[icon2html(I, user)] <a href='?src=[REF(src)];setname=[REF(I)]'>[stars(namer)]</a> - <a href='?src=[REF(src)];setprice=[REF(I)]'>[price]</a> <a href='?src=[REF(src)];retrieve=[REF(I)]'>[stars("TAKE")]</a>"
+				contents += "[icon2html(I, user)] <a href='?src=[REF(src)];setname=[REF(I)]'>[stars(namer)]</a> - <a href='?src=[REF(src)];setprice=[REF(I)]'>[price]</a> <a href='?src=[REF(src)];retrieve=[REF(I)]'>[stars("ВЗЯТЬ")]</a>"
 		contents += "<BR>"
 
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
@@ -239,19 +239,19 @@
 			if(!cachey[user]["trisawarded"])
 				cachey[user]["trisawarded"] = 1
 				user.adjust_triumphs(1)
-				say("[user] has purchased a prole dwelling.")
+				say("[user] приобрёл пролетарское жильё.")
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		if(cachey[user]["moneydonate"] > 499)
 			if(cachey[user]["trisawarded"] < 2)
 				cachey[user]["trisawarded"] = 2
 				user.adjust_triumphs(1)
-				say("[user] has been upgraded to a space in a serf apartment.")
+				say("[user] получил апгрейд до места в серфской квартире.")
 				playsound(src, pick('sound/misc/machinetalk.ogg'), 100, FALSE, -1)
 		if(cachey[user]["moneydonate"] > 999)
 			if(cachey[user]["trisawarded"] < 3)
 				cachey[user]["trisawarded"] = 3
 				user.adjust_triumphs(1)
-				say("[user] HAS BEEN UPGRADED TO A NOBLE BEDCHAMBER!")
+				say("[user] ПОЛУЧИЛ АПГРЕЙД ДО БЛАГОРОДНОЙ ОПОЧИВАЛЬНИ!")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
 
 /obj/structure/roguemachine/vendor/inn

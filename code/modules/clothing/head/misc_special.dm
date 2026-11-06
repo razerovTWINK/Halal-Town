@@ -14,7 +14,7 @@
  * Welding mask
  */
 /obj/item/clothing/head/welding
-	name = "welding helmet"
+	name = "сварочная маска"
 	desc = ""
 	icon_state = "welding"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -116,7 +116,7 @@
  * Ushanka
  */
 /obj/item/clothing/head/ushanka
-	name = "ushanka"
+	name = "ушанка"
 	desc = ""
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
@@ -158,7 +158,7 @@
  * Kitty ears
  */
 /obj/item/clothing/head/kitty
-	name = "kitty ears"
+	name = "кошачьи уши"
 	desc = ""
 	icon_state = "kitty"
 	color = "#999999"
@@ -332,7 +332,7 @@
 	if(!warped && iscarbon(usr))
 		var/mob/living/carbon/C = usr
 		if(src == C.head)
-			to_chat(C, "<span class='danger'>Why would you want to take this off? Do you want them to get into my mind?!</span>")
+			to_chat(C, "<span class='danger'>Зачем это снимать? Хочешь, чтобы они забрались ко мне в голову?!</span>")
 			return
 	return ..()
 
@@ -359,7 +359,7 @@
 	if(!warped && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, "<span class='danger'>Why would you want to take this off? Do you want them to get into my mind?!</span>")
+			to_chat(user, "<span class='danger'>Зачем это снимать? Хочешь, чтобы они забрались ко мне в голову?!</span>")
 			return
 	return ..()
 

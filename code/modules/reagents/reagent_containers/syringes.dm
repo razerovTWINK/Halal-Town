@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/syringe
-	name = "steel syringe"
+	name = "стальной шприц"
 	desc = ""
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_0"
@@ -78,7 +78,7 @@
 			if(L) //living mob
 				var/drawn_amount = reagents.maximum_volume - reagents.total_volume
 				if(target != user)
-					target.visible_message("<span class='danger'>[user] is trying to take a blood sample from [target]!</span>", \
+					target.visible_message("<span class='danger'>[user] пытается взять пробу крови у [target]!</span>", \
 									"<span class='danger'>[user] is trying to take a blood sample from you!</span>")
 					busy = TRUE
 					if(!do_mob(user, target, extra_checks=CALLBACK(L, /mob/living/proc/can_inject, user, TRUE)))
@@ -94,11 +94,11 @@
 
 			else //if not mob
 				if(!target.reagents.total_volume)
-					to_chat(user, "<span class='warning'>[target] is empty!</span>")
+					to_chat(user, "<span class='warning'>[target] пуст!</span>")
 					return
 
 				if(!target.is_drawable(user))
-					to_chat(user, "<span class='warning'>I cannot directly remove reagents from [target]!</span>")
+					to_chat(user, "<span class='warning'>Я не могу напрямую извлекать реагенты из [target]!</span>")
 					return
 
 				var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user) // transfer from, transfer to - who cares?
@@ -114,7 +114,7 @@
 			log_combat(user, target, "attempted to inject", src, addition="which had [contained]")
 
 			if(!reagents.total_volume)
-				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+				to_chat(user, "<span class='warning'>[src] пуст!</span>")
 				return
 
 			if(!L && !target.is_injectable(user)) //only checks on non-living mobs, due to how can_inject() handles
@@ -122,14 +122,14 @@
 				return
 
 			if(target.reagents.total_volume >= target.reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[target] is full.</span>")
+				to_chat(user, "<span class='notice'>[target] полон.</span>")
 				return
 
 			if(L) //living mob
 				if(!L.can_inject(user, TRUE))
 					return
 				if(L != user)
-					L.visible_message("<span class='danger'>[user] is trying to inject [L]!</span>", \
+					L.visible_message("<span class='danger'>[user] пытается сделать [L] укол!</span>", \
 											"<span class='danger'>[user] is trying to inject you!</span>")
 					if(!do_mob(user, L, extra_checks=CALLBACK(L, /mob/living/proc/can_inject, user, TRUE)))
 						return
@@ -137,7 +137,7 @@
 						return
 					if(L.reagents.total_volume >= L.reagents.maximum_volume)
 						return
-					L.visible_message("<span class='danger'>[user] injects [L] with the syringe!</span>", \
+					L.visible_message("<span class='danger'>[user] делает [L] укол шприцем!</span>", \
 									"<span class='danger'>[user] injects you with the syringe!</span>")
 
 				if(L != user)

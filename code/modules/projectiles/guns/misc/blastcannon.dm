@@ -1,5 +1,5 @@
 /obj/item/gun/blastcannon
-	name = "pipe gun"
+	name = "самопал из трубы"
 	desc = ""
 	icon_state = "empty_blastcannon"
 	var/icon_state_loaded = "loaded_blastcannon"
@@ -39,7 +39,7 @@
 	if(bomb)
 		bomb.forceMove(user.loc)
 		user.put_in_hands(bomb)
-		user.visible_message("<span class='warning'>[user] detaches [bomb] from [src].</span>")
+		user.visible_message("<span class='warning'>[user] отсоединяет [bomb] от [src].</span>")
 		bomb = null
 	update_icon()
 	return ..()
@@ -47,7 +47,7 @@
 /obj/item/gun/blastcannon/update_icon()
 	if(bomb)
 		icon_state = icon_state_loaded
-		name = "blast cannon"
+		name = "взрывная пушка"
 		desc = ""
 	else
 		icon_state = initial(icon_state)
@@ -58,12 +58,12 @@
 	if(istype(O, /obj/item/transfer_valve))
 		var/obj/item/transfer_valve/T = O
 		if(!T.tank_one || !T.tank_two)
-			to_chat(user, "<span class='warning'>What good would an incomplete bomb do?</span>")
+			to_chat(user, "<span class='warning'>Какой толк от недоделанной бомбы?</span>")
 			return FALSE
 		if(!user.transferItemToLoc(T, src))
-			to_chat(user, "<span class='warning'>[T] seems to be stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>Кажется, [T] прилипла к твоей руке!</span>")
 			return FALSE
-		user.visible_message("<span class='warning'>[user] attaches [T] to [src]!</span>")
+		user.visible_message("<span class='warning'>[user] прикрепляет [T] к [src]!</span>")
 		bomb = T
 		update_icon()
 		return TRUE
@@ -98,7 +98,7 @@
 	var/heavy = power * 0.25
 	var/medium = power * 0.5
 	var/light = power
-	user.visible_message("<span class='danger'>[user] opens [bomb] on [user.p_their()] [name] and fires a blast wave at [target]!</span>","<span class='danger'>I open [bomb] on your [name] and fire a blast wave at [target]!</span>")
+	user.visible_message("<span class='danger'>[user] активирует [bomb] на [name] и выпускает взрывную волну в [target]!</span>","<span class='danger'>Ты активируешь [bomb] на [name] и выпускаешь взрывную волну в [target]!</span>")
 	playsound(user, "explosion", 100, TRUE)
 	var/turf/starting = get_turf(user)
 	var/turf/targturf = get_turf(target)
@@ -110,7 +110,7 @@
 	BW.fire()
 
 /obj/projectile/blastwave
-	name = "blast wave"
+	name = "взрывная волна"
 	icon_state = "blastwave"
 	damage = 0
 	nodamage = FALSE

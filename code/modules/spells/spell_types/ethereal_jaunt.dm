@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
-	name = "Ethereal Jaunt"
+	name = "Эфирный шаг"
 	desc = ""
 
 	school = "transmutation"
@@ -89,10 +89,10 @@
 	movedelay = world.time + movespeed
 
 	if(newLoc.flags_1 & NOJAUNT_1)
-		to_chat(user, "<span class='warning'>Some strange aura is blocking the way.</span>")
+		to_chat(user, "<span class='warning'>Странная аура преграждает путь.</span>")
 		return
 	if (locate(/obj/effect/blessing, newLoc))
-		to_chat(user, "<span class='warning'>Holy energies block your path!</span>")
+		to_chat(user, "<span class='warning'>Священная энергия преграждает путь!</span>")
 		return
 
 	forceMove(newLoc)

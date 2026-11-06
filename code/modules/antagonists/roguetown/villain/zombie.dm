@@ -11,11 +11,11 @@
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		var/datum/antagonist/vampirelord/V = examined_datum
 		if(!V.disguised)
-			return "<span class='boldnotice'>Another deadite.</span>"
+			return "<span class='boldnotice'>Ещё один мертвец.</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
-		return "<span class='boldnotice'>Another deadite. My ally.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец. Мой союзник.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец.</span>"
 
 /datum/antagonist/zombie/on_gain()
 	if(owner)
@@ -145,7 +145,7 @@
 	if(stat)
 		return
 	if(world.time % 5)
-		to_chat(src, "<span class='warning'>I failed to smell anything...</span>")
+		to_chat(src, "<span class='warning'>Я ничего не учуял...</span>")
 		return
 	var/closest_dist
 	var/the_dir
@@ -165,7 +165,7 @@
 				closest_dist = TD
 				the_dir = get_dir(src, M)
 	if(!closest_dist)
-		to_chat(src, "<span class='warning'>I failed to smell anything...</span>")
+		to_chat(src, "<span class='warning'>Я ничего не учуял...</span>")
 		return
 	to_chat(src, "<span class='warning'>[closest_dist], [dir2text(the_dir)]</span>")
 
@@ -183,7 +183,7 @@
 	var/datum/antagonist/zombie/new_antag = new /datum/antagonist/zombie()
 	mind.add_antag_datum(new_antag)
 	if(stat != DEAD)
-		to_chat(src, "<span class='danger'>I feel horrible...</span>")
+		to_chat(src, "<span class='danger'>Мне ужасно плохо...</span>")
 		if(getToxLoss() >= 75 && blood_volume)
 			mob_timers["puke"] = world.time
 			vomit(1, blood = TRUE)

@@ -4,7 +4,7 @@
 #define ARMOR_CLASS_HEAVY 3
 
 /obj/item/clothing
-	name = "clothing"
+	name = "одежда"
 	resistance_flags = FLAMMABLE
 	obj_flags = CAN_BE_HIT
 	break_sound = 'sound/foley/cloth_rip.ogg'
@@ -103,14 +103,14 @@
 		if(r_sleeve_status == SLEEVE_NOMOD)
 			return
 		if(r_sleeve_status == SLEEVE_TORN)
-			to_chat(user, "<span class='info'>It's torn away.</span>")
+			to_chat(user, "<span class='info'>Это оторвано.</span>")
 			return
 		if(!shiftheld)
 			if(!do_after(user, 20, target = user))
 				return
 			if(prob(L.STASTR * 8))
 				r_sleeve_status = SLEEVE_TORN
-				user.visible_message("<span class='notice'>[user] tears [src].</span>")
+				user.visible_message("<span class='notice'>[user] рвёт [src].</span>")
 				playsound(src, 'sound/foley/cloth_rip.ogg', 50, TRUE)
 				if(r_sleeve_zone == BODY_ZONE_R_ARM)
 					body_parts_covered &= ~ARM_RIGHT
@@ -120,7 +120,7 @@
 				C.color = color
 				user.put_in_hands(C)
 			else
-				user.visible_message("<span class='warning'>[user] tries to tear [src].</span>")
+				user.visible_message("<span class='warning'>[user] пытается порвать [src].</span>")
 		else
 			if(r_sleeve_status == SLEEVE_ROLLED)
 				if(r_sleeve_zone == BODY_ZONE_R_ARM)
@@ -138,14 +138,14 @@
 		if(l_sleeve_status == SLEEVE_NOMOD)
 			return
 		if(l_sleeve_status == SLEEVE_TORN)
-			to_chat(user, "<span class='info'>It's torn away.</span>")
+			to_chat(user, "<span class='info'>Это оторвано.</span>")
 			return
 		if(!shiftheld) //tear
 			if(!do_after(user, 20, target = user))
 				return
 			if(prob(L.STASTR * 8))
 				l_sleeve_status = SLEEVE_TORN
-				user.visible_message("<span class='notice'>[user] tears [src].</span>")
+				user.visible_message("<span class='notice'>[user] рвёт [src].</span>")
 				playsound(src, 'sound/foley/cloth_rip.ogg', 50, TRUE)
 				if(l_sleeve_zone == BODY_ZONE_L_ARM)
 					body_parts_covered &= ~ARM_LEFT
@@ -155,7 +155,7 @@
 				C.color = color
 				user.put_in_hands(C)
 			else
-				user.visible_message("<span class='warning'>[user] tries to tear [src].</span>")
+				user.visible_message("<span class='warning'>[user] пытается порвать [src].</span>")
 		else
 			if(l_sleeve_status == SLEEVE_ROLLED)
 				l_sleeve_status = SLEEVE_NORMAL

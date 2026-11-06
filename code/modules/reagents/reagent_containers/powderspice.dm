@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/powder
-	name = "spice"
+	name = "специя"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "spice"
@@ -42,7 +42,7 @@
 	show_when_dead = FALSE
 
 /datum/reagent/druqks/overdose_start(mob/living/M)
-	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
+	M.visible_message("<span class='warning'>У [M] идёт кровь из носа.</span>")
 
 /datum/reagent/druqks/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
@@ -96,11 +96,11 @@
 			var/obj/item/bodypart/CH = C.get_bodypart(BODY_ZONE_HEAD)
 			if(!CH)
 				to_chat(user, "<span class='warning'>[C.p_theyre(TRUE)] missing something.</span>")
-			user.visible_message("<span class='danger'>[user] attempts to force [C] to inhale [src].</span>", \
+			user.visible_message("<span class='danger'>[user] пытается заставить [C] вдохнуть [src].</span>", \
 								"<span class='danger'>[user] attempts to force me to inhale [src]!</span>")
 			if(C.cmode)
 				if(!CH.grabbedby)
-					to_chat(user, "<span class='info'>[C.p_they(TRUE)] steals [C.p_their()] face from it.</span>")
+					to_chat(user, "<span class='info'>[C.p_they(TRUE)] крадёт с него [C.p_their()] лицо.</span>")
 					return FALSE
 			if(!do_mob(user, M, 10))
 				return FALSE
@@ -120,19 +120,19 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, "<span class='warning'>[target] пуст! Растворять [src] не в чем.</span>")
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, "<span class='warning'>[target] полон.</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>", "<span class='notice'>I dissolve [src] in [target].</span>", null, 2)
+	user.visible_message("<span class='warning'>[user] что-то подсыпает в [target]!</span>", "<span class='notice'>Я растворяю [src] в [target].</span>", null, 2)
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 */
 /obj/item/reagent_containers/powder/flour
-	name = "powder"
+	name = "порошок"
 	desc = ""
 	gender = PLURAL
 	icon_state = "flour"
@@ -140,7 +140,7 @@
 	volume = 1
 	sellprice = 0
 /datum/reagent/floure
-	name = "flower"
+	name = "цветок"
 	description = ""
 	color = "#FFFFFF" // rgb: 96, 165, 132
 
@@ -164,7 +164,7 @@
 	volume = 1
 
 /obj/item/reagent_containers/powder/ozium
-	name = "powder"
+	name = "порошок"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
@@ -193,7 +193,7 @@
 
 /datum/reagent/ozium/overdose_start(mob/living/M)
 	M.playsound_local(M, 'sound/misc/heroin_rush.ogg', 100, FALSE)
-	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
+	M.visible_message("<span class='warning'>У [M] идёт кровь из носа.</span>")
 
 /datum/reagent/ozium/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
@@ -233,7 +233,7 @@
 
 /datum/reagent/moondust/overdose_start(mob/living/M)
 	M.playsound_local(M, 'sound/misc/heroin_rush.ogg', 100, FALSE)
-	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
+	M.visible_message("<span class='warning'>У [M] идёт кровь из носа.</span>")
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
@@ -283,7 +283,7 @@
 
 /datum/reagent/moondust_purest/overdose_start(mob/living/M)
 	M.playsound_local(M, 'sound/misc/heroin_rush.ogg', 100, FALSE)
-	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
+	M.visible_message("<span class='warning'>У [M] идёт кровь из носа.</span>")
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)

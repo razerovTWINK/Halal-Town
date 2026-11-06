@@ -54,20 +54,20 @@
 		H.set_machine(src)
 		if(href_list["school"])
 			if(used)
-				to_chat(H, "<span class='warning'>I already used this contract!</span>")
+				to_chat(H, "<span class='warning'>Этот контракт уже использован!</span>")
 				return
-			var/list/candidates = pollCandidatesForMob("Do you want to play as a wizard's [href_list["school"]] apprentice?", ROLE_WIZARD, null, ROLE_WIZARD, 150, src)
+			var/list/candidates = pollCandidatesForMob("Хочешь сыграть за ученика мага школы [href_list["school"]]?", ROLE_WIZARD, null, ROLE_WIZARD, 150, src)
 			if(LAZYLEN(candidates))
 				if(QDELETED(src))
 					return
 				if(used)
-					to_chat(H, "<span class='warning'>I already used this contract!</span>")
+					to_chat(H, "<span class='warning'>Этот контракт уже использован!</span>")
 					return
 				used = TRUE
 				var/mob/dead/observer/C = pick(candidates)
 				spawn_antag(C.client, get_turf(src), href_list["school"],H.mind)
 			else
-				to_chat(H, "<span class='warning'>Unable to reach my apprentice! You can either attack the spellbook with the contract to refund my points, or wait and try again later.</span>")
+				to_chat(H, "<span class='warning'>Не удалось призвать ученика! Ударь контрактом по книге заклинаний, чтобы вернуть очки, или повтори попытку позже.</span>")
 
 /obj/item/antag_spawner/contract/spawn_antag(client/C, turf/T, kind ,datum/mind/user)
 	new /obj/effect/particle_effect/smoke(T)
@@ -229,19 +229,19 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "vial"
 
-	var/shatter_msg = "<span class='notice'>I shatter the bottle, no turning back now!</span>"
-	var/veil_msg = "<span class='warning'>I sense a dark presence lurking just beyond the veil...</span>"
+	var/shatter_msg = "<span class='notice'>Ты разбиваешь склянку, пути назад нет!</span>"
+	var/veil_msg = "<span class='warning'>Ты чувствуешь тёмное присутствие, притаившееся за завесой...</span>"
 	var/mob/living/demon_type = /mob/living/simple_animal/slaughter
 	var/antag_type = /datum/antagonist/slaughter
 
 
 /obj/item/antag_spawner/slaughter_demon/attack_self(mob/user)
 	if(!is_station_level(user.z))
-		to_chat(user, "<span class='warning'>I should probably wait until you reach the station.</span>")
+		to_chat(user, "<span class='warning'>Стоит подождать, пока ты не доберёшься до места.</span>")
 		return
 	if(used)
 		return
-	var/list/candidates = pollCandidatesForMob("Do you want to play as a [initial(demon_type.name)]?", ROLE_ALIEN, null, ROLE_ALIEN, 50, src)
+	var/list/candidates = pollCandidatesForMob("Хочешь сыграть за [initial(demon_type.name)]?", ROLE_ALIEN, null, ROLE_ALIEN, 50, src)
 	if(LAZYLEN(candidates))
 		if(used || QDELETED(src))
 			return
@@ -253,7 +253,7 @@
 		playsound(user.loc, 'sound/blank.ogg', 100, TRUE)
 		qdel(src)
 	else
-		to_chat(user, "<span class='warning'>I can't seem to work up the nerve to shatter the bottle! Perhaps you should try again later.</span>")
+		to_chat(user, "<span class='warning'>Ты никак не решишься разбить склянку! Попробуй позже.</span>")
 
 
 /obj/item/antag_spawner/slaughter_demon/spawn_antag(client/C, turf/T, kind = "", datum/mind/user)
@@ -265,8 +265,8 @@
 	S.mind.special_role = S.name
 	S.mind.add_antag_datum(antag_type)
 	to_chat(S, S.playstyle_string)
-	to_chat(S, "<B>I are currently not currently in the same plane of existence as the station. \
-	Ctrl+Click a blood pool to manifest.</B>")
+	to_chat(S, "<B>Ты находишься в ином плане бытия. \
+	Ctrl+Клик по луже крови, чтобы материализоваться.</B>")
 
 /obj/item/antag_spawner/slaughter_demon/laughter
 	name = "vial of tickles"
@@ -275,6 +275,6 @@
 	icon_state = "vial"
 	color = "#FF69B4" // HOT PINK
 
-	veil_msg = "<span class='warning'>I sense an adorable presence lurking just beyond the veil...</span>"
+	veil_msg = "<span class='warning'>Ты чувствуешь милое присутствие, притаившееся за завесой...</span>"
 	demon_type = /mob/living/simple_animal/slaughter/laughter
 	antag_type = /datum/antagonist/slaughter/laughter

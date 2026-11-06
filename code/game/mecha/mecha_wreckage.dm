@@ -54,7 +54,7 @@
 	..()
 	. = TRUE
 	if(salvage_num <= 0 || !length(welder_salvage))
-		to_chat(user, "<span class='notice'>I don't see anything that can be cut with [I]!</span>")
+		to_chat(user, "<span class='notice'>Я не вижу ничего, что можно разрезать [I]!</span>")
 		return
 	if(!I.use_tool(src, user, 0, volume=50))
 		return
@@ -72,7 +72,7 @@
 	..()
 	. = TRUE
 	if(wires_removed)
-		to_chat(user, "<span class='notice'>I don't see anything that can be cut with [I]!</span>")
+		to_chat(user, "<span class='notice'>Я не вижу ничего, что можно разрезать [I]!</span>")
 		return
 	var/N = new /obj/item/stack/cable_coil(get_turf(user), rand(1,3))
 	user.visible_message("<span class='notice'>[user] cuts [N] from [src].</span>", "<span class='notice'>I cut [N] from [src].</span>")
@@ -87,7 +87,7 @@
 		user.visible_message("<span class='notice'>[user] pries [S] from [src].</span>", "<span class='notice'>I pry [S] from [src].</span>")
 		crowbar_salvage -= S
 		return
-	to_chat(user, "<span class='notice'>I don't see anything that can be cut with [I]!</span>")
+	to_chat(user, "<span class='notice'>Я не вижу ничего, что можно разрезать [I]!</span>")
 
 /obj/structure/mecha_wreckage/transfer_ai(interaction, mob/user, null, obj/item/aicard/card)
 	if(!..())

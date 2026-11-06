@@ -11,7 +11,7 @@
 	protect_objective.target = date
 	if(!ishuman(date.current))
 		protect_objective.human_check = FALSE
-	protect_objective.explanation_text = "Protect [date.name], your date."
+	protect_objective.explanation_text = "Защищать [date.name], свою пару."
 	objectives += protect_objective
 
 /datum/antagonist/valentine/on_gain()
@@ -28,7 +28,7 @@
 		L.remove_status_effect(STATUS_EFFECT_INLOVE)
 
 /datum/antagonist/valentine/greet()
-	to_chat(owner, "<span class='warning'><B>You're on a date with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B></span>")
+	to_chat(owner, "<span class='warning'><B>Ты на свидании с [date.name]! Защищай [date.p_them()] любой ценой. Это важнее любых других обязательств.</B></span>")
 
 //Squashed up a bit
 /datum/antagonist/valentine/roundend_report()

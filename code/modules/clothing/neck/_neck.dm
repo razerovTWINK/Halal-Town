@@ -34,7 +34,7 @@
 	icon_state = "redtie"
 
 /obj/item/clothing/neck/tie/black
-	name = "black tie"
+	name = "чёрный галстук"
 	icon_state = "blacktie"
 
 /obj/item/clothing/neck/tie/horrible

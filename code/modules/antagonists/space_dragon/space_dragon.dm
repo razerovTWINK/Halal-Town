@@ -4,13 +4,13 @@
 	show_name_in_check_antagonists = TRUE
 
 /datum/antagonist/space_dragon/greet()
-	to_chat(owner, "<b>I am Space Dragon, ex-space carp, and defender of the secrets of constellation, Draco.\n\
-					Fabulous secret powers were revealed to me the day I held aloft a wizard's staff of change and said 'By the power of Draco, I have the power!'\n\
-					The wizard was turned into the short-lived Pastry Cat while I became Space Dragon, the most powerful beast in the universe.\n\
-					Clicking a tile will shoot fire onto that tile.\n\
-					Using Tail Sweep will let me get the better of those who come too close.\n\
-					Attacking dead bodies will allow me to gib them to restore health.\n\
-					From the wizard's writings, he had been studying this station and its hierarchy. From this, I know who leads the station, and will kill them so the station underlings see me as their new leader.</b>")
+	to_chat(owner, "<b>Ты — Космический Дракон, бывший космический карп и хранитель тайн созвездия Дракона.\n\
+					Неведомые силы открылись тебе в тот день, когда ты поднял посох превращения мага и воззвал: «Силой Дракона, я обладаю мощью!»\n\
+					Маг обратился в недолговечного Котёнка-Пирожное, а ты стал Космическим Драконом, самым могущественным зверем во вселенной.\n\
+					Клик по клетке извергает пламя в эту точку.\n\
+					Взмах хвостом (Tail Sweep) позволит смести любого, кто осмелится подойти слишком близко.\n\
+					Атака трупов разрывает их на куски, восстанавливая твоё здоровье.\n\
+					Из записей мага ты узнал, кто правит этим местом: уничтожь их, чтобы местные признали в тебе своего нового повелителя.</b>")
 	owner.announce_objectives()
 	SEND_SOUND(owner.current, sound('sound/blank.ogg'))
 

@@ -1,5 +1,5 @@
 /obj/item/clothing/head/helmet
-	name = "helmet"
+	name = "шлем"
 	desc = ""
 	icon_state = "helmet"
 	item_state = "helmet"
@@ -239,7 +239,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/knight
-	name = "medieval helmet"
+	name = "средневековый шлем"
 	desc = ""
 	icon_state = "knight_green"
 	item_state = "knight_green"
@@ -268,7 +268,7 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/head/helmet/knight/greyscale
-	name = "knight helmet"
+	name = "рыцарский шлем"
 	desc = ""
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
@@ -276,7 +276,7 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR//Can change color and add prefix
 
 /obj/item/clothing/head/helmet/skull
-	name = "skull helmet"
+	name = "шлем-череп"
 	desc = ""
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
@@ -295,7 +295,7 @@
 	strip_delay = 60
 
 /obj/item/clothing/head/helmet/rus_helmet
-	name = "russian helmet"
+	name = "русский шлем"
 	desc = ""
 	icon_state = "rus_helmet"
 	item_state = "rus_helmet"
@@ -303,7 +303,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 
 /obj/item/clothing/head/helmet/rus_ushanka
-	name = "battle ushanka"
+	name = "боевая ушанка"
 	desc = ""
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"

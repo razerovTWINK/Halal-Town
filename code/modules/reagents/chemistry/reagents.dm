@@ -116,7 +116,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /datum/reagent/proc/overdose_start(mob/living/M)
-	to_chat(M, "<span class='danger'>I feel like you took too much of [name]!</span>")
+	to_chat(M, "<span class='danger'>Я чувствую, что перебрал [name]!</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 	return
 
@@ -135,13 +135,13 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/addiction_act_stage3(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_severe, name)
 	if(prob(30))
-		to_chat(M, "<span class='danger'>I have an intense craving for [name].</span>")
+		to_chat(M, "<span class='danger'>Меня неудержимо тянет на [name].</span>")
 	return
 
 /datum/reagent/proc/addiction_act_stage4(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_critical, name)
 	if(prob(30))
-		to_chat(M, "<span class='boldannounce'>You're not feeling good at all! You really need some [name].</span>")
+		to_chat(M, "<span class='boldannounce'>Мне совсем нехорошо! Мне нужен [name].</span>")
 	return
 
 /proc/pretty_string_from_reagent_list(list/reagent_list)

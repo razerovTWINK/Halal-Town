@@ -32,8 +32,8 @@
 	show_name_in_check_antagonists = TRUE
 
 /datum/antagonist/brainwashed/greet()
-	to_chat(owner, "<span class='warning'>My mind reels as it begins focusing on a single purpose...</span>")
-	to_chat(owner, "<big><span class='warning'><b>Follow the Directives, at any cost!</b></span></big>")
+	to_chat(owner, "<span class='warning'>Твой разум затуманивается, сосредотачиваясь на единой цели...</span>")
+	to_chat(owner, "<big><span class='warning'><b>Следуй указаниям любой ценой!</b></span></big>")
 	var/i = 1
 	for(var/X in objectives)
 		var/datum/objective/O = X
@@ -41,8 +41,8 @@
 		i++
 
 /datum/antagonist/brainwashed/farewell()
-	to_chat(owner, "<span class='warning'>My mind suddenly clears...</span>")
-	to_chat(owner, "<big><span class='warning'><b>I feel the weight of the Directives disappear! You no longer have to obey them.</b></span></big>")
+	to_chat(owner, "<span class='warning'>Твой разум внезапно проясняется...</span>")
+	to_chat(owner, "<big><span class='warning'><b>Тяжесть указаний спадает! Тебе больше не нужно подчиняться им.</b></span></big>")
 	owner.announce_objectives()
 
 /datum/antagonist/brainwashed/admin_add(datum/mind/new_owner,mob/admin)

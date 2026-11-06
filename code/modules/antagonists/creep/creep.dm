@@ -25,11 +25,11 @@
 
 /datum/antagonist/obsessed/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/blank.ogg', 100, FALSE, pressure_affected = FALSE)
-	to_chat(owner, "<span class='danger'>I are the Obsessed!</span>")
-	to_chat(owner, "<B>The Voices have reached out to you, and are using you to complete their evil deeds.</B>")
-	to_chat(owner, "<B>I don't know their connection, but The Voices compel you to stalk [trauma.obsession], forcing them into a state of constant paranoia.</B>")
-	to_chat(owner, "<B>The Voices will retaliate if you fail to complete your tasks or spend too long away from your target.</B>")
-	to_chat(owner, "<span class='boldannounce'>This role does NOT enable you to otherwise surpass what's deemed creepy behavior per the rules.</span>")//ironic if you know the history of the antag
+	to_chat(owner, "<span class='danger'>Ты — Одержимый!</span>")
+	to_chat(owner, "<B>Голоса обратились к тебе и используют тебя для свершения своих тёмных замыслов.</B>")
+	to_chat(owner, "<B>Связь не ясна, но Голоса велят тебе преследовать [trauma.obsession], ввергая жертву в пучину постоянной паранойи.</B>")
+	to_chat(owner, "<B>Голоса накажут тебя, если ты не выполнишь задания или будешь слишком долго держаться вдали от цели.</B>")
+	to_chat(owner, "<span class='boldannounce'>Эта роль НЕ даёт права выходить за рамки правил сервера в отыгрыше сталкера.</span>")//ironic if you know the history of the antag
 	owner.announce_objectives()
 
 /datum/antagonist/obsessed/Destroy()
@@ -98,7 +98,7 @@
 		O.update_explanation_text()
 
 /datum/antagonist/obsessed/roundend_report_header()
-	return 	"<span class='header'>Someone became obsessed!</span><br>"
+	return 	"<span class='header'>Кто-то стал одержимым!</span><br>"
 
 /datum/antagonist/obsessed/roundend_report()
 	var/list/report = list()
@@ -117,16 +117,16 @@
 				break
 	if(trauma)
 		if(trauma.total_time_creeping > 0)
-			report += "<span class='greentext'>The [name] spent a total of [DisplayTimeText(trauma.total_time_creeping)] being near [trauma.obsession]!</span>"
+			report += "<span class='greentext'>[name] провёл целых [DisplayTimeText(trauma.total_time_creeping)] рядом с [trauma.obsession]!</span>"
 		else
-			report += "<span class='redtext'>The [name] did not go near their obsession the entire round! That's extremely impressive!</span>"
+			report += "<span class='redtext'>[name] ни разу за раунд не подошёл к объекту своей страсти! Невероятно!</span>"
 	else
 		report += "<span class='redtext'>The [name] had no trauma attached to their antagonist ways! Either it bugged out or an admin incorrectly gave this good samaritan antag and it broke! You might as well show yourself!!</span>"
 
 	if(objectives.len == 0 || objectives_complete)
-		report += "<span class='greentext big'>The [name] was successful!</span>"
+		report += "<span class='greentext big'>[name] успешно выполнил все задачи!</span>"
 	else
-		report += "<span class='redtext big'>The [name] has failed!</span>"
+		report += "<span class='redtext big'>[name] потерпел провал!</span>"
 
 	return report.Join("<br>")
 
@@ -139,10 +139,10 @@
 /datum/objective/assassinate/obsessed/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Murder [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Убить [target.name] ([!target_role_type ? target.assigned_role : target.special_role])."
 	else
 		message_admins("WARNING! [ADMIN_LOOKUPFLW(owner)] obsessed objectives forged without an obsession!")
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"
 
 /datum/objective/assassinate/jealous //assassinate, but it changes the target to someone else in the previous target's department. cool, right?
 	var/datum/mind/old //the target the coworker was picked from.
@@ -151,9 +151,9 @@
 	..()
 	old = find_coworker(target)
 	if(target && target.current && old)
-		explanation_text = "Murder [target.name], [old]'s coworker."
+		explanation_text = "Убить [target.name], коллегу [old]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"
 
 /datum/objective/assassinate/jealous/proc/find_coworker(datum/mind/oldmind)//returning null = free objective
 	if(!oldmind.assigned_role)
@@ -214,9 +214,9 @@
 	var/datum/antagonist/obsessed/creeper = owner.has_antag_datum(/datum/antagonist/obsessed)
 	if(target && target.current && creeper)
 		creeper.trauma.attachedobsessedobj = src
-		explanation_text = "Spend [DisplayTimeText(timer)] around [target.name] while they're alive."
+		explanation_text = "Провести [DisplayTimeText(timer)] рядом с [target.name], пока цель жива."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"
 
 /datum/objective/spendtime/check_completion()
 	return timer <= 0 || explanation_text == "Free Objective"
@@ -232,9 +232,9 @@
 		hugs_needed = rand(4,6)
 	var/datum/antagonist/obsessed/creeper = owner.has_antag_datum(/datum/antagonist/obsessed)
 	if(target && target.current && creeper)
-		explanation_text = "Hug [target.name] [hugs_needed] times while they're alive."
+		explanation_text = "Обнять [target.name] [hugs_needed] раз, пока цель жива."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"
 
 /datum/objective/hug/check_completion()
 	var/datum/antagonist/obsessed/creeper = owner.has_antag_datum(/datum/antagonist/obsessed)
@@ -248,9 +248,9 @@
 /datum/objective/polaroid/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Take a photo with [target.name] while they're alive."
+		explanation_text = "Сделать снимок с [target.name], пока цель жива."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"
 
 /datum/objective/polaroid/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -272,6 +272,6 @@
 /datum/objective/steal/heirloom_thief/update_explanation_text()
 	..()
 	if(steal_target)
-		explanation_text = "Steal [target.name]'s family heirloom, [steal_target] they cherish."
+		explanation_text = "Украсть фамильную реликвию ([steal_target]), которой так дорожит [target.name]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная цель"

@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/invoked/shepherd
-	name = "Shepherd"
+	name = "Пастырь"
 	range = 8
 	overlay_state = "psy"
 	releasedrain = 50
@@ -49,7 +49,7 @@
 
 // General
 /obj/effect/proc_holder/spell/invoked/heal/lesser
-	name = "Lesser Miracle"
+	name = "Малое чудо"
 	overlay_state = "lesserheal"
 	releasedrain = 30
 	chargedrain = 0
@@ -71,12 +71,12 @@
 		if(get_dist(user, target) > 7)
 			return FALSE
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
-			target.visible_message("<span class='danger'>[target] is burned by holy light!</span>", "<span class='userdanger'>I'm burned by holy light!</span>")
+			target.visible_message("<span class='danger'>[target] сгорает в священном свете!</span>", "<span class='userdanger'>Я сгораю в священном свете!</span>")
 			target.adjustFireLoss(50)
 			target.Paralyze(30)
 			target.fire_act(1,5)
 			return TRUE
-		target.visible_message("<span class='info'>A wreath of gentle light passes over [target]!</span>", "<span class='notice'>I'm bathed in holy light!</span>")
+		target.visible_message("<span class='info'>Венец мягкого света нисходит на [target]!</span>", "<span class='notice'>Я омываюсь священным светом!</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
@@ -97,7 +97,7 @@
 
 // Light
 /obj/effect/proc_holder/spell/invoked/heal
-	name = "Miracle"
+	name = "Чудо"
 	overlay_state = "astrata"
 	releasedrain = 30
 	chargedrain = 0
@@ -123,12 +123,12 @@
 		if(get_dist(user, target) > 7)
 			return FALSE
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
-			target.visible_message("<span class='danger'>[target] is burned by holy light!</span>", "<span class='userdanger'>I'm burned by holy light!</span>")
+			target.visible_message("<span class='danger'>[target] сгорает в священном свете!</span>", "<span class='userdanger'>Я сгораю в священном свете!</span>")
 			target.adjustFireLoss(100)
 			target.Paralyze(50)
 			target.fire_act(1,5)
 			return TRUE
-		target.visible_message("<span class='info'>A wreath of gentle light passes over [target]!</span>", "<span class='notice'>I'm bathed in holy light!</span>")
+		target.visible_message("<span class='info'>Венец мягкого света нисходит на [target]!</span>", "<span class='notice'>Я омываюсь священным светом!</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
@@ -148,7 +148,7 @@
 		return FALSE
 
 /obj/effect/proc_holder/spell/targeted/sacred_flame_rogue
-	name = "Sacred Flame"
+	name = "Священное пламя"
 	overlay_state = "sacredflame"
 	releasedrain = 30
 	chargedrain = 0
@@ -159,7 +159,7 @@
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/heal.ogg'
-	invocation = "The Sun cleanses!"
+	invocation = "Солнце очищает!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -171,7 +171,7 @@
 
 /obj/effect/proc_holder/spell/targeted/sacred_flame_rogue/cast(list/targets, mob/user = usr)
 	for(var/mob/living/L in targets)
-		user.visible_message("<font color='yellow'>[user] points at [L]/</font>")
+		user.visible_message("<font color='yellow'>[user] указывает на [L]!</font>")
 		if(L.anti_magic_check(TRUE, TRUE))
 			continue
 		L.adjust_fire_stacks(5)
@@ -180,7 +180,7 @@
 		L.ExtinguishMob()
 
 /obj/effect/proc_holder/spell/invoked/revive
-	name = "Anastasis"
+	name = "Анастасис"
 	overlay_state = "revive"
 	releasedrain = 90
 	chargedrain = 0
@@ -207,11 +207,11 @@
 		if(!user.Adjacent(target))
 			return FALSE
 		if(GLOB.tod == "night")
-			to_chat(user, "<span class='warning'>Let there be light.</span>")
+			to_chat(user, "<span class='warning'>Да будет свет.</span>")
 		for(var/obj/structure/fluff/psycross/S in oview(5, user))
 			S.AOE_flash(user, range = 8)
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
-			target.visible_message("<span class='danger'>[target] is unmade by holy light!</span>", "<span class='userdanger'>I'm unmade by holy light!</span>")
+			target.visible_message("<span class='danger'>[target] уничтожен священным светом!</span>", "<span class='userdanger'>Я уничтожен священным светом!</span>")
 			target.gib()
 		else
 			if(target.stat == DEAD)
@@ -220,9 +220,9 @@
 					target.grab_ghost(force = TRUE) // even suicides
 					target.emote("breathgasp")
 					target.Jitter(100)
-					to_chat(target, "<span class='notice'>I awake from the void.</span>")
+					to_chat(target, "<span class='notice'>Я пробуждаюсь из небытия.</span>")
 					return TRUE
-			target.visible_message("<span class='warning'>Nothing happens.</span>")
+			target.visible_message("<span class='warning'>Ничего не происходит.</span>")
 			return FALSE
 		return TRUE
 	else
@@ -235,7 +235,7 @@
 	for(var/obj/structure/fluff/psycross/S in oview(5, user))
 		found = S
 	if(!found)
-		to_chat(user, "<span class='warning'>I need a holy cross.</span>")
+		to_chat(user, "<span class='warning'>Мне нужен священный крест.</span>")
 		return FALSE
 	else
 		return TRUE
@@ -243,7 +243,7 @@
 
 // Necrite
 /obj/effect/proc_holder/spell/targeted/burialrite
-	name = "Burial Rites"
+	name = "Погребальный обряд"
 	range = 5
 	overlay_state = "consecrateburial"
 	releasedrain = 30
@@ -252,7 +252,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "Undermaiden grant thee passage forth and spare the trials of the forgotten."
+	invocation = "Подземная Дева, даруй путь и избавь от испытаний забытых."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = -15
@@ -267,13 +267,13 @@
 			A.funeral = TRUE
 			if(A.mind && A.mind.has_antag_datum(/datum/antagonist/zombie))
 				A.mind.remove_antag_datum(/datum/antagonist/zombie)
-			user.visible_message("My funeral rites have been performed!", "[user] consecrates the grave!")
+			user.visible_message("[user] освящает могилу!", "Погребальный обряд свершён!")
 		for(var/obj/structure/closet/crate/coffin/C)
 			for(var/mob/living/carbon/human/B in C.contents)
 				B.funeral = TRUE
 
 /obj/effect/proc_holder/spell/targeted/churn
-	name = "Churn Undead"
+	name = "Изгнание нежити"
 	range = 8
 	overlay_state = "necra"
 	releasedrain = 30
@@ -282,7 +282,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Undermaiden rubukes!"
+	invocation = "Подземная Дева карает!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = -60
@@ -306,7 +306,7 @@
 			if(L.mind.has_antag_datum(/datum/antagonist/zombie))
 				iszombie = TRUE
 			if(L.mind.special_role == "Vampire Lord")
-				user.visible_message("<span class='warning'>[L] overpowers being churned!</span>", "<span class='userdanger'>[L] is too strong, I am churned!</span>")
+				user.visible_message("<span class='warning'>[L] противится изгнанию!</span>", "<span class='userdanger'>[L] слишком силён, волна обращается против меня!</span>")
 				user.Stun(50)
 				user.throw_at(get_ranged_target_turf(user, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 				return
@@ -320,12 +320,12 @@
 				L.Stun(50)
 //				L.throw_at(get_ranged_target_turf(L, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
 			else
-				L.visible_message("<span class='warning'>[L] resists being churned!</span>", "<span class='userdanger'>I resist being churned!</span>")
+				L.visible_message("<span class='warning'>[L] сопротивляется изгнанию!</span>", "<span class='userdanger'>Я сопротивляюсь изгнанию!</span>")
 	..()
 	return TRUE
 
 /obj/effect/proc_holder/spell/targeted/soulspeak
-	name = "Speak with Soul"
+	name = "Разговор с душой"
 	range = 5
 	overlay_state = "speakwithdead"
 	releasedrain = 30
@@ -334,7 +334,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "She-Below brooks thee respite, be heard, wanderer."
+	invocation = "Та, Что Внизу, дарует передышку: будь услышан, скиталец."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = -100
@@ -345,12 +345,12 @@
 	var/list/itemstorestore = list()
 	for(var/mob/living/carbon/spirit/S in world)
 		souloptions += S.livingname
-	var/pickedsoul = input(user, "Which soul should I commune with?", "Available Souls") as null|anything in souloptions
+	var/pickedsoul = input(user, "С какой душой поговорить?", "Доступные души") as null|anything in souloptions
 	if(!pickedsoul)
 		return
 	for(var/mob/living/carbon/spirit/P in world)
 		if(P.livingname == pickedsoul)
-			to_chat(P, "You feel yourself being pulled out of the underworld.")
+			to_chat(P, "Ты чувствуешь, как тебя вытягивает из подземного мира.")
 			sleep(20)
 			P.loc = user.loc
 			capturedsoul = P
@@ -367,8 +367,8 @@
 		to_chat(P, "[itemstorestore]")
 	if(capturedsoul)
 		spawn(1200)
-			to_chat(user, "The soul returns to the underworld.")
-			to_chat(capturedsoul, "You feel yourself being pulled back to the underworld.")
+			to_chat(user, "Душа возвращается в подземный мир.")
+			to_chat(capturedsoul, "Ты чувствуешь, как тебя утягивает обратно в подземный мир.")
 			for(var/obj/effect/landmark/underworld/A in world)
 				capturedsoul.loc = A.loc
 				capturedsoul.invisibility = initial(capturedsoul.invisibility)
@@ -380,7 +380,7 @@
 						var/obj/item/flashlight/lantern/shrunken/L = new
 						capturedsoul.put_in_hands(L)
 			user.remove_language(/datum/language_holder/abyssal)
-		to_chat(user, "<font color='blue'>I feel a cold chill run down my spine, a presence has arrived.</font>")	
+		to_chat(user, "<font color='blue'>Мороз пробегает по коже: нечто явилось сюда.</font>")	
 		capturedsoul.Paralyze(1200)
 	else return
 
@@ -388,7 +388,7 @@
 // Druid
 
 /obj/effect/proc_holder/spell/targeted/blesscrop
-	name = "Bless Crops"
+	name = "Благословение урожая"
 	range = 5
 	overlay_state = "blesscrop"
 	releasedrain = 30
@@ -397,19 +397,19 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Treefather commands thee, be fruitful!"
+	invocation = "Отец Древ повелевает: плодоносите!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = -15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
-	visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
+	visible_message("<FONT COLOR='green'>[usr] благословляет урожай благодатью Дендора!</FONT><BR>")
 	for(var/obj/machinery/crop/C in view(5))
 		C.growth += 40
 		C.update_seed_icon()
 
 /obj/effect/proc_holder/spell/targeted/beasttame
-	name = "Tame Beast"
+	name = "Укрощение зверя"
 	range = 5
 	overlay_state = "tamebeast"
 	releasedrain = 30
@@ -418,12 +418,12 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "Be still and calm, brotherbeast."
+	invocation = "Успокойся и замри, брат-зверь."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = -60
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
-	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
+	visible_message("<FONT COLOR='green'>[usr] успокаивает звериную кровь шёпотом Дендора.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
 		B.aggressive = 0

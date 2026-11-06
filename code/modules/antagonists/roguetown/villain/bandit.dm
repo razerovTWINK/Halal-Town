@@ -8,11 +8,11 @@
 	antag_hud_name = "bandit"
 	var/tri_amt
 	var/contrib
-	confess_lines = list("FREEDOM!!!", "I WILL NOT LIVE IN YOUR WALLS!", "I WILL NOT FOLLOW YOUR RULES!")
+	confess_lines = list("СВОБОДА!!!", "Я НЕ БУДУ ЖИТЬ В ВАШИХ СТЕНАХ!", "Я НЕ СТАНУ ЖИТЬ ПО ВАШИМ ПРАВИЛАМ!")
 
 /datum/antagonist/bandit/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/bandit))
-		return "<span class='boldnotice'>Another free man. My ally.</span>"
+		return "<span class='boldnotice'>Ещё один свободный человек. Мой союзник.</span>"
 
 /datum/antagonist/bandit/on_gain()
 	owner.special_role = "Bandit"
@@ -32,8 +32,8 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /datum/antagonist/bandit/greet()
-	to_chat(owner.current, "<span class='alertsyndie'>I am a BANDIT!</span>")
-	to_chat(owner.current, "<span class='info'>Long ago I did a crime worthy of my bounty being hung on the wall outside of the local inn.</span>")
+	to_chat(owner.current, "<span class='alertsyndie'>Я — БАНДИТ!</span>")
+	to_chat(owner.current, "<span class='info'>Давным-давно я совершил преступление, и награду за мою голову вывесили на стене местной таверны.</span>")
 	owner.announce_objectives()
 	..()
 
@@ -138,9 +138,9 @@
 			var/mob/living/carbon/human/H = owner.current
 			the_name = H.real_name
 		if(!amt)
-			to_chat(world, "[the_name] was a bandit.")
+			to_chat(world, "[the_name] был бандитом.")
 		else
-			to_chat(world, "[the_name] was a bandit. He stole [amt] triumphs worth of loot.")
+			to_chat(world, "[the_name] был бандитом. Награблено добычи на [amt] триумфов.")
 	return
 
 	var/traitorwin = TRUE
@@ -158,11 +158,11 @@
 
 	if(traitorwin)
 		owner.adjust_triumphs(count)
-		to_chat(owner.current, "<span class='greentext'>I've TRIUMPHED!</span>")
+		to_chat(owner.current, "<span class='greentext'>Я ПРЕУСПЕЛ!</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
-		to_chat(owner.current, "<span class='redtext'>I've failed to satisfy my greed.</span>")
+		to_chat(owner.current, "<span class='redtext'>Мне не удалось утолить свою алчность.</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 

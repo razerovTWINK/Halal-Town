@@ -2,7 +2,7 @@
 	dying_key = DYE_REGISTRY_SNEAKERS
 
 /obj/item/clothing/shoes/sneakers/black
-	name = "black shoes"
+	name = "чёрные ботинки"
 	icon_state = "black"
 	desc = ""
 	custom_price = 20
@@ -74,7 +74,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/C = user
 		if(C.shoes == src && chained == 1)
-			to_chat(user, "<span class='warning'>I need help taking these off!</span>")
+			to_chat(user, "<span class='warning'>Мне нужна помощь, чтобы это снять!</span>")
 			return FALSE
 	return ..()
 
@@ -83,7 +83,7 @@
 	if(ishuman(m))
 		var/mob/living/carbon/human/c = m
 		if(c.shoes == src && chained == 1)
-			to_chat(c, "<span class='warning'>I need help taking these off!</span>")
+			to_chat(c, "<span class='warning'>Мне нужна помощь, чтобы это снять!</span>")
 			return
 	return ..()
 

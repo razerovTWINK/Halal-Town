@@ -1,5 +1,5 @@
 /datum/surgery/lobectomy
-	name = "Lobectomy"	//not to be confused with lobotomy
+	name = "лобэктомия"	//not to be confused with lobotomy
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/saw, /datum/surgery_step/clamp_bleeders,
 				 /datum/surgery_step/lobectomy, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
@@ -14,15 +14,15 @@
 
 //lobectomy, removes the most damaged lung lobe with a 95% base success chance
 /datum/surgery_step/lobectomy
-	name = "excise damaged lung node"
+	name = "иссечь повреждённую долю лёгкого"
 	implements = list(TOOL_SCALPEL = 95, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
 		/obj/item/shard = 35)
 	time = 42
 
 /datum/surgery_step/lobectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I begin to make an incision in [target]'s lungs...</span>",
-		"<span class='notice'>[user] begins to make an incision in [target].</span>",
-		"<span class='notice'>[user] begins to make an incision in [target].</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь делать надрез на лёгких [target]...</span>",
+		"<span class='notice'>[user] начинает делать надрез на теле [target].</span>",
+		"<span class='notice'>[user] начинает делать надрез на теле [target].</span>")
 
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
@@ -30,17 +30,17 @@
 		var/obj/item/organ/lungs/L = H.getorganslot(ORGAN_SLOT_LUNGS)
 		L.operated = TRUE
 		H.setOrganLoss(ORGAN_SLOT_LUNGS, 60)
-		display_results(user, target, "<span class='notice'>I successfully excise [H]'s most damaged lobe.</span>",
-			"<span class='notice'>Successfully removes a piece of [H]'s lungs.</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно иссекаешь повреждённую долю лёгкого [H].</span>",
+			"<span class='notice'>[user] успешно удаляет часть лёгкого [H].</span>",
 			"")
 	return TRUE
 
 /datum/surgery_step/lobectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, "<span class='warning'>I screw up, failing to excise [H]'s damaged lobe!</span>",
-			"<span class='warning'>[user] screws up!</span>",
-			"<span class='warning'>[user] screws up!</span>")
+		display_results(user, target, "<span class='warning'>Ты совершаешь ошибку, не сумев иссечь повреждённую долю лёгкого [H]!</span>",
+			"<span class='warning'>[user] совершает ошибку!</span>",
+			"<span class='warning'>[user] совершает ошибку!</span>")
 		H.losebreath += 4
 		H.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
 	return FALSE

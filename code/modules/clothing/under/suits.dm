@@ -3,7 +3,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
 
 /obj/item/clothing/under/suit/white_on_white
-	name = "white suit"
+	name = "белый костюм"
 	desc = ""
 	icon_state = "scratch"
 	item_state = "scratch"
@@ -54,7 +54,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/suit/black_really
-	name = "executive suit"
+	name = "костюм начальника"
 	desc = ""
 	icon_state = "really_black_suit"
 	item_state = "really_black_suit"
@@ -70,7 +70,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/suit/black/female
-	name = "executive suit"
+	name = "костюм начальника"
 	desc = ""
 	icon_state = "black_suit_fem"
 	item_state = "black_suit_fem"
@@ -121,7 +121,7 @@
 	item_state = "tan_suit"
 
 /obj/item/clothing/under/suit/white
-	name = "white suit"
+	name = "белый костюм"
 	desc = ""
 	icon_state = "white_suit"
 	item_state = "white_suit"

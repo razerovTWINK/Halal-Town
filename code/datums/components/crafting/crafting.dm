@@ -177,34 +177,34 @@
 	if(!isopenturf(T) || R.ontile)
 		T = get_turf(user.loc)
 	if(!R.TurfCheck(user, T))
-		to_chat(user, "<span class='warning'>I can't craft here.</span>")
+		to_chat(user, "<span class='warning'>Я не могу здесь мастерить.</span>")
 		return
 	if(istype(T, /turf/open/water))
-		to_chat(user, "<span class='warning'>I can't craft here.</span>")
+		to_chat(user, "<span class='warning'>Я не могу здесь мастерить.</span>")
 		return
 	if(isturf(R.result))
 		for(var/obj/structure/fluff/traveltile/TT in range(7, user))
-			to_chat(user, "<span class='warning'>I can't craft here.</span>")
+			to_chat(user, "<span class='warning'>Я не могу здесь мастерить.</span>")
 			return
 	if(ispath(R.result, /obj/structure) || ispath(R.result, /obj/machinery))
 		for(var/obj/structure/fluff/traveltile/TT in range(7, user))
-			to_chat(user, "<span class='warning'>I can't craft here.</span>")
+			to_chat(user, "<span class='warning'>Я не могу здесь мастерить.</span>")
 			return
 		for(var/obj/structure/S in T)
 			if(R.buildsame && istype(S, R.result))
 				if(user.dir == S.dir)
-					to_chat(user, "<span class='warning'>Something in the way.</span>")
+					to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 					return
 				continue
 			if(R.structurecraft && istype(S, R.structurecraft))
 				testing("isstructurecraft")
 				continue
 			if(S.density)
-				to_chat(user, "<span class='warning'>Something in the way.</span>")
+				to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 				return
 		for(var/obj/machinery/M in T)
 			if(M.density)
-				to_chat(user, "<span class='warning'>Something in the way.</span>")
+				to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 				return
 	if(R.req_table)
 		if(!(locate(/obj/structure/table) in T))
@@ -562,7 +562,7 @@
 		return
 	var/area/A = get_area(user)
 	if(!A.can_craft_here())
-		to_chat(user, "<span class='warning'>I can't craft here.</span>")
+		to_chat(user, "<span class='warning'>Я не могу здесь мастерить.</span>")
 		return
 //	if(user != parent)
 //		testing("c2")

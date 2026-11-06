@@ -4,7 +4,7 @@
 /////////////////////////////////////////
 
 /datum/design/health_hud
-	name = "Health Scanner HUD"
+	name = "Медицинский визор (HUD)"
 	desc = ""
 	id = "health_hud"
 	build_type = PROTOLATHE
@@ -14,7 +14,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/health_hud_night
-	name = "Night Vision Health Scanner HUD"
+	name = "Медицинский визор ночного видения (HUD)"
 	desc = ""
 	id = "health_hud_night"
 	build_type = PROTOLATHE
@@ -24,7 +24,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/security_hud
-	name = "Security HUD"
+	name = "Охранный визор (HUD)"
 	desc = ""
 	id = "security_hud"
 	build_type = PROTOLATHE
@@ -34,7 +34,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/security_hud_night
-	name = "Night Vision Security HUD"
+	name = "Охранный визор ночного видения (HUD)"
 	desc = ""
 	id = "security_hud_night"
 	build_type = PROTOLATHE
@@ -44,7 +44,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/diagnostic_hud
-	name = "Diagnostic HUD"
+	name = "Диагностический визор (HUD)"
 	desc = ""
 	id = "diagnostic_hud"
 	build_type = PROTOLATHE
@@ -54,7 +54,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/diagnostic_hud_night
-	name = "Night Vision Diagnostic HUD"
+	name = "Диагностический визор ночного видения (HUD)"
 	desc = ""
 	id = "diagnostic_hud_night"
 	build_type = PROTOLATHE
@@ -68,7 +68,7 @@
 /////////////////////////////////////////
 
 /datum/design/welding_goggles
-	name = "Welding Goggles"
+	name = "Сварочные очки"
 	desc = ""
 	id = "welding_goggles"
 	build_type = PROTOLATHE
@@ -78,7 +78,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/welding_mask
-	name = "Welding Gas Mask"
+	name = "Сварочный противогаз"
 	desc = ""
 	id = "weldingmask"
 	build_type = PROTOLATHE
@@ -88,7 +88,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/portaseeder
-	name = "Portable Seed Extractor"
+	name = "Портативный экстрактор семян"
 	desc = ""
 	id = "portaseeder"
 	build_type = PROTOLATHE
@@ -98,7 +98,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/air_horn
-	name = "Air Horn"
+	name = "Пневмогудок"
 	desc = ""
 	id = "air_horn"
 	build_type = PROTOLATHE
@@ -108,7 +108,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL			//HONK!
 
 /datum/design/mesons
-	name = "Optical Meson Scanners"
+	name = "Мязонные очки"
 	desc = ""
 	id = "mesons"
 	build_type = PROTOLATHE
@@ -118,7 +118,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/engine_goggles
-	name = "Engineering Scanner Goggles"
+	name = "Инженерные сканирующие очки"
 	desc = ""
 	id = "engine_goggles"
 	build_type = PROTOLATHE
@@ -128,7 +128,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/tray_goggles
-	name = "Optical T-Ray Scanners"
+	name = "Т-лучевые очки"
 	desc = ""
 	id = "tray_goggles"
 	build_type = PROTOLATHE
@@ -138,7 +138,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/nvgmesons
-	name = "Night Vision Optical Meson Scanners"
+	name = "Мязонные очки ночного видения"
 	desc = ""
 	id = "nvgmesons"
 	build_type = PROTOLATHE
@@ -148,7 +148,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/night_vision_goggles
-	name = "Night Vision Goggles"
+	name = "Очки ночного видения"
 	desc = ""
 	id = "night_visision_goggles"
 	build_type = PROTOLATHE
@@ -158,7 +158,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/magboots
-	name = "Magnetic Boots"
+	name = "Магнитные ботинки"
 	desc = ""
 	id = "magboots"
 	build_type = PROTOLATHE
@@ -168,7 +168,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/forcefield_projector
-	name = "Forcefield Projector"
+	name = "Проектор силового поля"
 	desc = ""
 	id = "forcefield_projector"
 	build_type = PROTOLATHE
@@ -178,7 +178,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/sci_goggles
-	name = "Science Goggles"
+	name = "Научные очки"
 	desc = ""
 	id = "scigoggles"
 	build_type = PROTOLATHE
@@ -188,7 +188,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/diskplantgene
-	name = "Plant Data Disk"
+	name = "Диск данных растений"
 	desc = ""
 	id = "diskplantgene"
 	build_type = PROTOLATHE
@@ -198,7 +198,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/roastingstick
-	name = "Advanced Roasting Stick"
+	name = "Улучшенный вертел для жарки"
 	desc = ""
 	id = "roastingstick"
 	build_type = PROTOLATHE
@@ -208,7 +208,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/locator
-	name = "Bluespace Locator"
+	name = "Блюспейс-локатор"
 	desc = ""
 	id = "locator"
 	build_type = PROTOLATHE
@@ -218,7 +218,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/quantum_keycard
-	name = "Quantum Keycard"
+	name = "Квантовая ключ-карта"
 	desc = ""
 	id = "quantum_keycard"
 	build_type = PROTOLATHE
@@ -228,7 +228,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/anomaly_neutralizer
-	name = "Anomaly Neutralizer"
+	name = "Нейтрализатор аномалий"
 	desc = ""
 	id = "anomaly_neutralizer"
 	build_type = PROTOLATHE
@@ -238,7 +238,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/donksoft_refill
-	name = "Donksoft Toy Vendor Refill"
+	name = "Пополнение автомата игрушек Donksoft"
 	desc = ""
 	id = "donksoft_refill"
 	build_type = PROTOLATHE
@@ -247,7 +247,7 @@
 	category = list("Equipment")
 
 /datum/design/oxygen_tank
-	name = "Oxygen Tank"
+	name = "Кислородный баллон"
 	desc = ""
 	id = "oxygen_tank"
 	build_type = PROTOLATHE
@@ -257,7 +257,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/plasma_tank
-	name = "Plasma Tank"
+	name = "Плазменный баллон"
 	desc = ""
 	id = "plasma_tank"
 	build_type = PROTOLATHE
@@ -267,7 +267,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/id
-	name = "Identification Card"
+	name = "ID-карта"
 	desc = ""
 	id = "idcard"
 	build_type = PROTOLATHE
@@ -281,7 +281,7 @@
 /////////////////////////////////////////
 
 /datum/design/advmop
-	name = "Advanced Mop"
+	name = "Улучшенная швабра"
 	desc = ""
 	id = "advmop"
 	build_type = PROTOLATHE
@@ -291,7 +291,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/blutrash
-	name = "Trashbag of Holding"
+	name = "Бездонный мешок для мусора"
 	desc = ""
 	id = "blutrash"
 	build_type = PROTOLATHE
@@ -301,7 +301,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/buffer
-	name = "Floor Buffer Upgrade"
+	name = "Насадка-полотер"
 	desc = ""
 	id = "buffer"
 	build_type = PROTOLATHE
@@ -311,7 +311,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/spraybottle
-	name = "Spray Bottle"
+	name = "Пульверизатор"
 	desc = ""
 	id = "spraybottle"
 	build_type = PROTOLATHE
@@ -321,7 +321,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/beartrap
-	name = "Bear Trap"
+	name = "Медвежий капкан"
 	desc = ""
 	id = "beartrap"
 	build_type = PROTOLATHE
@@ -335,7 +335,7 @@
 /////////////////////////////////////////
 
 /datum/design/holosign
-	name = "Holographic Sign Projector"
+	name = "Голографический проектор знаков"
 	desc = ""
 	id = "holosign"
 	build_type = PROTOLATHE
@@ -345,7 +345,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/holobarrier_jani
-	name = "Custodial Holobarrier Projector"
+	name = "Проектор санитарных голобарьеров"
 	desc = ""
 	id = "holobarrier_jani"
 	build_type = PROTOLATHE
@@ -356,7 +356,7 @@
 
 
 /datum/design/holosignsec
-	name = "Security Holobarrier Projector"
+	name = "Проектор охранных голобарьеров"
 	desc = ""
 	id = "holosignsec"
 	build_type = PROTOLATHE
@@ -366,7 +366,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/holosignengi
-	name = "Engineering Holobarrier Projector"
+	name = "Проектор инженерных голобарьеров"
 	desc = ""
 	id = "holosignengi"
 	build_type = PROTOLATHE
@@ -376,7 +376,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/holosignatmos
-	name = "ATMOS Holofan Projector"
+	name = "Проектор атмосферного головентилятора"
 	desc = ""
 	id = "holosignatmos"
 	build_type = PROTOLATHE
@@ -386,7 +386,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/holobarrier_med
-	name = "PENLITE Holobarrier Projector"
+	name = "Проектор голобарьеров PENLITE"
 	desc = ""
 	build_type = PROTOLATHE
 	build_path = /obj/item/holosign_creator/medical
@@ -400,7 +400,7 @@
 /////////////////////////////////////////
 
 /datum/design/reactive_armour
-	name = "Reactive Armour Shell"
+	name = "Основа реактивной брони"
 	desc = ""
 	id = "reactive_armour"
 	build_type = PROTOLATHE
@@ -410,7 +410,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/knight_armour
-	name = "Knight Armour"
+	name = "Рыцарские доспехи"
 	desc = ""
 	id = "knight_armour"
 	build_type = AUTOLATHE
@@ -419,7 +419,7 @@
 	category = list("Imported")
 
 /datum/design/knight_helmet
-	name = "Knight Helmet"
+	name = "Рыцарский шлем"
 	desc = ""
 	id = "knight_helmet"
 	build_type = AUTOLATHE
@@ -434,7 +434,7 @@
 /////////////////////////////////////////
 
 /datum/design/seclite
-	name = "Seclite"
+	name = "Охранный фонарик"
 	desc = ""
 	id = "seclite"
 	build_type = PROTOLATHE
@@ -444,7 +444,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/detective_scanner
-	name = "Forensic Scanner"
+	name = "Криминалистический сканер"
 	desc = ""
 	id = "detective_scanner"
 	build_type = PROTOLATHE
@@ -454,7 +454,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pepperspray
-	name = "Pepper Spray"
+	name = "Перцовый баллончик"
 	desc = ""
 	id = "pepperspray"
 	build_type = PROTOLATHE
@@ -464,7 +464,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/bola_energy
-	name = "Energy Bola"
+	name = "Энергетическое боло"
 	desc = ""
 	id = "bola_energy"
 	build_type = PROTOLATHE
@@ -474,7 +474,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/zipties
-	name = "Zipties"
+	name = "Пластиковые стяжки"
 	desc = ""
 	id = "zipties"
 	build_type = PROTOLATHE
@@ -484,7 +484,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/evidencebag
-	name = "Evidence Bag"
+	name = "Пакет для улик"
 	desc = ""
 	id = "evidencebag"
 	build_type = PROTOLATHE
@@ -494,7 +494,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/plumbing_rcd
-	name = "Plumbing Constructor"
+	name = "Сантехнический сборщик"
 	id = "plumbing_rcd"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500, /datum/material/plastic = 1000)

@@ -29,7 +29,7 @@
 /datum/antagonist/villain/on_removal()
 	SSticker.mode.villains -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='danger'>I am no longer a [special_role]!</span>")
+		to_chat(owner.current,"<span class='danger'>Я больше не злодей!</span>")
 	owner.special_role = null
 	return ..()
 
@@ -59,7 +59,7 @@
 	add_objective(kill_objective)
 
 /datum/antagonist/succubus/greet()
-	to_chat(owner.current, "<span class='alertsyndie'>I am a succubus! Long since have I consumed this mortal form, and now I will feast on the souls of men.</span>")
+	to_chat(owner.current, "<span class='alertsyndie'>Я — суккуб! Давным-давно я поглотила эту смертную оболочку, и теперь я буду пировать душами смертных.</span>")
 	owner.announce_objectives()
 	..()
 

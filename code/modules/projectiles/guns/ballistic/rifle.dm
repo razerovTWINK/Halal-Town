@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/rifle
-	name = "Bolt Rifle"
+	name = "винтовка с продольно-скользящим затвором"
 	desc = ""
 	icon_state = "moistnugget"
 	item_state = "moistnugget"
@@ -21,7 +21,7 @@ obj/item/gun/ballistic/rifle/update_icon()
 
 obj/item/gun/ballistic/rifle/rack(mob/user = null)
 	if (bolt_locked == FALSE)
-		to_chat(user, "<span class='notice'>I open the bolt of \the [src].</span>")
+		to_chat(user, "<span class='notice'>Ты открываешь затвор [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE)
 		bolt_locked = TRUE
@@ -36,20 +36,20 @@ obj/item/gun/ballistic/rifle/can_shoot()
 
 obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
-		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
+		to_chat(user, "<span class='notice'>Затвор закрыт!</span>")
 		return
 	return ..()
 
 /obj/item/gun/ballistic/rifle/examine(mob/user)
 	. = ..()
-	. += "The bolt is [bolt_locked ? "open" : "closed"]."
+	. += "Затвор [bolt_locked ? "открыт" : "закрыт"]."
 
 ///////////////////////
 // BOLT ACTION RIFLE //
 ///////////////////////
 
 /obj/item/gun/ballistic/rifle/boltaction
-	name = "\improper Mosin Nagant"
+	name = "\improper винтовка Мосина"
 	desc = ""
 	sawn_desc = ""
 	w_class = WEIGHT_CLASS_BULKY
@@ -76,14 +76,14 @@ obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 		. = 1
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
-	name = "enchanted bolt action rifle"
+	name = "зачарованная магазинная винтовка"
 	desc = ""
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage
-	name = "arcane barrage"
+	name = "чародейский шквал"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	pin = /obj/item/firing_pin/magic

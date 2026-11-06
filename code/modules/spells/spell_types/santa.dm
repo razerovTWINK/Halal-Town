@@ -1,6 +1,6 @@
 //Santa spells!
 /obj/effect/proc_holder/spell/aoe_turf/conjure/presents
-	name = "Conjure Presents!"
+	name = "Сотворение подарков!"
 	desc = ""
 	school = "santa"
 	charge_max = 600

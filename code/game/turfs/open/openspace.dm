@@ -180,7 +180,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 			if(S.use(1))
 				qdel(L)
 				playsound(src, 'sound/blank.ogg', 50, TRUE)
-				to_chat(user, "<span class='notice'>I build a floor.</span>")
+				to_chat(user, "<span class='notice'>Я настилаю пол.</span>")
 				PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			else
 				to_chat(user, "<span class='warning'>I need one floor tile to build a floor!</span>")
@@ -203,7 +203,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 /turf/open/transparent/openspace/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>I build a floor.</span>")
+			to_chat(user, "<span class='notice'>Я настилаю пол.</span>")
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE

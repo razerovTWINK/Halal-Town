@@ -131,13 +131,13 @@
 	if (active)
 		user.visible_message("<span class='notice'>[user] deactivated \the [src].</span>", \
 			"<span class='notice'>I deactivate \the [src].</span>", \
-			"<span class='hear'>I hear heavy droning fade out.</span>")
+			"<span class='hear'>Тяжёлый гул стихает.</span>")
 		shields_down()
 	else
 		if(anchored)
 			user.visible_message("<span class='notice'>[user] activated \the [src].</span>", \
 				"<span class='notice'>I activate \the [src].</span>", \
-				"<span class='hear'>I hear heavy droning.</span>")
+				"<span class='hear'>Слышен тяжёлый гул.</span>")
 			shields_up()
 		else
 			to_chat(user, "<span class='warning'>The device must first be secured to the floor!</span>")
@@ -189,7 +189,7 @@
 		else if(obj_flags & EMAGGED)
 			to_chat(user, "<span class='danger'>Error, access controller damaged!</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 
 	else
 		return ..()
@@ -269,7 +269,7 @@
 		else
 			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
 				"If this message is ever seen, something is wrong.",
-				"<span class='hear'>I hear heavy droning fade out.</span>")
+				"<span class='hear'>Тяжёлый гул стихает.</span>")
 			icon_state = "shield_wall_gen"
 			active = FALSE
 			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
@@ -351,7 +351,7 @@
 		else if(obj_flags & EMAGGED)
 			to_chat(user, "<span class='danger'>Error, access controller damaged!</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 
 	else
 		add_fingerprint(user)
@@ -374,13 +374,13 @@
 	if(active)
 		user.visible_message("<span class='notice'>[user] turned \the [src] off.</span>", \
 			"<span class='notice'>I turn off \the [src].</span>", \
-			"<span class='hear'>I hear heavy droning fade out.</span>")
+			"<span class='hear'>Тяжёлый гул стихает.</span>")
 		active = FALSE
 		log_game("[src] was deactivated by [key_name(user)] at [AREACOORD(src)]")
 	else
 		user.visible_message("<span class='notice'>[user] turned \the [src] on.</span>", \
 			"<span class='notice'>I turn on \the [src].</span>", \
-			"<span class='hear'>I hear heavy droning.</span>")
+			"<span class='hear'>Слышен тяжёлый гул.</span>")
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by [key_name(user)] at [AREACOORD(src)]")
 	add_fingerprint(user)

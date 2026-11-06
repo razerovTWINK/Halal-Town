@@ -3,7 +3,7 @@
 ////////////////////////////////////////
 
 /datum/design/RPED
-	name = "Rapid Part Exchange Device"
+	name = "Устройство быстрой замены деталей"
 	desc = ""
 	id = "rped"
 	build_type = PROTOLATHE
@@ -13,7 +13,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/BS_RPED
-	name = "Bluespace RPED"
+	name = "Блюспейс-устройство быстрой замены деталей"
 	desc = ""
 	id = "bs_rped"
 	build_type = PROTOLATHE
@@ -24,7 +24,7 @@
 
 //Capacitors
 /datum/design/basic_capacitor
-	name = "Basic Capacitor"
+	name = "Базовый конденсатор"
 	desc = ""
 	id = "basic_capacitor"
 	build_type = PROTOLATHE | AUTOLATHE
@@ -35,7 +35,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/adv_capacitor
-	name = "Advanced Capacitor"
+	name = "Улучшенный конденсатор"
 	desc = ""
 	id = "adv_capacitor"
 	build_type = PROTOLATHE
@@ -46,7 +46,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/super_capacitor
-	name = "Super Capacitor"
+	name = "Суперконденсатор"
 	desc = ""
 	id = "super_capacitor"
 	build_type = PROTOLATHE
@@ -57,7 +57,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quadratic_capacitor
-	name = "Quadratic Capacitor"
+	name = "Квадратичный конденсатор"
 	desc = ""
 	id = "quadratic_capacitor"
 	build_type = PROTOLATHE
@@ -69,7 +69,7 @@
 
 //Scanning modules
 /datum/design/basic_scanning
-	name = "Basic Scanning Module"
+	name = "Базовый сканирующий модуль"
 	desc = ""
 	id = "basic_scanning"
 	build_type = PROTOLATHE | AUTOLATHE
@@ -80,7 +80,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/adv_scanning
-	name = "Advanced Scanning Module"
+	name = "Улучшенный сканирующий модуль"
 	desc = ""
 	id = "adv_scanning"
 	build_type = PROTOLATHE
@@ -91,7 +91,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/phasic_scanning
-	name = "Phasic Scanning Module"
+	name = "Фазовый сканирующий модуль"
 	desc = ""
 	id = "phasic_scanning"
 	build_type = PROTOLATHE
@@ -102,7 +102,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/triphasic_scanning
-	name = "Triphasic Scanning Module"
+	name = "Трёхфазный сканирующий модуль"
 	desc = ""
 	id = "triphasic_scanning"
 	build_type = PROTOLATHE
@@ -114,7 +114,7 @@
 
 //Maipulators
 /datum/design/micro_mani
-	name = "Micro Manipulator"
+	name = "Микроманипулятор"
 	desc = ""
 	id = "micro_mani"
 	build_type = PROTOLATHE | AUTOLATHE
@@ -125,7 +125,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/nano_mani
-	name = "Nano Manipulator"
+	name = "Наноманипулятор"
 	desc = ""
 	id = "nano_mani"
 	build_type = PROTOLATHE
@@ -136,7 +136,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/pico_mani
-	name = "Pico Manipulator"
+	name = "Пикоманипулятор"
 	desc = ""
 	id = "pico_mani"
 	build_type = PROTOLATHE
@@ -147,7 +147,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/femto_mani
-	name = "Femto Manipulator"
+	name = "Фемтоманипулятор"
 	desc = ""
 	id = "femto_mani"
 	build_type = PROTOLATHE
@@ -159,7 +159,7 @@
 
 //Micro-lasers
 /datum/design/basic_micro_laser
-	name = "Basic Micro-Laser"
+	name = "Базовый микролазер"
 	desc = ""
 	id = "basic_micro_laser"
 	build_type = PROTOLATHE | AUTOLATHE
@@ -170,7 +170,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/high_micro_laser
-	name = "High-Power Micro-Laser"
+	name = "Мощный микролазер"
 	desc = ""
 	id = "high_micro_laser"
 	build_type = PROTOLATHE
@@ -181,7 +181,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/ultra_micro_laser
-	name = "Ultra-High-Power Micro-Laser"
+	name = "Сверхмощный микролазер"
 	desc = ""
 	id = "ultra_micro_laser"
 	build_type = PROTOLATHE
@@ -192,7 +192,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quadultra_micro_laser
-	name = "Quad-Ultra Micro-Laser"
+	name = "Квад-ультра микролазер"
 	desc = ""
 	id = "quadultra_micro_laser"
 	build_type = PROTOLATHE
@@ -203,7 +203,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/basic_matter_bin
-	name = "Basic Matter Bin"
+	name = "Базовый контейнер материи"
 	desc = ""
 	id = "basic_matter_bin"
 	build_type = PROTOLATHE | AUTOLATHE
@@ -214,7 +214,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/adv_matter_bin
-	name = "Advanced Matter Bin"
+	name = "Улучшенный контейнер материи"
 	desc = ""
 	id = "adv_matter_bin"
 	build_type = PROTOLATHE
@@ -225,7 +225,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/super_matter_bin
-	name = "Super Matter Bin"
+	name = "Суперконтейнер материи"
 	desc = ""
 	id = "super_matter_bin"
 	build_type = PROTOLATHE
@@ -236,7 +236,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/bluespace_matter_bin
-	name = "Bluespace Matter Bin"
+	name = "Блюспейс-контейнер материи"
 	desc = ""
 	id = "bluespace_matter_bin"
 	build_type = PROTOLATHE
@@ -248,7 +248,7 @@
 
 //T-Comms devices
 /datum/design/subspace_ansible
-	name = "Subspace Ansible"
+	name = "Подпространственный ансибл"
 	desc = ""
 	id = "s-ansible"
 	build_type = PROTOLATHE
@@ -258,7 +258,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/hyperwave_filter
-	name = "Hyperwave Filter"
+	name = "Гиперволновой фильтр"
 	desc = ""
 	id = "s-filter"
 	build_type = PROTOLATHE
@@ -268,7 +268,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/subspace_amplifier
-	name = "Subspace Amplifier"
+	name = "Подпространственный усилитель"
 	desc = ""
 	id = "s-amplifier"
 	build_type = PROTOLATHE
@@ -278,7 +278,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/subspace_treatment
-	name = "Subspace Treatment Disk"
+	name = "Диск подпространственной обработки"
 	desc = ""
 	id = "s-treatment"
 	build_type = PROTOLATHE
@@ -288,7 +288,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/subspace_analyzer
-	name = "Subspace Analyzer"
+	name = "Подпространственный анализатор"
 	desc = ""
 	id = "s-analyzer"
 	build_type = PROTOLATHE
@@ -298,7 +298,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/subspace_crystal
-	name = "Ansible Crystal"
+	name = "Кристалл ансибла"
 	desc = ""
 	id = "s-crystal"
 	build_type = PROTOLATHE
@@ -308,7 +308,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/subspace_transmitter
-	name = "Subspace Transmitter"
+	name = "Подпространственный передатчик"
 	desc = ""
 	id = "s-transmitter"
 	build_type = PROTOLATHE

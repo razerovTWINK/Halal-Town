@@ -51,8 +51,8 @@
 	if(!iscultist(user))
 		user.Paralyze(100)
 		user.dropItemToGround(src, TRUE)
-		user.visible_message("<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
-							 "<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
+		user.visible_message("<span class='warning'>Неведомая сила отталкивает [user] от [target]!</span>", \
+							 "<span class='cultlarge'>«Не стоит играть с острыми предметами. Ещё глаз себе выколешь.»</span>")
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -74,7 +74,7 @@
 /obj/item/melee/cultblade/pickup(mob/living/user)
 	..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
+		to_chat(user, "<span class='cultlarge'>«Я бы этого не советовал.»</span>")
 
 /obj/item/twohanded/required/cult_bastard
 	name = "bloody bastard sword"
@@ -124,14 +124,14 @@
 /obj/item/twohanded/required/cult_bastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
-		to_chat(loc, "<span class='notice'>I raise [src] and prepare to jaunt with it.</span>")
+		to_chat(loc, "<span class='notice'>Ты поднимаешь [src] и готовишься к прыжку сквозь пространство.</span>")
 	else
-		to_chat(loc, "<span class='notice'>I lower [src] and prepare to swing it normally.</span>")
+		to_chat(loc, "<span class='notice'>Ты опускаешь [src] и готовишься наносить обычные удары.</span>")
 
 /obj/item/twohanded/required/cult_bastard/pickup(mob/living/user)
 	. = ..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
+		to_chat(user, "<span class='cultlarge'>«Я бы этого не советовал.»</span>")
 		force = 5
 		return
 	force = initial(force)
@@ -155,12 +155,12 @@
 /obj/item/twohanded/required/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
-			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
+			owner.visible_message("<span class='danger'>[owner] отражает [attack_text] с помощью [src]!</span>")
 			playsound(src, pick('sound/blank.ogg'), 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/blank.ogg', 75, TRUE)
-			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			owner.visible_message("<span class='danger'>[owner] парирует [attack_text] с помощью [src]!</span>")
 			return TRUE
 	return FALSE
 
@@ -249,7 +249,7 @@
 /obj/item/restraints/legcuffs/bola/cult/pickup(mob/living/user)
 	. = ..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='warning'>The bola seems to take on a life of its own!</span>")
+		to_chat(user, "<span class='warning'>Болас словно оживает в руках!</span>")
 		ensnare(user)
 
 /obj/item/restraints/legcuffs/bola/cult/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -376,19 +376,19 @@
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-		to_chat(user, "<span class='warning'>An overwhelming sense of nausea overpowers you!</span>")
+		to_chat(user, "<span class='cultlarge'>«Я бы этого не советовал.»</span>")
+		to_chat(user, "<span class='warning'>Накатывает непреодолимый приступ тошноты!</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.Paralyze(100)
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(current_charges)
-		owner.visible_message("<span class='danger'>\The [attack_text] is deflected in a burst of blood-red sparks!</span>")
+		owner.visible_message("<span class='danger'>[attack_text] отражается снопом кроваво-красных искр!</span>")
 		current_charges--
 		new /obj/effect/temp_visual/cult/sparks(get_turf(owner))
 		if(!current_charges)
-			owner.visible_message("<span class='danger'>The runed shield around [owner] suddenly disappears!</span>")
+			owner.visible_message("<span class='danger'>Рунический щит вокруг [owner] внезапно исчезает!</span>")
 			owner.update_inv_wear_suit()
 		return 1
 	return 0
@@ -414,8 +414,8 @@
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-		to_chat(user, "<span class='warning'>An overwhelming sense of nausea overpowers you!</span>")
+		to_chat(user, "<span class='cultlarge'>«Я бы этого не советовал.»</span>")
+		to_chat(user, "<span class='warning'>Накатывает непреодолимый приступ тошноты!</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.Paralyze(100)
@@ -430,7 +430,7 @@
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		to_chat(user, "<span class='cultlarge'>«Ослепнуть захотелось, да?»</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.Paralyze(100)
@@ -455,13 +455,13 @@
 	if(!iscultist(user))
 		user.dropItemToGround(src, TRUE)
 		user.Paralyze(100)
-		to_chat(user, "<span class='warning'>A powerful force shoves you away from [src]!</span>")
+		to_chat(user, "<span class='warning'>Могучая сила отталкивает тебя от [src]!</span>")
 		return
 	if(curselimit > 1)
-		to_chat(user, "<span class='notice'>We have exhausted our ability to curse the shuttle.</span>")
+		to_chat(user, "<span class='notice'>Мы исчерпали силы для проклятия челнока.</span>")
 		return
 	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
-		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
+		to_chat(user, "<span class='warning'>Нар-Си уже в этом мире, конец всего сущего не отсрочить.</span>")
 		return
 
 	if(SSshuttle.emergency.mode == SHUTTLE_CALL)
@@ -480,7 +480,7 @@
 		SSshuttle.emergency.setTimer(timer)
 		if(surplus > 0)
 			SSshuttle.block_recall(surplus)
-		to_chat(user, "<span class='danger'>I shatter the orb! A dark essence spirals into the air, then disappears.</span>")
+		to_chat(user, "<span class='danger'>Ты разбиваешь сферу! Тёмная эссенция взмывает в воздух спиралью и исчезает.</span>")
 		playsound(user.loc, 'sound/blank.ogg', 50, TRUE)
 		qdel(src)
 		sleep(20)
@@ -508,9 +508,9 @@
 /obj/item/cult_shift/examine(mob/user)
 	. = ..()
 	if(uses)
-		. += "<span class='cult'>It has [uses] use\s remaining.</span>"
+		. += "<span class='cult'>Осталось использований: [uses].</span>"
 	else
-		. += "<span class='cult'>It seems drained.</span>"
+		. += "<span class='cult'>Она истощена.</span>"
 
 /obj/item/cult_shift/proc/handle_teleport_grab(turf/T, mob/user)
 	var/mob/living/carbon/C = user
@@ -521,12 +521,12 @@
 
 /obj/item/cult_shift/attack_self(mob/user)
 	if(!uses || !iscarbon(user))
-		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
+		to_chat(user, "<span class='warning'>[src] лежит тусклым и неподвижным в твоих руках.</span>")
 		return
 	if(!iscultist(user))
 		user.dropItemToGround(src, TRUE)
 		step(src, pick(GLOB.alldirs))
-		to_chat(user, "<span class='warning'>\The [src] flickers out of your hands, your connection to this dimension is too strong!</span>")
+		to_chat(user, "<span class='warning'>[src] выскальзывает из рук, твоя связь с этим измерением слишком сильна!</span>")
 		return
 
 	var/mob/living/carbon/C = user
@@ -549,7 +549,7 @@
 			playsound(destination, "sparks", 50, TRUE)
 
 	else
-		to_chat(C, "<span class='warning'>The veil cannot be torn here!</span>")
+		to_chat(C, "<span class='warning'>Здесь невозможно разорвать завесу!</span>")
 
 /obj/item/flashlight/flare/culttorch
 	name = "void torch"
@@ -568,7 +568,7 @@
 	if(!proximity)
 		return
 	if(!iscultist(user))
-		to_chat(user, "That doesn't seem to do anything useful.")
+		to_chat(user, "Похоже, это не даёт никакого толка.")
 		return
 
 	if(istype(A, /obj/item))
@@ -581,30 +581,30 @@
 		if(!Adjacent(user) || !src || QDELETED(src) || user.incapacitated())
 			return
 		if(!cultist_to_receive)
-			to_chat(user, "<span class='cult italic'>I require a destination!</span>")
+			to_chat(user, "<span class='cult italic'>Требуется цель для отправки!</span>")
 			log_game("Void torch failed - no target")
 			return
 		if(cultist_to_receive.stat == DEAD)
-			to_chat(user, "<span class='cult italic'>[cultist_to_receive] has died!</span>")
+			to_chat(user, "<span class='cult italic'>[cultist_to_receive] погиб!</span>")
 			log_game("Void torch failed  - target died")
 			return
 		if(!iscultist(cultist_to_receive))
-			to_chat(user, "<span class='cult italic'>[cultist_to_receive] is not a follower of the Geometer!</span>")
+			to_chat(user, "<span class='cult italic'>[cultist_to_receive] не последователь Геометра!</span>")
 			log_game("Void torch failed - target was deconverted")
 			return
 		if(A in user.GetAllContents())
-			to_chat(user, "<span class='cult italic'>[A] must be on a surface in order to teleport it!</span>")
+			to_chat(user, "<span class='cult italic'>[A] должен быть на поверхности для телепортации!</span>")
 			return
-		to_chat(user, "<span class='cult italic'>I ignite [A] with \the [src], turning it to ash, but through the torch's flames you see that [A] has reached [cultist_to_receive]!</span>")
+		to_chat(user, "<span class='cult italic'>Ты поджигаешь [A] с помощью [src], обращая предмет в пепел, но в пламени факела видно, как [A] переносится к [cultist_to_receive]!</span>")
 		cultist_to_receive.put_in_hands(A)
 		charges--
-		to_chat(user, "\The [src] now has [charges] charge\s.")
+		to_chat(user, "Зарядов в [src]: [charges].")
 		if(charges == 0)
 			qdel(src)
 
 	else
 		..()
-		to_chat(user, "<span class='warning'>\The [src] can only transport items!</span>")
+		to_chat(user, "<span class='warning'>[src] может переносить только предметы!</span>")
 
 
 /obj/item/twohanded/cult_spear
@@ -644,9 +644,9 @@
 		if(iscultist(L))
 			playsound(src, 'sound/blank.ogg', 50)
 			if(L.put_in_active_hand(src))
-				L.visible_message("<span class='warning'>[L] catches [src] out of the air!</span>")
+				L.visible_message("<span class='warning'>[L] перехватывает [src] в воздухе!</span>")
 			else
-				L.visible_message("<span class='warning'>[src] bounces off of [L], as if repelled by an unseen force!</span>")
+				L.visible_message("<span class='warning'>[src] отскакивает от [L], будто отброшенный невидимой силой!</span>")
 		else if(!..())
 			if(!L.anti_magic_check())
 				L.Paralyze(50)
@@ -659,7 +659,7 @@
 		if(!T)
 			T = get_turf(src)
 		if(T)
-			T.visible_message("<span class='warning'>[src] shatters and melts back into blood!</span>")
+			T.visible_message("<span class='warning'>[src] раскалывается и тает обратно в кровь!</span>")
 			new /obj/effect/temp_visual/cult/sparks(T)
 			new /obj/effect/decal/cleanable/blood/splatter(T)
 			playsound(T, 'sound/blank.ogg', 100)
@@ -670,12 +670,12 @@
 		final_block_chance *= 2
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
-			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
+			owner.visible_message("<span class='danger'>[owner] отражает [attack_text] с помощью [src]!</span>")
 			playsound(src, pick('sound/blank.ogg'), 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/blank.ogg', 100, TRUE)
-			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			owner.visible_message("<span class='danger'>[owner] парирует [attack_text] с помощью [src]!</span>")
 			return TRUE
 	return FALSE
 
@@ -699,13 +699,13 @@
 	var/ST = get_turf(spear)
 	var/OT = get_turf(owner)
 	if(get_dist(OT, ST) > 10)
-		to_chat(owner,"<span class='cult'>The spear is too far away!</span>")
+		to_chat(owner,"<span class='cult'>Копьё слишком далеко!</span>")
 	else
 		cooldown = world.time + 20
 		if(isliving(spear.loc))
 			var/mob/living/L = spear.loc
 			L.dropItemToGround(spear)
-			L.visible_message("<span class='warning'>An unseen force pulls the blood spear from [L]'s hands!</span>")
+			L.visible_message("<span class='warning'>Невидимая сила вырывает копьё крови из рук [L]!</span>")
 		spear.throw_at(owner, 10, 2, owner)
 
 
@@ -789,7 +789,7 @@
 		var/obj/structure/emergency_shield/invoker/N = new(user.loc)
 		if(do_after(user, 90, target = user))
 			user.Paralyze(40)
-			to_chat(user, "<span class='cult italic'>I have exhausted the power of this spell!</span>")
+			to_chat(user, "<span class='cult italic'>Ты исчерпал силу этого заклинания!</span>")
 		firing = FALSE
 		if(N)
 			qdel(N)
@@ -886,7 +886,7 @@
 			if(P.damage_type == BRUTE || P.damage_type == BURN)
 				if(P.damage >= 30)
 					var/turf/T = get_turf(owner)
-					T.visible_message("<span class='warning'>The sheer force from [P] shatters the mirror shield!</span>")
+					T.visible_message("<span class='warning'>Сокрушительный удар от [P] раскалывает зеркальный щит!</span>")
 					new /obj/effect/temp_visual/cult/sparks(T)
 					playsound(T, 'sound/blank.ogg', 100)
 					owner.Paralyze(25)
@@ -918,14 +918,14 @@
 			H.faction = list("cult")
 			H.GiveTarget(owner)
 			H.move_to_delay = owner.cached_multiplicative_slowdown
-			to_chat(owner, "<span class='danger'><b>[src] betrays you!</b></span>")
+			to_chat(owner, "<span class='danger'><b>[src] предаёт тебя!</b></span>")
 		return FALSE
 
 /obj/item/shield/mirror/proc/readd()
 	illusions++
 	if(illusions == initial(illusions) && isliving(loc))
 		var/mob/living/holder = loc
-		to_chat(holder, "<span class='cult italic'>The shield's illusions are back at full strength!</span>")
+		to_chat(holder, "<span class='cult italic'>Иллюзии щита снова набрали полную силу!</span>")
 
 /obj/item/shield/mirror/IsReflect()
 	if(prob(block_chance))
@@ -940,9 +940,9 @@
 		if(iscultist(L))
 			playsound(src, 'sound/blank.ogg', 50)
 			if(L.put_in_active_hand(src))
-				L.visible_message("<span class='warning'>[L] catches [src] out of the air!</span>")
+				L.visible_message("<span class='warning'>[L] перехватывает [src] в воздухе!</span>")
 			else
-				L.visible_message("<span class='warning'>[src] bounces off of [L], as if repelled by an unseen force!</span>")
+				L.visible_message("<span class='warning'>[src] отскакивает от [L], будто отброшенный невидимой силой!</span>")
 		else if(!..())
 			if(!L.anti_magic_check())
 				L.Paralyze(30)

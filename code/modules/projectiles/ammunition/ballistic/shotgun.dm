@@ -1,7 +1,7 @@
 // Shotgun
 
 /obj/item/ammo_casing/shotgun
-	name = "shotgun slug"
+	name = "ружейная пуля"
 	desc = ""
 	icon_state = "blshell"
 	caliber = "shotgun"
@@ -9,20 +9,20 @@
 	projectile_type = /obj/projectile/bullet/shotgun_slug
 
 /obj/item/ammo_casing/shotgun/beanbag
-	name = "beanbag slug"
+	name = "травматический патрон"
 	desc = ""
 	icon_state = "bshell"
 	custom_materials = list(/datum/material/iron=250)
 	projectile_type = /obj/projectile/bullet/shotgun_beanbag
 
 /obj/item/ammo_casing/shotgun/incendiary
-	name = "incendiary slug"
+	name = "зажигательный патрон"
 	desc = ""
 	icon_state = "ishell"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun
 
 /obj/item/ammo_casing/shotgun/dragonsbreath
-	name = "dragonsbreath shell"
+	name = "патрон «дыхание дракона»"
 	desc = ""
 	icon_state = "ishell2"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
@@ -30,34 +30,32 @@
 	variance = 35
 
 /obj/item/ammo_casing/shotgun/stunslug
-	name = "taser slug"
+	name = "тазерный патрон"
 	desc = ""
 	icon_state = "stunshell"
 	projectile_type = /obj/projectile/bullet/shotgun_stunslug
 	custom_materials = list(/datum/material/iron=250)
 
 /obj/item/ammo_casing/shotgun/meteorslug
-	name = "meteorslug shell"
+	name = "метеорный патрон"
 	desc = ""
 	icon_state = "mshell"
 	projectile_type = /obj/projectile/bullet/shotgun_meteorslug
 
 /obj/item/ammo_casing/shotgun/pulseslug
-	name = "pulse slug"
-	desc = "A delicate device which can be loaded into a shotgun. The primer acts as a button which triggers the gain medium and fires a powerful \
-	energy blast. While the heat and power drain limit it to one use, it can still allow an operator to engage targets that ballistic ammunition \
-	would have difficulty with."
+	name = "импульсный патрон"
+	desc = "Хрупкое устройство, заряжаемое в дробовик. Капсюль служит спуском для мощного энергетического импульса. Одноразовое из-за перегрева, но позволяет поражать цели, неуязвимые для обычной дроби."
 	icon_state = "pshell"
 	projectile_type = /obj/projectile/beam/pulse/shotgun
 
 /obj/item/ammo_casing/shotgun/frag12
-	name = "FRAG-12 slug"
+	name = "осколочный патрон FRAG-12"
 	desc = ""
 	icon_state = "heshell"
 	projectile_type = /obj/projectile/bullet/shotgun_frag12
 
 /obj/item/ammo_casing/shotgun/buckshot
-	name = "buckshot shell"
+	name = "патрон с картечью"
 	desc = ""
 	icon_state = "gshell"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
@@ -65,7 +63,7 @@
 	variance = 25
 
 /obj/item/ammo_casing/shotgun/rubbershot
-	name = "rubber shot"
+	name = "патрон с резиновой дробью"
 	desc = ""
 	icon_state = "bshell"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_rubbershot
@@ -74,7 +72,7 @@
 	custom_materials = list(/datum/material/iron=4000)
 
 /obj/item/ammo_casing/shotgun/incapacitate
-	name = "custom incapacitating shot"
+	name = "усыпляющий патрон"
 	desc = ""
 	icon_state = "bountyshell"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_incapacitate
@@ -83,7 +81,7 @@
 	custom_materials = list(/datum/material/iron=4000)
 
 /obj/item/ammo_casing/shotgun/improvised
-	name = "improvised shell"
+	name = "самодельный патрон"
 	desc = ""
 	icon_state = "improvshell"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_improvised
@@ -92,16 +90,15 @@
 	variance = 25
 
 /obj/item/ammo_casing/shotgun/ion
-	name = "ion shell"
-	desc = "An advanced shotgun shell which uses a subspace ansible crystal to produce an effect similar to a standard ion rifle. \
-	The unique properties of the crystal split the pulse into a spread of individually weaker bolts."
+	name = "ионный патрон"
+	desc = "Продвинутый ружейный патрон с кристаллом ансибла. Расщепляет импульс на веер ослабленных ионных разрядов."
 	icon_state = "ionshell"
 	projectile_type = /obj/projectile/ion/weak
 	pellets = 4
 	variance = 35
 
 /obj/item/ammo_casing/shotgun/laserslug
-	name = "scatter laser shell"
+	name = "дробный лазерный патрон"
 	desc = ""
 	icon_state = "lshell"
 	projectile_type = /obj/projectile/beam/weak
@@ -109,13 +106,13 @@
 	variance = 35
 
 /obj/item/ammo_casing/shotgun/techshell
-	name = "unloaded technological shell"
+	name = "незаряженный технологический патрон"
 	desc = ""
 	icon_state = "cshell"
 	projectile_type = null
 
 /obj/item/ammo_casing/shotgun/dart
-	name = "shotgun dart"
+	name = "ружейный дротик"
 	desc = ""
 	icon_state = "cshell"
 	projectile_type = /obj/projectile/bullet/dart
@@ -129,7 +126,7 @@
 	return
 
 /obj/item/ammo_casing/shotgun/dart/noreact
-	name = "cryostasis shotgun dart"
+	name = "криостазисный ружейный дротик"
 	desc = ""
 	icon_state = "cnrshell"
 	reagent_amount = 10

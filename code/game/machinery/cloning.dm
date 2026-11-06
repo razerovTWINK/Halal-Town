@@ -364,7 +364,7 @@
 	var/mob/living/mob_occupant = occupant
 	if(W.GetID())
 		if(!check_access(W))
-			to_chat(user, "<span class='danger'>Access Denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 			return
 		if(!(mob_occupant || mess))
 			to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")

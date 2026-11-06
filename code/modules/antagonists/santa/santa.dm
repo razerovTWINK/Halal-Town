@@ -13,7 +13,7 @@
 
 /datum/antagonist/santa/greet()
 	. = ..()
-	to_chat(owner, "<span class='boldannounce'>I are Santa! Your objective is to bring joy to the people on this station. You have a magical bag, which generates presents as long as you have it! You can examine the presents to take a peek inside, to make sure that you give the right gift to the right person.</span>")
+	to_chat(owner, "<span class='boldannounce'>Ты — Санта! Твоя цель — нести радость людям. У тебя есть волшебный мешок, создающий подарки, пока он при тебе! Осматривай подарки, чтобы заглянуть внутрь и вручить нужный подарок правильному человеку.</span>")
 
 /datum/antagonist/santa/proc/give_equipment()
 	var/mob/living/carbon/human/H = owner.current

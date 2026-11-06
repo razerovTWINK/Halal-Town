@@ -1,7 +1,7 @@
 // 40mm (Grenade Launcher
 
 /obj/projectile/bullet/a40mm
-	name ="40mm grenade"
+	name = "40мм граната"
 	desc = ""
 	icon_state= "bolter"
 	damage = 60

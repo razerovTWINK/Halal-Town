@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/summon_wealth
-	name = "Summon wealth"
+	name = "Призыв богатства"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE
@@ -27,7 +27,7 @@
 			C.put_in_hands(item)
 
 /obj/effect/proc_holder/spell/targeted/view_range
-	name = "Distant vision"
+	name = "Дальнозоркость"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE
@@ -43,10 +43,10 @@
 	for(var/mob/C in targets)
 		if(!C.client)
 			continue
-		C.client.change_view(input("Select view range:", "Range", 4) in ranges)
+		C.client.change_view(input("Выбери радиус обзора:", "Дальность обзора", 4) in ranges)
 
 /obj/effect/proc_holder/spell/targeted/summon_friend
-	name = "Summon Friend"
+	name = "Призыв друга"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE
@@ -61,7 +61,7 @@
 
 /obj/effect/proc_holder/spell/targeted/summon_friend/cast(list/targets, mob/user = usr)
 	if(!QDELETED(friend))
-		to_chat(friend, "<span class='danger'>My master has deemed you a poor friend. Your durance in hell will now resume.</span>")
+		to_chat(friend, "<span class='danger'>Хозяин счёл тебя плохим другом. Твоё заточение в аду возобновляется.</span>")
 		friend.dust(TRUE)
 		qdel(friendShell)
 		return

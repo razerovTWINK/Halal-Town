@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/sniper_rounds
-	name = "sniper rounds (.50)"
+	name = "снайперский магазин (.50)"
 	icon_state = ".50mag"
 	ammo_type = /obj/item/ammo_casing/p50
 	max_ammo = 6
@@ -13,7 +13,7 @@
 		icon_state = "[initial(icon_state)]"
 
 /obj/item/ammo_box/magazine/sniper_rounds/soporific
-	name = "sniper rounds (Zzzzz)"
+	name = "снайперский магазин (усыпляющие)"
 	desc = ""
 	icon_state = "soporific"
 	ammo_type = /obj/item/ammo_casing/p50/soporific
@@ -21,7 +21,7 @@
 	caliber = ".50"
 
 /obj/item/ammo_box/magazine/sniper_rounds/penetrator
-	name = "sniper rounds (penetrator)"
+	name = "снайперский магазин (проникающие)"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/p50/penetrator
 	max_ammo = 5

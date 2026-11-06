@@ -1,5 +1,5 @@
 /obj/projectile/beam/mindflayer
-	name = "flayer ray"
+	name = "сдирающий луч"
 
 /obj/projectile/beam/mindflayer/on_hit(atom/target, blocked = FALSE)
 	. = ..()

@@ -243,12 +243,12 @@ SUBSYSTEM_DEF(triumphs)
 	if(!client)
 		return
 	if(SSticker.current_state > GAME_STATE_PREGAME)
-		to_chat(src, "<span class='warning'>Too late.</span>")
+		to_chat(src, "<span class='warning'>Слишком поздно.</span>")
 		return
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	if(istype(C))
 		if(C.allmig || C.roguefight)
-			to_chat(src, "<span class='warning'>Too late.</span>")
+			to_chat(src, "<span class='warning'>Слишком поздно.</span>")
 			return
 		if(alert(src,"Force ROGUEWORLD? (30 TRI)","ROGUETOWN","YES","NO") == "YES")
 			if(SSticker.current_state <= GAME_STATE_PREGAME)
@@ -278,7 +278,7 @@ SUBSYSTEM_DEF(triumphs)
 	if(!client)
 		return
 	if(SSticker.current_state > GAME_STATE_PREGAME)
-		to_chat(src, "<span class='warning'>Too late.</span>")
+		to_chat(src, "<span class='warning'>Слишком поздно.</span>")
 		return
 	if(alert(src,"Burn down the hall of TRIUMPHS?","ROGUETOWN","YES","NO") == "YES")
 		if(SSticker.current_state <= GAME_STATE_PREGAME)

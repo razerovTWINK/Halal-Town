@@ -32,7 +32,7 @@
 		if(1)
 			if(restcure)
 				if(!(affected_mob.mobility_flags & MOBILITY_STAND) && prob(30))
-					to_chat(affected_mob, "<span class='notice'>I feel better.</span>")
+					to_chat(affected_mob, "<span class='notice'>Я чувствую себя лучше.</span>")
 					cure()
 					return
 			if (prob(8))
@@ -44,7 +44,7 @@
 		if(2)
 			if(restcure)
 				if(!(affected_mob.mobility_flags & MOBILITY_STAND) && prob(20))
-					to_chat(affected_mob, "<span class='notice'>I feel better.</span>")
+					to_chat(affected_mob, "<span class='notice'>Я чувствую себя лучше.</span>")
 					cure()
 					return
 			if (prob(8))
@@ -59,7 +59,7 @@
 		if(3)
 			if(restcure)
 				if(!(affected_mob.mobility_flags & MOBILITY_STAND) && prob(20))
-					to_chat(affected_mob, "<span class='notice'>I feel better.</span>")
+					to_chat(affected_mob, "<span class='notice'>Я чувствую себя лучше.</span>")
 					cure()
 					return
 			if (prob(10))
@@ -74,7 +74,7 @@
 		if(4)
 			if(restcure)
 				if(!(affected_mob.mobility_flags & MOBILITY_STAND) && prob(5))
-					to_chat(affected_mob, "<span class='notice'>I feel better.</span>")
+					to_chat(affected_mob, "<span class='notice'>Я чувствую себя лучше.</span>")
 					cure()
 					return
 			if (prob(60))

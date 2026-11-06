@@ -8,7 +8,7 @@
 
 /datum/reagent/medicine
 	name = "Medicine"
-	taste_description = "bitterness"
+	taste_description = "горечь"
 
 /datum/reagent/medicine/on_mob_life(mob/living/carbon/M)
 	current_cycle++
@@ -76,7 +76,7 @@
 /datum/reagent/medicine/adminordrazine/quantum_heal
 	name = "Quantum Medicine"
 	description = "Rare and experimental particles, that apparently swap the user's body with one from an alternate dimension where it's completely healthy."
-	taste_description = "science"
+	taste_description = "наука"
 
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
@@ -119,7 +119,7 @@
 	name = "Cryoxadone"
 	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the patient's body temperature must be under 270K for it to metabolise correctly."
 	color = "#0000C8"
-	taste_description = "sludge"
+	taste_description = "жижа"
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
@@ -183,7 +183,7 @@
 	reagent_state = SOLID
 	color = "#669900" // rgb: 102, 153, 0
 	overdose_threshold = 30
-	taste_description = "fish"
+	taste_description = "рыба"
 
 /datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M)
 	M.setCloneLoss(0) //Rezadone is almost never used in favor of cryoxadone. Hopefully this will change that.
@@ -236,7 +236,7 @@
 	color = "#DCDCDC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
-	taste_description = "sweetness and salt"
+	taste_description = "сладость и соль"
 	var/last_added = 0
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
 
@@ -297,7 +297,7 @@
 				S.speed_modifier = max(0.1, S.speed_modifier)
 
 			if(show_message)
-				to_chat(M, "<span class='danger'>I feel my wounds fade away to nothing!</span>" )
+				to_chat(M, "<span class='danger'>Мои раны затягиваются на глазах!</span>" )
 	..()
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
@@ -336,7 +336,7 @@
 	reagent_state = LIQUID
 	color = "#19C832"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
 	for(var/datum/reagent/R in M.reagents.reagent_list)
@@ -434,7 +434,7 @@
 	if(prob(20) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
-			to_chat(M, "<span class='notice'>My hands spaz out and you drop what you were holding!</span>")
+			to_chat(M, "<span class='notice'>Мои руки сводит, и я роняю то, что держал!</span>")
 			M.Jitter(10)
 
 	M.AdjustAllImmobility(-20, FALSE)
@@ -446,7 +446,7 @@
 	if(prob(2) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)
-		to_chat(M, "<span class='danger'>You're pretty sure you just felt my heart stop for a second there..</span>")
+		to_chat(M, "<span class='danger'>Кажется, моё сердце только что на миг остановилось...</span>")
 		M.playsound_local(M, 'sound/blank.ogg', 100, 0)
 
 	if(prob(7))
@@ -460,7 +460,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage1(mob/living/M)
 	if(prob(3) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='danger'>I have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] бьётся в припадке!</span>", "<span class='danger'>У меня припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -472,7 +472,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage2(mob/living/M)
 	if(prob(6) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='danger'>I have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] бьётся в припадке!</span>", "<span class='danger'>У меня припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -484,7 +484,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage3(mob/living/M)
 	if(prob(12) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='danger'>I have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] бьётся в припадке!</span>", "<span class='danger'>У меня припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -496,7 +496,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage4(mob/living/M)
 	if(prob(24) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='danger'>I have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] бьётся в припадке!</span>", "<span class='danger'>У меня припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -702,7 +702,7 @@
 	reagent_state = LIQUID
 	color = "#A0E85E"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	taste_description = "magnets"
+	taste_description = "магниты"
 
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
@@ -769,7 +769,7 @@
 	name = "Mutadone"
 	description = "Removes jitteriness and restores genetic defects."
 	color = "#5096C8"
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = 0
@@ -864,7 +864,7 @@
 	description = "Gradually regenerates all types of damage, without harming slime anatomy."
 	reagent_state = LIQUID
 	color = "#CC23FF"
-	taste_description = "jelly"
+	taste_description = "желе"
 
 /datum/reagent/medicine/regen_jelly/reaction_mob(mob/living/M, reac_volume)
 	if(M && ishuman(M) && reac_volume >= 0.5)
@@ -1098,7 +1098,7 @@
 	color = "#BEF7D8" // palish blue white
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	overdose_threshold = 20 // with the random effects this might be awesome or might kill you at less than 10u (extensively tested)
-	taste_description = "salt" // it actually does taste salty
+	taste_description = "соль" // it actually does taste salty
 	var/overdose_progress = 0 // to track overdose progress
 
 /datum/reagent/medicine/modafinil/on_mob_metabolize(mob/living/M)
@@ -1120,7 +1120,7 @@
 	..()
 
 /datum/reagent/medicine/modafinil/overdose_start(mob/living/M)
-	to_chat(M, "<span class='danger'>I feel awfully out of breath and jittery!</span>")
+	to_chat(M, "<span class='danger'>Я задыхаюсь и меня всего трясёт!</span>")
 	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.01 per tick on overdose
 
 /datum/reagent/medicine/modafinil/overdose_process(mob/living/M)
@@ -1141,11 +1141,11 @@
 			if(prob(50))
 				M.losebreath++
 			if(prob(20))
-				to_chat(M, "<span class='danger'>I have a sudden fit!</span>")
+				to_chat(M, "<span class='danger'>Со мной случается внезапный припадок!</span>")
 				M.emote("moan")
 				M.Paralyze(20, 1, 0) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
-			to_chat(M, "<span class='danger'>I feel too exhausted to continue!</span>") // at this point you will eventually die unless you get charcoal
+			to_chat(M, "<span class='danger'>Я слишком измождён, чтобы продолжать!</span>") // at this point you will eventually die unless you get charcoal
 			M.adjustOxyLoss(0.1*REM, 0)
 			M.adjustStaminaLoss(0.1*REM, 0)
 		if(82 to INFINITY)
@@ -1279,7 +1279,7 @@
 	color = "#9423FF"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 50
-	taste_description = "numbing bitterness"
+	taste_description = "онемевшая горечь"
 
 /datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25)
@@ -1340,7 +1340,7 @@
 	if(prob(30) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
-			to_chat(M, "<span class='notice'>My hands spaz out and you drop what you were holding!</span>")
+			to_chat(M, "<span class='notice'>Мои руки сводит, и я роняю то, что держал!</span>")
 	if(prob(33))
 		M.losebreath++
 		M.adjustOxyLoss(1, 0)

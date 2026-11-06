@@ -6,10 +6,10 @@ Slimecrossing Weapons
 
 //Boneblade - Burning Green
 /obj/item/melee/arm_blade/slime
-	name = "slimy boneblade"
+	name = "слизистый костяной клинок"
 	desc = ""
 	force = 15
-	force_string = "painful"
+	force_string = "болезненно"
 
 /obj/item/melee/arm_blade/slime/attack(mob/living/L, mob/user)
 	. = ..()
@@ -18,7 +18,7 @@ Slimecrossing Weapons
 
 //Rainbow knife - Burning Rainbow
 /obj/item/kitchen/knife/rainbowknife
-	name = "rainbow knife"
+	name = "радужный нож"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "rainbowknife"
@@ -33,24 +33,24 @@ Slimecrossing Weapons
 	switch(damtype)
 		if(BRUTE)
 			hitsound = 'sound/blank.ogg'
-			attack_verb = list("slashed","sliced","cut")
+			attack_verb = list("полоснул","разрезал","нанёс порез")
 		if(BURN)
 			hitsound = 'sound/blank.ogg'
-			attack_verb = list("burned","singed","heated")
+			attack_verb = list("обжёг","опалил","прижёг")
 		if(TOX)
 			hitsound = 'sound/blank.ogg'
-			attack_verb = list("poisoned","dosed","toxified")
+			attack_verb = list("отравил","опоил","ввёл токсин")
 		if(OXY)
 			hitsound = 'sound/blank.ogg'
-			attack_verb = list("suffocated","winded","vacuumed")
+			attack_verb = list("лишил дыхания","задушил","перекрыл воздух")
 		if(CLONE)
 			hitsound = 'sound/blank.ogg'
-			attack_verb = list("irradiated","mutated","maligned")
+			attack_verb = list("облучил","мутировал","поразил")
 	return ..()
 
 //Adamantine shield - Chilling Adamantine
 /obj/item/twohanded/required/adamantineshield
-	name = "adamantine shield"
+	name = "адамантиновый щит"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "adamshield"
@@ -62,12 +62,12 @@ Slimecrossing Weapons
 	throw_range = 1 //How far do you think you're gonna throw a solid crystalline shield...?
 	throw_speed = 2
 	force_wielded = 15 //Heavy, but hard to wield.
-	attack_verb = list("bashed","pounded","slammed")
+	attack_verb = list("ударил","размозжил","огрел")
 	item_flags = SLOWS_WHILE_IN_HAND
 
 //Bloodchiller - Chilling Green
 /obj/item/gun/magic/bloodchill
-	name = "blood chiller"
+	name = "леденитель крови"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "bloodgun"
@@ -104,7 +104,7 @@ Slimecrossing Weapons
 	projectile_type = /obj/projectile/magic/bloodchill
 
 /obj/projectile/magic/bloodchill
-	name = "blood ball"
+	name = "сгусток крови"
 	icon_state = "pulse0_bl"
 	damage = 0
 	damage_type = OXY

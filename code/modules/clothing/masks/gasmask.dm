@@ -1,5 +1,5 @@
 /obj/item/clothing/mask/gas
-	name = "gas mask"
+	name = "противогаз"
 	desc = "" //More accurate
 	icon_state = "gas_alt"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS

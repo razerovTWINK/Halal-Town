@@ -1,5 +1,5 @@
 /obj/projectile/beam
-	name = "laser"
+	name = "лазер"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 20
@@ -21,7 +21,7 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/projectile/beam/laser/heavylaser
-	name = "heavy laser"
+	name = "тяжелый лазер"
 	icon_state = "heavylaser"
 	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
@@ -43,17 +43,17 @@
 	armor_penetration = 50
 
 /obj/projectile/beam/practice
-	name = "practice laser"
+	name = "тренировочный лазер"
 	damage = 0
 	nodamage = TRUE
 
 /obj/projectile/beam/scatter
-	name = "laser pellet"
+	name = "лазерная картечь"
 	icon_state = "scatterlaser"
 	damage = 5
 
 /obj/projectile/beam/xray
-	name = "\improper X-ray beam"
+	name = "\improper рентгеновский луч"
 	icon_state = "xray"
 	flag = "rad"
 	damage = 15
@@ -68,7 +68,7 @@
 	impact_type = /obj/effect/projectile/impact/xray
 
 /obj/projectile/beam/disabler
-	name = "disabler beam"
+	name = "деактивирующий луч"
 	icon_state = "omnilaser"
 	damage = 30
 	damage_type = STAMINA
@@ -82,7 +82,7 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/pulse
-	name = "pulse"
+	name = "импульс"
 	icon_state = "u_laser"
 	damage = 50
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -100,7 +100,7 @@
 	damage = 40
 
 /obj/projectile/beam/pulse/heavy
-	name = "heavy pulse laser"
+	name = "тяжелый импульсный лазер"
 	icon_state = "pulse1_bl"
 	var/life = 20
 
@@ -111,7 +111,7 @@
 	..()
 
 /obj/projectile/beam/emitter
-	name = "emitter beam"
+	name = "луч эмиттера"
 	icon_state = "emitter"
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
@@ -121,7 +121,7 @@
 	return //don't want the emitters to miss
 
 /obj/projectile/beam/lasertag
-	name = "laser tag beam"
+	name = "лазертаг-луч"
 	icon_state = "omnilaser"
 	hitsound = null
 	damage = 0
@@ -162,7 +162,7 @@
 	hitscan = TRUE
 
 /obj/projectile/beam/instakill
-	name = "instagib laser"
+	name = "аннигиляторный лазер"
 	icon_state = "purple_laser"
 	damage = 200
 	damage_type = BURN
@@ -183,12 +183,12 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.visible_message("<span class='danger'>[M] разлетается на куски плоти!</span>")
 		M.gib()
 
 //a shrink ray that shrinks stuff, which grows back after a short while.
 /obj/projectile/beam/shrink
-	name = "shrink ray"
+	name = "уменьшающий луч"
 	icon_state = "blue_laser"
 	hitsound = 'sound/blank.ogg'
 	damage = 0

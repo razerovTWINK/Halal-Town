@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/sandwich
-	name = "sandwich"
+	name = "сэндвич"
 	desc = ""
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "sandwich"

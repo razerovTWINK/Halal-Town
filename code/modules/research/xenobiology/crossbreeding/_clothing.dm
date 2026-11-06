@@ -6,7 +6,7 @@ Slimecrossing Armor
 
 //Rebreather mask - Chilling Blue
 /obj/item/clothing/mask/nobreath
-	name = "rebreather mask"
+	name = "маска-ребризер"
 	desc = ""
 	icon_state = "slime"
 	item_state = "slime"
@@ -31,7 +31,7 @@ Slimecrossing Armor
 	user.remove_status_effect(/datum/status_effect/rebreathing)
 
 /obj/item/clothing/glasses/prism_glasses
-	name = "prism glasses"
+	name = "призматические очки"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "prismglasses"
@@ -43,7 +43,7 @@ Slimecrossing Armor
 		return TRUE
 
 /obj/structure/light_prism
-	name = "light prism"
+	name = "световая призма"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "lightprism"
@@ -58,11 +58,11 @@ Slimecrossing Armor
 	set_light(5)
 
 /obj/structure/light_prism/attack_hand(mob/user)
-	to_chat(user, "<span class='notice'>I dispel [src].</span>")
+	to_chat(user, "<span class='notice'>Я развеиваю [src].</span>")
 	qdel(src)
 
 /datum/action/item_action/change_prism_colour
-	name = "Adjust Prismatic Lens"
+	name = "Настроить призматические линзы"
 	icon_icon = 'icons/obj/slimecrossing.dmi'
 	button_icon_state = "prismcolor"
 
@@ -70,13 +70,13 @@ Slimecrossing Armor
 	if(!IsAvailable())
 		return
 	var/obj/item/clothing/glasses/prism_glasses/glasses = target
-	var/new_color = input(owner, "Choose the lens color:", "Color change",glasses.glasses_color) as color|null
+	var/new_color = input(owner, "Выбери цвет линз:", "Смена цвета", glasses.glasses_color) as color|null
 	if(!new_color)
 		return
 	glasses.glasses_color = new_color
 
 /datum/action/item_action/place_light_prism
-	name = "Fabricate Light Prism"
+	name = "Создать световую призму"
 	icon_icon = 'icons/obj/slimecrossing.dmi'
 	button_icon_state = "lightprism"
 
@@ -85,17 +85,17 @@ Slimecrossing Armor
 		return
 	var/obj/item/clothing/glasses/prism_glasses/glasses = target
 	if(locate(/obj/structure/light_prism) in get_turf(owner))
-		to_chat(owner, "<span class='warning'>There isn't enough ambient energy to fabricate another light prism here.</span>")
+		to_chat(owner, "<span class='warning'>Здесь недостаточно окружающей энергии для создания ещё одной световой призмы.</span>")
 		return
 	if(istype(glasses))
 		if(!glasses.glasses_color)
-			to_chat(owner, "<span class='warning'>The lens is oddly opaque...</span>")
+			to_chat(owner, "<span class='warning'>Линза странно непрозрачна...</span>")
 			return
-		to_chat(owner, "<span class='notice'>I channel nearby light into a glowing, ethereal prism.</span>")
+		to_chat(owner, "<span class='notice'>Я направляю окружающий свет в сияющую призрачную призму.</span>")
 		new /obj/structure/light_prism(get_turf(owner), glasses.glasses_color)
 
 /obj/item/clothing/head/peaceflower
-	name = "heroine bud"
+	name = "бутон героина"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "peaceflower"
@@ -122,12 +122,12 @@ Slimecrossing Armor
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, "<span class='warning'>I feel at peace. <b style='color:pink'>Why would you want anything else?</b></span>")
+			to_chat(user, "<span class='warning'>Я чувствую полное умиротворение. <b style='color:pink'>Зачем вообще желать чего-то ещё?</b></span>")
 			return
 	return ..()
 
 /obj/item/clothing/suit/armor/heavy/adamantine
-	name = "adamantine armor"
+	name = "адамантиновый доспех"
 	desc = ""
 	icon_state = "adamsuit"
 	item_state = "adamsuit"

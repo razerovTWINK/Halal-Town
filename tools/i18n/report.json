@@ -1,0 +1,23 @@
+{
+  "dry_run": false,
+  "full_files": {
+    "strings/rt/bumaggrolines.txt": 0,
+    "strings/rt/bumlines.txt": 0,
+    "strings/rt/crier.txt": 0,
+    "strings/rt/rp_prompt.txt": 0,
+    "strings/bibble.txt": 0,
+    "strings/abductee_objectives.txt": 0,
+    "strings/tips.txt": 0,
+    "config/motd.txt": 0,
+    "config/silicon_laws.txt": 0,
+    "strings/station_names.txt": 0,
+    "strings/station_prefixes.txt": 0,
+    "strings/station_suffixes.txt": 0,
+    "strings/dreamstrings.txt": 0
+  },
+  "dictionary": {
+    "strings/cas_white.txt": 162,
+    "strings/hallucination.json": 2
+  },
+  "errors": []
+}

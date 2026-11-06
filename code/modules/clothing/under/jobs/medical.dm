@@ -73,19 +73,19 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/medical/doctor/blue
-	name = "medical scrubs"
+	name = "медицинская форма"
 	desc = ""
 	icon_state = "scrubsblue"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/green
-	name = "medical scrubs"
+	name = "медицинская форма"
 	desc = ""
 	icon_state = "scrubsgreen"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/purple
-	name = "medical scrubs"
+	name = "медицинская форма"
 	desc = ""
 	icon_state = "scrubspurple"
 	can_adjust = FALSE

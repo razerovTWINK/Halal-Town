@@ -131,7 +131,7 @@
 				return
 			var/turf/target = get_step_multiz(user, UP)
 			if(!istype(target, /turf/open/transparent/openspace))
-				to_chat(user, "<span class='warning'>I can't climb here.</span>")
+				to_chat(user, "<span class='warning'>Я не могу здесь забраться.</span>")
 				return
 			if(!L.can_zTravel(target, UP))
 				to_chat(user, "<span class='warning'>I can't climb there.</span>")
@@ -140,11 +140,11 @@
 			if(!target || istype(target, /turf/closed) || istype(target, /turf/open/transparent/openspace))
 				target = get_step_multiz(user.loc, UP)
 				if(!target || !istype(target, /turf/open/transparent/openspace))
-					to_chat(user, "<span class='warning'>I can't climb here.</span>")
+					to_chat(user, "<span class='warning'>Я не могу здесь забраться.</span>")
 					return
 			for(var/obj/structure/F in target)
 				if(F && (F.density && !F.climbable))
-					to_chat(user, "<span class='warning'>I can't climb here.</span>")
+					to_chat(user, "<span class='warning'>Я не могу здесь забраться.</span>")
 					return
 			var/used_time = 0
 			if(L.mind)
@@ -163,7 +163,7 @@
 							climbsound = 'sound/foley/ladder.ogg'
 
 				if(myskill < climbdiff)
-					to_chat(user, "<span class='warning'>I can't climb here.</span>")
+					to_chat(user, "<span class='warning'>Я не могу здесь забраться.</span>")
 					return
 				used_time = max(70 - (myskill * 10) - (L.STASPD * 3), 30)
 			if(user.m_intent != MOVE_INTENT_SNEAK)
@@ -185,10 +185,10 @@
 		return
 	var/turf/target = get_step_multiz(user, UP)
 	if(!target)
-		to_chat(user, "<span class='warning'>I can't go there.</span>")
+		to_chat(user, "<span class='warning'>Я не могу туда пройти.</span>")
 		return
 	if(!istype(target, /turf/open/transparent/openspace))
-		to_chat(user, "<span class='warning'>I can't go there.</span>")
+		to_chat(user, "<span class='warning'>Я не могу туда пройти.</span>")
 		return
 	user.forceMove(target)
 	to_chat(user, "<span class='warning'>I crawl up the wall.</span>")

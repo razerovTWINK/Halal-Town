@@ -1,5 +1,5 @@
 /datum/surgery/advanced/bioware/ligament_reinforcement
-	name = "Ligament Reinforcement"
+	name = "Укрепление связок"
 	desc = "A surgical procedure which adds a protective tissue and bone cage around the connections between the torso and limbs, preventing dismemberment. \
 	However, the nerve connections as a result are more easily interrupted, making it easier to disable limbs with damage."
 	steps = list(/datum/surgery_step/incise,
@@ -13,24 +13,24 @@
 	bioware_target = BIOWARE_LIGAMENTS
 
 /datum/surgery_step/reinforce_ligaments
-	name = "reinforce ligaments"
+	name = "укрепить связки"
 	accept_hand = TRUE
 	time = 125
 
 /datum/surgery_step/reinforce_ligaments/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I start reinforcing [target]'s ligaments.</span>",
-		"<span class='notice'>[user] starts reinforce [target]'s ligaments.</span>",
-		"<span class='notice'>[user] starts manipulating [target]'s ligaments.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь укреплять связки [target].</span>",
+		"<span class='notice'>[user] начинает укреплять связки [target].</span>",
+		"<span class='notice'>[user] начинает перебирать связки [target].</span>")
 
 /datum/surgery_step/reinforce_ligaments/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I reinforce [target]'s ligaments!</span>",
-		"<span class='notice'>[user] reinforces [target]'s ligaments!</span>",
-		"<span class='notice'>[user] finishes manipulating [target]'s ligaments.</span>")
+	display_results(user, target, "<span class='notice'>Ты укрепляешь связки [target]!</span>",
+		"<span class='notice'>[user] укрепляет связки [target]!</span>",
+		"<span class='notice'>[user] заканчивает перебирать связки [target].</span>")
 	new /datum/bioware/reinforced_ligaments(target)
 	return TRUE
 
 /datum/bioware/reinforced_ligaments
-	name = "Reinforced Ligaments"
+	name = "Укреплённые связки"
 	desc = ""
 	mod_type = BIOWARE_LIGAMENTS
 

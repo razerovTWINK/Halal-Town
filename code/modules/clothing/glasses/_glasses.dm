@@ -1,6 +1,6 @@
 //Glasses
 /obj/item/clothing/glasses
-	name = "glasses"
+	name = "очки"
 	icon = 'icons/obj/clothing/glasses.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
@@ -91,7 +91,7 @@
 	sharpness = IS_SHARP
 
 /obj/item/clothing/glasses/science
-	name = "science goggles"
+	name = "научные очки"
 	desc = ""
 	icon_state = "purple"
 	item_state = "glasses"
@@ -106,7 +106,7 @@
 		return 1
 
 /obj/item/clothing/glasses/night
-	name = "night vision goggles"
+	name = "очки ночного видения"
 	desc = ""
 	icon_state = "night"
 	item_state = "glasses"
@@ -120,13 +120,13 @@
 	return OXYLOSS
 
 /obj/item/clothing/glasses/eyepatch
-	name = "eyepatch"
+	name = "повязка на глаз"
 	desc = ""
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 
 /obj/item/clothing/glasses/monocle
-	name = "monocle"
+	name = "монокль"
 	desc = ""
 	icon_state = "monocle"
 	item_state = "headset" // lol
@@ -160,7 +160,7 @@
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 
 /obj/item/clothing/glasses/regular
-	name = "prescription glasses"
+	name = "очки по рецепту"
 	desc = ""
 	icon_state = "glasses"
 	item_state = "glasses"
@@ -173,7 +173,7 @@
 	item_state = "jamjar_glasses"
 
 /obj/item/clothing/glasses/regular/hipster
-	name = "prescription glasses"
+	name = "очки по рецепту"
 	desc = ""
 	icon_state = "hipster_glasses"
 	item_state = "hipster_glasses"
@@ -187,7 +187,7 @@
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses
-	name = "sunglasses"
+	name = "солнцезащитные очки"
 	desc = ""
 	icon_state = "sun"
 	item_state = "sunglasses"
@@ -198,7 +198,7 @@
 	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/glasses/sunglasses/reagent
-	name = "beer goggles"
+	name = "пивные очки"
 	desc = ""
 	clothing_flags = SCAN_REAGENTS
 
@@ -254,7 +254,7 @@
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/glasses/welding
-	name = "welding goggles"
+	name = "сварочные очки"
 	desc = ""
 	icon_state = "welding-g"
 	item_state = "welding-g"
@@ -271,7 +271,7 @@
 
 
 /obj/item/clothing/glasses/blindfold
-	name = "blindfold"
+	name = "повязка на глаза"
 	desc = ""
 	icon_state = "blindfold"
 	item_state = "blindfold"

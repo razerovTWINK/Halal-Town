@@ -41,7 +41,7 @@
 //  This is on a case-by-case basis, and you can even make a separate sprite for shot glasses if you want. //
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass
-	name = "shot glass"
+	name = "рюмка"
 	desc = ""
 	custom_price = 5
 	icon_state = "shotglass"
@@ -72,7 +72,7 @@
 
 	else
 		icon_state = "shotglass"
-		name = "shot glass"
+		name = "рюмка"
 		desc = ""
 		return
 
@@ -81,7 +81,7 @@
 	on_reagent_change(ADD_REAGENT)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda
-	name = "Soda Water"
+	name = "Газировка"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola
@@ -89,7 +89,7 @@
 	list_reagents = list(/datum/reagent/consumable/space_cola = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola
-	name = "Nuka Cola"
+	name = "Ядерная кола"
 	list_reagents = list(/datum/reagent/consumable/nuka_cola = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/attackby(obj/item/I, mob/user, params)
@@ -97,9 +97,9 @@
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, "<span class='notice'>[src] полон.</span>")
 			else
-				to_chat(user, "<span class='notice'>I break [E] in [src].</span>")
+				to_chat(user, "<span class='notice'>Я разбиваю [E] в [src].</span>")
 				reagents.add_reagent(/datum/reagent/consumable/eggyolk, 5)
 				qdel(E)
 			return
@@ -108,8 +108,8 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/attack(obj/target, mob/user)
 	if(user.used_intent.type == INTENT_HARM && ismob(target) && target.reagents && reagents.total_volume)
-		target.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-						"<span class='danger'>[user] splashes the contents of [src] onto you!</span>")
+		target.visible_message("<span class='danger'>[user] выплёскивает содержимое [src] на [target]!</span>", \
+						"<span class='danger'>[user] выплёскивает содержимое [src] на тебя!</span>")
 		log_combat(user, target, "splashed", src)
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
@@ -122,8 +122,8 @@
 		return
 
 	else if(reagents.total_volume && user.used_intent.type == INTENT_HARM)
-		user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-							"<span class='notice'>I splash the contents of [src] onto [target].</span>")
+		user.visible_message("<span class='danger'>[user] выплёскивает содержимое [src] на [target]!</span>", \
+							"<span class='notice'>Я выплёскиваю содержимое [src] на [target].</span>")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
 		return

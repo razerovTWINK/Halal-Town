@@ -2,7 +2,7 @@
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 
 /obj/item/gun
-	name = "gun"
+	name = "оружие"
 	desc = ""
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "detective"
@@ -114,7 +114,7 @@
 	if(G)
 		G.forceMove(loc)
 		QDEL_NULL(G.pin)
-		visible_message("<span class='notice'>[G] can now fit a new pin, but the old one was destroyed in the process.</span>", null, null, 3)
+		visible_message("<span class='notice'>В [G] теперь можно установить новый боёк, но старый был разрушен.</span>", null, null, 3)
 		qdel(src)
 
 /obj/item/gun/examine(mob/user)
@@ -153,7 +153,7 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*click*</span>")
+	to_chat(user, "<span class='danger'>*щелк*</span>")
 	playsound(src, dry_fire_sound, 30, TRUE)
 
 
@@ -176,8 +176,8 @@
 					pbtarget.throw_at(throw_target, pb_knockback, 2)
 
 			else*/
-			user.visible_message("<span class='danger'>[user] shoots [src]!</span>", \
-							"<span class='danger'>I shoot [src]!</span>", \
+			user.visible_message("<span class='danger'>[user] стреляет из [src]!</span>", \
+							"<span class='danger'>Ты стреляешь из [src]!</span>", \
 							COMBAT_MESSAGE_RANGE)
 
 /obj/item/gun/emp_act(severity)
@@ -226,14 +226,14 @@
 	if(clumsy_check)
 		if(istype(user))
 			if (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='danger'>I shoot myself in the foot with [src]!</span>")
+				to_chat(user, "<span class='danger'>Ты стреляешь себе в ногу из [src]!</span>")
 				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				process_fire(user, user, FALSE, params, shot_leg)
 				user.dropItemToGround(src, TRUE)
 				return
 	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
 	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
-		to_chat(user, "<span class='warning'>I need two hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>Нужно держать [src] двумя руками, чтобы выстрелить!</span>")
 		return
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -265,7 +265,7 @@
 			pin.auth_fail(user)
 			return FALSE
 	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
+		to_chat(user, "<span class='warning'>Спуск [src] заблокирован. В этом оружии не установлен боёк!</span>")
 	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
@@ -282,7 +282,7 @@
 	if(chambered && chambered.BB)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, "<span class='warning'>В патроннике [src] боевой патрон! Ты не хочешь никому навредить...</span>")
 				return
 		if(randomspread)
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
@@ -331,7 +331,7 @@
 		if(chambered)
 			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 				if(chambered.harmful) // Is the bullet chambered harmful?
-					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+					to_chat(user, "<span class='warning'>В патроннике [src] боевой патрон! Ты не хочешь никому навредить...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
 			before_firing(target,user)
@@ -391,7 +391,7 @@
 		if(!gun_light)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>I click [S] into place on [src].</span>")
+			to_chat(user, "<span class='notice'>Ты защелкиваешь [S] на [src].</span>")
 			if(S.on)
 				set_light(0)
 			gun_light = S
@@ -405,7 +405,7 @@
 			return ..()
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, "<span class='notice'>I attach [K] to [src]'s bayonet lug.</span>")
+		to_chat(user, "<span class='notice'>Ты прикрепляешь [K] к креплению штыка на [src].</span>")
 		bayonet = K
 		var/state = "bayonet"							//Generic state.
 		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
@@ -426,21 +426,21 @@
 		return
 	if((can_flashlight && gun_light) && (can_bayonet && bayonet)) //give them a choice instead of removing both
 		var/list/possible_items = list(gun_light, bayonet)
-		var/obj/item/item_to_remove = input(user, "Select an attachment to remove", "Attachment Removal") as null|obj in sortNames(possible_items)
+		var/obj/item/item_to_remove = input(user, "Выбери насадку для снятия", "Снятие насадки") as null|obj in sortNames(possible_items)
 		if(!item_to_remove || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 			return
 		return remove_gun_attachment(user, I, item_to_remove)
 
 	else if(gun_light && can_flashlight) //if it has a gun_light and can_flashlight is false, the flashlight is permanently attached.
-		return remove_gun_attachment(user, I, gun_light, "unscrewed")
+		return remove_gun_attachment(user, I, gun_light, "откручиваешь")
 
 	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
-		return remove_gun_attachment(user, I, bayonet, "unfix")
+		return remove_gun_attachment(user, I, bayonet, "снимаешь")
 
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
 		tool_item.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>I [removal_verb ? removal_verb : "remove"] [item_to_remove] from [src].</span>")
+	to_chat(user, "<span class='notice'>Ты [removal_verb ? removal_verb : "снимаешь"] [item_to_remove] с [src].</span>")
 	item_to_remove.forceMove(drop_location())
 
 	if(Adjacent(user) && !issilicon(user))
@@ -482,7 +482,7 @@
 
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
-	to_chat(user, "<span class='notice'>I toggle the gunlight [gun_light.on ? "on":"off"].</span>")
+	to_chat(user, "<span class='notice'>Ты [gun_light.on ? "включаешь" : "выключаешь"] подствольный фонарь.</span>")
 
 	playsound(user, 'sound/blank.ogg', 100, TRUE)
 	update_gunlight()
@@ -531,26 +531,26 @@
 		return
 
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='danger'>I stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message("<span class='warning'>[user] засовывает [src] себе в рот, готовясь нажать на спуск...</span>", \
+			"<span class='danger'>Ты засовываешь [src] себе в рот, готовясь нажать на спуск...</span>")
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='danger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message("<span class='warning'>[user] наставляет [src] на голову [target], готовясь нажать на спуск...</span>", \
+			"<span class='danger'>[user] наставляет [src] на твою голову, готовясь нажать на спуск...</span>")
 
 	semicd = TRUE
 
 	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message("<span class='notice'>[user] решает не стрелять.</span>")
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message("<span class='notice'>[user] решает пощадить [target].</span>", "<span class='notice'>[user] решает сохранить тебе жизнь!</span>")
 		semicd = FALSE
 		return
 
 	semicd = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='danger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
+	target.visible_message("<span class='warning'>[user] нажимает на спуск!</span>", "<span class='danger'>[(user == target) ? "Ты нажимаешь" : "[user] нажимает"] на спуск!</span>")
 
 	if(chambered && chambered.BB)
 		chambered.BB.damage *= 5
@@ -571,7 +571,7 @@
 /////////////
 
 /datum/action/toggle_scope_zoom
-	name = "Toggle Scope"
+	name = "Переключить прицел"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"

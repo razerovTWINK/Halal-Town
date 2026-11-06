@@ -1,5 +1,5 @@
 /obj/projectile/spellcard
-	name = "enchanted card"
+	name = "зачарованная карта"
 	desc = ""
 	icon_state = "spellcard"
 	damage_type = BURN

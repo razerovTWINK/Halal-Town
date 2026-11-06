@@ -1,23 +1,23 @@
 // 7.62x38mmR (Nagant Revolver)
 
 /obj/projectile/bullet/n762
-	name = "7.62x38mmR bullet"
+	name = "пуля 7.62x38ммR"
 	damage = 60
 
 // .50AE (Desert Eagle)
 
 /obj/projectile/bullet/a50AE
-	name = ".50AE bullet"
+	name = "пуля .50AE"
 	damage = 60
 
 // .38 (Detective's Gun)
 
 /obj/projectile/bullet/c38
-	name = ".38 bullet"
+	name = "пуля .38"
 	damage = 25
 
 /obj/projectile/bullet/c38/trac
-	name = ".38 TRAC bullet"
+	name = "пуля .38 TRAC"
 	damage = 10
 
 /obj/projectile/bullet/c38/trac/on_hit(atom/target, blocked = FALSE)
@@ -32,7 +32,7 @@
 		imp.implant(M)
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
-	name = ".38 Hot Shot bullet"
+	name = "пуля .38 Hot Shot"
 	damage = 20
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
@@ -43,7 +43,7 @@
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
-	name = ".38 Iceblox bullet"
+	name = "пуля .38 Iceblox"
 	damage = 20
 	var/temperature = 100
 
@@ -56,5 +56,5 @@
 // .357 (Syndie Revolver)
 
 /obj/projectile/bullet/a357
-	name = ".357 bullet"
+	name = "пуля .357"
 	damage = 60

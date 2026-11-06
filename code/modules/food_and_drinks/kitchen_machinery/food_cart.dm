@@ -71,7 +71,7 @@
 			to_chat(user, "<span class='notice'>[src] accepts the drinking glass, sterilizing it.</span>")
 	else if(istype(O, /obj/item/reagent_containers/food/snacks))
 		if(isFull())
-			to_chat(user, "<span class='warning'>[src] is at full capacity.</span>")
+			to_chat(user, "<span class='warning'>[src] заполнен до отказа.</span>")
 		else
 			var/obj/item/reagent_containers/food/snacks/S = O
 			if(!user.transferItemToLoc(S, src))
@@ -90,7 +90,7 @@
 		var/obj/item/storage/bag/tray/T = O
 		for(var/obj/item/reagent_containers/food/snacks/S in T.contents)
 			if(isFull())
-				to_chat(user, "<span class='warning'>[src] is at full capacity.</span>")
+				to_chat(user, "<span class='warning'>[src] заполнен до отказа.</span>")
 				break
 			else
 				if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
@@ -144,7 +144,7 @@
 
 	if(href_list["transfer"])
 		if(mixer.reagents.trans_id_to(src, href_list["transfer"], portion) == 0)
-			to_chat(usr, "<span class='warning'>[src] is full!</span>")
+			to_chat(usr, "<span class='warning'>[src] полон!</span>")
 
 	updateDialog()
 

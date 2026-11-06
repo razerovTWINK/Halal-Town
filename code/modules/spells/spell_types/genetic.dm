@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/genetic
-	name = "Genetic"
+	name = "Генетическое заклинание"
 	desc = ""
 
 	var/list/active_on = list()

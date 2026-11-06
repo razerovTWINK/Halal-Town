@@ -1,6 +1,6 @@
 
 /obj/item/reagent_containers/glass
-	name = "glass"
+	name = "стакан"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
 	volume = 50
@@ -45,12 +45,12 @@
 				return
 
 			if(!reagents || !reagents.total_volume)
-				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+				to_chat(user, "<span class='warning'>[src] пуст!</span>")
 				return
 			if(user.used_intent.type == INTENT_SPLASH)
 				var/R
-				M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
-								"<span class='danger'>[user] splashes the contents of [src] onto you!</span>")
+				M.visible_message("<span class='danger'>[user] выплёскивает содержимое [src] на [M]!</span>", \
+								"<span class='danger'>[user] выплёскивает содержимое [src] на тебя!</span>")
 				if(reagents)
 					for(var/datum/reagent/A in reagents.reagent_list)
 						R += "[A] ([num2text(A.volume)]),"
@@ -66,17 +66,17 @@
 				if(!canconsume(M, user))
 					return
 				if(M != user)
-					M.visible_message("<span class='danger'>[user] attempts to feed [M] something.</span>", \
-								"<span class='danger'>[user] attempts to feed you something.</span>")
+					M.visible_message("<span class='danger'>[user] пытается накормить [M] чем-то.</span>", \
+								"<span class='danger'>[user] пытается накормить тебя чем-то.</span>")
 					if(!do_mob(user, M))
 						return
 					if(!reagents || !reagents.total_volume)
 						return // The drink might be empty after the delay, such as by spam-feeding
-					M.visible_message("<span class='danger'>[user] feeds [M] something.</span>", \
-								"<span class='danger'>[user] feeds you something.</span>")
+					M.visible_message("<span class='danger'>[user] кормит [M] чем-то.</span>", \
+								"<span class='danger'>[user] кормит тебя чем-то.</span>")
 					log_combat(user, M, "fed", reagents.log_list())
 				else
-					to_chat(user, "<span class='notice'>I swallow a gulp of [src].</span>")
+					to_chat(user, "<span class='notice'>Я делаю глоток [src].</span>")
 				addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 				playsound(M.loc,pick(drinksounds), 100, TRUE)
 				return
@@ -93,11 +93,11 @@
 	if(target.is_refillable() && (user.used_intent.type == INTENT_POUR)) //Something like a glass. Player probably wants to transfer TO it.
 		testing("attackobj2")
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, "<span class='warning'>[src] пуст!</span>")
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, "<span class='warning'>[target] полон.</span>")
 			return
 		user.visible_message("<span class='notice'>[user] pours [src] into [target].</span>", \
 						"<span class='notice'>I pour [src] into [target].</span>")
@@ -119,11 +119,11 @@
 	if(target.is_drainable() && (user.used_intent.type == /datum/intent/fill)) //A dispenser. Transfer FROM it TO us.
 		testing("attackobj3")
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty!</span>")
+			to_chat(user, "<span class='warning'>[target] пуст!</span>")
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'>[src] полон.</span>")
 			return
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			if(fillsounds)
@@ -145,7 +145,7 @@
 
 	if(istype(target, /obj/machinery/crop))
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, "<span class='warning'>[src] пуст!</span>")
 			return
 		var/obj/machinery/crop/C = target
 		C.water = 100
@@ -155,8 +155,8 @@
 		return
 
 	if(reagents.total_volume && user.used_intent.type == INTENT_SPLASH)
-		user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-							"<span class='notice'>I splash the contents of [src] onto [target].</span>")
+		user.visible_message("<span class='danger'>[user] выплёскивает содержимое [src] на [target]!</span>", \
+							"<span class='notice'>Я выплёскиваю содержимое [src] на [target].</span>")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
 		return
@@ -173,8 +173,8 @@
 
 	if(isturf(target))
 		if(reagents.total_volume && user.used_intent.type == INTENT_SPLASH)
-			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-								"<span class='notice'>I splash the contents of [src] onto [target].</span>")
+			user.visible_message("<span class='danger'>[user] выплёскивает содержимое [src] на [target]!</span>", \
+								"<span class='notice'>Я выплёскиваю содержимое [src] на [target].</span>")
 			reagents.reaction(target, TOUCH)
 			reagents.clear_reagents()
 			return
@@ -183,15 +183,15 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>I heat [name] with [I]!</span>")
+		to_chat(user, "<span class='notice'>Я нагреваю [name] при помощи [I]!</span>")
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/egg)) //breaking eggs
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, "<span class='notice'>[src] полон.</span>")
 			else
-				to_chat(user, "<span class='notice'>I break [E] in [src].</span>")
+				to_chat(user, "<span class='notice'>Я разбиваю [E] в [src].</span>")
 				E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
 				qdel(E)
 			return
@@ -199,7 +199,7 @@
 
 
 /obj/item/reagent_containers/glass/beaker
-	name = "beaker"
+	name = "мензурка"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beaker"
@@ -215,13 +215,13 @@
 	return reagents.maximum_volume
 
 /obj/item/reagent_containers/glass/beaker/jar
-	name = "honey jar"
+	name = "банка мёда"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "vapour"
 
 /obj/item/reagent_containers/glass/beaker/large
-	name = "large beaker"
+	name = "большая мензурка"
 	desc = ""
 	icon_state = "beakerlarge"
 	custom_materials = list(/datum/material/glass=2500)
@@ -230,7 +230,7 @@
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100)
 
 /obj/item/reagent_containers/glass/beaker/plastic
-	name = "x-large beaker"
+	name = "очень большая мензурка"
 	desc = ""
 	icon_state = "beakerwhite"
 	custom_materials = list(/datum/material/glass=2500, /datum/material/plastic=3000)
@@ -303,7 +303,7 @@
 	list_reagents = list(/datum/reagent/medicine/C2/instabitaluri = 50)
 
 /obj/item/reagent_containers/glass/bucket
-	name = "bucket"
+	name = "ведро"
 	desc = ""
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "bucket"
@@ -331,7 +331,7 @@
 	)
 
 /obj/item/reagent_containers/glass/bucket/wooden
-	name = "bucket"
+	name = "ведро"
 	icon_state = "woodbucket"
 	item_state = "woodbucket"
 	icon = 'icons/roguetown/items/misc.dmi'
@@ -479,13 +479,13 @@
 
 /obj/item/reagent_containers/glass/waterbottle/attack(mob/M, mob/user, obj/target)
 	if(cap_on && reagents.total_volume && istype(M))
-		to_chat(user, "<span class='warning'>I must remove the cap before you can do that!</span>")
+		to_chat(user, "<span class='warning'>Сначала нужно снять крышку!</span>")
 		return
 	. = ..()
 
 /obj/item/reagent_containers/glass/waterbottle/afterattack(obj/target, mob/user, proximity)
 	if(cap_on && (target.is_refillable() || target.is_drainable() || (reagents.total_volume && user.used_intent.type == INTENT_HARM)))
-		to_chat(user, "<span class='warning'>I must remove the cap before you can do that!</span>")
+		to_chat(user, "<span class='warning'>Сначала нужно снять крышку!</span>")
 		return
 
 	else if(istype(target, /obj/item/reagent_containers/glass/waterbottle))
@@ -527,7 +527,7 @@
 
 // Admin spawn
 /obj/item/reagent_containers/glass/waterbottle/relic
-	name = "mysterious bottle"
+	name = "таинственная бутылка"
 	desc = ""
 	flip_chance = 100 // FLIPP
 
@@ -538,14 +538,14 @@
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
 
 /obj/item/pestle
-	name = "pestle"
+	name = "пестик"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "pestle"
 	force = 7
 
 /obj/item/reagent_containers/glass/mortar
-	name = "mortar"
+	name = "ступка"
 	desc = ""
 	icon_state = "mortar"
 	amount_per_transfer_from_this = 10
@@ -598,7 +598,7 @@
 	to_chat(user, "<span class='warning'>I can't grind this!</span>")
 
 /obj/item/reagent_containers/glass/saline
-	name = "saline canister"
+	name = "канистра с физраствором"
 	volume = 5000
 	list_reagents = list(/datum/reagent/medicine/salglu_solution = 5000)
 

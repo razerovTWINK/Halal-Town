@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/blood
-	name = "blood pack"
+	name = "пакет крови"
 	desc = ""
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
@@ -30,7 +30,7 @@
 		if(blood_type)
 			name = "blood pack - [blood_type]"
 		else
-			name = "blood pack"
+			name = "пакет крови"
 
 /obj/item/reagent_containers/blood/random
 	icon_state = "random_bloodpack"

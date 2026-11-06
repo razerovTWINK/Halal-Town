@@ -1,5 +1,5 @@
 /obj/item/organ
-	name = "organ"
+	name = "орган"
 	icon = 'icons/obj/surgery.dmi'
 	var/mob/living/carbon/owner = null
 	var/status = ORGAN_ORGANIC
@@ -87,12 +87,12 @@
 	. = ..()
 	if(organ_flags & ORGAN_FAILING)
 		if(status == ORGAN_ROBOTIC)
-			. += "<span class='warning'>[src] seems to be broken!</span>"
+			. += "<span class='warning'>[src], похоже, сломан!</span>"
 			return
-		. += "<span class='warning'>[src] has decayed for too long, and has turned a sickly color! It doesn't look like it will work anymore!</span>"
+		. += "<span class='warning'>[src] слишком долго разлагался и приобрёл нездоровый цвет! Похоже, он больше не пригоден к работе!</span>"
 		return
 	if(damage > high_threshold)
-		. += "<span class='warning'>[src] is starting to look discolored.</span>"
+		. += "<span class='warning'>[src] начинает менять цвет.</span>"
 
 
 /obj/item/organ/proc/prepare_eat(mob/living/carbon/human/user)
@@ -106,7 +106,7 @@
 	return S
 
 /obj/item/reagent_containers/food/snacks/organ
-	name = "appendix"
+	name = "орган"
 	icon_state = "appendix"
 	icon = 'icons/obj/surgery.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/berrypoison = 1)

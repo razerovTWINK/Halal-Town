@@ -2,22 +2,22 @@
 	completed = 1
 
 /datum/objective/sintouched/gluttony
-	explanation_text = "Everything is so delicious. Go eat everything."
+	explanation_text = "Всё такое вкусное. Иди и съешь всё, что найдёшь."
 
 /datum/objective/sintouched/greed
-	explanation_text = "You want MORE, more money, more wealth, more riches.  Go get it, but don't hurt people for it."
+	explanation_text = "Ты жаждешь БОЛЬШЕГО: больше денег, больше богатств. Добудь их, но никого ради этого не калечь."
 
 /datum/objective/sintouched/sloth
-	explanation_text = "You just get tired randomly.  Go take a nap at a time that would inconvenience other people."
+	explanation_text = "Усталость наваливается внезапно. Вздремни тогда, когда это доставит окружающим больше всего неудобств."
 
 /datum/objective/sintouched/wrath
-	explanation_text = "What have your coworkers ever done for you? Don't offer to help them in any matter, and refuse if asked."
+	explanation_text = "Да что эти люди вообще сделали для тебя? Никому не предлагай помощи и отказывай, если попросят."
 
 /datum/objective/sintouched/envy
-	explanation_text = "Why should you be stuck with your rank? Show everyone you can do other jobs too, and don't let anyone stop you, least of all because you have no training"
+	explanation_text = "Почему ты должен довольствоваться своим положением? Докажи всем, что способен на любую работу, и пусть никто тебя не останавливает."
 
 /datum/objective/sintouched/pride
-	explanation_text = "You are the BEST thing on the station.  Make sure everyone knows it."
+	explanation_text = "Ты — ЛУЧШЕЕ, что есть в этих краях. Сделай так, чтобы каждый об этом знал."
 
 /datum/objective/sintouched/acedia
-	explanation_text = "Angels, devils, good, evil... who cares?  Just ignore any hellish threats and do your job."
+	explanation_text = "Ангелы, демоны, добро, зло... какая разница? Просто игнорируй адские угрозы и делай своё дело."

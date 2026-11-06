@@ -39,9 +39,9 @@
 	if(!istype(I, /obj/item/reagent_containers/food/snacks/customizable) && istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, "<span class='warning'>Ингредиент слишком велик для [src]!</span>")
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
-			to_chat(user, "<span class='warning'>I can't add more ingredients to [src]!</span>")
+			to_chat(user, "<span class='warning'>Больше ингредиентов в [src] не влезет!</span>")
 		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(I, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
 			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
 		else
@@ -149,7 +149,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/customizable/burger
-	name = "burger"
+	name = "бургер"
 	desc = ""
 	ingredients_placement = INGREDIENTS_STACKPLUSTOP
 	icon = 'icons/obj/food/burgerbread.dmi'
@@ -158,7 +158,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/bread
-	name = "bread"
+	name = "хлеб"
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/custom
 	slices_num = 5
@@ -168,7 +168,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/cake
-	name = "cake"
+	name = "торт"
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/custom
 	slices_num = 5
@@ -178,7 +178,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/kebab
-	name = "kebab"
+	name = "кебаб"
 	desc = ""
 	ingredients_placement = INGREDIENTS_LINE
 	trash = /obj/item/stack/rods
@@ -187,7 +187,7 @@
 	icon_state = "rod"
 
 /obj/item/reagent_containers/food/snacks/customizable/pasta
-	name = "spaghetti"
+	name = "спагетти"
 	desc = ""
 	ingredients_placement = INGREDIENTS_SCATTER
 	ingMax = 6
@@ -197,7 +197,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/pie
-	name = "pie"
+	name = "пирог"
 	ingMax = 6
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "pie"
@@ -205,7 +205,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/pizza
-	name = "pizza"
+	name = "пицца"
 	desc = ""
 	ingredients_placement = INGREDIENTS_SCATTER
 	ingMax = 8
@@ -217,7 +217,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/salad
-	name = "salad"
+	name = "салат"
 	desc = ""
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 6
@@ -226,7 +226,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/sandwich
-	name = "toast"
+	name = "тост"
 	desc = ""
 	ingredients_placement = INGREDIENTS_STACK
 	icon = 'icons/obj/food/burgerbread.dmi'
@@ -245,7 +245,7 @@
 			return
 		to_chat(user, "<span class='notice'>I finish the [src.name].</span>")
 		finished = 1
-		name = "[customname] sandwich"
+		name = "[customname] сэндвич"
 		BS.reagents.trans_to(src, BS.reagents.total_volume, transfered_by = user)
 		ingMax = ingredients.len //can't add more ingredients after that
 		var/mutable_appearance/TOP = mutable_appearance(icon, "[BS.icon_state]")
@@ -263,7 +263,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/customizable/soup
-	name = "soup"
+	name = "суп"
 	desc = ""
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 8
@@ -281,7 +281,7 @@
 // Bowl ////////////////////////////////////////////////
 
 /obj/item/reagent_containers/glass/bowl
-	name = "bowl"
+	name = "миска"
 	desc = ""
 	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "bowl"
@@ -293,9 +293,9 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, "<span class='warning'>Ингредиент слишком велик для [src]!</span>")
 		else if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>I can't add more ingredients to [src]!</span>")
+			to_chat(user, "<span class='warning'>Больше ингредиентов в [src] не влезет!</span>")
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup(get_turf(src))

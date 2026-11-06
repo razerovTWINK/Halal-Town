@@ -1,5 +1,5 @@
 /obj/item/gun/energy/laser
-	name = "laser gun"
+	name = "лазерный пистолет"
 	desc = ""
 	icon_state = "laser"
 	item_state = "laser"
@@ -10,27 +10,27 @@
 	shaded_charge = 1
 
 /obj/item/gun/energy/laser/practice
-	name = "practice laser gun"
+	name = "тренировочный лазерный пистолет"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
 	clumsy_check = 0
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro
-	name ="retro laser gun"
+	name = "ретро-лазерный пистолет"
 	icon_state = "retro"
 	desc = ""
 	ammo_x_offset = 3
 
 /obj/item/gun/energy/laser/retro/old
-	name ="laser gun"
+	name = "старый лазерный пистолет"
 	icon_state = "retro"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/old)
 	ammo_x_offset = 3
 
 /obj/item/gun/energy/laser/captain
-	name = "antique laser gun"
+	name = "капитанский лазерный пистолет"
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	desc = ""
@@ -40,7 +40,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/gun/energy/laser/captain/scattershot
-	name = "scatter shot laser rifle"
+	name = "дробовой лазерный карабин"
 	icon_state = "lasercannon"
 	item_state = "laser"
 	desc = ""
@@ -56,12 +56,12 @@
 	return
 
 /obj/item/gun/energy/laser/scatter
-	name = "scatter laser gun"
+	name = "дробовой лазерный пистолет"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
 
 /obj/item/gun/energy/laser/scatter/shotty
-	name = "energy shotgun"
+	name = "энергетический дробовик"
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "cshotgun"
 	item_state = "shotgun"
@@ -73,7 +73,7 @@
 ///Laser Cannon
 
 /obj/item/gun/energy/lasercannon
-	name = "accelerator laser cannon"
+	name = "ускорительная лазерная пушка"
 	desc = ""
 	icon_state = "lasercannon"
 	item_state = "laser"
@@ -91,7 +91,7 @@
 	fire_sound = 'sound/blank.ogg'
 
 /obj/projectile/beam/laser/accelerator
-	name = "accelerator laser"
+	name = "ускорительный лазер"
 	icon_state = "scatterlaser"
 	range = 255
 	damage = 6
@@ -102,7 +102,7 @@
 	transform *= 1 + ((damage/7) * 0.2)//20% larger per tile
 
 /obj/item/gun/energy/xray
-	name = "\improper X-ray laser gun"
+	name = "\improper рентгеновский лазерный карабин"
 	desc = ""
 	icon_state = "xray"
 	item_state = null
@@ -113,7 +113,7 @@
 ////////Laser Tag////////////////////
 
 /obj/item/gun/energy/laser/bluetag
-	name = "laser tag gun"
+	name = "лазертаг-карабин (синий)"
 	icon_state = "bluetag"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag)
@@ -127,7 +127,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag/hitscan)
 
 /obj/item/gun/energy/laser/redtag
-	name = "laser tag gun"
+	name = "лазертаг-карабин (красный)"
 	icon_state = "redtag"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag)

@@ -4,7 +4,7 @@
 #define COOLDOWN_NONE 100
 
 /obj/item/organ/vocal_cords //organs that are activated through speech with the :x/MODE_KEY_VOCALCORDS channel
-	name = "vocal cords"
+	name = "голосовые связки"
 	icon_state = "appendix"
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_VOICE
@@ -23,14 +23,14 @@
 	owner.say(message, spans = spans, sanitize = FALSE)
 
 /obj/item/organ/adamantine_resonator
-	name = "adamantine resonator"
+	name = "адамантиновый резонатор"
 	desc = ""
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_ADAMANTINE_RESONATOR
 	icon_state = "adamantine_resonator"
 
 /obj/item/organ/vocal_cords/adamantine
-	name = "adamantine vocal cords"
+	name = "адамантиновые голосовые связки"
 	desc = ""
 	actions_types = list(/datum/action/item_action/organ_action/use/adamantine_vocal_cords)
 	icon_state = "adamantine_cords"
@@ -38,13 +38,13 @@
 /datum/action/item_action/organ_action/use/adamantine_vocal_cords/Trigger()
 	if(!IsAvailable())
 		return
-	var/message = input(owner, "Resonate a message to all nearby golems.", "Resonate")
+	var/message = input(owner, "Пошли сообщение ближайшим големам.", "Резонанс")
 	if(QDELETED(src) || QDELETED(owner) || !message)
 		return
 	owner.say(".x[message]")
 
 /obj/item/organ/vocal_cords/adamantine/handle_speech(message)
-	var/msg = "<span class='resonate'><span class='name'>[owner.real_name]</span> <span class='message'>resonates, \"[message]\"</span></span>"
+	var/msg = "<span class='resonate'><span class='name'>[owner.real_name]</span> <span class='message'>резонирует, \"[message]\"</span></span>"
 	for(var/m in GLOB.player_list)
 		if(iscarbon(m))
 			var/mob/living/carbon/C = m
@@ -56,7 +56,7 @@
 
 //Colossus drop, forces the listeners to obey certain commands
 /obj/item/organ/vocal_cords/colossus
-	name = "divine vocal cords"
+	name = "божественные голосовые связки"
 	desc = ""
 	icon_state = "voice_of_god"
 	actions_types = list(/datum/action/item_action/organ_action/colossus)
@@ -66,7 +66,7 @@
 	spans = list("colossus","yell")
 
 /datum/action/item_action/organ_action/colossus
-	name = "Voice of God"
+	name = "Глас Божий"
 	var/obj/item/organ/vocal_cords/colossus/cords = null
 
 /datum/action/item_action/organ_action/colossus/New()
@@ -89,9 +89,9 @@
 	. = ..()
 	if(!IsAvailable())
 		if(world.time < cords.next_command)
-			to_chat(owner, "<span class='notice'>I must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again.</span>")
+			to_chat(owner, "<span class='notice'>Нужно подождать [DisplayTimeText(cords.next_command - world.time)] перед следующим словом.</span>")
 		return
-	var/command = input(owner, "Speak with the Voice of God", "Command")
+	var/command = input(owner, "Воззови Гласом Божьим", "Приказ")
 	if(QDELETED(src) || QDELETED(owner))
 		return
 	if(!command)
@@ -100,12 +100,12 @@
 
 /obj/item/organ/vocal_cords/colossus/can_speak_with()
 	if(world.time < next_command)
-		to_chat(owner, "<span class='notice'>I must wait [DisplayTimeText(next_command - world.time)] before Speaking again.</span>")
+		to_chat(owner, "<span class='notice'>Нужно подождать [DisplayTimeText(next_command - world.time)] перед следующим словом.</span>")
 		return FALSE
 	if(!owner)
 		return FALSE
 	if(!owner.can_speak())
-		to_chat(owner, "<span class='warning'>I are unable to speak!</span>")
+		to_chat(owner, "<span class='warning'>Ты не можешь говорить!</span>")
 		return FALSE
 	return TRUE
 

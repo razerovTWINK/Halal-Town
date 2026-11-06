@@ -1,7 +1,7 @@
 // Note: tails only work in humans. They use human-specific parameters and rely on human code for displaying.
 
 /obj/item/organ/tail
-	name = "tail"
+	name = "хвост"
 	desc = ""
 	icon_state = "severedtail"
 	zone = BODY_ZONE_PRECISE_GROIN
@@ -14,7 +14,7 @@
 		H.dna.species.stop_wagging_tail(H)
 
 /obj/item/organ/tail/cat
-	name = "cat tail"
+	name = "кошачий хвост"
 	desc = ""
 	tail_type = "Cat"
 
@@ -35,7 +35,7 @@
 		H.update_body()
 
 /obj/item/organ/tail/lizard
-	name = "lizard tail"
+	name = "хвост ящера"
 	desc = ""
 	color = "#116611"
 	tail_type = "Smooth"

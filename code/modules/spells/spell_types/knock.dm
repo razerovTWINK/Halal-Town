@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/aoe_turf/knock
-	name = "Knock"
+	name = "Отпирание"
 	desc = ""
 
 	school = "transmutation"

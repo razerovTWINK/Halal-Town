@@ -2,7 +2,7 @@
 //Body modifications applied through surgery. They generally affect physiology.
 
 /datum/bioware
-	var/name = "Generic Bioware"
+	var/name = "Обычное биоулучшение"
 	var/mob/living/carbon/human/owner
 	var/desc = ""
 	var/active = FALSE

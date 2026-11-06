@@ -1,5 +1,5 @@
 /datum/surgery/advanced/lobotomy
-	name = "Lobotomy"
+	name = "Лоботомия"
 	desc = ""
 	steps = list(
 	/datum/surgery_step/incise,
@@ -22,7 +22,7 @@
 	return TRUE
 
 /datum/surgery_step/lobotomize
-	name = "perform lobotomy"
+	name = "провести лоботомию"
 	implements = list(TOOL_SCALPEL = 85, /obj/item/melee/transforming/energy/sword = 55, /obj/item/kitchen/knife = 35,
 		/obj/item/shard = 25, /obj/item = 20)
 	time = 100
@@ -33,14 +33,14 @@
 	return TRUE
 
 /datum/surgery_step/lobotomize/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I begin to perform a lobotomy on [target]'s brain...</span>",
-		"<span class='notice'>[user] begins to perform a lobotomy on [target]'s brain.</span>",
-		"<span class='notice'>[user] begins to perform surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь проводить лоботомию мозга [target]...</span>",
+		"<span class='notice'>[user] начинает проводить лоботомию мозга [target].</span>",
+		"<span class='notice'>[user] начинает оперировать мозг [target].</span>")
 
 /datum/surgery_step/lobotomize/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I succeed in lobotomizing [target].</span>",
-			"<span class='notice'>[user] successfully lobotomizes [target]!</span>",
-			"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Тебе удаётся провести лоботомию [target].</span>",
+			"<span class='notice'>[user] успешно проводит лоботомию [target]!</span>",
+			"<span class='notice'>[user] завершает операцию на мозгу [target].</span>")
 	target.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
@@ -56,9 +56,9 @@
 /datum/surgery_step/lobotomize/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(B)
-		display_results(user, target, "<span class='warning'>I remove the wrong part, causing more damage!</span>",
-			"<span class='notice'>[user] successfully lobotomizes [target]!</span>",
-			"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+		display_results(user, target, "<span class='warning'>Ты удаляешь не ту часть, нанося ещё больше повреждений!</span>",
+			"<span class='notice'>[user] успешно проводит лоботомию [target]!</span>",
+			"<span class='notice'>[user] завершает операцию на мозгу [target].</span>")
 		B.applyOrganDamage(80)
 		switch(rand(1,3))
 			if(1)
@@ -68,5 +68,5 @@
 			if(3)
 				target.gain_trauma_type(BRAIN_TRAUMA_SPECIAL, TRAUMA_RESILIENCE_MAGIC)
 	else
-		user.visible_message("<span class='warning'>[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.</span>", "<span class='warning'>I suddenly notice that the brain you were working on is not there anymore.</span>")
+		user.visible_message("<span class='warning'>[user] вдруг замечает, что мозг, над которым шла операция, куда-то пропал.</span>", "<span class='warning'>Ты вдруг замечаешь, что оперируемый мозг куда-то пропал.</span>")
 	return FALSE

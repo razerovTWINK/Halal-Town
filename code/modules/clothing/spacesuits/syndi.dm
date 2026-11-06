@@ -23,7 +23,7 @@
 	item_state = "syndicate-helm-green"
 
 /obj/item/clothing/suit/space/syndicate/green
-	name = "green space suit"
+	name = "зелёный скафандр"
 	icon_state = "syndicate-green"
 	item_state = "syndicate-green"
 
@@ -65,7 +65,7 @@
 
 //Black syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black"
 	item_state = "syndicate-helm-black"
 
@@ -77,7 +77,7 @@
 
 //Black-green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/green
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-green"
 	item_state = "syndicate-helm-black-green"
 
@@ -89,7 +89,7 @@
 
 //Black-blue syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/blue
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-blue"
 	item_state = "syndicate-helm-black-blue"
 
@@ -101,19 +101,19 @@
 
 //Black medical syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/med
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-med"
 	item_state = "syndicate-helm-black"
 
 /obj/item/clothing/suit/space/syndicate/black/med
-	name = "green space suit"
+	name = "зелёный скафандр"
 	icon_state = "syndicate-black-med"
 	item_state = "syndicate-black"
 
 
 //Black-orange syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/orange
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-orange"
 	item_state = "syndicate-helm-black"
 
@@ -125,7 +125,7 @@
 
 //Black-red syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/red
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-red"
 	item_state = "syndicate-helm-black-red"
 
@@ -152,7 +152,7 @@
 
 //Black with yellow/red engineering syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/engie
-	name = "black space helmet"
+	name = "чёрный космический шлем"
 	icon_state = "syndicate-helm-black-engie"
 	item_state = "syndicate-helm-black"
 

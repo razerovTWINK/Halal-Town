@@ -39,7 +39,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(HAS_TRAIT(H.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM) && !HAS_TRAIT(H, TRAIT_AGEUSIA))
-				to_chat(H,"<span class='notice'>I love this taste!</span>")
+				to_chat(H,"<span class='notice'>Обожаю этот вкус!</span>")
 				H.adjust_disgust(-5 + -2.5 * fraction)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 				last_check_time = world.time
@@ -146,7 +146,7 @@
 //////////////////////JELLY DONUTS/////////////////////////
 
 /obj/item/reagent_containers/food/snacks/donut/jelly
-	name = "jelly donut"
+	name = "пончик с желе"
 	desc = ""
 	icon_state = "jelly"
 	decorated_icon = "jelly_homer"
@@ -236,7 +236,7 @@
 //////////////////////////SLIME DONUTS/////////////////////////
 
 /obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly
-	name = "jelly donut"
+	name = "пончик с желе"
 	desc = ""
 	icon_state = "jelly"
 	extra_reagent = /datum/reagent/toxin/slimejelly

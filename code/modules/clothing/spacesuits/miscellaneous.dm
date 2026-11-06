@@ -129,7 +129,7 @@ Contains:
 
 	//Space pirate outfit
 /obj/item/clothing/head/helmet/space/pirate
-	name = "pirate hat"
+	name = "пиратская шляпа"
 	desc = ""
 	icon_state = "pirate"
 	item_state = "pirate"
@@ -140,7 +140,7 @@ Contains:
 	flags_cover = HEADCOVERSEYES
 
 /obj/item/clothing/head/helmet/space/pirate/bandana
-	name = "pirate bandana"
+	name = "пиратская бандана"
 	icon_state = "bandana"
 	item_state = "bandana"
 

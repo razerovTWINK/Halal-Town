@@ -36,7 +36,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/item/clothing/under/color/black
-	name = "black jumpsuit"
+	name = "чёрный комбинезон"
 	icon_state = "black"
 	item_state = "bl_suit"
 	resistance_flags = NONE

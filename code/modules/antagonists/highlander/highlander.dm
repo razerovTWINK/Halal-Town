@@ -20,7 +20,7 @@
 	objectives += steal_objective
 
 	var/datum/objective/hijack/hijack_objective = new
-	hijack_objective.explanation_text = "Escape on the shuttle alone. Ensure that nobody else makes it out."
+	hijack_objective.explanation_text = "Сбежать в одиночку. Никто другой не должен спастись."
 	hijack_objective.owner = owner
 	objectives += hijack_objective
 
@@ -32,8 +32,8 @@
 	. = ..()
 
 /datum/antagonist/highlander/greet()
-	to_chat(owner, "<span class='boldannounce'>My [sword.name] cries out for blood. Claim the lives of others, and my own will be restored!\n\
-	Activate it in my hand, and it will lead to the nearest target. Attack the nuclear authentication disk with it, and you will store it.</span>")
+	to_chat(owner, "<span class='boldannounce'>Твой [sword.name] взывает к крови. Забирай чужие жизни, чтобы исцелять себя!\n\
+	Активируй его в руке, и он укажет путь к ближайшей цели. Ударь им по диску ядерной аутентификации, чтобы забрать его.</span>")
 
 	owner.announce_objectives()
 

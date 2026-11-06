@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/mind_transfer
-	name = "Mind Transfer"
+	name = "Перенос разума"
 	desc = ""
 
 	school = "transmutation"
@@ -22,48 +22,46 @@ Also, you never added distance checking after target is selected. I've went ahea
 /obj/effect/proc_holder/spell/targeted/mind_transfer/cast(list/targets, mob/living/user = usr, distanceoverride, silent = FALSE)
 	if(!targets.len)
 		if(!silent)
-			to_chat(user, "<span class='warning'>No mind found!</span>")
+			to_chat(user, "<span class='warning'>Разум не найден!</span>")
 		return
 
 	if(targets.len > 1)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Too many minds! You're not a hive damnit!</span>")
+			to_chat(user, "<span class='warning'>Слишком много разумов! Ты же не улей, чёрт побери!</span>")
 		return
 
 	var/mob/living/target = targets[1]
 
-	var/t_He = target.p_they(TRUE)
-	var/t_is = target.p_are()
 
 	if(!(target in oview(range)) && !distanceoverride)//If they are not in overview after selection. Do note that !() is necessary for in to work because ! takes precedence over it.
 		if(!silent)
-			to_chat(user, "<span class='warning'>[t_He] [t_is] too far away!</span>")
+			to_chat(user, "<span class='warning'>[target] слишком далеко!</span>")
 		return
 
 	if(ismegafauna(target))
 		if(!silent)
-			to_chat(user, "<span class='warning'>This creature is too powerful to control!</span>")
+			to_chat(user, "<span class='warning'>Это существо слишком могущественно, чтобы подчинить его!</span>")
 		return
 
 	if(target.stat == DEAD)
 		if(!silent)
-			to_chat(user, "<span class='warning'>I don't particularly want to be dead!</span>")
+			to_chat(user, "<span class='warning'>Мне совсем не хочется быть мертвецом!</span>")
 		return
 
 	if(!target.key || !target.mind)
 		if(!silent)
-			to_chat(user, "<span class='warning'>[t_He] appear[target.p_s()] to be catatonic! Not even magic can affect [target.p_their()] vacant mind.</span>")
+			to_chat(user, "<span class='warning'>[target] в кататонии! Даже магия не способна затронуть пустой разум.</span>")
 		return
 
 	if(user.suiciding)
 		if(!silent)
-			to_chat(user, "<span class='warning'>You're killing yourself! You can't concentrate enough to do this!</span>")
+			to_chat(user, "<span class='warning'>Ты совершаешь самоубийство! Невозможно сосредоточиться!</span>")
 		return
 
 	var/datum/mind/TM = target.mind
 	if((target.anti_magic_check(TRUE, FALSE) || TM.has_antag_datum(/datum/antagonist/wizard) || TM.has_antag_datum(/datum/antagonist/cult) || TM.has_antag_datum(/datum/antagonist/changeling) || TM.has_antag_datum(/datum/antagonist/rev)) || cmptext(copytext(target.key,1,2),"@"))
 		if(!silent)
-			to_chat(user, "<span class='warning'>[target.p_their(TRUE)] mind is resisting your spell!</span>")
+			to_chat(user, "<span class='warning'>Разум цели сопротивляется твоему заклинанию!</span>")
 		return
 
 	if(istype(target, /mob/living/simple_animal/hostile/guardian))
@@ -71,7 +69,7 @@ Also, you never added distance checking after target is selected. I've went ahea
 		if(stand.summoner)
 			if(stand.summoner == user)
 				if(!silent)
-					to_chat(user, "<span class='warning'>Swapping minds with your own guardian would just put you back into your own head!</span>")
+					to_chat(user, "<span class='warning'>Обмен разумом с собственным стражем лишь вернёт тебя в твоё же тело!</span>")
 				return
 			else
 				target = stand.summoner

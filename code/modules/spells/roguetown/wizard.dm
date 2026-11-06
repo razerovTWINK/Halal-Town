@@ -1,6 +1,6 @@
 
 /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt
-	name = "Bolt of Lightning"
+	name = "Молния"
 	desc = ""
 	clothes_req = FALSE
 	overlay_state = "lightning"
@@ -19,7 +19,7 @@
 	associated_skill = /datum/skill/magic/arcane
 
 /obj/projectile/magic/lightning
-	name = "bolt of lightning"
+	name = "молния"
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = null
 	impact_type = null
@@ -39,7 +39,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			visible_message("<span class='warning'>[src] рассеивается при контакте с [target]!</span>")
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
@@ -49,7 +49,7 @@
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning
-	name = "Blood Bolt"
+	name = "Кровавая стрела"
 	desc = ""
 	clothes_req = FALSE
 	overlay_state = "bloodlightning"
@@ -68,7 +68,7 @@
 	associated_skill = /datum/skill/magic/blood
 
 /obj/projectile/magic/bloodlightning
-	name = "blood bolt"
+	name = "кровавая стрела"
 	tracer_type = /obj/effect/projectile/tracer/blood
 	muzzle_type = null
 	impact_type = null
@@ -87,7 +87,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			visible_message("<span class='warning'>[src] рассеивается при контакте с [target]!</span>")
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
@@ -97,7 +97,7 @@
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal
-	name = "Blood Steal"
+	name = "Похищение крови"
 	desc = ""
 	clothes_req = FALSE
 	overlay_state = "bloodsteal"
@@ -116,7 +116,7 @@
 	associated_skill = /datum/skill/magic/blood
 
 /obj/projectile/magic/bloodsteal
-	name = "blood steal"
+	name = "похищение крови"
 	tracer_type = /obj/effect/projectile/tracer/bloodsteal
 	muzzle_type = null
 	impact_type = null
@@ -136,7 +136,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			visible_message("<span class='warning'>[src] рассеивается при контакте с [target]!</span>")
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
@@ -145,14 +145,14 @@
 			var/datum/antagonist/vampirelord/VDrinker = sender.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			H.blood_volume = max(H.blood_volume-45, 0)
 			H.handle_blood()
-			H.visible_message("<span class='danger'>[target] has their blood ripped from their body!!</span>", \
-					"<span class='userdanger'>My blood erupts from my body!", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, target)
+			H.visible_message("<span class='danger'>Из тела [target] вырывается кровь!</span>", \
+					"<span class='userdanger'>Моя кровь вырывается из тела!", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, target)
 			new /obj/effect/decal/cleanable/blood/puddle(H.loc)
 			VDrinker.handle_vitae(400)						
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/fireball
-	name = "Fireball"
+	name = "Огненный шар"
 	desc = ""
 	clothes_req = FALSE
 	range = 8
@@ -176,7 +176,7 @@
 	return ..()
 
 /obj/projectile/magic/aoe/fireball/rogue
-	name = "fireball"
+	name = "огненный шар"
 	exp_heavy = 0
 	exp_light = 0
 	exp_flash = 0
@@ -193,7 +193,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			visible_message("<span class='warning'>[src] рассеивается при контакте с [target]!</span>")
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK
@@ -201,7 +201,7 @@
 
 
 /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
-	name = "Greater Fireball"
+	name = "Великий огненный шар"
 	desc = ""
 	clothes_req = FALSE
 	range = 8
@@ -219,7 +219,7 @@
 	chargedloop = /datum/looping_sound/invokegen
 
 /obj/projectile/magic/aoe/fireball/rogue/great
-	name = "fireball"
+	name = "огненный шар"
 	exp_heavy = 0
 	exp_light = 1
 	exp_flash = 2
@@ -227,7 +227,7 @@
 	flag = "magic"
 
 /obj/effect/proc_holder/spell/invoked/projectile/fetch
-	name = "Fetch"
+	name = "Притягивание"
 	desc = ""
 	clothes_req = FALSE
 	range = 15
@@ -248,7 +248,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[target] repells the fetch!</span>")
+			visible_message("<span class='warning'>[target] отражает притягивание!</span>")
 			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
 			qdel(src)
 			return BULLET_ACT_BLOCK

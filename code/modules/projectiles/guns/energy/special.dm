@@ -1,5 +1,5 @@
 /obj/item/gun/energy/ionrifle
-	name = "ion rifle"
+	name = "ионная винтовка"
 	desc = ""
 	icon_state = "ionrifle"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -16,7 +16,7 @@
 	return
 
 /obj/item/gun/energy/ionrifle/carbine
-	name = "ion carbine"
+	name = "ионный карабин"
 	desc = ""
 	icon_state = "ioncarbine"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -27,7 +27,7 @@
 	flight_y_offset = 11
 
 /obj/item/gun/energy/decloner
-	name = "biological demolecularisor"
+	name = "биологический демолекуляризатор"
 	desc = ""
 	icon_state = "decloner"
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
@@ -45,7 +45,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/declone/weak)
 
 /obj/item/gun/energy/floragun
-	name = "floral somatoray"
+	name = "ботанический соматолуч"
 	desc = ""
 	icon_state = "flora"
 	item_state = "gun"
@@ -55,7 +55,7 @@
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun
-	name = "meteor gun"
+	name = "метеоромет"
 	desc = ""
 	icon_state = "meteor_gun"
 	item_state = "c20r"
@@ -66,7 +66,7 @@
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
-	name = "meteor pen"
+	name = "метеорная ручка"
 	desc = ""
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen"
@@ -76,7 +76,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/gun/energy/mindflayer
-	name = "\improper Mind Flayer"
+	name = "\improper свежеватель разума"
 	desc = ""
 	icon_state = "xray"
 	item_state = null
@@ -84,7 +84,7 @@
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow
-	name = "mini energy crossbow"
+	name = "миниатюрный энергетический арбалет"
 	desc = ""
 	icon_state = "crossbow"
 	item_state = "crossbow"
@@ -101,14 +101,14 @@
 	max_mod_capacity = 0
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
-	name = "candy corn crossbow"
+	name = "леденцовый арбалет"
 	desc = ""
 	icon_state = "crossbow_halloween"
 	item_state = "crossbow"
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/halloween)
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large
-	name = "energy crossbow"
+	name = "энергетический арбалет"
 	desc = ""
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -119,7 +119,7 @@
 
 
 /obj/item/gun/energy/plasmacutter
-	name = "plasma cutter"
+	name = "плазменный резак"
 	desc = ""
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
@@ -145,7 +145,7 @@
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += "<span class='notice'>[src] заряжен на [round(cell.percent())]%.</span>"
 
 /obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
 	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
@@ -155,11 +155,11 @@
 		charge_multiplier = 1
 	if(charge_multiplier)
 		if(cell.charge == cell.maxcharge)
-			to_chat(user, "<span class='notice'>I try to insert [I] into [src], but it's fully charged.</span>") //my cell is round and full
+			to_chat(user, "<span class='notice'>Ты пытаешься вставить [I] в [src], но заряд уже полон.</span>") //my cell is round and full
 			return
 		I.use(1)
 		cell.give(500*charge_multiplier)
-		to_chat(user, "<span class='notice'>I insert [I] in [src], recharging it.</span>")
+		to_chat(user, "<span class='notice'>Ты вставляешь [I] в [src], заряжая его.</span>")
 	else
 		..()
 
@@ -174,13 +174,13 @@
 // Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
 /obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, amount)
 	if(QDELETED(cell))
-		to_chat(user, "<span class='warning'>[src] does not have a cell, and cannot be used!</span>")
+		to_chat(user, "<span class='warning'>В [src] нет батареи, использовать невозможно!</span>")
 		return FALSE
 	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_weld = 25
 	// Then it'll drain 125 at first and 25 periodically, but fail if charge dips below 125 even though it still can finish action
 	// Alternately it'll need to drain amount*charge_weld every period, which is either obscene or makes it free for other uses
 	if(amount ? cell.charge < charge_weld * amount : cell.charge < charge_weld)
-		to_chat(user, "<span class='warning'>I need more charge to complete this task!</span>")
+		to_chat(user, "<span class='warning'>Недостаточно заряда для этого действия!</span>")
 		return FALSE
 
 	return TRUE
@@ -210,14 +210,14 @@
 	return
 
 /obj/item/gun/energy/plasmacutter/adv
-	name = "advanced plasma cutter"
+	name = "улучшенный плазменный резак"
 	icon_state = "adv_plasmacutter"
 	item_state = "adv_plasmacutter"
 	force = 15
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 
 /obj/item/gun/energy/wormhole_projector
-	name = "bluespace wormhole projector"
+	name = "проектор червоточин блюспейса"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
 	item_state = null
@@ -286,7 +286,7 @@
 /* 3d printer 'pseudo guns' for borgs */
 
 /obj/item/gun/energy/printer
-	name = "cyborg lmg"
+	name = "киборг-пулемет"
 	desc = ""
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -302,7 +302,7 @@
 	return
 
 /obj/item/gun/energy/temperature
-	name = "temperature gun"
+	name = "термопушка"
 	icon_state = "freezegun"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
@@ -310,12 +310,12 @@
 	pin = null
 
 /obj/item/gun/energy/temperature/security
-	name = "security temperature gun"
+	name = "термопушка службы безопасности"
 	desc = ""
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/laser/instakill
-	name = "instakill rifle"
+	name = "аннигиляторная винтовка"
 	icon_state = "instagib"
 	item_state = "instagib"
 	desc = ""
@@ -341,7 +341,7 @@
 	return
 
 /obj/item/gun/energy/gravity_gun
-	name = "one-point bluespace-gravitational manipulator"
+	name = "одноточечный блюспейс-гравитационный манипулятор"
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/gravity/repulse, /obj/item/ammo_casing/energy/gravity/attract, /obj/item/ammo_casing/energy/gravity/chaos)
 	item_state = "gravity_gun"

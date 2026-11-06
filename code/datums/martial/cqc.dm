@@ -46,7 +46,7 @@
 		return FALSE
 	if(D.mobility_flags & MOBILITY_STAND)
 		D.visible_message("<span class='danger'>[A] slams [D] into the ground!</span>", \
-						"<span class='danger'>You're slammed into the ground by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+						"<span class='danger'>You're slammed into the ground by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 		to_chat(A, "<span class='danger'>I slam [D] into the ground!</span>")
 		playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 		D.apply_damage(10, BRUTE)
@@ -59,7 +59,7 @@
 		return FALSE
 	if(!D.stat || !D.IsParalyzed())
 		D.visible_message("<span class='danger'>[A] kicks [D] back!</span>", \
-						"<span class='danger'>You're kicked back by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+						"<span class='danger'>You're kicked back by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 		to_chat(A, "<span class='danger'>I kick [D] back!</span>")
 		playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 		var/atom/throw_target = get_edge_target_turf(D, A.dir)
@@ -69,7 +69,7 @@
 	if(D.IsParalyzed() && !D.stat)
 		log_combat(A, D, "knocked out (Head kick)(CQC)")
 		D.visible_message("<span class='danger'>[A] kicks [D]'s head, knocking [D.p_them()] out!</span>", \
-						"<span class='danger'>You're knocked unconscious by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+						"<span class='danger'>You're knocked unconscious by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 		to_chat(A, "<span class='danger'>I kick [D]'s head, knocking [D.p_them()] out!</span>")
 		playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 		D.SetSleeping(300)
@@ -81,7 +81,7 @@
 		return FALSE
 	log_combat(A, D, "pressured (CQC)")
 	D.visible_message("<span class='danger'>[A] punches [D]'s neck!</span>", \
-					"<span class='danger'>My neck is punched by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>My neck is punched by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I punch [D]'s neck!</span>")
 	D.adjustStaminaLoss(60)
 	playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
@@ -95,7 +95,7 @@
 	if(!D.stat)
 		log_combat(A, D, "restrained (CQC)")
 		D.visible_message("<span class='warning'>[A] locks [D] into a restraining position!</span>", \
-						"<span class='danger'>You're locked into a restraining position by [A]!</span>", "<span class='hear'>I hear shuffling and a muffled groan!</span>", null, A)
+						"<span class='danger'>You're locked into a restraining position by [A]!</span>", "<span class='hear'>Слышно шарканье и приглушённый стон!</span>", null, A)
 		to_chat(A, "<span class='danger'>I lock [D] into a restraining position!</span>")
 		D.adjustStaminaLoss(20)
 		D.Stun(100)
@@ -109,7 +109,7 @@
 	if(!D.stat)
 		log_combat(A, D, "consecutive CQC'd (CQC)")
 		D.visible_message("<span class='danger'>[A] strikes [D]'s abdomen, neck and back consecutively</span>", \
-						"<span class='danger'>My abdomen, neck and back are struck consecutively by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+						"<span class='danger'>My abdomen, neck and back are struck consecutively by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 		to_chat(A, "<span class='danger'>I strike [D]'s abdomen, neck and back consecutively!</span>")
 		playsound(get_turf(D), 'sound/blank.ogg', 50, TRUE, -1)
 		var/obj/item/I = D.get_active_held_item()
@@ -156,12 +156,12 @@
 	else
 		playsound(get_turf(D), 'sound/blank.ogg', 50, TRUE, -1)
 	D.visible_message("<span class='danger'>[A] [picked_hit_type]ed [D]!</span>", \
-					"<span class='danger'>You're [picked_hit_type]ed by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>You're [picked_hit_type]ed by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I [picked_hit_type] [D]!</span>")
 	log_combat(A, D, "[picked_hit_type]s (CQC)")
 	if(A.resting && !D.stat && !D.IsParalyzed())
 		D.visible_message("<span class='danger'>[A] leg sweeps [D]!</span>", \
-						"<span class='danger'>My legs are sweeped by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+						"<span class='danger'>My legs are sweeped by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 		to_chat(A, "<span class='danger'>I leg sweep [D]!</span>")
 		playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 		D.apply_damage(10, BRUTE)
@@ -180,7 +180,7 @@
 		if(!D.stat || !D.IsParalyzed() || !restraining)
 			I = D.get_active_held_item()
 			D.visible_message("<span class='danger'>[A] strikes [D]'s jaw with their hand!</span>", \
-							"<span class='danger'>My jaw is struck by [A], you feel disoriented!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+							"<span class='danger'>My jaw is struck by [A], you feel disoriented!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 			to_chat(A, "<span class='danger'>I strike [D]'s jaw, leaving [D.p_them()] disoriented!</span>")
 			playsound(get_turf(D), 'sound/blank.ogg', 50, TRUE, -1)
 			if(I && D.temporarilyRemoveItemFromInventory(I))
@@ -196,7 +196,7 @@
 	if(restraining && A.pulling == D)
 		log_combat(A, D, "knocked out (Chokehold)(CQC)")
 		D.visible_message("<span class='danger'>[A] puts [D] into a chokehold!</span>", \
-						"<span class='danger'>You're put into a chokehold by [A]!</span>", "<span class='hear'>I hear shuffling and a muffled groan!</span>", null, A)
+						"<span class='danger'>You're put into a chokehold by [A]!</span>", "<span class='hear'>Слышно шарканье и приглушённый стон!</span>", null, A)
 		to_chat(A, "<span class='danger'>I put [D] into a chokehold!</span>")
 		D.SetSleeping(400)
 		restraining = FALSE

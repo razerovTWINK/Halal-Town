@@ -5,7 +5,7 @@
 	name = "Toxin"
 	description = "A toxic chemical."
 	color = "#CF3600" // rgb: 207, 54, 0
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	taste_mult = 1.2
 	harmful = TRUE
 	var/toxpwr = 1.5
@@ -21,14 +21,14 @@
 	description = "A powerful poison derived from certain species of mushroom."
 	color = "#792300" // rgb: 121, 35, 0
 	toxpwr = 2.5
-	taste_description = "mushroom"
+	taste_description = "грибы"
 
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"
 	description = "Might cause unpredictable mutations. Keep away from children."
 	color = "#00FF00"
 	toxpwr = 0
-	taste_description = "slime"
+	taste_description = "слизь"
 	taste_mult = 0.9
 
 /datum/reagent/toxin/mutagen/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
@@ -55,7 +55,7 @@
 /datum/reagent/toxin/plasma
 	name = "Plasma"
 	description = "Plasma in its liquid form."
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	specific_heat = SPECIFIC_HEAT_PLASMA
 	taste_mult = 1.5
 	color = "#8228A0"
@@ -100,7 +100,7 @@
 	description = "A powerful poison used to stop respiration."
 	color = "#7DC3A0"
 	toxpwr = 0
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/toxin/lexorin/on_mob_life(mob/living/carbon/C)
 	. = TRUE
@@ -120,12 +120,12 @@
 	description = "A gooey semi-liquid produced from one of the deadliest lifeforms in existence. SO REAL."
 	color = "#801E28" // rgb: 128, 30, 40
 	toxpwr = 0
-	taste_description = "slime"
+	taste_description = "слизь"
 	taste_mult = 1.3
 
 /datum/reagent/toxin/slimejelly/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		to_chat(M, "<span class='danger'>My insides are burning!</span>")
+		to_chat(M, "<span class='danger'>Внутри всё горит!</span>")
 		M.adjustToxLoss(rand(20,60)*REM, 0)
 		. = 1
 	else if(prob(40))
@@ -138,7 +138,7 @@
 	description = "Useful for dealing with undesirable customers."
 	color = "#CF3600" // rgb: 207, 54, 0
 	toxpwr = 0
-	taste_description = "mint"
+	taste_description = "мята"
 
 /datum/reagent/toxin/minttoxin/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_FAT))
@@ -151,7 +151,7 @@
 	silent_toxin = TRUE
 	color = "#003333" // rgb: 0, 51, 51
 	toxpwr = 2
-	taste_description = "fish"
+	taste_description = "рыба"
 
 /datum/reagent/toxin/zombiepowder
 	name = "Zombie Powder"
@@ -160,7 +160,7 @@
 	reagent_state = SOLID
 	color = "#669900" // rgb: 102, 153, 0
 	toxpwr = 0.5
-	taste_description = "death"
+	taste_description = "смерть"
 	var/fakedeath_active = FALSE
 
 /datum/reagent/toxin/zombiepowder/on_mob_metabolize(mob/living/L)
@@ -198,7 +198,7 @@
 	reagent_state = SOLID
 	color = "#664700" // rgb: 102, 71, 0
 	toxpwr = 0.8
-	taste_description = "death"
+	taste_description = "смерть"
 
 /datum/reagent/toxin/ghoulpowder/on_mob_metabolize(mob/living/L)
 	..()
@@ -218,7 +218,7 @@
 	description = "A powerful hallucinogen. Not a thing to be messed with. For some mental patients. it counteracts their symptoms and anchors them to reality."
 	color = "#B31008" // rgb: 139, 166, 233
 	toxpwr = 0
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
 	M.hallucination += 5
@@ -283,7 +283,7 @@
 	description = "A natural toxin produced by blob spores that induces combustion in its victim."
 	color = "#9ACD32"
 	toxpwr = 0.5
-	taste_description = "burning"
+	taste_description = "жжение"
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -314,13 +314,13 @@
 	..()
 
 /datum/reagent/toxin/fakebeer	//disguised as normal beer for use by emagged brobots
-	name = "Beer"
+	name = "Пиво"
 	description = "A specially-engineered sedative disguised as beer. It induces instant sleep in its target."
 	color = "#664300" // rgb: 102, 67, 0
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "piss water"
 	glass_icon_state = "beerglass"
-	glass_name = "glass of beer"
+	glass_name = "стакан пива"
 	glass_desc = ""
 
 /datum/reagent/toxin/fakebeer/on_mob_life(mob/living/carbon/M)
@@ -345,7 +345,7 @@
 	reagent_state = SOLID
 	color = "#7F8400" // rgb: 127, 132, 0
 	toxpwr = 0.1
-	taste_description = "green tea"
+	taste_description = "зелёный чай"
 
 /datum/reagent/toxin/mutetoxin //the new zombie powder.
 	name = "Mute Toxin"
@@ -353,7 +353,7 @@
 	silent_toxin = TRUE
 	color = "#F0F8FF" // rgb: 240, 248, 255
 	toxpwr = 0
-	taste_description = "silence"
+	taste_description = "тишина"
 
 /datum/reagent/toxin/mutetoxin/on_mob_life(mob/living/carbon/M)
 	M.silent = max(M.silent, 3)
@@ -399,7 +399,7 @@
 	if(prob(50))
 		switch(pick(1, 2, 3, 4))
 			if(1)
-				to_chat(M, "<span class='danger'>I can barely see!</span>")
+				to_chat(M, "<span class='danger'>Я почти ничего не вижу!</span>")
 				M.blur_eyes(3)
 			if(2)
 				M.emote("cough")
@@ -407,7 +407,7 @@
 				M.emote("sneeze")
 			if(4)
 				if(prob(75))
-					to_chat(M, "<span class='danger'>I scratch at an itch.</span>")
+					to_chat(M, "<span class='danger'>Я чешу зудящее место.</span>")
 					M.adjustBruteLoss(2*REM, 0)
 					. = 1
 	..()
@@ -523,15 +523,15 @@
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
 	if(prob(15))
-		to_chat(M, "<span class='danger'>I scratch at my head.</span>")
+		to_chat(M, "<span class='danger'>Я чешу голову.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(15))
-		to_chat(M, "<span class='danger'>I scratch at my leg.</span>")
+		to_chat(M, "<span class='danger'>Я чешу ногу.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(15))
-		to_chat(M, "<span class='danger'>I scratch at my arm.</span>")
+		to_chat(M, "<span class='danger'>Я чешу руку.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(3))
@@ -564,7 +564,7 @@
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
 					C.set_heartattack(TRUE)
 					if(C.stat == CONSCIOUS)
-						C.visible_message("<span class='danger'>[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!</span>")
+						C.visible_message("<span class='danger'>[C] хватается за [C.p_their()] грудь, будто [C.p_their()] сердце остановилось!</span>")
 				else
 					C.losebreath += 10
 					C.adjustOxyLoss(rand(5,25), 0)
@@ -686,7 +686,7 @@
 	if(current_cycle >=33 && prob(15))
 		C.spew_organ()
 		C.vomit(0, TRUE, TRUE, 4)
-		to_chat(C, "<span class='danger'>I feel something lumpy come up as you vomit.</span>")
+		to_chat(C, "<span class='danger'>Меня выворачивает, во рту что-то комковатое.</span>")
 
 /datum/reagent/toxin/curare
 	name = "Curare"
@@ -729,7 +729,7 @@
 	color = "#AC88CA" //RGB: 172, 136, 202
 	metabolization_rate = 0.6 * REAGENTS_METABOLISM
 	toxpwr = 0.5
-	taste_description = "spinning"
+	taste_description = "кружение"
 
 /datum/reagent/toxin/rotatium/on_mob_life(mob/living/carbon/M)
 	if(M.hud_used)
@@ -773,7 +773,7 @@
 	color = "#00FF32"
 	toxpwr = 1
 	var/acidpwr = 10 //the amount of protection removed from the armour
-	taste_description = "acid"
+	taste_description = "кислота"
 	self_consuming = TRUE
 
 /datum/reagent/toxin/acid/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
@@ -849,7 +849,7 @@
 	silent_toxin = TRUE
 	color = "#F0F8FF" // rgb: 240, 248, 255
 	toxpwr = 0
-	taste_description = "stillness"
+	taste_description = "неподвижность"
 
 /datum/reagent/toxin/mimesbane/on_mob_metabolize(mob/living/L)
 	ADD_TRAIT(L, TRAIT_EMOTEMUTE, type)
@@ -887,7 +887,7 @@
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
 		if(bp)
 			playsound(M, get_sfx("desceration"), 50, TRUE, -1)
-			M.visible_message("<span class='warning'>[M]'s bones hurt too much!!</span>", "<span class='danger'>My bones hurt too much!!</span>")
+			M.visible_message("<span class='warning'>[M]'s bones hurt too much!!</span>", "<span class='danger'>Кости ломит невыносимо!!</span>")
 			M.say("OOF!!", forced = /datum/reagent/toxin/bonehurtingjuice)
 			bp.receive_damage(0, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!

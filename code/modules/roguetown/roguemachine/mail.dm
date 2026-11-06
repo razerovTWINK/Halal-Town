@@ -23,7 +23,7 @@
 					user.put_in_hands(I)
 					addl_mail = TRUE
 				else
-					say("You have additional mail available.")
+					say("У тебя есть дополнительная почта.")
 					break
 
 /obj/structure/roguemachine/mail/attack_right(mob/user)
@@ -32,18 +32,18 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(!coin_loaded)
-		to_chat(user, "<span class='warning'>The machine doesn't respond. It needs a coin.</span>")
+		to_chat(user, "<span class='warning'>Машина не отвечает. Нужна монета.</span>")
 		return
-	var/send2place = input(user, "Where to? (Person or #number)", "ROGUETOWN", null)
+	var/send2place = input(user, "Куда? (Имя или #номер)", "РОГТАУН", null)
 	if(!send2place)
 		return
-	var/sentfrom = input(user, "Who is this letter from?", "ROGUETOWN", null)
+	var/sentfrom = input(user, "От кого это письмо?", "РОГТАУН", null)
 	if(!sentfrom)
-		sentfrom = "Anonymous"
-	var/t = stripped_multiline_input("Write Your Letter", "ROGUETOWN", no_trim=TRUE)
+		sentfrom = "Аноним"
+	var/t = stripped_multiline_input("Напиши Своё Письмо", "РОГТАУН", no_trim=TRUE)
 	if(t)
 		if(length(t) > 2000)
-			to_chat(user, "<span class='warning'>Too long. Try again.</span>")
+			to_chat(user, "<span class='warning'>Слишком длинно. Попробуй снова.</span>")
 			return
 	if(!coin_loaded)
 		return
@@ -64,7 +64,7 @@
 				P.mailedto = send2place
 				P.update_icon()
 				P.forceMove(X.loc)
-				X.say("New mail!")
+				X.say("Новая почта!")
 				playsound(X, 'sound/misc/mail.ogg', 100, FALSE, -1)
 				break
 		if(found)
@@ -75,7 +75,7 @@
 			update_icon()
 			return
 		else
-			to_chat(user, "<span class='warning'>Failed to send it. Bad number?</span>")
+			to_chat(user, "<span class='warning'>Не удалось отправить. Неверный номер?</span>")
 	else
 		if(!send2place)
 			return
@@ -91,7 +91,7 @@
 			X.update_icon()
 			send_ooc_note("New letter from <b>[sentfrom].</b>", name = send2place)
 		else
-			to_chat(user, "<span class='warning'>The master of mails has perished?</span>")
+			to_chat(user, "<span class='warning'>Главный почтмейстер погиб?</span>")
 			return
 		visible_message("<span class='warning'>[user] sends something.</span>")
 		playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
@@ -124,11 +124,11 @@
 	if(istype(P, /obj/item/paper) || istype(P, /obj/item/smallDelivery))
 		if(P.w_class >= WEIGHT_CLASS_BULKY)
 			return
-		if(alert(user, "Send Mail?",,"YES","NO") == "YES")
-			var/send2place = input(user, "Where to? (Person or #number)", "ROGUETOWN", null)
-			var/sentfrom = input(user, "Who is this from?", "ROGUETOWN", null)
+		if(alert(user, "Отправить Почту?",,"ДА","НЕТ") == "ДА")
+			var/send2place = input(user, "Куда? (Имя или #номер)", "РОГТАУН", null)
+			var/sentfrom = input(user, "От кого это?", "РОГТАУН", null)
 			if(!sentfrom)
-				sentfrom = "Anonymous"
+				sentfrom = "Аноним"
 			if(findtext(send2place, "#"))
 				var/box2find = text2num(copytext(send2place, findtext(send2place, "#")+1))
 				testing("box2find [box2find]")
@@ -140,7 +140,7 @@
 						P.mailedto = send2place
 						P.update_icon()
 						P.forceMove(X.loc)
-						X.say("New mail!")
+						X.say("Новая почта!")
 						playsound(X, 'sound/misc/mail.ogg', 100, FALSE, -1)
 						playsound(src.loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 						break
@@ -149,7 +149,7 @@
 					playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
 					return
 				else
-					to_chat(user, "<span class='warning'>Cannot send it. Bad number?</span>")
+					to_chat(user, "<span class='warning'>Не могу отправить. Неверный номер?</span>")
 			else
 				if(!send2place)
 					return

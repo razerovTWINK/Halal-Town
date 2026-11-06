@@ -326,10 +326,11 @@ SUBSYSTEM_DEF(air)
 			EG.self_breakdown(space_is_all_consuming = 1)
 			EG.dismantle()
 			CHECK_TICK
-		var/msg = ""
-		log_game("HEY! LISTEN! [DisplayTimeText(world.timeofday - timer)] were wasted processing [starting_ats] turf(s) (connected to [ending_ats] other turfs) with atmos differences at round start.")
+		// msg used to be an empty string here, which produced a bare "## WARNING:"
+		// line in world.log and an empty boldannounce for the whole server.
+		var/msg = "HEY! LISTEN! [DisplayTimeText(world.timeofday - timer)] were wasted processing [starting_ats] turf(s) (connected to [ending_ats] other turfs) with atmos differences at round start."
+		log_game(msg)
 		to_chat(world, "<span class='boldannounce'>[msg]</span>")
-		warning(msg)
 
 /turf/open/proc/resolve_active_graph()
 	. = list()

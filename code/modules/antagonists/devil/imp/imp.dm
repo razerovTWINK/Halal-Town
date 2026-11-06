@@ -43,9 +43,7 @@
 	var/boost = 0
 	bloodcrawl = BLOODCRAWL_EAT
 	var/list/consumed_mobs = list()
-	var/playstyle_string = "<span class='big bold'>I are an imp,</span><B> a mischievous creature from hell. You are the lowest rank on the hellish totem pole \
-							Though you are not obligated to help, perhaps by aiding a higher ranking devil, you might just get a promotion. However, you are incapable	\
-							of intentionally harming a fellow devil.</B>"
+	var/playstyle_string = "<span class='big bold'>Ты — бес,</span><B> озорное порождение ада, низшее звено в адской иерархии. Ты не обязан помогать старшим дьяволам, но услужив им, возможно, заслужишь повышение. Ты не способен намеренно причинить вред другому дьяволу.</B>"
 
 /mob/living/simple_animal/imp/Initialize()
 	. = ..()
@@ -63,6 +61,6 @@
 
 /datum/antagonist/imp/proc/give_objectives()
 	var/datum/objective/newobjective = new
-	newobjective.explanation_text = "Try to get a promotion to a higher devilic rank."
+	newobjective.explanation_text = "Попробуй заслужить повышение до высшего дьявольского ранга."
 	newobjective.owner = owner
 	objectives += newobjective

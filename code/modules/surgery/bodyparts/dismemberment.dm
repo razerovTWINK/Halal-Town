@@ -29,9 +29,9 @@
 	affecting.add_wound(/datum/wound/dismemberment, skipcheck = TRUE)
 	playsound(C, pick(dismemsound), 50, FALSE, -1)
 	if(body_zone == BODY_ZONE_HEAD)
-		C.visible_message("<span class='danger'><B>[C] is [pick("BRUTALLY","VIOLENTLY","BLOODILY","MESSILY")] DECAPITATED!</B></span>")
+		C.visible_message("<span class='danger'><B>[C] [pick("ЖЕСТОКО", "БЕЗЖАЛОСТНО", "КРОВАВО", "ЯРОСТНО")] ОБЕЗГЛАВЛЕН!</B></span>")
 	else
-		C.visible_message("<span class='warning'><B>The [src.name] is [pick("torn off", "sundered", "severed", "seperated", "unsewn")]!</B></span>")
+		C.visible_message("<span class='warning'><B>[capitalize(src.name)] [pick("оторвана", "отсечена", "разрублена", "оторвана с мясом", "отделена")]!</B></span>")
 		C.emote("painscream")
 	src.add_mob_blood(C)
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
@@ -111,7 +111,7 @@
 		organ_spilled = 1
 
 	if(organ_spilled)
-		C.visible_message("<span class='danger'><B>[C] spills [C.p_their()] guts!</B></span>")
+		C.visible_message("<span class='danger'><B>Из [C] вываливаются внутренности!</B></span>")
 	return TRUE
 
 //limb removal. The "special" argument is used for swapping a limb with a new one without the effects of losing a limb kicking in.
@@ -303,7 +303,7 @@
 	if(istype(ooze))
 		ooze.transfer_to_limb(src, owner)
 
-	name = "[owner.real_name]'s head"
+	name = "голова [owner.real_name]"
 	..()
 
 	if(brainmob)

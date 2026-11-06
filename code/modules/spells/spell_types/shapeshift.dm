@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift
-	name = "Shapechange"
+	name = "Смена облика"
 	desc = ""
 	clothes_req = FALSE
 	human_req = FALSE
@@ -36,7 +36,7 @@
 			for(var/path in possible_shapes)
 				var/mob/living/simple_animal/A = path
 				animal_list[initial(A.name)] = path
-			var/new_shapeshift_type = input(M, "Choose Your Animal Form!", "It's Morphing Time!", null) as null|anything in sortList(animal_list)
+			var/new_shapeshift_type = input(M, "Выбери облик животного!", "Время превращения!", null) as null|anything in sortList(animal_list)
 			if(shapeshift_type)
 				return
 			shapeshift_type = new_shapeshift_type
@@ -56,7 +56,7 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
 	if(H)
-		to_chat(caster, "<span class='warning'>You're already shapeshifted!</span>")
+		to_chat(caster, "<span class='warning'>Твой облик уже изменён!</span>")
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)
@@ -76,7 +76,7 @@
 	human_req = initial(human_req)
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/dragon
-	name = "Dragon Form"
+	name = "Облик дракона"
 	desc = ""
 	invocation = "RAAAAAAAAWR!"
 	convert_damage = FALSE
@@ -86,7 +86,7 @@
 
 
 /obj/shapeshift_holder
-	name = "Shapeshift holder"
+	name = "вместилище смены облика"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF
 	var/mob/living/stored
 	var/mob/living/shape

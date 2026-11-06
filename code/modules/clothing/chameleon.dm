@@ -290,7 +290,7 @@
 
 /obj/item/clothing/under/chameleon
 //starts off as black
-	name = "black jumpsuit"
+	name = "чёрный комбинезон"
 	icon = 'icons/obj/clothing/under/color.dmi'
 	icon_state = "black"
 	item_state = "bl_suit"
@@ -323,7 +323,7 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/suit/chameleon
-	name = "armor"
+	name = "броня"
 	desc = ""
 	icon_state = "armor"
 	item_state = "armor"
@@ -381,7 +381,7 @@
 
 /obj/item/clothing/gloves/chameleon
 	desc = ""
-	name = "insulated gloves"
+	name = "изолированные перчатки"
 	icon_state = "yellow"
 	item_state = "ygloves"
 
@@ -452,7 +452,7 @@
 	randomise_action.UpdateButtonIcon()
 
 /obj/item/clothing/mask/chameleon
-	name = "gas mask"
+	name = "противогаз"
 	desc = "" //More accurate
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
@@ -510,7 +510,7 @@
 	to_chat(user, "<span class='notice'>[src] does not have a voice changer.</span>")
 
 /obj/item/clothing/shoes/chameleon
-	name = "black shoes"
+	name = "чёрные ботинки"
 	icon_state = "black"
 	desc = ""
 	permeability_coefficient = 0.05
@@ -535,7 +535,7 @@
 	chameleon_action.emp_randomise()
 
 /obj/item/clothing/shoes/chameleon/noslip
-	name = "black shoes"
+	name = "чёрные ботинки"
 	icon_state = "black"
 	desc = ""
 	clothing_flags = NOSLIP
@@ -546,7 +546,7 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/storage/backpack/chameleon
-	name = "backpack"
+	name = "рюкзак"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
 /obj/item/storage/backpack/chameleon/Initialize()
@@ -567,7 +567,7 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/storage/belt/chameleon
-	name = "toolbelt"
+	name = "пояс для инструментов"
 	desc = ""
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
@@ -595,7 +595,7 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/radio/headset/chameleon
-	name = "radio headset"
+	name = "радиогарнитура"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
 /obj/item/radio/headset/chameleon/Initialize()
@@ -652,7 +652,7 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/neck/chameleon
-	name = "black tie"
+	name = "чёрный галстук"
 	desc = ""
 	icon_state = "blacktie"
 	resistance_flags = NONE

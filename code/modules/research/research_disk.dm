@@ -1,6 +1,6 @@
 
 /obj/item/disk/tech_disk
-	name = "technology disk"
+	name = "технологический диск"
 	desc = ""
 	icon_state = "datadisk0"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
@@ -13,7 +13,7 @@
 	stored_research = new /datum/techweb
 
 /obj/item/disk/tech_disk/debug
-	name = "\improper CentCom technology disk"
+	name = "\improper технологический диск Центкома"
 	desc = ""
 	custom_materials = null
 
@@ -22,7 +22,7 @@
 	stored_research = new /datum/techweb/admin
 
 /obj/item/research_notes
-	name = "research notes"
+	name = "исследовательские заметки"
 	desc = ""
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
@@ -45,24 +45,24 @@
 
 /obj/item/research_notes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is worth [value] research points.</span>"
+	. += "<span class='notice'>Они дают [value] очков исследований.</span>"
 
 /// proc that changes name and icon depending on value
 /obj/item/research_notes/proc/change_vol()
 	if(value >= 10000)
-		name = "revolutionary discovery in the field of [origin_type]"
+		name = "революционное открытие в области: [origin_type]"
 		icon_state = "docs_verified"
 		return
 	else if(value >= 2500)
-		name = "essay about [origin_type]"
+		name = "исследование по теме: [origin_type]"
 		icon_state = "paper_words"
 		return
 	else if(value >= 100)
-		name = "notes of [origin_type]"
+		name = "заметки по теме: [origin_type]"
 		icon_state = "paperslip_words"
 		return
 	else
-		name = "fragmentary data of [origin_type]"
+		name = "отрывочные данные по теме: [origin_type]"
 		icon_state = "scrap"
 		return
 
@@ -72,7 +72,7 @@
 	value = value + new_paper.value
 	if(origin_type != new_paper.origin_type && !mixed)
 		value += bonus * 0.3
-		origin_type = "[origin_type] and [new_paper.origin_type]"
+		origin_type = "[origin_type] и [new_paper.origin_type]"
 		mixed = TRUE
 	change_vol()
 	qdel(new_paper)

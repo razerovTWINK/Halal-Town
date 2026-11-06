@@ -6,12 +6,12 @@ Slimecrossing Items
 
 //Rewind camera - I'm already Burning Sepia
 /obj/item/camera/rewind
-	name = "sepia-tinted camera"
+	name = "сепия-камера"
 	desc = ""
 	pictures_left = 1
 	pictures_max = 1
 	can_customise = FALSE
-	default_picture_name = "A nostalgic picture"
+	default_picture_name = "Ностальгический снимок"
 	var/used = FALSE
 
 /datum/saved_bodypart
@@ -60,11 +60,11 @@ Slimecrossing Items
 		return
 	if(!used)//selfie time
 		if(user == target)
-			to_chat(user, "<span class=notice>I take a selfie!</span>")
+			to_chat(user, "<span class=notice>Я делаю селфи!</span>")
 		else
-			to_chat(user, "<span class=notice>I take a photo with [target]!</span>")
-			to_chat(target, "<span class=notice>[user] takes a photo with you!</span>")
-		to_chat(target, "<span class=notice>You'll remember this moment forever!</span>")
+			to_chat(user, "<span class=notice>Я фотографируюсь с [target]!</span>")
+			to_chat(target, "<span class=notice>[user] фотографируется с тобой!</span>")
+		to_chat(target, "<span class=notice>Этот момент запомнится навсегда!</span>")
 
 		used = TRUE
 		target.AddComponent(/datum/component/dejavu, 2)
@@ -74,7 +74,7 @@ Slimecrossing Items
 
 //Timefreeze camera - Old Burning Sepia result. Kept in case admins want to spawn it
 /obj/item/camera/timefreeze
-	name = "sepia-tinted camera"
+	name = "сепия-камера"
 	desc = ""
 	pictures_left = 1
 	pictures_max = 1
@@ -92,7 +92,7 @@ Slimecrossing Items
 
 //Hypercharged slime cell - Charged Yellow
 /obj/item/stock_parts/cell/high/slime/hypercharged
-	name = "hypercharged slime core"
+	name = "сверхзаряженное ядро слайма"
 	desc = ""
 	rating = 7 //Roughly 1.5 times the original.
 	maxcharge = 20000 //2 times the normal one.
@@ -100,7 +100,7 @@ Slimecrossing Items
 
 //Barrier cube - Chilling Grey
 /obj/item/barriercube
-	name = "barrier cube"
+	name = "барьерный куб"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "barriercube"
@@ -108,16 +108,16 @@ Slimecrossing Items
 
 /obj/item/barriercube/attack_self(mob/user)
 	if(locate(/obj/structure/barricade/slime) in get_turf(loc))
-		to_chat(user, "<span class='warning'>I can't fit more than one barrier in the same space!</span>")
+		to_chat(user, "<span class='warning'>Нельзя поставить больше одного барьера на одну клетку!</span>")
 		return
-	to_chat(user, "<span class='notice'>I squeeze [src].</span>")
+	to_chat(user, "<span class='notice'>Я сжимаю [src].</span>")
 	var/obj/B = new /obj/structure/barricade/slime(get_turf(loc))
-	B.visible_message("<span class='warning'>[src] suddenly grows into a large, gelatinous barrier!</span>")
+	B.visible_message("<span class='warning'>[src] внезапно разрастается в огромный желатиновый барьер!</span>")
 	qdel(src)
 
 //Slime barricade - Chilling Grey
 /obj/structure/barricade/slime
-	name = "gelatinous barrier"
+	name = "желатиновый барьер"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "slimebarrier"
@@ -126,7 +126,7 @@ Slimecrossing Items
 
 //Melting Gel Wall - Chilling Metal
 /obj/effect/forcefield/slimewall
-	name = "solidified gel"
+	name = "затвердевший гель"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "slimebarrier_thick"
@@ -136,19 +136,19 @@ Slimecrossing Items
 
 //Rainbow barrier - Chilling Rainbow
 /obj/effect/forcefield/slimewall/rainbow
-	name = "rainbow barrier"
+	name = "радужный барьер"
 	desc = ""
 	icon_state = "rainbowbarrier"
 
 //Ration pack - Chilling Silver
 /obj/item/reagent_containers/food/snacks/rationpack
-	name = "ration pack"
+	name = "сухой паёк"
 	desc = ""
 	icon_state = "rationpack"
 	bitesize = 3
 	junkiness = 15
 	filling_color = "#964B00"
-	tastes = list("cardboard" = 3, "sadness" = 3)
+	tastes = list("картон" = 3, "грусть" = 3)
 	foodtype = null //Don't ask what went into them. You're better off not knowing.
 	list_reagents = list(/datum/reagent/consumable/nutriment/stabilized = 10, /datum/reagent/consumable/nutriment = 2) //Won't make you fat. Will make you question your sanity.
 
@@ -157,7 +157,7 @@ Slimecrossing Items
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H.mind && !HAS_TRAIT(H, TRAIT_AGEUSIA))
-				to_chat(H,"<span class='notice'>That didn't taste very good...</span>") //No disgust, though. It's just not good tasting.
+				to_chat(H, "<span class='notice'>Вкус так себе...</span>") //No disgust, though. It's just not good tasting.
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "gross_food", /datum/mood_event/gross_food)
 				last_check_time = world.time
 				return
@@ -165,7 +165,7 @@ Slimecrossing Items
 
 //Ice stasis block - Chilling Dark Blue
 /obj/structure/ice_stasis
-	name = "ice block"
+	name = "ледяная глыба"
 	desc = ""
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "frozen"
@@ -185,7 +185,7 @@ Slimecrossing Items
 
 //Gold capture device - Chilling Gold
 /obj/item/capturedevice
-	name = "gold capture device"
+	name = "золотая ловушка"
 	desc = ""
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/slimecrossing.dmi'
@@ -193,37 +193,37 @@ Slimecrossing Items
 
 /obj/item/capturedevice/attack(mob/living/M, mob/user)
 	if(length(contents))
-		to_chat(user, "<span class='warning'>The device already has something inside.</span>")
+		to_chat(user, "<span class='warning'>В устройстве уже кто-то есть.</span>")
 		return
 	if(!isanimal(M))
-		to_chat(user, "<span class='warning'>The capture device only works on simple creatures.</span>")
+		to_chat(user, "<span class='warning'>Ловушка работает только на простых существ.</span>")
 		return
 	if(M.mind)
-		to_chat(user, "<span class='notice'>I offer the device to [M].</span>")
-		if(alert(M, "Would you like to enter [user]'s capture device?", "Gold Capture Device", "Yes", "No") == "Yes")
+		to_chat(user, "<span class='notice'>Я протягиваю устройство [M].</span>")
+		if(alert(M, "Хочешь ли ты войти в ловушку [user]?", "Золотая ловушка", "Да", "Нет") == "Да")
 			if(user.canUseTopic(src, BE_CLOSE) && user.canUseTopic(M, BE_CLOSE))
-				to_chat(user, "<span class='notice'>I store [M] in the capture device.</span>")
-				to_chat(M, "<span class='notice'>The world warps around you, and you're suddenly in an endless void, with a window to the outside floating in front of you.</span>")
+				to_chat(user, "<span class='notice'>Я помещаю [M] в ловушку.</span>")
+				to_chat(M, "<span class='notice'>Мир вокруг искажается, и ты оказываешься в бесконечной пустоте, перед которой парит окно во внешний мир.</span>")
 				store(M, user)
 			else
-				to_chat(user, "<span class='warning'>I were too far away from [M].</span>")
-				to_chat(M, "<span class='warning'>I were too far away from [user].</span>")
+				to_chat(user, "<span class='warning'>Я слишком далеко от [M].</span>")
+				to_chat(M, "<span class='warning'>Я слишком далеко от [user].</span>")
 		else
-			to_chat(user, "<span class='warning'>[M] refused to enter the device.</span>")
+			to_chat(user, "<span class='warning'>[M] отказывается входить в устройство.</span>")
 			return
 	else
 		if(istype(M, /mob/living/simple_animal/hostile) && !("neutral" in M.faction))
-			to_chat(user, "<span class='warning'>This creature is too aggressive to capture.</span>")
+			to_chat(user, "<span class='warning'>Это существо слишком агрессивно для поимки.</span>")
 			return
-	to_chat(user, "<span class='notice'>I store [M] in the capture device.</span>")
+	to_chat(user, "<span class='notice'>Я помещаю [M] в ловушку.</span>")
 	store(M)
 
 /obj/item/capturedevice/attack_self(mob/user)
 	if(contents.len)
-		to_chat(user, "<span class='notice'>I open the capture device!</span>")
+		to_chat(user, "<span class='notice'>Я открываю ловушку!</span>")
 		release()
 	else
-		to_chat(user, "<span class='warning'>The device is empty...</span>")
+		to_chat(user, "<span class='warning'>Устройство пусто...</span>")
 
 /obj/item/capturedevice/proc/store(var/mob/living/M)
 	M.forceMove(src)

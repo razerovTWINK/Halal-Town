@@ -1,5 +1,5 @@
 /datum/surgery/advanced/pacify
-	name = "Pacification"
+	name = "Усмирение"
 	desc = ""
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
@@ -19,25 +19,25 @@
 		return FALSE
 
 /datum/surgery_step/pacify
-	name = "rewire brain"
+	name = "перестроить нейронные пути"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)
 	time = 40
 
 /datum/surgery_step/pacify/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I begin to pacify [target]...</span>",
-		"<span class='notice'>[user] begins to fix [target]'s brain.</span>",
-		"<span class='notice'>[user] begins to perform surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь усмирение [target]...</span>",
+		"<span class='notice'>[user] начинает вправлять мозг [target].</span>",
+		"<span class='notice'>[user] начинает оперировать мозг [target].</span>")
 
 /datum/surgery_step/pacify/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I succeed in neurologically pacifying [target].</span>",
-		"<span class='notice'>[user] successfully fixes [target]'s brain!</span>",
-		"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Тебе удаётся неврологически усмирить [target].</span>",
+		"<span class='notice'>[user] успешно заканчивает исправление мозга [target]!</span>",
+		"<span class='notice'>[user] завершает операцию на мозгу [target].</span>")
 	target.gain_trauma(/datum/brain_trauma/severe/pacifism, TRAUMA_RESILIENCE_LOBOTOMY)
 	return TRUE
 
 /datum/surgery_step/pacify/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I screw up, rewiring [target]'s brain the wrong way around...</span>",
-			"<span class='warning'>[user] screws up, causing brain damage!</span>",
-			"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='warning'>Ты ошибаешься, соединив нейроны [target] задом наперёд...</span>",
+			"<span class='warning'>[user] ошибается, повреждая мозг пациента!</span>",
+			"<span class='notice'>[user] завершает операцию на мозгу [target].</span>")
 	target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
 	return FALSE

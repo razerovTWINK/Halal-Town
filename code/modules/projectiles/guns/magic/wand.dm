@@ -1,5 +1,5 @@
 /obj/item/gun/magic/wand
-	name = "wand of nothing"
+	name = "палочка небытия"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic
 	icon_state = "nothingwand"
@@ -19,7 +19,7 @@
 
 /obj/item/gun/magic/wand/examine(mob/user)
 	. = ..()
-	. += "Has [charges] charge\s remaining."
+	. += "Осталось зарядов: [charges]."
 
 /obj/item/gun/magic/wand/update_icon()
 	icon_state = "[initial(icon_state)][charges ? "" : "-drained"]"
@@ -37,7 +37,7 @@
 		if(no_den_usage)
 			var/area/A = get_area(user)
 			if(istype(A, /area/wizard_station))
-				to_chat(user, "<span class='warning'>I know better than to violate the security of The Den, best wait until you leave to use [src].</span>")
+				to_chat(user, "<span class='warning'>Лучше не нарушать покой Логова, стоит подождать выхода, прежде чем использовать [src].</span>")
 				return
 			else
 				no_den_usage = 0
@@ -48,7 +48,7 @@
 
 
 /obj/item/gun/magic/wand/proc/zap_self(mob/living/user)
-	user.visible_message("<span class='danger'>[user] zaps [user.p_them()]self with [src].</span>")
+	user.visible_message("<span class='danger'>[user] поражает себя разрядом из [src].</span>")
 	playsound(user, fire_sound, 50, TRUE)
 	user.log_message("zapped [user.p_them()]self with a <b>[src]</b>", LOG_ATTACK)
 
@@ -58,7 +58,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/death
-	name = "wand of death"
+	name = "палочка смерти"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/death
@@ -69,16 +69,16 @@
 	..()
 	charges--
 	if(user.anti_magic_check())
-		user.visible_message("<span class='warning'>[src] has no effect on [user]!</span>")
+		user.visible_message("<span class='warning'>[src] не действует на [user]!</span>")
 		return
 	if(isliving(user))
 		var/mob/living/L = user
 		if(L.mob_biotypes & MOB_UNDEAD) //negative energy heals the undead
 			user.revive(full_heal = TRUE, admin_revive = TRUE)
-			to_chat(user, "<span class='notice'>I feel great!</span>")
+			to_chat(user, "<span class='notice'>Ты чувствуешь себя великолепно!</span>")
 			return
-	to_chat(user, "<span class='warning'>I irradiate myself with pure negative energy! \
-	[pick("Do not pass go. Do not collect 200 zorkmids.","You feel more confident in your spell casting skills.","You Die...","Do you want your possessions identified?")]\
+	to_chat(user, "<span class='warning'>Ты облучаешь себя чистой негативной энергией! \
+	[pick("Не проходите поле Вперёд. Не получайте 200 зоркмидов.","Ты чувствуешь больше уверенности в навыках сотворения чар.","Ты умираешь...","Хотите опознать ваше снаряжение?")]\
 	</span>")
 	user.death(FALSE)
 
@@ -95,7 +95,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/resurrection
-	name = "wand of healing"
+	name = "палочка исцеления"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	fire_sound = 'sound/blank.ogg'
@@ -106,18 +106,18 @@
 	..()
 	charges--
 	if(user.anti_magic_check())
-		user.visible_message("<span class='warning'>[src] has no effect on [user]!</span>")
+		user.visible_message("<span class='warning'>[src] не действует на [user]!</span>")
 		return
 	if(isliving(user))
 		var/mob/living/L = user
 		if(L.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
-			to_chat(user, "<span class='warning'>I irradiate myself with pure positive energy! \
-			[pick("Do not pass go. Do not collect 200 zorkmids.","You feel more confident in your spell casting skills.","You Die...","Do you want your possessions identified?")]\
+			to_chat(user, "<span class='warning'>Ты облучаешь себя чистой позитивной энергией! \
+			[pick("Не проходите поле Вперёд. Не получайте 200 зоркмидов.","Ты чувствуешь больше уверенности в навыках сотворения чар.","Ты умираешь...","Хотите опознать ваше снаряжение?")]\
 			</span>")
 			user.death(0)
 			return
 	user.revive(full_heal = TRUE, admin_revive = TRUE)
-	to_chat(user, "<span class='notice'>I feel great!</span>")
+	to_chat(user, "<span class='notice'>Ты чувствуешь себя великолепно!</span>")
 
 /obj/item/gun/magic/wand/resurrection/debug //for testing
 	desc = ""
@@ -131,7 +131,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/polymorph
-	name = "wand of polymorph"
+	name = "палочка превращения"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic/change
 	icon_state = "polywand"
@@ -148,7 +148,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/teleport
-	name = "wand of teleportation"
+	name = "палочка телепортации"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic/teleport
 	fire_sound = 'sound/blank.ogg'
@@ -165,7 +165,7 @@
 	..()
 
 /obj/item/gun/magic/wand/safety
-	name = "wand of safety"
+	name = "палочка безопасности"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic/safety
 	fire_sound = 'sound/blank.ogg'
@@ -197,7 +197,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/door
-	name = "wand of door creation"
+	name = "палочка создания дверей"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/magic/door
 	icon_state = "doorwand"
@@ -206,7 +206,7 @@
 	no_den_usage = 1
 
 /obj/item/gun/magic/wand/door/zap_self(mob/living/user)
-	to_chat(user, "<span class='notice'>I feel vaguely more open with your feelings.</span>")
+	to_chat(user, "<span class='notice'>Ты чувствуешь, что твои чувства стали немного более открытыми.</span>")
 	charges--
 	..()
 
@@ -215,7 +215,7 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/fireball
-	name = "wand of fireball"
+	name = "палочка огненного шара"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/fireball

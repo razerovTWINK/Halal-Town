@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if(!user.canUseTopic(src, !issilicon(user)))
 		return
 	if(stat & BROKEN)
-		visible_message("<span class='warning'>[src] buzzes.</span>", "<span class='hear'>I hear a faint buzz.</span>")
+		visible_message("<span class='warning'>[src] гудит.</span>", "<span class='hear'>Слышно слабое жужжание.</span>")
 		playsound(src.loc, 'sound/blank.ogg', 50, TRUE)
 		return
 
@@ -118,7 +118,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if(!usr.canUseTopic(src, !issilicon(usr)))
 		return
 	if(stat & BROKEN)
-		visible_message("<span class='warning'>[src] buzzes.</span>", "<span class='hear'>I hear a faint buzz.</span>")
+		visible_message("<span class='warning'>[src] гудит.</span>", "<span class='hear'>Слышно слабое жужжание.</span>")
 		playsound(src.loc, 'sound/blank.ogg', 50, TRUE)
 		return
 

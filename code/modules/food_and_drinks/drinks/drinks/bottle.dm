@@ -55,7 +55,7 @@
 		return ..()
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>I don't want to harm [target]!</span>")
+		to_chat(user, "<span class='warning'>Я не хочу причинять вред [target]!</span>")
 		return
 
 	var/obj/item/bodypart/affecting = user.zone_selected //Find what the player is aiming at

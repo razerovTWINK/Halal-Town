@@ -26,7 +26,7 @@
 	if(world.time > next_decree)
 		next_decree = world.time + rand(3 MINUTES, 8 MINUTES)
 		if(GLOB.lord_decrees.len)
-			say("The King Decrees: [pick(GLOB.lord_decrees)]", spans = list("info"))
+			say("Король Указует: [pick(GLOB.lord_decrees)]", spans = list("info"))
 
 /obj/structure/roguemachine/scomm/attack_hand(mob/living/user)
 	. = ..()
@@ -36,7 +36,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, "<span class='info'>I [speaking ? "unmute" : "mute"] the SCOM.</span>")
+	to_chat(user, "<span class='info'>Я [speaking ? "включаю" : "выключаю"] SCOM.</span>")
 	update_icon()
 
 /obj/structure/roguemachine/scomm/attack_right(mob/user)
@@ -47,9 +47,9 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	if(SSticker.rulertype == "King")
-		contents += "<center>KING'S DECREES<BR>"
+		contents += "<center>УКАЗЫ КОРОЛЯ<BR>"
 	else
-		contents += "<center>QUEEN'S DECREES<BR>"
+		contents += "<center>УКАЗЫ КОРОЛЕВЫ<BR>"
 	contents += "-----------<BR><BR></center>"
 	for(var/i = GLOB.lord_decrees.len to 1 step -1)
 		contents += "[i]. <span class='info'>[GLOB.lord_decrees[i]]</span><BR>"
@@ -160,7 +160,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, "<span class='info'>I [speaking ? "unmute" : "mute"] the scomstone.</span>")
+	to_chat(user, "<span class='info'>Я [speaking ? "включаю" : "выключаю"] scomstone.</span>")
 	update_icon()
 
 /obj/item/scomstone/Destroy()

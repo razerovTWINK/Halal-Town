@@ -1,5 +1,5 @@
 /obj/item/gun/energy/e_gun/advtaser/mounted
-	name = "mounted taser"
+	name = "станковый тазер"
 	desc = ""
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "taser"
@@ -13,7 +13,7 @@
 	..()
 
 /obj/item/gun/energy/laser/mounted
-	name = "mounted laser"
+	name = "станковый лазер"
 	desc = ""
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "laser"

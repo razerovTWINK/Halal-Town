@@ -2,7 +2,7 @@
 /// Drinks.
 ////////////////////////////////////////////////////////////////////////////////
 /obj/item/reagent_containers/food/drinks
-	name = "drink"
+	name = "напиток"
 	desc = ""
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = null
@@ -22,30 +22,30 @@
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 		return 0
 
 	if(!canconsume(M, user))
 		return 0
 
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, "<span class='warning'>Крышка [src] не открыта!</span>")
 		return 0
 
 	if(M == user)
 		user.visible_message("<span class='notice'>[user] swallows a gulp of [src].</span>", \
-			"<span class='notice'>I swallow a gulp of [src].</span>")
+			"<span class='notice'>Я делаю глоток [src].</span>")
 		if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) //chug! chug! chug!
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to feed [M] the contents of [src].</span>", \
+		M.visible_message("<span class='danger'>[user] пытается скормить [M] содержимое [src].</span>", \
 			"<span class='danger'>[user] attempts to feed you the contents of [src].</span>")
 		if(!do_mob(user, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message("<span class='danger'>[user] fed [M] the contents of [src].</span>", \
+		M.visible_message("<span class='danger'>[user] скормил [M] содержимое [src].</span>", \
 			"<span class='danger'>[user] fed you the contents of [src].</span>")
 		log_combat(user, M, "fed", reagents.log_list())
 
@@ -67,7 +67,7 @@
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, "<span class='warning'>[target] полон.</span>")
 			return
 
 		var/refill = reagents.get_master_reagent_id()
@@ -89,17 +89,17 @@
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'>[src] полон.</span>")
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>I fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Я наполняю [src] [trans] единицами содержимого [target].</span>")
 
 /obj/item/reagent_containers/food/drinks/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>I heat [name] with [I]!</span>")
+		to_chat(user, "<span class='notice'>Я нагреваю [name] при помощи [I]!</span>")
 	..()
 
 /obj/item/reagent_containers/food/drinks/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -144,7 +144,7 @@
 
 
 /obj/item/reagent_containers/food/drinks/trophy
-	name = "pewter cup"
+	name = "оловянная кружка"
 	desc = ""
 	icon_state = "pewter_cup"
 	w_class = WEIGHT_CLASS_TINY
@@ -160,7 +160,7 @@
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/trophy/gold_cup
-	name = "gold cup"
+	name = "золотая чаша"
 	desc = ""
 	icon_state = "golden_cup"
 	w_class = WEIGHT_CLASS_BULKY
@@ -171,7 +171,7 @@
 	volume = 150
 
 /obj/item/reagent_containers/food/drinks/trophy/silver_cup
-	name = "silver cup"
+	name = "серебряная чаша"
 	desc = ""
 	icon_state = "silver_cup"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -183,7 +183,7 @@
 
 
 /obj/item/reagent_containers/food/drinks/trophy/bronze_cup
-	name = "bronze cup"
+	name = "бронзовая чаша"
 	desc = ""
 	icon_state = "bronze_cup"
 	w_class = WEIGHT_CLASS_SMALL
@@ -223,7 +223,7 @@
 	list_reagents  = list(/datum/reagent/consumable/ice = 25, /datum/reagent/liquidgibs = 5)
 
 /obj/item/reagent_containers/food/drinks/mug/ // parent type is literally just so empty mug sprites are a thing
-	name = "mug"
+	name = "кружка"
 	desc = ""
 	icon_state = "tea"
 	item_state = "coffee"
@@ -279,7 +279,7 @@
 	foodtype = GRAIN | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/sillycup
-	name = "paper cup"
+	name = "бумажный стаканчик"
 	desc = ""
 	icon_state = "water_cup_e"
 	possible_transfer_amounts = list()
@@ -294,7 +294,7 @@
 		icon_state = "water_cup_e"
 
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
-	name = "small carton"
+	name = "маленький пакет"
 	desc = ""
 	icon_state = "juicebox"
 	volume = 15 //I figure if you have to craft these it should at least be slightly better than something you can get for free from a watercooler
@@ -321,37 +321,37 @@
 		switch(reagents.get_master_reagent_id())
 			if(/datum/reagent/consumable/orangejuice)
 				icon_state = "orangebox"
-				name = "orange juice box"
+				name = "пакет апельсинового сока"
 				desc = ""
 				foodtype = FRUIT | BREAKFAST
 			if(/datum/reagent/consumable/milk)
 				icon_state = "milkbox"
-				name = "carton of milk"
+				name = "пакет молока"
 				desc = ""
 				foodtype = DAIRY | BREAKFAST
 			if(/datum/reagent/consumable/applejuice)
 				icon_state = "juicebox"
-				name = "apple juice box"
+				name = "пакет яблочного сока"
 				desc = ""
 				foodtype = FRUIT
 			if(/datum/reagent/consumable/grapejuice)
 				icon_state = "grapebox"
-				name = "grape juice box"
+				name = "пакет виноградного сока"
 				desc = ""
 				foodtype = FRUIT
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
-				name = "carton of chocolate milk"
+				name = "пакет шоколадного молока"
 				desc = ""
 				foodtype = SUGAR
 			if(/datum/reagent/consumable/ethanol/eggnog)
 				icon_state = "nog2"
-				name = "carton of eggnog"
+				name = "пакет гоголь-моголя"
 				desc = ""
 				foodtype = MEAT
 	else
 		icon_state = "juicebox"
-		name = "small carton"
+		name = "маленький пакет"
 		desc = ""
 
 
@@ -362,7 +362,7 @@
 //	icon states.
 
 /obj/item/reagent_containers/food/drinks/shaker
-	name = "shaker"
+	name = "шейкер"
 	desc = ""
 	icon_state = "shaker"
 	custom_materials = list(/datum/material/iron=1500)
@@ -371,7 +371,7 @@
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/flask
-	name = "flask"
+	name = "фляга"
 	desc = ""
 	custom_price = 30
 	icon_state = "flask"
@@ -392,7 +392,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
 /obj/item/reagent_containers/food/drinks/britcup
-	name = "cup"
+	name = "чашка"
 	desc = ""
 	icon_state = "britcup"
 	volume = 30
@@ -402,7 +402,7 @@
 //These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
 
 /obj/item/reagent_containers/food/drinks/soda_cans
-	name = "soda can"
+	name = "банка газировки"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	reagent_flags = NONE
@@ -480,13 +480,13 @@
 	foodtype = ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater
-	name = "soda water"
+	name = "газировка"
 	desc = ""
 	icon_state = "sodawater"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime
-	name = "orange soda"
+	name = "апельсиновая газировка"
 	desc = ""
 	icon_state = "lemon-lime"
 	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
@@ -494,7 +494,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime/Initialize()
 	. = ..()
-	name = "lemon-lime soda"
+	name = "газировка лимон-лайм"
 
 /obj/item/reagent_containers/food/drinks/soda_cans/space_up
 	name = "Space-Up!"

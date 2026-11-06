@@ -223,7 +223,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -233,7 +233,7 @@
 				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>I remove the central computer mainboard from [parent].</span>")
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>I unfasten the mainboard.</span>")
 		if(8)
@@ -243,7 +243,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -253,7 +253,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(12)
@@ -509,7 +509,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -519,7 +519,7 @@
 				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>I remove the central computer mainboard from [parent].</span>")
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>I unfasten the mainboard.</span>")
 		if(8)
@@ -529,7 +529,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -539,7 +539,7 @@
 				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>I remove the weapon control module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>I unfasten the weapon control module.</span>")
 		if(12)
@@ -549,7 +549,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(14)
@@ -559,7 +559,7 @@
 				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>I remove the capacitor from [parent].</span>")
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>I unfasten the capacitor.</span>")
 		if(16)
@@ -584,7 +584,7 @@
 				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>I unfasten the internal armor layer.</span>")
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>I cut the internal armor layer from [parent].</span>")
 		if(21)
@@ -794,7 +794,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -814,7 +814,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -824,7 +824,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(12)
@@ -834,7 +834,7 @@
 				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>I remove the capacitor from [parent].</span>")
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>I unfasten the capacitor.</span>")
 		if(14)
@@ -1006,17 +1006,17 @@
 	//TODO: better messages.
 	switch(index)
 		if(2)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(4)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(6)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(8)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(10)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(12)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+			user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 		if(14)
 			user.visible_message("<span class='notice'>[user] puts [I] on [parent].</span>", "<span class='notice'>I put [I] on [parent].</span>")
 		if(16)
@@ -1227,7 +1227,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -1237,7 +1237,7 @@
 				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>I remove the central computer mainboard from [parent].</span>")
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>I unfasten the mainboard.</span>")
 		if(8)
@@ -1247,7 +1247,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -1257,7 +1257,7 @@
 				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>I remove the weapon control module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>I unfasten the weapon control module.</span>")
 		if(12)
@@ -1267,7 +1267,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(14)
@@ -1277,7 +1277,7 @@
 				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>I remove the capacitor from [parent].</span>")
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>I unfasten the capacitor.</span>")
 		if(16)
@@ -1302,7 +1302,7 @@
 				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>I unfasten the internal armor layer.</span>")
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>I cut the internal armor layer from [parent].</span>")
 		if(21)
@@ -1563,7 +1563,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -1573,7 +1573,7 @@
 				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>I remove the central computer mainboard from [parent].</span>")
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>I unfasten the mainboard.</span>")
 		if(8)
@@ -1583,7 +1583,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -1593,7 +1593,7 @@
 				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>I remove the weapon control module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>I unfasten the weapon control module.</span>")
 		if(12)
@@ -1603,7 +1603,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(14)
@@ -1628,7 +1628,7 @@
 				user.visible_message("<span class='notice'>[user] disconnects the bluespace crystal from [parent].</span>", "<span class='notice'>I disconnect the bluespace crystal from [parent].</span>")
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disengages the bluespace crystal.</span>", "<span class='notice'>I disengage the bluespace crystal.</span>")
 		if(19)
@@ -1653,7 +1653,7 @@
 				user.visible_message("<span class='notice'>[user] unfastens the phase armor layer.</span>", "<span class='notice'>I unfasten the phase armor layer.</span>")
 		if(23)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] cuts phase armor layer from [parent].</span>", "<span class='notice'>I cut the phase armor layer from [parent].</span>")
 		if(24)
@@ -1861,7 +1861,7 @@
 				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>I remove the wiring from [parent].</span>")
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>I disconnect the wiring of [parent].</span>")
 		if(6)
@@ -1871,7 +1871,7 @@
 				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>I remove the central computer mainboard from [parent].</span>")
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>I unfasten the mainboard.</span>")
 		if(8)
@@ -1881,7 +1881,7 @@
 				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>I remove the peripherals control module from [parent].</span>")
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>I unfasten the peripherals control module.</span>")
 		if(10)
@@ -1891,7 +1891,7 @@
 				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>I remove the scanner module from [parent].</span>")
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>I install [I] to [parent].</span>")
+				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>Я устанавливаю [I] на [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>I unfasten the scanner module.</span>")
 		if(12)
@@ -1901,7 +1901,7 @@
 				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>I remove the capacitor from [parent].</span>")
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>I install [I] into [parent].</span>")
+				user.visible_message("<span class='notice'>[user] устанавливает [I] в [parent].</span>", "<span class='notice'>Я устанавливаю [I] в [parent].</span>")
 			else
 				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>I unfasten the capacitor.</span>")
 		if(14)

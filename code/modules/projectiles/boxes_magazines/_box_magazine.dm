@@ -1,6 +1,6 @@
 //Boxes of ammo
 /obj/item/ammo_box
-	name = "ammo box (null_reference_exception)"
+	name = "коробка патронов (null_reference_exception)"
 	desc = ""
 	icon = 'icons/obj/ammo.dmi'
 	flags_1 = CONDUCT_1
@@ -106,7 +106,7 @@
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>I load [num_loaded] shell\s into \the [src]!</span>")
+			to_chat(user, "<span class='notice'>Ты заряжаешь [num_loaded] патронов в [src]!</span>")
 			playsound(src, 'sound/blank.ogg', 60, TRUE)
 		A.update_icon()
 		update_icon()
@@ -119,7 +119,7 @@
 		if(!user.is_holding(src) || !user.put_in_hands(A))	//incase they're using TK
 			A.bounce_away(FALSE, NONE)
 		playsound(src, 'sound/blank.ogg', 60, TRUE)
-		to_chat(user, "<span class='notice'>I remove a round from [src]!</span>")
+		to_chat(user, "<span class='notice'>Ты вынимаешь патрон из [src]!</span>")
 		update_icon()
 
 /obj/item/ammo_box/update_icon()

@@ -2,7 +2,7 @@
 
 //The ammo/gun is stored in a back slot item
 /obj/item/minigunpack
-	name = "backpack power source"
+	name = "ранцевый источник питания"
 	desc = ""
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "holstered"
@@ -37,12 +37,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, "<span class='warning'>I need a free hand to hold the gun!</span>")
+					to_chat(user, "<span class='warning'>Нужна свободная рука, чтобы держать орудие!</span>")
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, "<span class='warning'>I are already holding the gun!</span>")
+			to_chat(user, "<span class='warning'>Ты уже держишь орудие в руках!</span>")
 	else
 		..()
 
@@ -86,15 +86,15 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, "<span class='notice'>I attach the [gun.name] to the [name].</span>")
+		to_chat(user, "<span class='notice'>Ты прикрепляешь [gun.name] к [name].</span>")
 	else
-		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
+		src.visible_message("<span class='warning'>[gun.name] защелкивается обратно на [name]!</span>")
 	update_icon()
 	user.update_inv_back()
 
 
 /obj/item/gun/ballistic/minigun
-	name = "laser gatling gun"
+	name = "лазерный пулемет Гатлинга"
 	desc = ""
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "minigun_spin"
@@ -139,9 +139,9 @@
 			ammo_pack.overheat += burst_size
 			..()
 		else
-			to_chat(user, "<span class='warning'>The gun's heat sensor locked the trigger to prevent lens damage!</span>")
+			to_chat(user, "<span class='warning'>Датчик перегрева заблокировал спуск во избежание повреждения линзы!</span>")
 
 /obj/item/gun/ballistic/minigun/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)
-		to_chat(user, "<span class='warning'>I need the backpack power source to fire the gun!</span>")
+		to_chat(user, "<span class='warning'>Для стрельбы требуется ранцевый источник питания!</span>")
 	. = ..()

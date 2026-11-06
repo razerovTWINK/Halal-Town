@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/projectile/magic_missile
-	name = "Magic Missile"
+	name = "Магическая стрела"
 	desc = ""
 
 	school = "evocation"
@@ -15,7 +15,7 @@
 	sound = 'sound/blank.ogg'
 
 /obj/projectile/magic/spell/magic_missile
-	name = "magic missile"
+	name = "магическая стрела"
 	icon_state = "magicm"
 	range = 20
 	speed = 5
@@ -34,11 +34,11 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message("<span class='warning'>[src] исчезает при контакте с [target]!</span>")
 			return BULLET_ACT_BLOCK
 
 /obj/effect/proc_holder/spell/targeted/genetic/mutate
-	name = "Mutate"
+	name = "Мутация"
 	desc = ""
 
 	school = "transmutation"
@@ -58,7 +58,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/smoke
-	name = "Smoke"
+	name = "Дым"
 	desc = ""
 
 	school = "conjuration"
@@ -77,7 +77,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/smoke/lesser //Chaplain smoke book
-	name = "Smoke"
+	name = "Дым"
 	desc = ""
 
 	school = "conjuration"
@@ -94,7 +94,7 @@
 	action_icon_state = "smoke"
 
 /obj/effect/proc_holder/spell/targeted/emplosion/disable_tech
-	name = "Disable Tech"
+	name = "Подавление техники"
 	desc = ""
 	charge_max = 400
 	clothes_req = TRUE
@@ -109,7 +109,7 @@
 	sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/turf_teleport/blink
-	name = "Blink"
+	name = "Скачок"
 	desc = ""
 
 	school = "abjuration"
@@ -133,13 +133,13 @@
 	sound2 = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/turf_teleport/blink/cult
-	name = "quickstep"
+	name = "быстрый шаг"
 
 	charge_max = 100
 	clothes_req = TRUE
 
 /obj/effect/proc_holder/spell/targeted/area_teleport/teleport
-	name = "Teleport"
+	name = "Телепортация"
 	desc = ""
 
 	school = "abjuration"
@@ -158,14 +158,14 @@
 	sound2 = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/area_teleport/teleport/santa
-	name = "Santa Teleport"
+	name = "Телепортация Санты"
 
 	invocation = "HO HO HO"
 	clothes_req = FALSE
 	say_destination = FALSE // Santa moves in mysterious ways
 
 /obj/effect/proc_holder/spell/aoe_turf/timestop
-	name = "Stop Time"
+	name = "Остановка времени"
 	desc = ""
 	charge_max = 500
 	clothes_req = TRUE
@@ -181,7 +181,7 @@
 	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/carp
-	name = "Summon Carp"
+	name = "Призыв карпа"
 	desc = ""
 
 	school = "conjuration"
@@ -196,7 +196,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/construct
-	name = "Artificer"
+	name = "Ремесленник"
 	desc = ""
 
 	school = "conjuration"
@@ -213,7 +213,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/creature
-	name = "Summon Creature Swarm"
+	name = "Призыв роя тварей"
 	desc = ""
 
 	school = "conjuration"
@@ -228,7 +228,7 @@
 	cast_sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/trigger/blind
-	name = "Blind"
+	name = "Ослепление"
 	desc = ""
 
 	school = "transmutation"
@@ -236,7 +236,7 @@
 	clothes_req = FALSE
 	invocation = "STI KALY"
 	invocation_type = "whisper"
-	message = "<span class='notice'>My eyes cry out in pain!</span>"
+	message = "<span class='notice'>Мои глаза жжёт от боли!</span>"
 	cooldown_min = 50 //12 deciseconds reduction per rank
 
 	starting_spells = list("/obj/effect/proc_holder/spell/targeted/inflict_handler/blind","/obj/effect/proc_holder/spell/targeted/genetic/blind")
@@ -244,7 +244,7 @@
 	action_icon_state = "blind"
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/creature/cult
-	name = "Summon Creatures (DANGEROUS)"
+	name = "Призыв тварей (ОПАСНО)"
 	clothes_req = TRUE
 	charge_max = 5000
 	summon_amt = 2
@@ -263,7 +263,7 @@
 	sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse
-	name = "Repulse"
+	name = "Отталкивание"
 	desc = ""
 	charge_max = 400
 	clothes_req = TRUE
@@ -306,17 +306,17 @@
 				var/mob/living/M = AM
 				M.Paralyze(100)
 				M.adjustBruteLoss(5)
-				to_chat(M, "<span class='danger'>You're slammed into the floor by [user]!</span>")
+				to_chat(M, "<span class='danger'>[user] впечатывает тебя в пол!</span>")
 		else
 			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
 			if(isliving(AM))
 				var/mob/living/M = AM
 				M.Paralyze(stun_amt)
-				to_chat(M, "<span class='danger'>You're thrown back by [user]!</span>")
+				to_chat(M, "<span class='danger'>[user] отшвыривает тебя назад!</span>")
 			AM.safe_throw_at(throwtarget, ((CLAMP((maxthrow - (CLAMP(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
-	name = "Tail Sweep"
+	name = "Удар хвостом"
 	desc = ""
 	sound = 'sound/blank.ogg'
 	charge_max = 150
@@ -339,7 +339,7 @@
 	..(targets, user, 60)
 
 /obj/effect/proc_holder/spell/targeted/sacred_flame
-	name = "Sacred Flame"
+	name = "Священное пламя"
 	desc = ""
 	charge_max = 60
 	clothes_req = FALSE
@@ -363,7 +363,7 @@
 			U.IgniteMob()
 
 /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket
-	name = "Thrown Lightning"
+	name = "Метательная молния"
 	desc = ""
 	clothes_req = TRUE
 	item_type = /obj/item/spellpacket/lightningbolt
@@ -376,7 +376,7 @@
 		C.throw_mode_on()
 
 /obj/item/spellpacket/lightningbolt
-	name = "\improper Lightning bolt Spell Packet"
+	name = "\improper свиток молнии"
 	desc = ""
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snappop"

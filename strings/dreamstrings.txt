@@ -1,44 +1,44 @@
-%A% %ADJECTIVE% familiar face
-%A% %ADJECTIVE% crewmember
-%A% %ADJECTIVE% security officer
-%A% %ADJECTIVE% doctor
-%A% %ADJECTIVE% engineer
-%A% %ADJECTIVE% miner
-%A% %ADJECTIVE% slime
-%A% %ADJECTIVE% alien
-%A% %ADJECTIVE% traitor
-%A% %ADJECTIVE% ally
-%A% %ADJECTIVE% scientist
-%A% %ADJECTIVE% monkey
-%A% %ADJECTIVE% loved one
-%A% %ADJECTIVE% monster
-the %ADJECTIVE% captain
-%A% %ADJECTIVE% hat
-%A% %ADJECTIVE% ID card
-%A% %ADJECTIVE% bottle
-%A% %ADJECTIVE% toolbox
-%A% %ADJECTIVE% gun
-the sun
-the engine
-the station
-%A% %ADJECTIVE% planet
-the medical bay
-the %ADJECTIVE% bridge
-the %ADJECTIVE% brig
-%A% %ADJECTIVE% shuttle
-%A% %ADJECTIVE% laboratory
-Nanotrasen
-the Syndicate
-the Wizard Federation
-%ADJECTIVE% blood
-%ADJECTIVE% plasma
-%ADJECTIVE% wind
-%ADJECTIVE% darkness
-%ADJECTIVE% light
-%ADJECTIVE% death
-%ADJECTIVE% blinking lights
-%ADJECTIVE% power
-%ADJECTIVE% riches
-water
-%ADJECTIVE% flames
-some %ADJECTIVE% melons
+%ADJECTIVE% знакомое лицо
+%ADJECTIVE% член экипажа
+%ADJECTIVE% офицер охраны
+%ADJECTIVE% врач
+%ADJECTIVE% инженер
+%ADJECTIVE% шахтёр
+%ADJECTIVE% слайм
+%ADJECTIVE% пришелец
+%ADJECTIVE% предатель
+%ADJECTIVE% союзник
+%ADJECTIVE% учёный
+%ADJECTIVE% обезьяна
+%ADJECTIVE% близкий человек
+%ADJECTIVE% чудовище
+%ADJECTIVE% капитан
+%ADJECTIVE% шляпа
+%ADJECTIVE% ID-карта
+%ADJECTIVE% бутылка
+%ADJECTIVE% ящик с инструментами
+%ADJECTIVE% оружие
+солнце
+двигатель
+станция
+%ADJECTIVE% планета
+медотсек
+%ADJECTIVE% мостик
+%ADJECTIVE% карцер
+%ADJECTIVE% шаттл
+%ADJECTIVE% лаборатория
+Нанотрейзен
+Синдикат
+Федерация Волшебников
+%ADJECTIVE% кровь
+%ADJECTIVE% плазма
+%ADJECTIVE% ветер
+%ADJECTIVE% тьма
+%ADJECTIVE% свет
+%ADJECTIVE% смерть
+%ADJECTIVE% мигающие огни
+%ADJECTIVE% энергия
+%ADJECTIVE% богатства
+вода
+%ADJECTIVE% пламя
+какие-то %ADJECTIVE% дыни

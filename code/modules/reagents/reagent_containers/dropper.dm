@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/dropper
-	name = "dropper"
+	name = "пипетка"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dropper0"
@@ -17,7 +17,7 @@
 
 	if(reagents.total_volume > 0)
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='notice'>[target] is full.</span>")
+			to_chat(user, "<span class='notice'>[target] полон.</span>")
 			return
 
 		if(!target.is_injectable(user))
@@ -39,7 +39,7 @@
 
 					trans = reagents.trans_to(safe_thing, amount_per_transfer_from_this, transfered_by = user, method = TOUCH)
 
-					target.visible_message("<span class='danger'>[user] tries to squirt something into [target]'s eyes, but fails!</span>", \
+					target.visible_message("<span class='danger'>[user] пытается брызнуть чем-то в глаза [target], но не выходит!</span>", \
 											"<span class='danger'>[user] tries to squirt something into your eyes, but fails!</span>")
 
 					to_chat(user, "<span class='notice'>I transfer [trans] unit\s of the solution.</span>")
@@ -49,7 +49,7 @@
 				to_chat(target, "<span class='danger'>[target] does not seem to have any eyes!</span>")
 				return
 
-			target.visible_message("<span class='danger'>[user] squirts something into [target]'s eyes!</span>", \
+			target.visible_message("<span class='danger'>[user] брызгает чем-то в глаза [target]!</span>", \
 									"<span class='danger'>[user] squirts something into your eyes!</span>")
 
 			reagents.reaction(target, TOUCH, fraction)
@@ -68,11 +68,11 @@
 	else
 
 		if(!target.is_drawable(user, FALSE)) //No drawing from mobs here
-			to_chat(user, "<span class='warning'>I cannot directly remove reagents from [target]!</span>")
+			to_chat(user, "<span class='warning'>Я не могу напрямую извлекать реагенты из [target]!</span>")
 			return
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty!</span>")
+			to_chat(user, "<span class='warning'>[target] пуст!</span>")
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)

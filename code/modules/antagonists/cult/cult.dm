@@ -49,7 +49,7 @@
 		. = is_convertable_to_cult(new_owner.current,cult_team)
 
 /datum/antagonist/cult/greet()
-	to_chat(owner, "<span class='danger'>I are a member of the cult!</span>")
+	to_chat(owner, "<span class='danger'>Ты — член культа!</span>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/blank.ogg', 100, FALSE, pressure_affected = FALSE)//subject to change
 	owner.announce_objectives()
 
@@ -73,7 +73,7 @@
 	. += cult_give_item(/obj/item/melee/cultblade/dagger, H)
 	if(metal)
 		. += cult_give_item(/obj/item/stack/sheet/runed_metal/ten, H)
-	to_chat(owner, "These will help you start the cult on this station. Use them well, and remember - you are not the only one.</span>")
+	to_chat(owner, "Это поможет тебе положить начало культу. Используй их с умом и помни: ты здесь не один.</span>")
 
 
 /datum/antagonist/cult/proc/cult_give_item(obj/item/item_path, mob/living/carbon/human/mob)
@@ -87,10 +87,10 @@
 	var/item_name = initial(item_path.name)
 	var/where = mob.equip_in_one_of_slots(T, slots)
 	if(!where)
-		to_chat(mob, "<span class='danger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
+		to_chat(mob, "<span class='danger'>К сожалению, тебе не удалось получить [item_name]. Это ошибка, срочно свяжись с администрацией (нажми F1).</span>")
 		return 0
 	else
-		to_chat(mob, "<span class='danger'>I have a [item_name] in my [where].</span>")
+		to_chat(mob, "<span class='danger'>В твоём снаряжении ([where]) есть [item_name].</span>")
 		if(where == "backpack")
 			SEND_SIGNAL(mob.back, COMSIG_TRY_STORAGE_SHOW, mob)
 		return TRUE
@@ -101,7 +101,7 @@
 	if(mob_override)
 		current = mob_override
 	add_antag_hud(antag_hud_type, antag_hud_name, current)
-	handle_clown_mutation(current, mob_override ? null : "Your training has allowed you to overcome my clownish nature, allowing you to wield weapons without harming myself.")
+	handle_clown_mutation(current, mob_override ? null : "Твоя подготовка позволила преодолеть клоунскую натуру и держать оружие, не калеча себя.")
 	current.faction |= "cult"
 	current.grant_language(/datum/language/narsie)
 	if(!cult_team.cult_master)
@@ -139,8 +139,8 @@
 /datum/antagonist/cult/on_removal()
 	SSticker.mode.cult -= owner
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just reverted to [owner.current.p_their()] old faith!</span>", null, null, null, owner.current)
-		to_chat(owner.current, "<span class='danger'>An unfamiliar white light flashes through my mind, cleansing the taint of the Geometer and all my memories as her servant.</span>")
+		owner.current.visible_message("<span class='deconversion_message'>Похоже, [owner.current] возвращается к своей прежней вере!</span>", null, null, null, owner.current)
+		to_chat(owner.current, "<span class='danger'>Незнакомый белый свет озаряет твой разум, очищая от скверны Геометра и стирая воспоминания о служении ей.</span>")
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
@@ -196,9 +196,8 @@
 	set_antag_hud(current, "cultmaster")
 
 /datum/antagonist/cult/master/greet()
-	to_chat(owner.current, "<span class='cultlarge'>I are the cult's Master</span>. As the cult's Master, you have a unique title and loud voice when communicating, are capable of marking \
-	targets, such as a location or a noncultist, to direct the cult to them, and, finally, you are capable of summoning the entire living cult to my location <b><i>once</i></b>.")
-	to_chat(owner.current, "Use these abilities to direct the cult to victory at any cost.")
+	to_chat(owner.current, "<span class='cultlarge'>Ты — Магистр культа</span>. Как Магистр, ты обладаешь особым титулом и зычным голосом при общении, можешь отмечать цели (места или чужаков), чтобы направить на них культ, и, наконец, способен <b><i>один раз</i></b> призвать всех живых культистов к себе.")
+	to_chat(owner.current, "Используй эти дары, чтобы привести культ к победе любой ценой.")
 
 /datum/antagonist/cult/master/apply_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -265,7 +264,7 @@
 		for(var/datum/mind/B in members)
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/blank.ogg')
-				to_chat(B.current, "<span class='cultlarge'>The veil weakens as my cult grows, my eyes begin to glow...</span>")
+				to_chat(B.current, "<span class='cultlarge'>Завеса истончается по мере роста культа, глаза начинают пылать...</span>")
 				addtimer(CALLBACK(src, .proc/rise, B.current), 200)
 		cult_risen = TRUE
 
@@ -273,7 +272,7 @@
 		for(var/datum/mind/B in members)
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/blank.ogg')
-				to_chat(B.current, "<span class='cultlarge'>My cult is ascendent and the red harvest approaches - you cannot hide my true nature for much longer!!</span>")
+				to_chat(B.current, "<span class='cultlarge'>Культ возвысился, и приближается багровая жатва — истинную природу больше не скрыть!!</span>")
 				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
 		cult_ascendent = TRUE
 
@@ -345,9 +344,9 @@
 
 /datum/objective/sacrifice/update_explanation_text()
 	if(target)
-		explanation_text = "Sacrifice [target], the [target.assigned_role] via invoking a Sacrifice rune with [target.p_them()] on it and three acolytes around it."
+		explanation_text = "Принести в жертву [target] ([target.assigned_role]), активировав руну жертвоприношения с жертвой на ней в окружении трёх послушников."
 	else
-		explanation_text = "The veil has already been weakened here, proceed to the final objective."
+		explanation_text = "Завеса здесь уже истончена, переходите к финальной цели."
 
 /datum/objective/eldergod
 	var/summoned = FALSE
@@ -364,7 +363,7 @@
 	update_explanation_text()
 
 /datum/objective/eldergod/update_explanation_text()
-	explanation_text = "Summon Nar'Sie by invoking the rune 'Summon Nar'Sie'. <b>The summoning can only be accomplished in [english_list(summon_spots)] - where the veil is weak enough for the ritual to begin.</b>"
+	explanation_text = "Призвать Нар-Си, активировав руну «Призыв Нар-Си». <b>Призыв возможен только в следующих местах: [english_list(summon_spots)] — где завеса достаточно слаба для начала ритуала.</b>"
 
 /datum/objective/eldergod/check_completion()
 	return summoned || completed
@@ -379,22 +378,22 @@
 	var/list/parts = list()
 
 	if(check_cult_victory())
-		parts += "<span class='greentext big'>The cult has succeeded! Nar'Sie has snuffed out another torch in the void!</span>"
+		parts += "<span class='greentext big'>Культ преуспел! Нар-Си угасила ещё один факел в пустоте!</span>"
 	else
-		parts += "<span class='redtext big'>The staff managed to stop the cult! Dark words and heresy are no match for Nanotrasen's finest!</span>"
+		parts += "<span class='redtext big'>Культ был остановлен! Тёмные ритуалы и ересь не смогли сокрушить защитников!</span>"
 
 	if(objectives.len)
-		parts += "<b>The cultists' objectives were:</b>"
+		parts += "<b>Цели культистов:</b>"
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</span>"
+				parts += "<b>Цель #[count]</b>: [objective.explanation_text] <span class='greentext'>Успех!</span>"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
+				parts += "<b>Цель #[count]</b>: [objective.explanation_text] <span class='redtext'>Провал.</span>"
 			count++
 
 	if(members.len)
-		parts += "<span class='header'>The cultists were:</span>"
+		parts += "<span class='header'>Культисты:</span>"
 		parts += printplayerlist(members)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

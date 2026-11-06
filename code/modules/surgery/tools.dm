@@ -1,5 +1,5 @@
 /obj/item/retractor
-	name = "retractor"
+	name = "ранорасширитель"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "retractor"
@@ -19,7 +19,7 @@
 
 
 /obj/item/hemostat
-	name = "hemostat"
+	name = "хирургический зажим"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "hemostat"
@@ -40,7 +40,7 @@
 
 
 /obj/item/cautery
-	name = "cautery"
+	name = "прижигатель"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "cautery"
@@ -61,7 +61,7 @@
 
 
 /obj/item/surgicaldrill
-	name = "surgical drill"
+	name = "хирургическое сверло"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "drill"
@@ -86,7 +86,7 @@
 
 
 /obj/item/scalpel
-	name = "scalpel"
+	name = "скальпель"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel"
@@ -116,12 +116,12 @@
 	toolspeed = 0.5
 
 /obj/item/scalpel/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] режет себе [pick("запястья", "горло", "живот")] с помощью [src]! Похоже, [user] пытается покончить с собой!</span>")
 	return (BRUTELOSS)
 
 
 /obj/item/circular_saw
-	name = "circular saw"
+	name = "хирургическая пила"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "saw"
@@ -154,7 +154,7 @@
 
 
 /obj/item/surgical_drapes
-	name = "surgical drapes"
+	name = "хирургическая простыня"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgical_drapes"
@@ -169,7 +169,7 @@
 		..()
 
 /obj/item/organ_storage //allows medical cyborgs to manipulate organs without hands
-	name = "organ storage bag"
+	name = "мешок для органов"
 	desc = ""
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "evidenceobj"
@@ -180,13 +180,13 @@
 	if(!proximity)
 		return
 	if(contents.len)
-		to_chat(user, "<span class='warning'>[src] already has something inside it!</span>")
+		to_chat(user, "<span class='warning'>В [src] уже что-то лежит!</span>")
 		return
 	if(!isorgan(I) && !isbodypart(I))
-		to_chat(user, "<span class='warning'>[src] can only hold body parts!</span>")
+		to_chat(user, "<span class='warning'>В [src] можно класть только части тела или органы!</span>")
 		return
 
-	user.visible_message("<span class='notice'>[user] puts [I] into [src].</span>", "<span class='notice'>I put [I] inside [src].</span>")
+	user.visible_message("<span class='notice'>[user] кладёт [I] в [src].</span>", "<span class='notice'>Ты кладёшь [I] в [src].</span>")
 	icon_state = "evidence"
 	var/xx = I.pixel_x
 	var/yy = I.pixel_y
@@ -205,17 +205,17 @@
 /obj/item/organ_storage/attack_self(mob/user)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] dumps [I] from [src].</span>", "<span class='notice'>I dump [I] from [src].</span>")
+		user.visible_message("<span class='notice'>[user] достаёт [I] из [src].</span>", "<span class='notice'>Ты достаёшь [I] из [src].</span>")
 		cut_overlays()
 		I.forceMove(get_turf(src))
 		icon_state = "evidenceobj"
 		desc = ""
 	else
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, "<span class='notice'>[src] пуст.</span>")
 	return
 
 /obj/item/surgical_processor //allows medical cyborgs to scan and initiate advanced surgeries
-	name = "\improper Surgical Processor"
+	name = "\improper хирургический процессор"
 	desc = ""
 	icon = 'icons/obj/device.dmi'
 	icon_state = "spectrometer"
@@ -227,13 +227,13 @@
 	if(!proximity)
 		return
 	if(istype(O, /obj/item/disk/surgery))
-		to_chat(user, "<span class='notice'>I load the surgery protocol from [O] into [src].</span>")
+		to_chat(user, "<span class='notice'>Ты загружаешь протокол операции из [O] в [src].</span>")
 		var/obj/item/disk/surgery/D = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= D.surgeries
 		return TRUE
 	if(istype(O, /obj/machinery/computer/operating))
-		to_chat(user, "<span class='notice'>I copy surgery protocols from [O] into [src].</span>")
+		to_chat(user, "<span class='notice'>Ты копируешь протоколы операций из [O] в [src].</span>")
 		var/obj/machinery/computer/operating/OC = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= OC.advanced_surgeries
@@ -241,7 +241,7 @@
 	return
 
 /obj/item/scalpel/advanced
-	name = "laser scalpel"
+	name = "лазерный скальпель"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel_a"
@@ -259,23 +259,23 @@
 	playsound(get_turf(user), 'sound/blank.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_SCALPEL)
 		tool_behaviour = TOOL_SAW
-		to_chat(user, "<span class='notice'>I increase the power of [src], now it can cut bones.</span>")
+		to_chat(user, "<span class='notice'>Ты увеличиваешь мощность [src], теперь он может резать кости.</span>")
 		set_light(2)
 		force += 1 //we don't want to ruin sharpened stuff
 		icon_state = "saw_a"
 	else
 		tool_behaviour = TOOL_SCALPEL
-		to_chat(user, "<span class='notice'>I lower the power of [src], it can no longer cut bones.</span>")
+		to_chat(user, "<span class='notice'>Ты снижаешь мощность [src], теперь он больше не может резать кости.</span>")
 		set_light(1)
 		force -= 1
 		icon_state = "scalpel_a"
 
 /obj/item/scalpel/advanced/examine()
 	. = ..()
-	. += " It's set to [tool_behaviour == TOOL_SCALPEL ? "scalpel" : "saw"] mode."
+	. += " Установлен режим: [tool_behaviour == TOOL_SCALPEL ? "скальпель" : "пила"]."
 
 /obj/item/retractor/advanced
-	name = "mechanical pinches"
+	name = "механические щипцы"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "retractor_a"
@@ -285,19 +285,19 @@
 	playsound(get_turf(user), 'sound/blank.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_RETRACTOR)
 		tool_behaviour = TOOL_HEMOSTAT
-		to_chat(user, "<span class='notice'>I configure the gears of [src], they are now in hemostat mode.</span>")
+		to_chat(user, "<span class='notice'>Ты настраиваешь шестерни [src] в режим зажима.</span>")
 		icon_state = "hemostat_a"
 	else
 		tool_behaviour = TOOL_RETRACTOR
-		to_chat(user, "<span class='notice'>I configure the gears of [src], they are now in retractor mode.</span>")
+		to_chat(user, "<span class='notice'>Ты настраиваешь шестерни [src] в режим ранорасширителя.</span>")
 		icon_state = "retractor_a"
 
 /obj/item/retractor/advanced/examine()
 	. = ..()
-	. += " It resembles a [tool_behaviour == TOOL_RETRACTOR ? "retractor" : "hemostat"]."
+	. += " Инструмент сейчас действует как [tool_behaviour == TOOL_RETRACTOR ? "ранорасширитель" : "зажим"]."
 
 /obj/item/surgicaldrill/advanced
-	name = "searing tool"
+	name = "прижигающий инструмент"
 	desc = ""
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgicaldrill_a"
@@ -313,13 +313,13 @@
 	playsound(get_turf(user), 'sound/blank.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_DRILL)
 		tool_behaviour = TOOL_CAUTERY
-		to_chat(user, "<span class='notice'>I focus the lenses of [src], it is now in mending mode.</span>")
+		to_chat(user, "<span class='notice'>Ты фокусируешь линзы [src] в режим прижигания.</span>")
 		icon_state = "cautery_a"
 	else
 		tool_behaviour = TOOL_DRILL
-		to_chat(user, "<span class='notice'>I dilate the lenses of [src], it is now in drilling mode.</span>")
+		to_chat(user, "<span class='notice'>Ты расширяешь линзы [src] в режим сверления.</span>")
 		icon_state = "surgicaldrill_a"
 
 /obj/item/surgicaldrill/advanced/examine()
 	. = ..()
-	. += " It's set to [tool_behaviour == TOOL_DRILL ? "drilling" : "mending"] mode."
+	. += " Установлен режим: [tool_behaviour == TOOL_DRILL ? "сверление" : "прижигание"]."

@@ -369,15 +369,15 @@
 
 /datum/antagonist/changeling/greet()
 	if (you_are_greet)
-		to_chat(owner.current, "<span class='boldannounce'>I are [changelingID], a changeling! You have absorbed and taken the form of a human.</span>")
-	to_chat(owner.current, "<span class='boldannounce'>Use say \"[MODE_TOKEN_CHANGELING] message\" to communicate with your fellow changelings.</span>")
-	to_chat(owner.current, "<b>I must complete the following tasks:</b>")
+		to_chat(owner.current, "<span class='boldannounce'>Ты — [changelingID], генокрад! Ты поглотил человека и принял его облик.</span>")
+	to_chat(owner.current, "<span class='boldannounce'>Используй скажи \"[MODE_TOKEN_CHANGELING] сообщение\" для мысленного общения с другими генокрадами.</span>")
+	to_chat(owner.current, "<b>Ты должен выполнить следующие задачи:</b>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/blank.ogg', 100, FALSE, pressure_affected = FALSE)
 
 	owner.announce_objectives()
 
 /datum/antagonist/changeling/farewell()
-	to_chat(owner.current, "<span class='danger'>I grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!</span>")
+	to_chat(owner.current, "<span class='danger'>Силы покидают тебя! Ты больше не генокрад и застрял в текущем облике!</span>")
 
 /datum/antagonist/changeling/proc/forge_team_objectives()
 	if(GLOB.changeling_team_objective_type)
@@ -479,7 +479,7 @@
 
 /datum/antagonist/changeling/admin_add(datum/mind/new_owner,mob/admin)
 	. = ..()
-	to_chat(new_owner.current, "<span class='boldannounce'>Our powers have awoken. A flash of memory returns to us...we are [changelingID], a changeling!</span>")
+	to_chat(new_owner.current, "<span class='boldannounce'>Наши силы пробудились. Вспышка памяти возвращается... мы — [changelingID], генокрад!</span>")
 
 /datum/antagonist/changeling/get_admin_commands()
 	. = ..()

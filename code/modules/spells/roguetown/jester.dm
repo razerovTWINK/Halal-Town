@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/self/telljoke
-	name = "Comedia"
-	desc = "Say something funny to someone in high spirits, it will brighten their mood."
+	name = "Комедия"
+	desc = "Скажи что-нибудь смешное тому, кто в хорошем настроении, чтобы приободрить его ещё сильнее."
 	overlay_state = "comedy"
 	antimagic_allowed = TRUE
 	invocation_type = "shout"
@@ -8,7 +8,7 @@
 
 /obj/effect/proc_holder/spell/self/telljoke/cast(list/targets,mob/user = usr)
 	..()
-	var/joker = input(user, "Say something funny!", "Comedia")
+	var/joker = input(user, "Скажи что-нибудь смешное!", "Комедия")
 	if(!joker)
 		return FALSE
 	user.say(joker, forced = "spell")
@@ -25,8 +25,8 @@
 		sleep(rand(1,5))
 
 /obj/effect/proc_holder/spell/self/telltragedy
-	name = "Tragedia"
-	desc = "Remind someone in low spirits that it could be much worse."
+	name = "Трагедия"
+	desc = "Напомни тому, кто пал духом, что всё могло быть намного хуже."
 	overlay_state = "tragedy"
 	antimagic_allowed = TRUE
 	invocation_type = "shout"
@@ -34,7 +34,7 @@
 
 /obj/effect/proc_holder/spell/self/telltragedy/cast(list/targets,mob/user = usr)
 	..()
-	var/joker = input(user, "Say something sad!", "Tragedia")
+	var/joker = input(user, "Скажи что-нибудь грустное!", "Трагедия")
 	if(!joker)
 		return FALSE
 	user.say(joker, forced = "spell")

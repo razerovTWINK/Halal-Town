@@ -22,7 +22,7 @@
 					/datum/surgery_step/close)
 
 /datum/surgery_step/heal
-	name = "repair body"
+	name = "залечить раны"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
 	repeatable = TRUE
 	time = 25
@@ -33,17 +33,17 @@
 /datum/surgery_step/heal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/woundtype
 	if(brutehealing && burnhealing)
-		woundtype = "wounds"
+		woundtype = "раны"
 	else if(brutehealing)
-		woundtype = "bruises"
+		woundtype = "ушибы"
 	else //why are you trying to 0,0...?
-		woundtype = "burns"
+		woundtype = "ожоги"
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, "<span class='notice'>I attempt to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>")
+			display_results(user, target, "<span class='notice'>Ты пытаешься залечить часть повреждений ([woundtype]) у [target].</span>",
+		"<span class='notice'>[user] пытается залечить часть повреждений ([woundtype]) у [target].</span>",
+		"<span class='notice'>[user] пытается залечить часть повреждений ([woundtype]) у [target].</span>")
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(..())
@@ -52,8 +52,8 @@
 				break
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	var/umsg = "You succeed in fixing some of [target]'s wounds" //no period, add initial space to "addons"
-	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
+	var/umsg = "Ты успешно залечиваешь часть ран [target]" //no period, add initial space to "addons"
+	var/tmsg = "[user] залечивает часть ран [target]" //see above
 	var/urhealedamt_brute = brutehealing
 	var/urhealedamt_burn = burnhealing
 	if(missinghpbonus)
@@ -66,8 +66,8 @@
 	if(!get_location_accessible(target, target_zone))
 		urhealedamt_brute *= 0.55
 		urhealedamt_burn *= 0.55
-		umsg += " as best as you can while they have clothing on"
-		tmsg += " as best as they can while [target] has clothing on"
+		umsg += ", настолько хорошо, насколько позволяет одежда"
+		tmsg += ", настолько хорошо, насколько позволяет одежда"
 	target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)
 	display_results(user, target, "<span class='notice'>[umsg].</span>",
 		"[tmsg].",
@@ -78,9 +78,9 @@
 	return TRUE
 
 /datum/surgery_step/heal/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>I screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s wounds.</span>", TRUE)
+	display_results(user, target, "<span class='warning'>Ты совершаешь ошибку!</span>",
+		"<span class='warning'>[user] совершает ошибку!</span>",
+		"<span class='notice'>[user] залечивает часть ран [target].</span>", TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	if(missinghpbonus)
@@ -92,23 +92,23 @@
 
 /***************************BRUTE***************************/
 /datum/surgery/healing/brute
-	name = "Tend Wounds (Bruises)"
+	name = "Перевязка ран (ушибы)"
 
 /datum/surgery/healing/brute/basic
-	name = "Tend Wounds (Bruises, Basic)"
+	name = "Перевязка ран (ушибы, базовая)"
 	replaced_by = /datum/surgery/healing/brute/upgraded
 	healing_step_type = /datum/surgery_step/heal/brute/basic
 	desc = ""
 
 /datum/surgery/healing/brute/upgraded
-	name = "Tend Wounds (Bruises, Adv.)"
+	name = "Перевязка ран (ушибы, улучш.)"
 	replaced_by = /datum/surgery/healing/brute/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded
 	desc = ""
 
 /datum/surgery/healing/brute/upgraded/femto
-	name = "Tend Wounds (Bruises, Exp.)"
+	name = "Перевязка ран (ушибы, эксп.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded/femto
@@ -116,7 +116,7 @@
 
 /********************BRUTE STEPS********************/
 /datum/surgery_step/heal/brute/basic
-	name = "tend bruises"
+	name = "лечить ушибы"
 	brutehealing = 5
 	missinghpbonus = 15
 
@@ -130,23 +130,23 @@
 
 /***************************BURN***************************/
 /datum/surgery/healing/burn
-	name = "Tend Wounds (Burn)"
+	name = "Перевязка ран (ожоги)"
 
 /datum/surgery/healing/burn/basic
-	name = "Tend Wounds (Burn, Basic)"
+	name = "Перевязка ран (ожоги, базовая)"
 	replaced_by = /datum/surgery/healing/burn/upgraded
 	healing_step_type = /datum/surgery_step/heal/burn/basic
 	desc = ""
 
 /datum/surgery/healing/burn/upgraded
-	name = "Tend Wounds (Burn, Adv.)"
+	name = "Перевязка ран (ожоги, улучш.)"
 	replaced_by = /datum/surgery/healing/burn/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded
 	desc = ""
 
 /datum/surgery/healing/burn/upgraded/femto
-	name = "Tend Wounds (Burn, Exp.)"
+	name = "Перевязка ран (ожоги, эксп.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded/femto
@@ -154,7 +154,7 @@
 
 /********************BURN STEPS********************/
 /datum/surgery_step/heal/burn/basic
-	name = "tend burn wounds"
+	name = "лечить ожоги"
 	burnhealing = 5
 	missinghpbonus = 15
 
@@ -171,28 +171,28 @@
 
 
 /datum/surgery/healing/combo
-	name = "Tend Wounds (Mixture, Basic)"
+	name = "Перевязка ран (смешанные, базовая)"
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/combo
 	desc = ""
 
 /datum/surgery/healing/combo/upgraded
-	name = "Tend Wounds (Mixture, Adv.)"
+	name = "Перевязка ран (смешанные, улучш.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
 	desc = ""
 
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
-	name = "Tend Wounds (Mixture, Exp.)"
+	name = "Перевязка ран (смешанные, эксп.)"
 	replaced_by = null
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded/femto
 	desc = ""
 
 /********************COMBO STEPS********************/
 /datum/surgery_step/heal/combo
-	name = "tend physical wounds"
+	name = "лечить телесные раны"
 	brutehealing = 3
 	burnhealing = 3
 	missinghpbonus = 15

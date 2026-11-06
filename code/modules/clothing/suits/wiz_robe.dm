@@ -1,5 +1,5 @@
 /obj/item/clothing/head/wizard
-	name = "wizard hat"
+	name = "шляпа волшебника"
 	desc = ""
 	icon_state = "wizard"
 	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
@@ -30,7 +30,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/fake
-	name = "wizard hat"
+	name = "шляпа волшебника"
 	desc = ""
 	icon_state = "wizard-fake"
 	gas_transfer_coefficient = 1
@@ -40,7 +40,7 @@
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
 
 /obj/item/clothing/head/wizard/marisa
-	name = "witch hat"
+	name = "шляпа ведьмы"
 	desc = ""
 	icon_state = "marisa"
 	dog_fashion = null
@@ -60,7 +60,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/suit/wizrobe
-	name = "wizard robe"
+	name = "мантия волшебника"
 	desc = ""
 	icon_state = "wizard"
 	item_state = "wizrobe"
@@ -93,7 +93,7 @@
 	item_state = "blackwizrobe"
 
 /obj/item/clothing/suit/wizrobe/marisa
-	name = "witch robe"
+	name = "мантия ведьмы"
 	desc = ""
 	icon_state = "marisa"
 	item_state = "marisarobe"
@@ -118,7 +118,7 @@
 	item_state = "santa"
 
 /obj/item/clothing/suit/wizrobe/fake
-	name = "wizard robe"
+	name = "мантия волшебника"
 	desc = ""
 	icon_state = "wizard-fake"
 	item_state = "wizrobe"
@@ -128,7 +128,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/head/wizard/marisa/fake
-	name = "witch hat"
+	name = "шляпа ведьмы"
 	desc = ""
 	icon_state = "marisa"
 	gas_transfer_coefficient = 1
@@ -137,7 +137,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/suit/wizrobe/marisa/fake
-	name = "witch robe"
+	name = "мантия ведьмы"
 	desc = ""
 	icon_state = "marisa"
 	item_state = "marisarobe"

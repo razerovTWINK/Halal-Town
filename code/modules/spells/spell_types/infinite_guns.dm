@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/infinite_guns
-	name = "Lesser Summon Guns"
+	name = "Малый призыв оружия"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE
@@ -21,7 +21,7 @@
 /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
 
 /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-	name = "Arcane Barrage"
+	name = "Чародейский залп"
 	desc = ""
 	action_icon_state = "arcane_barrage"
 	summon_path = /obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage

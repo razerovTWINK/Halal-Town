@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/pill/patch
-	name = "chemical patch"
+	name = "химический пластырь"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bandaid"

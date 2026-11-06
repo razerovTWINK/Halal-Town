@@ -9,7 +9,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c38_trac
-	name = "Speed Loader (.38 TRAC)"
+	name = "Спидлоадер (.38 TRAC)"
 	desc = ""
 	id = "c38_trac"
 	build_type = PROTOLATHE
@@ -19,7 +19,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c38_hotshot
-	name = "Speed Loader (.38 Hot Shot)"
+	name = "Спидлоадер (.38 Зажигательный)"
 	desc = ""
 	id = "c38_hotshot"
 	build_type = PROTOLATHE
@@ -29,7 +29,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c38_iceblox
-	name = "Speed Loader (.38 Iceblox)"
+	name = "Спидлоадер (.38 Криогенный)"
 	desc = ""
 	id = "c38_iceblox"
 	build_type = PROTOLATHE
@@ -75,7 +75,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pin_testing
-	name = "Test-Range Firing Pin"
+	name = "Ударник: тестовый полигон"
 	desc = ""
 	id = "pin_testing"
 	build_type = PROTOLATHE
@@ -85,7 +85,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pin_mindshield
-	name = "Mindshield Firing Pin"
+	name = "Ударник: щит разума"
 	desc = ""
 	id = "pin_loyalty"
 	build_type = PROTOLATHE
@@ -95,7 +95,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/stunrevolver
-	name = "Tesla Revolver"
+	name = "Револьвер Теслы"
 	desc = ""
 	id = "stunrevolver"
 	build_type = PROTOLATHE
@@ -105,7 +105,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/nuclear_gun
-	name = "Advanced Energy Gun"
+	name = "Улучшенное энергетическое ружьё"
 	desc = ""
 	id = "nuclear_gun"
 	build_type = PROTOLATHE
@@ -115,7 +115,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/tele_shield
-	name = "Telescopic Riot Shield"
+	name = "Телескопический полицейский щит"
 	desc = ""
 	id = "tele_shield"
 	build_type = PROTOLATHE
@@ -125,7 +125,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/beamrifle
-	name = "Beam Marksman Rifle"
+	name = "Снайперская лучевая винтовка"
 	desc = ""
 	id = "beamrifle"
 	build_type = PROTOLATHE
@@ -135,7 +135,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/decloner
-	name = "Decloner"
+	name = "Деклонатор"
 	desc = ""
 	id = "decloner"
 	build_type = PROTOLATHE
@@ -146,7 +146,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/rapidsyringe
-	name = "Rapid Syringe Gun"
+	name = "Скорострельный шприцемёт"
 	desc = ""
 	id = "rapidsyringe"
 	build_type = PROTOLATHE
@@ -156,7 +156,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL		//uwu
 
 /datum/design/temp_gun
-	name = "Temperature Gun"
+	name = "Термическое ружьё"
 	desc = ""//Change it if you want
 	id = "temp_gun"
 	build_type = PROTOLATHE
@@ -166,7 +166,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/flora_gun
-	name = "Floral Somatoray"
+	name = "Цветочный соматолуч"
 	desc = ""
 	id = "flora_gun"
 	build_type = PROTOLATHE
@@ -177,7 +177,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/large_grenade
-	name = "Large Grenade"
+	name = "Большая граната"
 	desc = ""
 	id = "large_Grenade"
 	build_type = PROTOLATHE
@@ -187,7 +187,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/pyro_grenade
-	name = "Pyro Grenade"
+	name = "Пирограната"
 	desc = ""
 	id = "pyro_Grenade"
 	build_type = PROTOLATHE
@@ -197,7 +197,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cryo_grenade
-	name = "Cryo Grenade"
+	name = "Криограната"
 	desc = ""
 	id = "cryo_Grenade"
 	build_type = PROTOLATHE
@@ -207,7 +207,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/adv_grenade
-	name = "Advanced Release Grenade"
+	name = "Улучшенная распылительная граната"
 	desc = ""
 	id = "adv_Grenade"
 	build_type = PROTOLATHE
@@ -217,7 +217,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/xray
-	name = "X-ray Laser Gun"
+	name = "Рентгеновский лазер"
 	desc = ""
 	id = "xray_laser"
 	build_type = PROTOLATHE
@@ -227,7 +227,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ioncarbine
-	name = "Ion Carbine"
+	name = "Ионный карабин"
 	desc = ""
 	id = "ioncarbine"
 	build_type = PROTOLATHE
@@ -237,7 +237,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/wormhole_projector
-	name = "Bluespace Wormhole Projector"
+	name = "Блюспейс-проектор червоточин"
 	desc = ""
 	id = "wormholeprojector"
 	build_type = PROTOLATHE
@@ -249,7 +249,7 @@
 //WT550 Mags
 
 /datum/design/mag_oldsmg
-	name = "WT-550 Auto Gun Magazine (4.6x30mm)"
+	name = "Магазин WT-550 (4.6x30 мм)"
 	desc = ""
 	id = "mag_oldsmg"
 	build_type = PROTOLATHE
@@ -259,7 +259,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mag_oldsmg/ap_mag
-	name = "WT-550 Auto Gun Armour Piercing Magazine (4.6x30mm AP)"
+	name = "Бронебойный магазин WT-550 (4.6x30 мм ББ)"
 	desc = ""
 	id = "mag_oldsmg_ap"
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600)
@@ -267,7 +267,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mag_oldsmg/ic_mag
-	name = "WT-550 Auto Gun Incendiary Magazine (4.6x30mm IC)"
+	name = "Зажигательный магазин WT-550 (4.6x30 мм ЗЖ)"
 	desc = ""
 	id = "mag_oldsmg_ic"
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
@@ -275,7 +275,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/stunshell
-	name = "Stun Shell"
+	name = "Оглушающий патрон"
 	desc = ""
 	id = "stunshell"
 	build_type = PROTOLATHE
@@ -285,7 +285,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/techshell
-	name = "Unloaded Technological Shotshell"
+	name = "Незаряженная технологическая гильза"
 	desc = ""
 	id = "techshotshell"
 	build_type = PROTOLATHE
@@ -295,7 +295,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/suppressor
-	name = "Suppressor"
+	name = "Глушитель"
 	desc = ""
 	id = "suppressor"
 	build_type = PROTOLATHE
@@ -305,7 +305,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/gravitygun
-	name = "One-point Bluespace-gravitational Manipulator"
+	name = "Гравитационный манипулятор"
 	desc = ""
 	id = "gravitygun"
 	build_type = PROTOLATHE
@@ -315,7 +315,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/largecrossbow
-	name = "Energy Crossbow"
+	name = "Энергетический арбалет"
 	desc = ""
 	id = "largecrossbow"
 	build_type = PROTOLATHE
@@ -325,7 +325,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/cryostasis_shotgun_dart
-	name = "Cryostasis Shotgun Dart"
+	name = "Криостазисный дротик для дробовика"
 	desc = ""
 	id = "shotgundartcryostasis"
 	build_type = PROTOLATHE
@@ -335,7 +335,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cleric_mace
-	name = "Cleric Mace"
+	name = "Булава клирика"
 	desc = ""
 	id = "cleric_mace"
 	build_type = AUTOLATHE

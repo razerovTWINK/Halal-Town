@@ -59,13 +59,13 @@
 /datum/antagonist/brother/proc/give_meeting_area()
 	if(!owner.current || !team || !team.meeting_area)
 		return
-	to_chat(owner.current, "<B>My designated meeting area:</B> [team.meeting_area]")
-	antag_memory += "<b>Meeting Area</b>: [team.meeting_area]<br>"
+	to_chat(owner.current, "<B>Место встречи:</B> [team.meeting_area]")
+	antag_memory += "<b>Место встречи</b>: [team.meeting_area]<br>"
 
 /datum/antagonist/brother/greet()
 	var/brother_text = get_brother_names()
-	to_chat(owner.current, "<span class='alertsyndie'>I are the [owner.special_role] of [brother_text].</span>")
-	to_chat(owner.current, "The Syndicate only accepts those that have proven themselves. Prove myself and prove my [team.member_name]s by completing my objectives together!")
+	to_chat(owner.current, "<span class='alertsyndie'>Ты — [owner.special_role] ([brother_text]).</span>")
+	to_chat(owner.current, "Синдикат признаёт лишь тех, кто делом доказал свою верность. Докажи свою силу и поддержи [team.member_name], выполнив общие цели!")
 	owner.announce_objectives()
 	give_meeting_area()
 

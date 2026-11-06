@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/voice_of_god
-	name = "Voice of God"
+	name = "Глас Божий"
 	desc = ""
 	charge_max = 1200 //variable
 	cooldown_min = 0
@@ -16,14 +16,14 @@
 
 /obj/effect/proc_holder/spell/voice_of_god/can_cast(mob/user = usr)
 	if(!user.can_speak())
-		to_chat(user, "<span class='warning'>I are unable to speak!</span>")
+		to_chat(user, "<span class='warning'>Мне не удаётся говорить!</span>")
 		return FALSE
 	return TRUE
 
 /obj/effect/proc_holder/spell/voice_of_god/choose_targets(mob/user = usr)
 	perform(user=user)
 /obj/effect/proc_holder/spell/voice_of_god/perform(list/targets, recharge = 1, mob/user = usr)
-	command = input(user, "Speak with the Voice of God", "Command")
+	command = input(user, "Возгласи Гласом Божьим", "Приказ")
 	if(QDELETED(src) || QDELETED(user))
 		return
 	if(!command)
@@ -37,7 +37,7 @@
 	charge_max = (cooldown * cooldown_mod)
 
 /obj/effect/proc_holder/spell/voice_of_god/clown
-	name = "Voice of Clown"
+	name = "Глас Клоуна"
 	desc = ""
 	power_mod = 0.1
 	cooldown_mod = 0.5

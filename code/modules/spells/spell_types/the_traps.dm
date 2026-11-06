@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps
-	name = "The Traps!"
+	name = "Ловушки!"
 	desc = ""
 
 	charge_max = 250

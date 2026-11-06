@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/spacetime_dist
-	name = "Spacetime Distortion"
+	name = "Искажение пространства-времени"
 	desc = ""
 	charge_max = 300
 	var/duration = 150
@@ -61,12 +61,12 @@
 	ready = TRUE
 
 /obj/effect/cross_action
-	name = "cross me"
+	name = "пересеки меня"
 	desc = ""
 	anchored = TRUE
 
 /obj/effect/cross_action/spacetime_dist
-	name = "spacetime distortion"
+	name = "искажение пространства-времени"
 	desc = ""
 	icon_state = ""
 	var/obj/effect/cross_action/spacetime_dist/linked_dist

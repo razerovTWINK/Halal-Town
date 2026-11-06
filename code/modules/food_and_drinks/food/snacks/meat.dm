@@ -3,7 +3,7 @@
 	var/subjectjob = null
 
 /obj/item/reagent_containers/food/snacks/meat/slab
-	name = "meat"
+	name = "мясо"
 	desc = ""
 	dried_type = /obj/item/reagent_containers/food/snacks/sosjerky/healthy
 	bitesize = 3
@@ -30,7 +30,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human
-	name = "meat"
+	name = "мясо"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	tastes = list("tender meat" = 1)

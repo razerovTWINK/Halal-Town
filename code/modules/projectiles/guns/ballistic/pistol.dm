@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/pistol
-	name = "stechkin pistol"
+	name = "пистолет Стечкина"
 	desc = ""
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
@@ -32,7 +32,7 @@
 	install_suppressor(S)
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "\improper M1911"
+	name = "\improper пистолет M1911"
 	desc = ""
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -70,7 +70,7 @@
 	item_state = "deagleg"
 
 /obj/item/gun/ballistic/automatic/pistol/APS
-	name = "stechkin APS pistol"
+	name = "пистолет АПС"
 	desc = ""
 	icon_state = "aps"
 	w_class = WEIGHT_CLASS_SMALL
@@ -81,18 +81,18 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
-	name = "flat gun"
+	name = "плоский пистолет"
 	desc = ""
 	icon_state = "flatgun"
 
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	SHOULD_CALL_PARENT(0)
-	to_chat(user, "<span class='notice'>As you try to pick up [src], it slips out of your grip..</span>")
+	to_chat(user, "<span class='notice'>Когда ты пытаешься поднять [src], оно выскальзывает из рук...</span>")
 	if(prob(50))
-		to_chat(user, "<span class='notice'>..and vanishes from your vision! Where the hell did it go?</span>")
+		to_chat(user, "<span class='notice'>...и исчезает из виду! Куда оно вообще делось?</span>")
 		qdel(src)
 		user.update_icons()
 	else
-		to_chat(user, "<span class='notice'>..and falls into view. Whew, that was a close one.</span>")
+		to_chat(user, "<span class='notice'>...и снова появляется на виду. Фух, пронесло.</span>")
 		user.dropItemToGround(src)
 

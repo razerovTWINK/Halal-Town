@@ -126,7 +126,7 @@
 						to_chat(R.connected_ai, "<br><br><span class='alert'>ALERT - Cyborg detonation detected: [R.name]</span><br>")
 					R.self_destruct()
 		else
-			to_chat(usr, "<span class='danger'>Access Denied.</span>")
+			to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 
 	else if (href_list["stopbot"])
 		if(allowed(usr))
@@ -142,7 +142,7 @@
 						to_chat(R.connected_ai, "[!R.lockcharge ? "<span class='notice'>NOTICE - Cyborg lockdown lifted" : "<span class='alert'>ALERT - Cyborg lockdown detected"]: <a href='?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a></span><br>")
 
 		else
-			to_chat(usr, "<span class='danger'>Access Denied.</span>")
+			to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 
 	else if (href_list["magbot"])
 		var/mob/living/silicon/S = usr

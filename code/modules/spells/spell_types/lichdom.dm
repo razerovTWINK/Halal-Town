@@ -1,11 +1,11 @@
 /obj/effect/proc_holder/spell/targeted/lichdom
-	name = "Bind Soul"
-	desc = "A dark necromantic pact that can forever bind my soul to an \
-	item of my choosing. So long as both my body and the item remain \
-	intact and on the same plane you can revive from death, though the time \
-	between reincarnations grows steadily with use, along with the weakness \
-	that the new skeleton body will experience upon 'birth'. Note that \
-	becoming a lich destroys all internal organs except the brain."
+	name = "Связывание души"
+	desc = "Тёмный некромантический пакт, навеки привязывающий душу к \
+	выбранному предмету. Пока твоё тело и предмет остаются \
+	целы и находятся в одном плане, ты сможешь возрождаться, но время \
+	между перерождениями будет расти, а новое тело-скелет будет \
+	испытывать слабость после возрождения. Обратите внимание: \
+	обращение в лича уничтожает все органы, кроме мозга."
 	school = "necromancy"
 	charge_max = 10
 	clothes_req = FALSE
@@ -26,10 +26,10 @@
 		if(iscarbon(M))
 			hand_items = list(M.get_active_held_item(),M.get_inactive_held_item())
 		if(!hand_items.len)
-			to_chat(M, "<span class='warning'>I must hold an item you wish to make my phylactery!</span>")
+			to_chat(M, "<span class='warning'>В руках нужно держать предмет, который станет филактерией!</span>")
 			return
 		if(!M.mind.hasSoul)
-			to_chat(user, "<span class='warning'>I do not possess a soul!</span>")
+			to_chat(user, "<span class='warning'>У тебя нет души!</span>")
 			return
 
 		var/obj/item/marked_item
@@ -40,26 +40,26 @@
 			if((item.item_flags & ABSTRACT) || HAS_TRAIT(item, TRAIT_NODROP) || SEND_SIGNAL(item, COMSIG_ITEM_IMBUE_SOUL, user))
 				continue
 			marked_item = item
-			to_chat(M, "<span class='warning'>I begin to focus my very being into [item]...</span>")
+			to_chat(M, "<span class='warning'>Ты начинаешь переносить саму свою суть в [item]...</span>")
 			break
 
 		if(!marked_item)
-			to_chat(M, "<span class='warning'>None of the items you hold are suitable for emplacement of my fragile soul.</span>")
+			to_chat(M, "<span class='warning'>Ни один из предметов в руках не подходит для вместилища души.</span>")
 			return
 
 		playsound(user, 'sound/blank.ogg', 100)
 
 		if(!do_after(M, 50, needhand=FALSE, target=marked_item))
-			to_chat(M, "<span class='warning'>My soul snaps back to my body as you stop ensouling [marked_item]!</span>")
+			to_chat(M, "<span class='warning'>Душа возвращается в тело, когда ты прекращаешь одушевление [marked_item]!</span>")
 			return
 
-		marked_item.name = "ensouled [marked_item.name]"
-		marked_item.desc += "\nA terrible aura surrounds this item, its very existence is offensive to life itself..."
+		marked_item.name = "одушевлённый [marked_item.name]"
+		marked_item.desc += "\nУжасающая аура окружает этот предмет, само его существование оскорбляет всё живое..."
 		marked_item.add_atom_colour("#003300", ADMIN_COLOUR_PRIORITY)
 
 		new /obj/item/phylactery(marked_item, M.mind)
 
-		to_chat(M, "<span class='danger'>With a hideous feeling of emptiness you watch in horrified fascination as skin sloughs off bone! Blood boils, nerves disintegrate, eyes boil in their sockets! As my organs crumble to dust in my fleshless chest you come to terms with my choice. You're a lich!</span>")
+		to_chat(M, "<span class='danger'>С жутким чувством пустоты ты в ужасе наблюдаешь, как плоть сползает с костей! Кровь закипает, нервы распадаются, глаза выкипают в глазницах! Когда твои органы обращаются в прах в бестелесной груди, ты осознаёшь свой выбор. Ты — лич!</span>")
 		M.mind.hasSoul = FALSE
 		M.set_species(/datum/species/skeleton)
 		if(ishuman(M))
@@ -76,7 +76,7 @@
 
 
 /obj/item/phylactery
-	name = "phylactery"
+	name = "филактерия"
 	desc = ""
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "bluespace"
@@ -92,7 +92,7 @@
 /obj/item/phylactery/Initialize(mapload, datum/mind/newmind)
 	. = ..()
 	mind = newmind
-	name = "phylactery of [mind.name]"
+	name = "филактерия [mind.name]"
 
 	active_phylacteries++
 	GLOB.poi_list |= src
@@ -137,7 +137,7 @@
 	mind.transfer_to(lich)
 	mind.grab_ghost(force=TRUE)
 	lich.hardset_dna(null,null,lich.real_name,null, new /datum/species/skeleton)
-	to_chat(lich, "<span class='warning'>My bones clatter and shudder as you are pulled back into this world!</span>")
+	to_chat(lich, "<span class='warning'>Кости стучат и содрогаются, пока тебя затягивает обратно в этот мир!</span>")
 	var/turf/body_turf = get_turf(old_body)
 	lich.Paralyze(200 + 200*resurrections)
 	resurrections++
@@ -152,7 +152,7 @@
 				I.forceMove(body_turf)
 		var/wheres_wizdo = dir2text(get_dir(body_turf, item_turf))
 		if(wheres_wizdo)
-			old_body.visible_message("<span class='warning'>Suddenly [old_body.name]'s corpse falls to pieces! You see a strange energy rise from the remains, and speed off towards the [wheres_wizdo]!</span>")
+			old_body.visible_message("<span class='warning'>Внезапно останки [old_body.name] рассыпаются на куски! Странная энергия поднимается из них и устремляется в сторону: [wheres_wizdo]!</span>")
 			body_turf.Beam(item_turf,icon_state="lichbeam",time=10+10*resurrections,maxdistance=INFINITY)
 		old_body.dust()
 

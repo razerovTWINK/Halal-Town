@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/magic
-	name = "magic casing"
+	name = "магическая гильза"
 	desc = ""
 	projectile_type = /obj/projectile/magic
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/magic

@@ -1,5 +1,5 @@
 /obj/item/clothing/gloves/boxing
-	name = "boxing gloves"
+	name = "боксёрские перчатки"
 	desc = ""
 	icon_state = "boxing"
 	item_state = "boxing"

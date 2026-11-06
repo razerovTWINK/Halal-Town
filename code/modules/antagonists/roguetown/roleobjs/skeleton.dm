@@ -7,11 +7,11 @@
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		var/datum/antagonist/vampirelord/V = examined_datum
 		if(!V.disguised)
-			return "<span class='boldnotice'>Another deadite.</span>"
+			return "<span class='boldnotice'>Ещё один мертвец.</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite. My ally.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец. Мой союзник.</span>"
 
 /datum/antagonist/skeleton/on_gain()
 //	if(!(locate(/datum/objective/escape) in objectives))
@@ -42,11 +42,11 @@
 	if(traitorwin)
 		//arriving gives them a tri anyway, all good
 //		owner.adjust_triumphs(1)
-		to_chat(owner.current, "<span class='greentext'>I've TRIUMPHED! Arcadia belongs to death!</span>")
+		to_chat(owner.current, "<span class='greentext'>Я ОДЕРЖАЛ ТРИУМФ! Аркадия принадлежит смерти!</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
-		to_chat(owner.current, "<span class='redtext'>I've FAILED to invade Arcadia!</span>")
+		to_chat(owner.current, "<span class='redtext'>Мне НЕ УДАЛОСЬ захватить Аркадию!</span>")
 		if(owner.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 

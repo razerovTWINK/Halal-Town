@@ -137,7 +137,7 @@
 				if(C && C.registered_account)
 					C.registered_account.adjust_money(ransom * 0.35)
 
-					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's my cut - my balance is now \
+					C.registered_account.bank_card_talk("Выкуп получен, агент. Вот твоя доля. Текущий баланс: \
 					$[C.registered_account.account_balance].", TRUE)
 
 // They're off to holding - handle the return timer and give some text about what's going on.
@@ -154,23 +154,23 @@
 		M.flash_act()
 		M.confused += 10
 		M.blur_eyes(5)
-		to_chat(M, "<span class='warning'>I feel strange...</span>")
+		to_chat(M, "<span class='warning'>Ты чувствуешь себя странно...</span>")
 		sleep(60)
-		to_chat(M, "<span class='warning'>That pod did something to you...</span>")
+		to_chat(M, "<span class='warning'>Эта капсула что-то с тобой сделала...</span>")
 		M.Dizzy(35)
 		sleep(65)
-		to_chat(M, "<span class='warning'>My head pounds... It feels like it's going to burst out my skull!</span>")
+		to_chat(M, "<span class='warning'>Голова раскалывается... кажется, череп вот-вот взорвётся!</span>")
 		M.flash_act()
 		M.confused += 20
 		M.blur_eyes(3)
 		sleep(30)
-		to_chat(M, "<span class='warning'>My head pounds...</span>")
+		to_chat(M, "<span class='warning'>Голова пульсирует от боли...</span>")
 		sleep(100)
 		M.flash_act()
 		M.Unconscious(200)
-		to_chat(M, "<span class='reallybig hypnophrase'>A million voices echo in my head... <i>\"Your mind held many valuable secrets - \
-					we thank you for providing them. Your value is expended, and you will be ransomed back to my station. We always get paid, \
-					so it's only a matter of time before we ship you back...\"</i></span>")
+		to_chat(M, "<span class='reallybig hypnophrase'>Миллионы голосов эхом звучат в твоей голове... <i>«Твой разум хранил ценные тайны — \
+					спасибо за них. Ты больше не представляешь ценности и будешь выкуплен обратно. Мы всегда получаем своё, \
+					так что твоё возвращение — лишь вопрос времени...»</i></span>")
 		M.blur_eyes(10)
 		M.Dizzy(15)
 		M.confused += 20
@@ -193,7 +193,7 @@
 		return_pod.style = STYLE_SYNDICATE
 
 		do_sparks(8, FALSE, M)
-		M.visible_message("<span class='notice'>[M] vanishes...</span>")
+		M.visible_message("<span class='notice'>[M] исчезает...</span>")
 
 		for(var/obj/item/W in M)
 			if (ishuman(M))
@@ -216,8 +216,8 @@
 
 		new /obj/effect/DPtarget(possible_drop_loc[pod_rand_loc], return_pod)
 	else
-		to_chat(M, "<span class='reallybig hypnophrase'>A million voices echo in my head... <i>\"Seems where you got sent here from won't \
-					be able to handle our pod... You will die here instead.\"</i></span>")
+		to_chat(M, "<span class='reallybig hypnophrase'>Миллионы голосов эхом звучат в твоей голове... <i>«Похоже, место, откуда тебя доставили, \
+					не примет нашу капсулу... Ты умрёшь здесь.»</i></span>")
 		if (iscarbon(M))
 			var/mob/living/carbon/C = M
 			if (C.can_heartattack())

@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/explosion
-	name = "Explosion"
+	name = "Взрыв"
 	desc = ""
 
 	var/ex_severe = 1

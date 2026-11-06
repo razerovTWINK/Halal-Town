@@ -1,5 +1,5 @@
 /obj/item/organ/stomach
-	name = "stomach"
+	name = "желудок"
 	icon_state = "stomach"
 	w_class = WEIGHT_CLASS_SMALL
 	zone = BODY_ZONE_CHEST
@@ -10,10 +10,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>My stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.</span>"
-	high_threshold_passed = "<span class='warning'>My stomach flares up with constant pain- you can hardly stomach the idea of food right now!</span>"
-	high_threshold_cleared = "<span class='info'>The pain in my stomach dies down for now, but food still seems unappealing.</span>"
-	low_threshold_cleared = "<span class='info'>The last bouts of pain in my stomach have died out.</span>"
+	low_threshold_passed = "<span class='info'>Желудок пронзает боль, а затем утихает. Мысли о еде сейчас совсем не вызывают аппетита.</span>"
+	high_threshold_passed = "<span class='warning'>В желудке вспыхивает непрекращающаяся боль — от одной мысли о еде тебя выворачивает!</span>"
+	high_threshold_cleared = "<span class='info'>Боль в желудке утихла, но есть всё ещё не хочется.</span>"
+	low_threshold_cleared = "<span class='info'>Последние приступы боли в желудке наконец утихли.</span>"
 
 	var/disgust_metabolism = 1
 
@@ -35,12 +35,12 @@
 	if(Nutri)
 		if(prob((damage/40) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, "<span class='warning'>My stomach reels in pain as you're incapable of holding down all that food!</span>")
+			to_chat(H, "<span class='warning'>Желудок скручивает от боли, ты не в силах удержать пищу!</span>")
 
 	else if(Nutri && damage > high_threshold)
 		if(prob((damage/10) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, "<span class='warning'>My stomach reels in pain as you're incapable of holding down all that food!</span>")
+			to_chat(H, "<span class='warning'>Желудок скручивает от боли, ты не в силах удержать пищу!</span>")
 
 /obj/item/organ/stomach/proc/handle_disgust(mob/living/carbon/human/H)
 	if(H.disgust)
@@ -50,7 +50,7 @@
 				H.stuttering += 1
 				H.confused += 2
 			if(prob(10) && !H.stat)
-				to_chat(H, "<span class='warning'>I feel kind of iffy...</span>")
+				to_chat(H, "<span class='warning'>Тебе нехорошо...</span>")
 			H.jitteriness = max(H.jitteriness - 3, 0)
 		if(H.disgust >= DISGUST_LEVEL_VERYGROSS)
 			if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
@@ -85,17 +85,17 @@
 	..()
 
 /obj/item/organ/stomach/fly
-	name = "insectoid stomach"
+	name = "желудок инсектоида"
 	icon_state = "stomach-x" //xenomorph liver? It's just a black liver so it fits.
 	desc = ""
 
 /obj/item/organ/stomach/plasmaman
-	name = "digestive crystal"
+	name = "пищеварительный кристалл"
 	icon_state = "stomach-p"
 	desc = ""
 
 /obj/item/organ/stomach/ethereal
-	name = "biological battery"
+	name = "биологическая батарея"
 	icon_state = "stomach-p" //Welp. At least it's more unique in functionaliy.
 	desc = ""
 	var/crystal_charge = ETHEREAL_CHARGE_FULL
@@ -121,7 +121,7 @@
 	if(flags & SHOCK_ILLUSION)
 		return
 	adjust_charge(shock_damage * siemens_coeff * 2)
-	to_chat(owner, "<span class='notice'>I absorb some of the shock into my body!</span>")
+	to_chat(owner, "<span class='notice'>Ты поглощаешь часть электрического разряда телом!</span>")
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = CLAMP(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_FULL)

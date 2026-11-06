@@ -20,7 +20,7 @@
 	..()
 
 /datum/objective/purishep
-	explanation_text = "Send 5 confessions of sin to the Inquisition at Kingsfield."
+	explanation_text = "Отправить 5 признаний в грехах Инквизиции в Кингсфилде."
 
 /datum/objective/purishep/check_completion()
 	if(GLOB.confessors)
@@ -38,4 +38,4 @@
 		if(traitorwin)
 			to_chat(owner.current, "<span class='greentext'>5/5.</span>")
 		else
-			to_chat(owner.current, "<span class='redtext'>I've FAILED to meet my quota. Someone more capable will be along to replace me.</span>")
+			to_chat(owner.current, "<span class='redtext'>Я НЕ СПРАВИЛСЯ со своей задачей. Мне на смену придёт кто-то более способный.</span>")

@@ -10,14 +10,14 @@
 	antag_hud_name = "rev"
 	var/datum/team/prebels/rev_team
 	show_in_roundend = FALSE
-	confess_lines = list("VIVA!", "DEATH TO THE NOBLES!")
+	confess_lines = list("ВИВА!", "СМЕРТЬ ДВОРЯНАМ!")
 	increase_votepwr = FALSE
 
 /datum/antagonist/prebel/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/prebel/head))
-		return "<span class='boldnotice'>A revolution leader.</span>"
+		return "<span class='boldnotice'>Лидер восстания.</span>"
 	if(istype(examined_datum, /datum/antagonist/prebel))
-		return "<span class='boldnotice'>My ally in revolt against the pigs.</span>"
+		return "<span class='boldnotice'>Мой соратник по бунту против этих свиней.</span>"
 
 
 /datum/antagonist/prebel/on_gain()
@@ -28,7 +28,7 @@
 	H.add_stress(/datum/stressevent/prebel)
 
 /datum/antagonist/prebel/greet()
-	to_chat(owner, "<span class='danger'>I am a peasant rebel! It's time for a change in leadership for this town.</span>")
+	to_chat(owner, "<span class='danger'>Я — бунтующий крестьянин! Пришла пора сменить власть в этом городе.</span>")
 	if(rev_team)
 		rev_team.update_objectives()
 	owner.announce_objectives()
@@ -120,7 +120,7 @@
 
 /obj/effect/proc_holder/spell/self/rebelconvert/cast(list/targets,mob/user = usr)
 	..()
-	var/inputty = input("Make a speech!", "ROGUETOWN") as text|null
+	var/inputty = input("Произнеси речь!", "РОУГТАУН") as text|null
 	if(inputty)
 		user.say(inputty, forced = "spell")
 		var/datum/antagonist/prebel/PR = user.mind.has_antag_datum(/datum/antagonist/prebel)
@@ -142,19 +142,19 @@
 	var/datum/team/prebels/RT = mind_datum.rev_team
 	var/shittime = world.time
 	playsound_local(src, 'sound/misc/rebel.ogg', 100, FALSE)
-	var/garbaggio = alert(src, "[offer]","Rebellion", "Yes", "No")
+	var/garbaggio = alert(src, "[offer]","Восстание", "Yes", "No")
 	if(world.time > shittime + 35 SECONDS)
-		to_chat(src,"<span class='danger'>Too late.</span>")
+		to_chat(src,"<span class='danger'>Слишком поздно.</span>")
 		return
 	mob_timers["rebeloffer"] = world.time
 	if(garbaggio == "Yes")
 		if(mind_datum.add_revolutionary(mind))
-			RT.offers2join += "<span class='info'><B>[real_name]</B> <span class='blue'>ACCEPTED</span> [guy.real_name]: \"[offer]\"</span>"
-			to_chat(guy,"<span class='blue'>[src] joins the revolution.</span>")
+			RT.offers2join += "<span class='info'><B>[real_name]</B> <span class='blue'>ПРИНЯЛ</span> предложение [guy.real_name]: \"[offer]\"</span>"
+			to_chat(guy,"<span class='blue'>[src] присоединяется к восстанию.</span>")
 	else
-		to_chat(src,"<span class='danger'>I reject the offer.</span>")
-		to_chat(guy,"<span class='danger'>[src] rejects the offer.</span>")
-		RT.offers2join += "<span class='info'><B>[real_name]</B> <span class='red'>REJECTED</span> [guy.real_name]: \"[offer]\"</span>"
+		to_chat(src,"<span class='danger'>Я отвергаю предложение.</span>")
+		to_chat(guy,"<span class='danger'>[src] отвергает предложение.</span>")
+		RT.offers2join += "<span class='info'><B>[real_name]</B> <span class='red'>ОТВЕРГ</span> предложение [guy.real_name]: \"[offer]\"</span>"
 
 /datum/antagonist/prebel/proc/add_revolutionary(datum/mind/rev_mind)
 	if(!can_be_converted(rev_mind.current))
@@ -168,8 +168,8 @@
 
 /datum/objective/prebel
 	name = "Rebellion"
-	explanation_text = "Put a rebel on the throne with the crown, and make a new decree."
-	team_explanation_text = "Put a rebel on the throne with the crown, and make a new decree."
+	explanation_text = "Посадить бунтовщика на трон в короне и издать новый указ."
+	team_explanation_text = "Посадить бунтовщика на трон в короне и издать новый указ."
 
 /datum/team/prebels/proc/update_objectives(initial = FALSE)
 	if(!(locate(/datum/objective/prebel) in objectives))
@@ -194,17 +194,17 @@
 		var/objective_count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='greentext'>TRIUMPH!</span>")
+				to_chat(world, "<B>Цель #[objective_count]</B>: [objective.explanation_text] <span class='greentext'>ТРИУМФ!</span>")
 			else
-				to_chat(world, "<B>Goal #[objective_count]</B>: [objective.explanation_text] <span class='redtext'>FAIL.</span>")
+				to_chat(world, "<B>Цель #[objective_count]</B>: [objective.explanation_text] <span class='redtext'>ПРОВАЛ.</span>")
 				win = FALSE
 			objective_count++
 		if(win)
 			for(var/datum/mind/M in members)
 				if(considered_alive(M))
 					M.adjust_triumphs(5)
-			to_chat(world, "<span class='greentext'>The Peasant Rebellion has triumphed!</span>")
+			to_chat(world, "<span class='greentext'>Крестьянское восстание увенчалось ТРИУМФОМ!</span>")
 		else
-			to_chat(world, "<span class='redtext'>The Peasant Rebellion has FAILED!</span>")
+			to_chat(world, "<span class='redtext'>Крестьянское восстание потерпело КРАХ!</span>")
 		for(var/X in offers2join)
 			to_chat(world,"[X]")

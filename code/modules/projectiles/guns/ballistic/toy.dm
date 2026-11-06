@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/toy
-	name = "foam force SMG"
+	name = "игрушечный ПП Foam Force"
 	desc = ""
 	icon_state = "saber"
 	item_state = "gun"
@@ -21,7 +21,7 @@
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/toy/pistol
-	name = "foam force pistol"
+	name = "игрушечный пистолет Foam Force"
 	desc = ""
 	icon_state = "pistol"
 	bolt_type = BOLT_TYPE_LOCKING
@@ -46,7 +46,7 @@
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/shotgun/toy
-	name = "foam force shotgun"
+	name = "игрушечный дробовик Foam Force"
 	desc = ""
 	force = 0
 	throwforce = 0
@@ -71,7 +71,7 @@
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/shotgun/toy/crossbow
-	name = "foam force crossbow"
+	name = "игрушечный арбалет Foam Force"
 	desc = ""
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "foamcrossbow"
@@ -82,7 +82,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gun/ballistic/automatic/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
-	name = "donksoft SMG"
+	name = "игрушечный ПП Donksoft"
 	desc = ""
 	can_suppress = TRUE
 	item_flags = NONE
@@ -102,7 +102,7 @@
 	add_overlay("[icon_state]_toy")
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy //This is the syndicate variant with syndicate firing pin and riot darts.
-	name = "donksoft LMG"
+	name = "игрушечный пулемет Donksoft"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	can_suppress = FALSE

@@ -17,7 +17,7 @@
 	foodtype = GRAIN | DAIRY
 
 /obj/item/reagent_containers/food/snacks/store/cake/plain
-	name = "plain cake"
+	name = "простой торт"
 	desc = ""
 	icon_state = "plaincake"
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/cake
@@ -26,7 +26,7 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/cakeslice/plain
-	name = "plain cake slice"
+	name = "кусок простого торта"
 	desc = ""
 	icon_state = "plaincake_slice"
 	filling_color = "#FFD700"
@@ -35,7 +35,7 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/store/cake/carrot
-	name = "carrot cake"
+	name = "морковный торт"
 	desc = ""
 	icon_state = "carrotcake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/carrot
@@ -46,7 +46,7 @@
 	foodtype = GRAIN | DAIRY | VEGETABLES | SUGAR
 
 /obj/item/reagent_containers/food/snacks/cakeslice/carrot
-	name = "carrot cake slice"
+	name = "кусок морковного торта"
 	desc = ""
 	icon_state = "carrotcake_slice"
 	filling_color = "#FFA500"
@@ -75,7 +75,7 @@
 	foodtype = GRAIN | DAIRY | MEAT | GROSS | SUGAR
 
 /obj/item/reagent_containers/food/snacks/store/cake/cheese
-	name = "cheese cake"
+	name = "сырный торт"
 	desc = ""
 	icon_state = "cheesecake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/cheese
@@ -147,7 +147,7 @@
 	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/store/cake/chocolate
-	name = "chocolate cake"
+	name = "шоколадный торт"
 	desc = ""
 	icon_state = "chocolatecake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/chocolate
@@ -157,7 +157,7 @@
 	foodtype = GRAIN | DAIRY | JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/cakeslice/chocolate
-	name = "chocolate cake slice"
+	name = "кусок шоколадного торта"
 	desc = ""
 	icon_state = "chocolatecake_slice"
 	filling_color = "#A0522D"
@@ -165,7 +165,7 @@
 	foodtype = GRAIN | DAIRY | JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/store/cake/birthday
-	name = "birthday cake"
+	name = "праздничный торт"
 	desc = ""
 	icon_state = "birthdaycake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/birthday
@@ -231,7 +231,7 @@
 	energy_bite(M, user)
 
 /obj/item/reagent_containers/food/snacks/store/cake/apple
-	name = "apple cake"
+	name = "яблочный торт"
 	desc = ""
 	icon_state = "applecake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/apple
@@ -249,7 +249,7 @@
 	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/cakeslice/custom
-	name = "cake slice"
+	name = "кусок торта"
 	icon_state = "plaincake_slice"
 	filling_color = "#FFFFFF"
 	foodtype = GRAIN | DAIRY
@@ -375,7 +375,7 @@
 	foodtype = GRAIN | GROSS
 
 /obj/item/reagent_containers/food/snacks/store/cake/vanilla_cake
-	name = "vanilla cake"
+	name = "ванильный торт"
 	desc = ""
 	icon_state = "vanillacake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/vanilla_slice

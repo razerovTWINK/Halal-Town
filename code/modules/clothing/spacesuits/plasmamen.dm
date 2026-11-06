@@ -29,7 +29,7 @@
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
-			H.visible_message("<span class='warning'>[H]'s suit automatically extinguishes [H.p_them()]!</span>","<span class='warning'>My suit automatically extinguishes you.</span>")
+			H.visible_message("<span class='warning'>Костюм [H] сам гасит [H.p_them()]!</span>","<span class='warning'>Мой костюм сам гасит тебя.</span>")
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 
@@ -70,7 +70,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/proc/toggle_welding_screen(mob/living/user)
 	if(weldingvisortoggle(user))
 		if(on)
-			to_chat(user, "<span class='notice'>My helmet's torch can't pass through my welding visor!</span>")
+			to_chat(user, "<span class='notice'>Свет шлемового фонаря не проходит сквозь сварочный щиток!</span>")
 			on = FALSE
 			playsound(src, 'sound/blank.ogg', 50, TRUE) //Visors don't just come from nothing
 			update_icon()
@@ -135,7 +135,7 @@
 
 	if(on)
 		if(!up)
-			to_chat(user, "<span class='notice'>My helmet's torch can't pass through my welding visor!</span>")
+			to_chat(user, "<span class='notice'>Свет шлемового фонаря не проходит сквозь сварочный щиток!</span>")
 			set_light(0)
 		else
 			set_light(brightness_on)

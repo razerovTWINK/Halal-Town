@@ -1,5 +1,5 @@
 /obj/item/ammo_box/a357
-	name = "speed loader (.357)"
+	name = "спидлоадер (.357)"
 	desc = ""
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
@@ -8,7 +8,7 @@
 	item_flags = NO_MAT_REDEMPTION
 
 /obj/item/ammo_box/c38
-	name = "speed loader (.38)"
+	name = "спидлоадер (.38)"
 	desc = ""
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c38
@@ -17,47 +17,47 @@
 	custom_materials = list(/datum/material/iron = 20000)
 
 /obj/item/ammo_box/c38/trac
-	name = "speed loader (.38 TRAC)"
+	name = "спидлоадер (.38 TRAC)"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/c38/trac
 
 /obj/item/ammo_box/c38/hotshot
-	name = "speed loader (.38 Hot Shot)"
+	name = "спидлоадер (.38 Hot Shot)"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/c38/hotshot
 
 /obj/item/ammo_box/c38/iceblox
-	name = "speed loader (.38 Iceblox)"
+	name = "спидлоадер (.38 Iceblox)"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
 /obj/item/ammo_box/c9mm
-	name = "ammo box (9mm)"
+	name = "коробка патронов (9мм)"
 	icon_state = "9mmbox"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
 
 /obj/item/ammo_box/c10mm
-	name = "ammo box (10mm)"
+	name = "коробка патронов (10мм)"
 	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 20
 
 /obj/item/ammo_box/c45
-	name = "ammo box (.45)"
+	name = "коробка патронов (.45)"
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 20
 
 /obj/item/ammo_box/a40mm
-	name = "ammo box (40mm grenades)"
+	name = "коробка гранат (40мм)"
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
 	max_ammo = 4
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/a762
-	name = "stripper clip (7.62mm)"
+	name = "обойма (7.62мм)"
 	desc = ""
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a762
@@ -65,13 +65,13 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/n762
-	name = "ammo box (7.62x38mmR)"
+	name = "коробка патронов (7.62x38ммR)"
 	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/n762
 	max_ammo = 14
 
 /obj/item/ammo_box/foambox
-	name = "ammo box (Foam Darts)"
+	name = "коробка мягких дротиков"
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foambox"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart

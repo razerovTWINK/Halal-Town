@@ -1,12 +1,12 @@
 /datum/reagent/blood
 	data = list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
-	name = "Blood"
+	name = "Кровь"
 	color = "#C80000" // rgb: 200, 0, 0
 	metabolization_rate = 5 //fast rate so it disappears fast.
-	taste_description = "iron"
+	taste_description = "железо"
 	taste_mult = 1.3
 	glass_icon_state = "glass_red"
-	glass_name = "glass of tomato juice"
+	glass_name = "стакан томатного сока"
 	glass_desc = ""
 	shot_glass_icon_state = "shotglassred"
 
@@ -88,14 +88,14 @@
 	name = "Liquid gibs"
 	color = "#CC4633"
 	description = "You don't even want to think about what's in here."
-	taste_description = "gross iron"
+	taste_description = "мерзкое железо"
 	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/vaccine
 	//data must contain virus type
 	name = "Vaccine"
 	color = "#C81040" // rgb: 200, 16, 64
-	taste_description = "slime"
+	taste_description = "слизь"
 
 /datum/reagent/vaccine/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(islist(data) && (method == INGEST || method == INJECT))
@@ -122,10 +122,10 @@
 	src.data = cached_data
 
 /datum/reagent/water
-	name = "Water"
+	name = "Вода"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
-	taste_description = "water"
+	taste_description = "вода"
 	var/cooling_temperature = 2
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
@@ -150,7 +150,7 @@
 	..()
 
 /datum/reagent/water/gross
-	taste_description = "lead"
+	taste_description = "свинец"
 
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1)
@@ -306,7 +306,7 @@
 		if(iscultist(M) && prob(20))
 			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
-				M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='danger'>I have a seizure!</span>")
+				M.visible_message("<span class='danger'>[M] бьётся в припадке!</span>", "<span class='danger'>У меня припадок!</span>")
 				M.Unconscious(120)
 				to_chat(M, "<span class='cultlarge'>[pick("Your blood is my bond - you are nothing without it", "Do not forget my place", \
 				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour my meager life!")].</span>")
@@ -362,7 +362,7 @@
 /datum/reagent/fuel/unholywater		//if you somehow managed to extract this from someone, dont splash it on myself and have a smoke
 	name = "Unholy Water"
 	description = "Something that shouldn't exist on this plane of existence."
-	taste_description = "suffering"
+	taste_description = "страдание"
 
 /datum/reagent/fuel/unholywater/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -393,7 +393,7 @@
 /datum/reagent/hellwater			//if someone has this in their system they've really pissed off an eldrich god
 	name = "Hell Water"
 	description = "YOUR FLESH! IT BURNS!"
-	taste_description = "burning"
+	taste_description = "жжение"
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
@@ -413,7 +413,7 @@
 	name = "Space Lube"
 	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them. giggity."
 	color = "#009CA8" // rgb: 0, 156, 168
-	taste_description = "cherry" // by popular demand
+	taste_description = "вишня" // by popular demand
 	var/lube_kind = TURF_WET_LUBE ///What kind of slipperiness gets added to turfs.
 
 /datum/reagent/lube/reaction_turf(turf/open/T, reac_volume)
@@ -434,7 +434,7 @@
 	color = "#FFC080" // rgb: 255, 196, 128  Bright orange
 	metabolization_rate = 10 * REAGENTS_METABOLISM // very fast, so it can be applied rapidly.  But this changes on an overdose
 	overdose_threshold = 11 //Slightly more than one un-nozzled spraybottle.
-	taste_description = "sour oranges"
+	taste_description = "кислые апельсины"
 
 /datum/reagent/spraytan/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(ishuman(M))
@@ -532,7 +532,7 @@
 	description = "A humanizing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	metabolization_rate = 0.2 //metabolizes to prevent micro-dosage
-	taste_description = "slime"
+	taste_description = "слизь"
 	var/race = /datum/species/human
 	var/list/mutationtexts = list( "You don't feel very well." = MUT_MSG_IMMEDIATE,
 									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
@@ -594,21 +594,21 @@
 	description = "An insectifying toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/fly
-	taste_description = "trash"
+	taste_description = "мусор"
 
 /datum/reagent/mutationtoxin/moth
 	name = "Moth Mutation Toxin"
 	description = "A glowing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/moth
-	taste_description = "clothing"
+	taste_description = "одежда"
 
 /datum/reagent/mutationtoxin/pod
 	name = "Podperson Mutation Toxin"
 	description = "A vegetalizing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/pod
-	taste_description = "flowers"
+	taste_description = "цветы"
 
 /datum/reagent/mutationtoxin/jelly
 	name = "Imperfect Mutation Toxin"
@@ -688,7 +688,7 @@
 	description = "A plasma-based toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/plasmaman
-	taste_description = "plasma"
+	taste_description = "плазма"
 
 #undef MUT_MSG_IMMEDIATE
 #undef MUT_MSG_EXTENDED
@@ -699,7 +699,7 @@
 	description = "This toxin will rapidly change the DNA of human beings. Commonly used by Syndicate spies and assassins in need of an emergency ID change."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	metabolization_rate = INFINITY
-	taste_description = "slime"
+	taste_description = "слизь"
 
 /datum/reagent/mulligan/on_mob_life(mob/living/carbon/human/H)
 	..()
@@ -713,7 +713,7 @@
 	name = "Advanced Mutation Toxin"
 	description = "An advanced corruptive toxin produced by slimes."
 	color = "#13BC5E" // rgb: 19, 188, 94
-	taste_description = "slime"
+	taste_description = "слизь"
 
 /datum/reagent/aslimetoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(method != TOUCH)
@@ -724,7 +724,7 @@
 	description = "An advanced corruptive toxin produced by something terrible."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	can_synth = FALSE
-	taste_description = "decay"
+	taste_description = "гниение"
 
 /datum/reagent/gluttonytoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	L.ForceContractDisease(new /datum/disease/transformation/morph(), FALSE, TRUE)
@@ -734,7 +734,7 @@
 	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
 	color = "#202040" // rgb: 20, 20, 40
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	taste_description = "bitterness"
+	taste_description = "горечь"
 
 /datum/reagent/serotrotium/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
@@ -766,7 +766,7 @@
 	description = "A highly ductile metal. Things made out of copper aren't very durable, but it makes a decent material for electrical wiring."
 	reagent_state = SOLID
 	color = "#6E3B08" // rgb: 110, 59, 8
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/copper/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/stack/sheet/metal))
@@ -806,7 +806,7 @@
 	description = "A soft, low-melting solid that can easily be cut with a knife. Reacts violently with water."
 	reagent_state = SOLID
 	color = "#A0A0A0" // rgb: 160, 160, 160
-	taste_description = "sweetness"
+	taste_description = "сладость"
 
 /datum/reagent/mercury
 	name = "Mercury"
@@ -827,7 +827,7 @@
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
 	color = "#BF8C00" // rgb: 191, 140, 0
-	taste_description = "rotten eggs"
+	taste_description = "тухлые яйца"
 
 /datum/reagent/carbon
 	name = "Carbon"
@@ -847,7 +847,7 @@
 	description = "A pale yellow gas that's well known as an oxidizer. While it forms many harmless molecules in its elemental form it is far from harmless."
 	reagent_state = GAS
 	color = "#FFFB89" //pale yellow? let's make it light gray
-	taste_description = "chlorine"
+	taste_description = "хлор"
 
 /datum/reagent/chlorine/on_mob_life(mob/living/carbon/M)
 	M.take_bodypart_damage(1*REM, 0, 0, 0)
@@ -859,7 +859,7 @@
 	description = "A comically-reactive chemical element. The universe does not want this stuff to exist in this form in the slightest."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/fluorine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1*REM, 0)
@@ -878,14 +878,14 @@
 	description = "A ruddy red powder that burns readily. Though it comes in many colors, the general theme is always the same."
 	reagent_state = SOLID
 	color = "#832828" // rgb: 131, 40, 40
-	taste_description = "vinegar"
+	taste_description = "уксус"
 
 /datum/reagent/lithium
 	name = "Lithium"
 	description = "A silver metal, its claim to fame is its remarkably low density. Using it is a bit too effective in calming oneself down."
 	reagent_state = SOLID
 	color = "#808080" // rgb: 128, 128, 128
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
 	if((M.mobility_flags & MOBILITY_MOVE) && !isspaceturf(M.loc))
@@ -898,13 +898,13 @@
 	name = "Glycerol"
 	description = "Glycerol is a simple polyol compound. Glycerol is sweet-tasting and of low toxicity."
 	color = "#D3B913"
-	taste_description = "sweetness"
+	taste_description = "сладость"
 
 /datum/reagent/space_cleaner/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
-	taste_description = "bitterness"
+	taste_description = "горечь"
 
 /datum/reagent/space_cleaner/sterilizine/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
@@ -914,10 +914,10 @@
 	..()
 
 /datum/reagent/iron
-	name = "Iron"
+	name = "Железо"
 	description = "Pure iron is a metal."
 	reagent_state = SOLID
-	taste_description = "iron"
+	taste_description = "железо"
 
 	color = "#606060" //pure iron? let's make it violet of course
 
@@ -956,7 +956,7 @@
 	description = "A jade-green metallic chemical element in the actinide series, weakly radioactive."
 	reagent_state = SOLID
 	color = "#5E9964" //this used to be silver, but liquid uranium can still be green and it's more easily noticeable as uranium like this so why bother?
-	taste_description = "the inside of a reactor"
+	taste_description = "нутро реактора"
 	var/irradiation_level = 1
 
 /datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
@@ -1007,7 +1007,7 @@
 	description = "A silvery white and ductile member of the boron group of chemical elements."
 	reagent_state = SOLID
 	color = "#A8A8A8" // rgb: 168, 168, 168
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/silicon
 	name = "Silicon"
@@ -1040,7 +1040,7 @@
 	name = "Space cleaner"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
 	color = "#A5F0EE" // rgb: 165, 240, 238
-	taste_description = "sourness"
+	taste_description = "кислинка"
 	reagent_weight = 0.6 //so it sprays further
 
 /datum/reagent/space_cleaner/reaction_obj(obj/O, reac_volume)
@@ -1096,7 +1096,7 @@
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
@@ -1115,7 +1115,7 @@
 	description = "Cryptobiolin causes confusion and dizziness."
 	color = "#ADB5DB" //i hate default violets and 'crypto' keeps making me think of cryo so it's light blue now
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M)
 	M.Dizzy(1)
@@ -1128,7 +1128,7 @@
 	name = "Impedrezene"
 	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
 	color = "#E07DDD" // pink = happy = dumb
-	taste_description = "numbness"
+	taste_description = "онемение"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = max(M.jitteriness-5,0)
@@ -1145,7 +1145,7 @@
 	description = "Microscopic construction robots."
 	color = "#535E66" // rgb: 83, 94, 102
 	can_synth = FALSE
-	taste_description = "sludge"
+	taste_description = "жижа"
 
 /datum/reagent/nanomachines/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1156,7 +1156,7 @@
 	description = "Microbes with an entirely alien cellular structure."
 	color = "#535E66" // rgb: 83, 94, 102
 	can_synth = FALSE
-	taste_description = "sludge"
+	taste_description = "жижа"
 
 /datum/reagent/xenomicrobes/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1167,7 +1167,7 @@
 	description = "Active fungal spores."
 	color = "#92D17D" // rgb: 146, 209, 125
 	can_synth = FALSE
-	taste_description = "slime"
+	taste_description = "слизь"
 
 /datum/reagent/fungalspores/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1177,7 +1177,7 @@
 	name = "Agent-S"
 	description = "Virological agent that infects the subject with Gastrolosis."
 	color = "#003300" // rgb(0, 51, 0)
-	taste_description = "goo"
+	taste_description = "слизь"
 	can_synth = FALSE //special orange man request
 
 /datum/reagent/snail/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
@@ -1188,21 +1188,21 @@
 	name = "Fluorosurfactant"
 	description = "A perfluoronated sulfonic acid that forms a foam when mixed with water."
 	color = "#9E6B38" // rgb: 158, 107, 56
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/foaming_agent// Metal foaming agent. This is lithium hydride. Add other recipes (e.g. LiH + H2O -> LiOH + H2) eventually.
 	name = "Foaming agent"
 	description = "An agent that yields metallic foam when mixed with light metal and a strong acid."
 	reagent_state = SOLID
 	color = "#664B63" // rgb: 102, 75, 99
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/smart_foaming_agent //Smart foaming agent. Functions similarly to metal foam, but conforms to walls.
 	name = "Smart foaming agent"
 	description = "An agent that yields metallic foam which conforms to area boundaries when mixed with light metal and a strong acid."
 	reagent_state = SOLID
 	color = "#664B63" // rgb: 102, 75, 99
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/ammonia
 	name = "Ammonia"
@@ -1215,7 +1215,7 @@
 	name = "Diethylamine"
 	description = "A secondary amine, mildly corrosive."
 	color = "#604030" // rgb: 96, 64, 48
-	taste_description = "iron"
+	taste_description = "железо"
 
 /datum/reagent/carbondioxide
 	name = "Carbon Dioxide"
@@ -1242,7 +1242,7 @@
 	reagent_state = LIQUID
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	color = "#808080"
-	taste_description = "sweetness"
+	taste_description = "сладость"
 
 /datum/reagent/nitrous_oxide/reaction_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
@@ -1275,7 +1275,7 @@
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl are handled through gas breathing, metabolism must be lower for breathcode to keep up
 	color = "E1A116"
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/stimulum/on_mob_metabolize(mob/living/L)
 	..()
@@ -1298,7 +1298,7 @@
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl are handled through gas breathing, metabolism must be lower for breathcode to keep up
 	color = "90560B"
-	taste_description = "burning"
+	taste_description = "жжение"
 
 /datum/reagent/nitryl/on_mob_metabolize(mob/living/L)
 	..()
@@ -1465,14 +1465,14 @@
 	description = "Burns in a small smoky fire, can be used to get Ash."
 	reagent_state = LIQUID
 	color = "#2D2D2D"
-	taste_description = "oil"
+	taste_description = "масло"
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
 	description = "Non-flammable plasma locked into a liquid form that cannot ignite or become gaseous/solid."
 	reagent_state = LIQUID
 	color = "#2D2D2D"
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	taste_mult = 1.5
 
 /datum/reagent/stable_plasma/on_mob_life(mob/living/carbon/C)
@@ -1484,7 +1484,7 @@
 	description = "Commonly added to table salt as a nutrient. On its own it tastes far less pleasing."
 	reagent_state = LIQUID
 	color = "#BC8A00"
-	taste_description = "metal"
+	taste_description = "металл"
 
 /datum/reagent/carpet
 	name = "Carpet"
@@ -1504,7 +1504,7 @@
 	name = "Black Carpet"
 	description = "The carpet also comes in... BLAPCK" //yes, the typo is intentional
 	color = "#1E1E1E"
-	taste_description = "licorice"
+	taste_description = "лакрица"
 	carpet_type = /turf/open/floor/carpet/black
 
 /datum/reagent/carpet/blue
@@ -1539,7 +1539,7 @@
 	name = "Purple Carpet"
 	description = "For those that need to waste copious amounts of healing jelly in order to look fancy."
 	color = "#91D865"
-	taste_description = "jelly"
+	taste_description = "желе"
 	carpet_type = /turf/open/floor/carpet/purple
 
 /datum/reagent/carpet/red
@@ -1586,14 +1586,14 @@
 	description = "A brownish liquid that's highly reactive. Useful for stopping free radicals, but not intended for human consumption."
 	reagent_state = LIQUID
 	color = "#D35415"
-	taste_description = "chemicals"
+	taste_description = "химикаты"
 
 /datum/reagent/pentaerythritol
 	name = "Pentaerythritol"
 	description = "Slow down, it ain't no spelling bee!"
 	reagent_state = SOLID
 	color = "#E66FFF"
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/acetaldehyde
 	name = "Acetaldehyde"
@@ -1607,7 +1607,7 @@
 	description = "Enslaved oxygen"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
-	taste_description = "acid"
+	taste_description = "кислота"
 
 
 /datum/reagent/acetone_oxide/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people kills people!
@@ -1625,21 +1625,21 @@
 	description = "An aromatic ring of carbon with a hydroxyl group. A useful precursor to some medicines, but has no healing properties on its own."
 	reagent_state = LIQUID
 	color = "#E7EA91"
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/ash
 	name = "Ash"
 	description = "Supposedly phoenixes rise from these, but you've never seen it."
 	reagent_state = LIQUID
 	color = "#515151"
-	taste_description = "ash"
+	taste_description = "пепел"
 
 /datum/reagent/acetone
 	name = "Acetone"
 	description = "A slick, slightly carcinogenic liquid. Has a multitude of mundane uses in everyday life."
 	reagent_state = LIQUID
 	color = "#AF14B7"
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/colorful_reagent
 	name = "Colorful Reagent"
@@ -1647,7 +1647,7 @@
 	reagent_state = LIQUID
 	var/list/random_color_list = list("#00aedb","#a200ff","#f47835","#d41243","#d11141","#00b159","#00aedb","#f37735","#ffc425","#008744","#0057e7","#d62d20","#ffa700")
 	color = "#C8A5DC"
-	taste_description = "rainbows"
+	taste_description = "радуга"
 	var/can_colour_mobs = TRUE
 
 /datum/reagent/colorful_reagent/New()
@@ -1682,7 +1682,7 @@
 	reagent_state = LIQUID
 	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0") // fucking hair code
 	color = "#C8A5DC"
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/hair_dye/New()
 	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
@@ -1703,7 +1703,7 @@
 	description = "A solution to hair loss across the world."
 	reagent_state = LIQUID
 	color = "#A86B45" //hair is brown
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1720,7 +1720,7 @@
 	description = "A concentrated solution to hair loss across the world."
 	reagent_state = LIQUID
 	color = "#7A4E33" //hair is dark browmn
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/concentrated_barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1742,14 +1742,14 @@
 	description = "Also known as sodium hydroxide. As a profession making this is somewhat underwhelming."
 	reagent_state = LIQUID
 	color = "#FFFFD6" // very very light yellow
-	taste_description = "acid"
+	taste_description = "кислота"
 
 /datum/reagent/drying_agent
 	name = "Drying agent"
 	description = "A desiccant. Can be used to dry things."
 	reagent_state = LIQUID
 	color = "#A70FFF"
-	taste_description = "dryness"
+	taste_description = "сухость"
 
 /datum/reagent/drying_agent/reaction_turf(turf/open/T, reac_volume)
 	if(istype(T))
@@ -1766,44 +1766,44 @@
 /datum/reagent/toxin/mutagen/mutagenvirusfood
 	name = "mutagenic agar"
 	color = "#A3C00F" // rgb: 163,192,15
-	taste_description = "sourness"
+	taste_description = "кислинка"
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood/sugar
 	name = "sucrose agar"
 	color = "#41B0C0" // rgb: 65,176,192
-	taste_description = "sweetness"
+	taste_description = "сладость"
 
 /datum/reagent/medicine/synaptizine/synaptizinevirusfood
 	name = "virus rations"
 	color = "#D18AA5" // rgb: 209,138,165
-	taste_description = "bitterness"
+	taste_description = "горечь"
 
 /datum/reagent/toxin/plasma/plasmavirusfood
 	name = "virus plasma"
 	color = "#A270A8" // rgb: 166,157,169
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	taste_mult = 1.5
 
 /datum/reagent/toxin/plasma/plasmavirusfood/weak
 	name = "weakened virus plasma"
 	color = "#A28CA5" // rgb: 206,195,198
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	taste_mult = 1.5
 
 /datum/reagent/uranium/uraniumvirusfood
 	name = "decaying uranium gel"
 	color = "#67ADBA" // rgb: 103,173,186
-	taste_description = "the inside of a reactor"
+	taste_description = "нутро реактора"
 
 /datum/reagent/uranium/uraniumvirusfood/unstable
 	name = "unstable uranium gel"
 	color = "#2FF2CB" // rgb: 47,242,203
-	taste_description = "the inside of a reactor"
+	taste_description = "нутро реактора"
 
 /datum/reagent/uranium/uraniumvirusfood/stable
 	name = "stable uranium gel"
 	color = "#04506C" // rgb: 4,80,108
-	taste_description = "the inside of a reactor"
+	taste_description = "нутро реактора"
 
 // Bee chemicals
 
@@ -1831,7 +1831,7 @@
 	color = "#123524" // RGB (18, 53, 36)
 	metabolization_rate = INFINITY
 	can_synth = FALSE
-	taste_description = "brains"
+	taste_description = "мозги"
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
@@ -1856,7 +1856,7 @@
 	description = "A commercial chemical designed to help older men in the bedroom."//not really it just makes you a giant
 	color = "#ff0000"//strong red. rgb 255, 0, 0
 	var/current_size = 1
-	taste_description = "bitterness" // apparently what viagra tastes like
+	taste_description = "горечь" // apparently what viagra tastes like
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
@@ -1886,13 +1886,13 @@
 	name = "plastic polymers"
 	description = "the petroleum based components of plastic."
 	color = "#f7eded"
-	taste_description = "plastic"
+	taste_description = "пластик"
 
 /datum/reagent/glitter
 	name = "generic glitter"
 	description = "if you can see this description, contact a coder."
 	color = "#FFFFFF" //pure white
-	taste_description = "plastic"
+	taste_description = "пластик"
 	reagent_state = SOLID
 	var/glitter_type = /obj/effect/decal/cleanable/glitter
 
@@ -1922,7 +1922,7 @@
 	name = "Pax"
 	description = "A colorless liquid that suppresses violence in its subjects."
 	color = "#AAAAAA55"
-	taste_description = "water"
+	taste_description = "вода"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 
 /datum/reagent/pax/on_mob_metabolize(mob/living/L)
@@ -1967,7 +1967,7 @@
 	name = "Dizzying Solution"
 	description = "Makes the target off balance and dizzy"
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	taste_description = "dizziness"
+	taste_description = "головокружение"
 	can_synth = TRUE
 
 /datum/reagent/peaceborg/confuse/on_mob_life(mob/living/carbon/M)
@@ -1983,7 +1983,7 @@
 	name = "Tiring Solution"
 	description = "An extremely weak stamina-toxin that tires out the target. Completely harmless."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	taste_description = "tiredness"
+	taste_description = "усталость"
 	can_synth = TRUE
 
 /datum/reagent/peaceborg/tire/on_mob_life(mob/living/carbon/M)
@@ -1998,7 +1998,7 @@
 	name = "Tranquility"
 	description = "A highly mutative liquid of unknown origin."
 	color = "#9A6750" //RGB: 154, 103, 80
-	taste_description = "inner peace"
+	taste_description = "умиротворение"
 	can_synth = FALSE
 
 /datum/reagent/tranquility/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
@@ -2070,7 +2070,7 @@
 	name = "Monkey Powder"
 	description = "Just add water!"
 	color = "#9C5A19"
-	taste_description = "bananas"
+	taste_description = "бананы"
 	can_synth = TRUE
 
 /datum/reagent/cellulose

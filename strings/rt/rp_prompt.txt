@@ -1,11 +1,11 @@
-(Welcome to Roguetown)
-It is the age of abandonment
+(Добро пожаловать в Роугтаун)
+Это эпоха забвения
 <br><br>
-It is the year 1522, the world has recently seen the end of a massive conflict known as the War in the Mists between the two major nations of the world. To the west, the Zybatine Empire has grown out of the remanents of the Golden-Bridge Empire of old, its name lost to the annals of time and the greed of it sultans.
-To the east, the Grenzelhofts have carved an imperiate out of the various tribes and nations of its contient, it's legions marching upon its foes with ruthless efficency to those its politicans cannot coerce with trade and political overpowering. Many claim the Gods have abandoned this world, with the hordes of beasts growing ever more present in daily life, the various wars between petty-kings over whatever remains untouched by the dominant powers and the ever amassing fervor against the arts of magic leading to what has been refered to as 'The Fallow Years'.
+На дворе 1522 год. Мир недавно пережил конец великой войны, известной как Война в Туманах, между двумя главными державами. На западе из обломков древней Империи Золотого Моста выросла Зибатинская империя — её имя затерялось в анналах времени и в алчности её султанов.
+На востоке Гренцельхофты сколотили империю из разрозненных племён и народов их континента; их легионы идут на врагов с безжалостной решимостью, если торговлей и политическим давлением не удаётся склонить тех к покорности. Многие говорят, что боги покинули этот мир: орды зверей всё чаще встречаются в повседневной жизни, мелкие короли воюют за остатки не тронутых державами земель, а негодование против искусства магии всё растёт — эти годы прозвали «Скудными».
 <br><br>
-However, not all places are afflicted as miserably by the growing pains of a new era. Such as the place our story takes place: Rockhill. The mantlepiece of a small petty kingdom on the Isle of Enigma, this township has long since stood upon the burrows of a much more ancient and mysterious empire of old. This town is a melting pot of cultural, political and martial history, with it being a cornerstone location where adventurers and townsfolk alike congregate to share in its rather impressive wealth and quality of living compared to other borderstates.
+Впрочем, не все места столь тяжело страдают от болезней роста новой эпохи. Например, Рокхилл, где начинается наша история. Жемчужина маленького княжества на острове Энигма, этот город с давних пор стоит на подземных ходах куда более древней и таинственной империи. Он — котёл культурной, политической и военной истории, оплот, где искатели приключений и горожане собираются разделить его немалое богатство и качество жизни, недостижимое для соседних пограничных земель.
 <br><br>
-A typical role-play character in Roguetown comes from a diverse set of backgrounds, experiences and world-views. It is up to you, the player: to decide how to portray such a complex history through your character. You may be a good person looking to the betterment of your daily lot in life, morally grey and survival focused or a terrible whoreson of little morality. This is your story to create.
+Типичный персонаж Роугтауна выходит из самого разного прошлого, с самым разным опытом и взглядом на мир. Тебе, игрок, решать, как воплотить такую сложную историю в своём персонаже. Ты можешь быть добрым человеком, стремящимся улучшить свою долю, серым и озабоченным лишь выживанием или же вовсе беспринципным подлецом. Эту историю предстоит создать тебе.
 <br><br>
-Will you go down in legend or falter into obscurity this day?
+Войдёшь сегодня в легенду или канешь в безвестность?

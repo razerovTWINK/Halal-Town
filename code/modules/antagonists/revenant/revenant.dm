@@ -450,7 +450,7 @@
 
 /datum/objective/revenant/New()
 	targetAmount = rand(350,600)
-	explanation_text = "Absorb [targetAmount] points of essence from humans."
+	explanation_text = "Поглотить [targetAmount] очков эссенции из смертных."
 	..()
 
 /datum/objective/revenant/check_completion()
@@ -467,17 +467,17 @@
 /datum/objective/revenantFluff
 
 /datum/objective/revenantFluff/New()
-	var/list/explanationTexts = list("Assist and exacerbate existing threats at critical moments.", \
-									 "Avoid killing in plain sight.", \
-									 "Cause as much chaos and anger as you can without being killed.", \
-									 "Damage and render as much of the station rusted and unusable as possible.", \
-									 "Disable and cause malfunctions in as many machines as possible.", \
-									 "Ensure that any holy weapons are rendered unusable.", \
-									 "Hinder the crew while attempting to avoid being noticed.", \
-									 "Make the crew as miserable as possible.", \
-									 "Make the clown as miserable as possible.", \
-									 "Make the captain as miserable as possible.", \
-									 "Prevent the use of energy weapons where possible.")
+	var/list/explanationTexts = list("Помогай и обостряй существующие угрозы в критические моменты.", \
+									 "Избегай убийств на глазах у всех.", \
+									 "Сей как можно больше хаоса и ярости, оставаясь в живых.", \
+									 "Разрушай и обращай в прах окружение, где только сможешь.", \
+									 "Выводи из строя и ломай механизмы.", \
+									 "Уничтожай или оскверняй священное оружие.", \
+									 "Вреди смертным, стараясь оставаться незамеченным.", \
+									 "Сделай жизнь обитателей как можно более невыносимой.", \
+									 "Сделай жизнь шута как можно более невыносимой.", \
+									 "Сделай жизнь правителя как можно более невыносимой.", \
+									 "Препятствуй использованию особого оружия, где возможно.")
 	explanation_text = pick(explanationTexts)
 	..()
 

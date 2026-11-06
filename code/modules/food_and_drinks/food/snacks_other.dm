@@ -2,7 +2,7 @@
 ////////////////////////////////////////////OTHER////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/store/cheesewheel
-	name = "cheese wheel"
+	name = "головка сыра"
 	desc = ""
 	icon_state = "cheesewheel"
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesewedge
@@ -13,7 +13,7 @@
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/cheesewedge
-	name = "cheese wedge"
+	name = "ломтик сыра"
 	desc = ""
 	icon_state = "cheesewedge"
 	filling_color = "#FFD700"
@@ -22,7 +22,7 @@
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/watermelonslice
-	name = "watermelon slice"
+	name = "ломтик арбуза"
 	desc = ""
 	icon_state = "watermelonslice"
 	filling_color = "#FF1493"
@@ -31,7 +31,7 @@
 	juice_results = list(/datum/reagent/consumable/watermelonjuice = 5)
 
 /obj/item/reagent_containers/food/snacks/candy_corn
-	name = "candy corn"
+	name = "кукурузные конфеты"
 	desc = ""
 	icon_state = "candy_corn"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 2)
@@ -48,7 +48,7 @@
 	foodtype = GROSS
 
 /obj/item/reagent_containers/food/snacks/chocolatebar
-	name = "chocolate bar"
+	name = "шоколадный батончик"
 	desc = ""
 	icon_state = "chocolatebar"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 2)
@@ -65,7 +65,7 @@
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/popcorn
-	name = "popcorn"
+	name = "попкорн"
 	desc = ""
 	icon_state = "popcorn"
 	trash = /obj/item/trash/popcorn
@@ -80,7 +80,7 @@
 	eatverb = pick("bite","nibble","gnaw","gobble","chomp")
 
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato
-	name = "loaded baked potato"
+	name = "печёный картофель с начинкой"
 	desc = ""
 	icon_state = "loadedbakedpotato"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -90,7 +90,7 @@
 	foodtype = VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/fries
-	name = "space fries"
+	name = "космический картофель фри"
 	desc = ""
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
@@ -101,7 +101,7 @@
 	dunkable = TRUE
 
 /obj/item/reagent_containers/food/snacks/tatortot
-	name = "tator tot"
+	name = "картофельные шарики"
 	desc = ""
 	icon_state = "tatortot"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -608,7 +608,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, "<span class='warning'>Крышка [src] не открыта!</span>")
 		return 0
 	return ..()
 

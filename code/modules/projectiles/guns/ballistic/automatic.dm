@@ -13,7 +13,7 @@
 	suppressed_sound = 'sound/blank.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
-	name = "\improper Nanotrasen Saber SMG"
+	name = "\improper пистолет-пулемёт Saber"
 	desc = ""
 	icon_state = "saber"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
@@ -43,11 +43,11 @@
 	if(!select)
 		burst_size = 1
 		fire_delay = 0
-		to_chat(user, "<span class='notice'>I switch to semi-automatic.</span>")
+		to_chat(user, "<span class='notice'>Ты переключаешься на одиночный огонь.</span>")
 	else
 		burst_size = initial(burst_size)
 		fire_delay = initial(fire_delay)
-		to_chat(user, "<span class='notice'>I switch to [burst_size]-rnd burst.</span>")
+		to_chat(user, "<span class='notice'>Ты переключаешься на стрельбу очередями по [burst_size].</span>")
 
 	playsound(user, 'sound/blank.ogg', 100, TRUE)
 	update_icon()
@@ -56,7 +56,7 @@
 		A.UpdateButtonIcon()
 
 /obj/item/gun/ballistic/automatic/c20r
-	name = "\improper C-20r SMG"
+	name = "\improper пистолет-пулемёт C-20r"
 	desc = ""
 	icon_state = "c20r"
 	item_state = "c20r"
@@ -79,7 +79,7 @@
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "security auto rifle"
+	name = "автоматическая винтовка службы безопасности"
 	desc = ""
 	icon_state = "wt550"
 	item_state = "arg"
@@ -96,7 +96,7 @@
 	empty_indicator = TRUE
 
 /obj/item/gun/ballistic/automatic/mini_uzi
-	name = "\improper Type U3 Uzi"
+	name = "\improper пистолет-пулемёт Type U3 Uzi"
 	desc = ""
 	icon_state = "miniuzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
@@ -106,7 +106,7 @@
 	rack_sound = 'sound/blank.ogg'
 
 /obj/item/gun/ballistic/automatic/m90
-	name = "\improper M-90gl Carbine"
+	name = "\improper карабин M-90gl"
 	desc = ""
 	icon_state = "m90"
 	item_state = "m90"
@@ -165,21 +165,21 @@
 			select = 1
 			burst_size = initial(burst_size)
 			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>I switch to [burst_size]-rnd burst.</span>")
+			to_chat(user, "<span class='notice'>Ты переключаешься на стрельбу очередями по [burst_size].</span>")
 		if(1)
 			select = 2
-			to_chat(user, "<span class='notice'>I switch to grenades.</span>")
+			to_chat(user, "<span class='notice'>Ты переключаешься на подствольный гранатомет.</span>")
 		if(2)
 			select = 0
 			burst_size = 1
 			fire_delay = 0
-			to_chat(user, "<span class='notice'>I switch to semi-auto.</span>")
+			to_chat(user, "<span class='notice'>Ты переключаешься на одиночный огонь.</span>")
 	playsound(user, 'sound/blank.ogg', 100, TRUE)
 	update_icon()
 	return
 
 /obj/item/gun/ballistic/automatic/tommygun
-	name = "\improper Thompson SMG"
+	name = "\improper пистолет-пулемёт Томпсона"
 	desc = ""
 	icon_state = "tommygun"
 	item_state = "shotgun"
@@ -192,7 +192,7 @@
 	bolt_type = BOLT_TYPE_OPEN
 
 /obj/item/gun/ballistic/automatic/ar
-	name = "\improper NT-ARG 'Boarder'"
+	name = "\improper автомат NT-ARG 'Boarder'"
 	desc = ""
 	icon_state = "arg"
 	item_state = "arg"
@@ -206,7 +206,7 @@
 // L6 SAW //
 
 /obj/item/gun/ballistic/automatic/l6_saw
-	name = "\improper L6 SAW"
+	name = "\improper ручной пулемет L6 SAW"
 	desc = ""
 	icon_state = "l6"
 	item_state = "l6closedmag"
@@ -234,14 +234,14 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
 	. = ..()
-	. += "<b>alt + click</b> to [cover_open ? "close" : "open"] the dust cover."
+	. += "<b>alt + click</b>, чтобы [cover_open ? "закрыть" : "открыть"] крышку ствольной коробки."
 	if(cover_open && magazine)
-		. += "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>"
+		. += "<span class='notice'>Кажется, можно извлечь короб с патронами <b>пустой рукой</b>.</span>"
 
 
 /obj/item/gun/ballistic/automatic/l6_saw/AltClick(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>I [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, "<span class='notice'>Ты [cover_open ? "открываешь" : "закрываешь"] крышку [src].</span>")
 	playsound(user, 'sound/blank.ogg', 60, TRUE)
 	update_icon()
 
@@ -253,7 +253,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, "<span class='warning'>Крышка [src] открыта! Закрой её перед стрельбой!</span>")
 		return
 	else
 		. = ..()
@@ -265,13 +265,13 @@
 		..()
 		return
 	if (!cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! Open it before trying to remove the magazine!</span>")
+		to_chat(user, "<span class='warning'>Крышка [src] закрыта! Открой её перед извлечением короба!</span>")
 		return
 	..()
 
 /obj/item/gun/ballistic/automatic/l6_saw/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s dust cover prevents a magazine from being fit.</span>")
+		to_chat(user, "<span class='warning'>Закрытая крышка [src] не даёт вставить короб с патронами.</span>")
 		return
 	..()
 
@@ -280,7 +280,7 @@
 // SNIPER //
 
 /obj/item/gun/ballistic/automatic/sniper_rifle
-	name = "sniper rifle"
+	name = "снайперская винтовка"
 	desc = ""
 	icon_state = "sniper"
 	item_state = "sniper"
@@ -304,7 +304,7 @@
 	mag_display = TRUE
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
-	name = "syndicate sniper rifle"
+	name = "снайперская винтовка синдиката"
 	desc = ""
 	can_suppress = TRUE
 	can_unsuppress = TRUE
@@ -313,7 +313,7 @@
 // Old Semi-Auto Rifle //
 
 /obj/item/gun/ballistic/automatic/surplus
-	name = "Surplus Rifle"
+	name = "армейская винтовка"
 	desc = ""
 	icon_state = "surplus"
 	item_state = "moistnugget"
@@ -331,7 +331,7 @@
 // Laser rifle (rechargeable magazine) //
 
 /obj/item/gun/ballistic/automatic/laser
-	name = "laser rifle"
+	name = "лазерная винтовка"
 	desc = ""
 	icon_state = "oldrifle"
 	item_state = "arg"

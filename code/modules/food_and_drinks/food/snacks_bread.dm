@@ -19,7 +19,7 @@
 	dunkable = TRUE
 
 /obj/item/reagent_containers/food/snacks/store/bread/plain
-	name = "bread"
+	name = "хлеб"
 	desc = ""
 	icon_state = "bread"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 7)
@@ -30,14 +30,14 @@
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/breadslice/plain
-	name = "bread slice"
+	name = "ломтик хлеба"
 	desc = ""
 	icon_state = "breadslice"
 	customfoodfilling = 1
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/store/bread/meat
-	name = "meatbread loaf"
+	name = "буханка мясного хлеба"
 	desc = ""
 	icon_state = "meatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/meat
@@ -47,7 +47,7 @@
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/breadslice/meat
-	name = "meatbread slice"
+	name = "ломтик мясного хлеба"
 	desc = ""
 	icon_state = "meatbreadslice"
 	foodtype = GRAIN | MEAT
@@ -162,13 +162,13 @@
 	foodtype = GRAIN | FRUIT
 
 /obj/item/reagent_containers/food/snacks/breadslice/custom
-	name = "bread slice"
+	name = "ломтик хлеба"
 	icon_state = "tofubreadslice"
 	filling_color = "#FFFFFF"
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/baguette
-	name = "baguette"
+	name = "багет"
 	desc = ""
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "baguette"
@@ -182,7 +182,7 @@
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/garlicbread
-	name = "garlic bread"
+	name = "чесночный хлеб"
 	desc = ""
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "garlicbread"
@@ -245,11 +245,11 @@
 			desc = ""
 		if(16 to 49)
 			add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
-			name = "fried [name]"
+			name = "жареный [name]"
 			desc = ""
 		if(50 to 59)
 			add_atom_colour(rgb(63,23,4), FIXED_COLOUR_PRIORITY)
-			name = "deep-fried [name]"
+			name = "обжаренный во фритюре [name]"
 			desc = ""
 		if(60 to INFINITY)
 			add_atom_colour(rgb(33,19,9), FIXED_COLOUR_PRIORITY)
@@ -259,7 +259,7 @@
 	foodtype |= FRIED
 
 /obj/item/reagent_containers/food/snacks/butterbiscuit
-	name = "butter biscuit"
+	name = "масляное печенье"
 	desc = ""
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "butterbiscuit"

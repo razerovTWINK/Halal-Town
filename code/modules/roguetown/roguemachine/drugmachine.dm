@@ -32,7 +32,7 @@
 			update_icon()
 			return attack_hand(user)
 		else
-			to_chat(user, "<span class='warning'>Wrong key.</span>")
+			to_chat(user, "<span class='warning'>Не тот ключ.</span>")
 			return
 	if(istype(P, /obj/item/keyring))
 		var/obj/item/keyring/K = P
@@ -82,7 +82,7 @@
 				if(!(drugrade_flags & DRUGRADE_NOTAX))
 					SStreasury.give_money_treasury(tax_amt, "purity import tax")
 			else
-				say("Not enough!")
+				say("Недостаточно!")
 				return
 		var/obj/item/I = new O(get_turf(src))
 		M.put_in_hands(I)
@@ -96,59 +96,59 @@
 		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 			return
 		var/list/options = list()
-		options += "Withdraw Cut"
+		options += "Забрать Долю"
 		if(drugrade_flags & DRUGRADE_NOTAX)
-			options += "Enable Paying Taxes"
+			options += "Включить Уплату Налогов"
 		else
-			options += "Stop Paying Taxes"
+			options += "Прекратить Платить Налоги"
 		if(!(drugrade_flags & DRUGRADE_MONEYA))
-			options += "Unlock 25% Cut (30)"
+			options += "Разблокировать 25% Долю (30)"
 		else
 			if(!(drugrade_flags & DRUGRADE_MONEYB))
-				options += "Unlock 50% Cut (105)"
-		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
+				options += "Разблокировать 50% Долю (105)"
+		var/select = input(usr, "Выбери опцию.", "", null) as null|anything in options
 		if(!select)
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 			return
 		switch(select)
-			if("Withdraw Cut")
-				options = list("To Bank", "Direct")
-				select = input(usr, "Please select an option.", "", null) as null|anything in options
+			if("Забрать Долю")
+				options = list("На Счёт", "Напрямую")
+				select = input(usr, "Выбери опцию.", "", null) as null|anything in options
 				if(!select)
 					return
 				if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 					return
 				switch(select)
-					if("To Bank")
+					if("На Счёт")
 						var/mob/living/carbon/human/H = usr
 						SStreasury.generate_money_account(secret_budget, H.real_name)
 						secret_budget = 0
-					if("Direct")
+					if("Напрямую")
 						if(secret_budget > 0)
 							budget2change(secret_budget, usr)
 							secret_budget = 0
-			if("Enable Paying Taxes")
+			if("Включить Уплату Налогов")
 				drugrade_flags &= ~DRUGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Stop Paying Taxes")
+			if("Прекратить Платить Налоги")
 				drugrade_flags |= DRUGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Unlock 25% Cut (30)")
+			if("Разблокировать 25% Долю (30)")
 				if(drugrade_flags & DRUGRADE_MONEYA)
 					return
 				if(budget < 30)
-					say("Ask again when you're serious.")
+					say("Спроси снова, когда будешь серьёзен.")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					return
 				budget -= 30
 				drugrade_flags |= DRUGRADE_MONEYA
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Unlock 50% Cut (105)")
+			if("Разблокировать 50% Долю (105)")
 				if(drugrade_flags & DRUGRADE_MONEYB)
 					return
 				if(budget < 105)
-					say("Ask again when you're serious.")
+					say("Спроси снова, когда будешь серьёзен.")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					return
 				budget -= 105

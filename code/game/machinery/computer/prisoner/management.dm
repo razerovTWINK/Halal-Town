@@ -74,7 +74,7 @@
 		if(screen)
 			id_insert(user)
 		else
-			to_chat(user, "<span class='danger'>Unauthorized access.</span>")
+			to_chat(user, "<span class='danger'>Несанкционированный доступ.</span>")
 	else
 		return ..()
 
@@ -121,7 +121,7 @@
 				screen = !screen
 				playsound(src, 'sound/blank.ogg', 50, FALSE)
 			else
-				to_chat(usr, "<span class='danger'>Unauthorized access.</span>")
+				to_chat(usr, "<span class='danger'>Несанкционированный доступ.</span>")
 
 		else if(href_list["warn"])
 			var/warning = copytext(sanitize(input(usr,"Message:","Enter your message here!","")),1,MAX_MESSAGE_LEN)

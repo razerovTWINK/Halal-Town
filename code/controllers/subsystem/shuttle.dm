@@ -79,14 +79,16 @@ SUBSYSTEM_DEF(shuttle)
 
 	initial_load()
 
+	// Rogue Town maps intentionally have no /tg/-style arrival/escape shuttles.
+	// Keep this as informational logging instead of spamming WARNING at every start.
 	if(!arrivals)
-		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
+		log_world("Shuttle: no /obj/docking_port/mobile/arrivals on this map (expected for Rogue Town).")
 	if(!emergency)
-		WARNING("No /obj/docking_port/mobile/emergency placed on the map!")
+		log_world("Shuttle: no /obj/docking_port/mobile/emergency on this map (expected for Rogue Town).")
 	if(!backup_shuttle)
-		WARNING("No /obj/docking_port/mobile/emergency/backup placed on the map!")
+		log_world("Shuttle: no /obj/docking_port/mobile/emergency/backup on this map (expected for Rogue Town).")
 	if(!supply)
-		WARNING("No /obj/docking_port/mobile/supply placed on the map!")
+		log_world("Shuttle: no /obj/docking_port/mobile/supply on this map (expected for Rogue Town).")
 	return ..()
 
 /datum/controller/subsystem/shuttle/proc/initial_load()

@@ -1,5 +1,5 @@
 /obj/projectile/energy/net
-	name = "energy netting"
+	name = "энергосеть"
 	icon_state = "e_netting"
 	damage = 10
 	damage_type = STAMINA
@@ -22,7 +22,7 @@
 	..()
 
 /obj/effect/nettingportal
-	name = "DRAGnet teleportation field"
+	name = "поле телепортации DRAGnet"
 	desc = ""
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dragnetfield"
@@ -56,7 +56,7 @@
 	return
 
 /obj/projectile/energy/trap
-	name = "energy snare"
+	name = "энергетический капкан"
 	icon_state = "e_snare"
 	nodamage = TRUE
 	hitsound = 'sound/blank.ogg'
@@ -75,7 +75,7 @@
 	..()
 
 /obj/projectile/energy/trap/cyborg
-	name = "Energy Bola"
+	name = "энергетическое боло"
 	icon_state = "e_snare"
 	nodamage = TRUE
 	paralyze = 0

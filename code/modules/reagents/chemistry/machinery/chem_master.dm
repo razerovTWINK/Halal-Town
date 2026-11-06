@@ -98,7 +98,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>I add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>Я добавляю [B] в [src].</span>")
 		updateUsrDialog()
 		update_icon()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))

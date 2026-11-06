@@ -16,7 +16,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/carpmeat
-	name = "carp fillet"
+	name = "филе карпа"
 	desc = ""
 	icon_state = "fishfillet"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -34,7 +34,7 @@
 	desc = ""
 
 /obj/item/reagent_containers/food/snacks/fishfingers
-	name = "fish fingers"
+	name = "рыбные палочки"
 	desc = ""
 	icon_state = "fishfingers"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -45,7 +45,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/fishandchips
-	name = "fish and chips"
+	name = "рыба с картошкой"
 	desc = ""
 	icon_state = "fishandchips"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -57,7 +57,7 @@
 ////////////////////////////////////////////MEATS AND ALIKE////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/tofu
-	name = "tofu"
+	name = "тофу"
 	desc = ""
 	icon_state = "tofu"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -72,7 +72,7 @@
 	foodtype = GROSS
 
 /obj/item/reagent_containers/food/snacks/spiderleg
-	name = "spider leg"
+	name = "паучья лапка"
 	desc = ""
 	icon_state = "spiderleg"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin = 2)
@@ -111,7 +111,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sausage
-	name = "sausage"
+	name = "колбаса"
 	desc = ""
 	icon_state = "sausage"
 	filling_color = "#CD5C5C"
@@ -181,7 +181,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/monkeycube
-	name = "monkey cube"
+	name = "кубик обезьяны"
 	desc = ""
 	icon_state = "monkeycube"
 	bitesize = 12
@@ -275,7 +275,7 @@
 	foodtype = MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/nugget
-	name = "chicken nugget"
+	name = "куриный наггетс"
 	filling_color = "#B22222"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)

@@ -2,13 +2,13 @@ GLOBAL_VAR_INIT(curse_of_madness_triggered, FALSE)
 
 /proc/curse_of_madness(mob/user, message)
 	if(user) //in this case either someone holding a spellbook or a badmin
-		to_chat(user, "<span class='warning'>I sent a curse of madness with the message \"[message]\"!</span>")
+		to_chat(user, "<span class='warning'>Я насылаю проклятие безумия со словами «[message]»!</span>")
 		message_admins("[ADMIN_LOOKUPFLW(user)] sent a curse of madness with the message \"[message]\"!")
 		log_game("[key_name(user)] sent a curse of madness with the message \"[message]\"!")
 
 	GLOB.curse_of_madness_triggered = message // So latejoiners are also afflicted.
 
-	deadchat_broadcast("A <span class='name'>Curse of Madness</span> has stricken the station, shattering their minds with the awful secret: \"<span class='big hypnophrase'>[message]</span>\"")
+	deadchat_broadcast("<span class='name'>Проклятие безумия</span> поразило мир, сокрушая разум ужасной тайной: «<span class='big hypnophrase'>[message]</span>»")
 
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(H.stat == DEAD)
@@ -17,14 +17,14 @@ GLOBAL_VAR_INIT(curse_of_madness_triggered, FALSE)
 		if(T && !is_station_level(T.z))
 			continue
 		if(H.anti_magic_check(TRUE, FALSE, TRUE))
-			to_chat(H, "<span class='notice'>I have a strange feeling for a moment, but then it passes.</span>")
+			to_chat(H, "<span class='notice'>На миг накатывает странное чувство, но вскоре проходит.</span>")
 			continue
 		give_madness(H, message)
 
 /proc/give_madness(mob/living/carbon/human/H, message)
 	H.playsound_local(H,'sound/blank.ogg',40,1)
 	to_chat(H, "<span class='reallybig hypnophrase'>[message]</span>")
-	to_chat(H, "<span class='warning'>My mind shatters!</span>")
+	to_chat(H, "<span class='warning'>Мой разум раскалывается!</span>")
 	switch(rand(1,10))
 		if(1 to 3)
 			H.gain_trauma_type(BRAIN_TRAUMA_MILD, TRAUMA_RESILIENCE_LOBOTOMY)

@@ -2,7 +2,7 @@
 ////////////////////////////////////////////EGGS////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/chocolateegg
-	name = "chocolate egg"
+	name = "шоколадное яйцо"
 	desc = ""
 	icon_state = "chocolateegg"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -120,7 +120,7 @@
 	icon_state = "egg-yellow"
 
 /obj/item/reagent_containers/food/snacks/friedegg
-	name = "fried egg"
+	name = "жареное яйцо"
 	desc = ""
 	icon_state = "friedegg"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -131,7 +131,7 @@
 	foodtype = MEAT | FRIED | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/boiledegg
-	name = "boiled egg"
+	name = "варёное яйцо"
 	desc = ""
 	icon_state = "egg"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -141,7 +141,7 @@
 	foodtype = MEAT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/omelette	//FUCK THIS
-	name = "omelette du fromage"
+	name = "омлет с сыром"
 	desc = ""
 	icon_state = "omelette"
 	trash = /obj/item/trash/plate

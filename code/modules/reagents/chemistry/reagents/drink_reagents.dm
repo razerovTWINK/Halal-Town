@@ -5,10 +5,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/reagent/consumable/orangejuice
-	name = "Orange Juice"
+	name = "Апельсиновый сок"
 	description = "Both delicious AND rich in Vitamin C, what more do you need?"
 	color = "#E78108" // rgb: 231, 129, 8
-	taste_description = "oranges"
+	taste_description = "апельсины"
 	glass_icon_state = "glass_orange"
 	glass_name = "glass of orange juice"
 	glass_desc = ""
@@ -20,12 +20,12 @@
 	..()
 
 /datum/reagent/consumable/tomatojuice
-	name = "Tomato Juice"
+	name = "Томатный сок"
 	description = "Tomatoes made into juice. What a waste of big, juicy tomatoes, huh?"
 	color = "#731008" // rgb: 115, 16, 8
-	taste_description = "tomatoes"
+	taste_description = "помидоры"
 	glass_icon_state = "glass_red"
-	glass_name = "glass of tomato juice"
+	glass_name = "стакан томатного сока"
 	glass_desc = ""
 
 /datum/reagent/consumable/tomatojuice/on_mob_life(mob/living/carbon/M)
@@ -35,7 +35,7 @@
 	..()
 
 /datum/reagent/consumable/limejuice
-	name = "Lime Juice"
+	name = "Сок лайма"
 	description = "The sweet-sour juice of limes."
 	color = "#365E30" // rgb: 54, 94, 48
 	taste_description = "unbearable sourness"
@@ -50,10 +50,10 @@
 	..()
 
 /datum/reagent/consumable/carrotjuice
-	name = "Carrot Juice"
+	name = "Морковный сок"
 	description = "It is just like a carrot but without crunching."
 	color = "#973800" // rgb: 151, 56, 0
-	taste_description = "carrots"
+	taste_description = "морковь"
 	glass_icon_state = "carrotjuice"
 	glass_name = "glass of  carrot juice"
 	glass_desc = ""
@@ -71,27 +71,27 @@
 	return
 
 /datum/reagent/consumable/berryjuice
-	name = "Berry Juice"
+	name = "Ягодный сок"
 	description = "A delicious blend of several different kinds of berries."
 	color = "#863333" // rgb: 134, 51, 51
-	taste_description = "berries"
+	taste_description = "ягоды"
 	glass_icon_state = "berryjuice"
-	glass_name = "glass of berry juice"
+	glass_name = "стакан ягодного сока"
 	glass_desc = ""
 
 /datum/reagent/consumable/applejuice
-	name = "Apple Juice"
+	name = "Яблочный сок"
 	description = "The sweet juice of an apple, fit for all ages."
 	color = "#ECFF56" // rgb: 236, 255, 86
-	taste_description = "apples"
+	taste_description = "яблоки"
 
 /datum/reagent/consumable/poisonberryjuice
-	name = "Poison Berry Juice"
+	name = "Ядовитый ягодный сок"
 	description = "A tasty juice blended from various kinds of very deadly and toxic berries."
 	color = "#863353" // rgb: 134, 51, 83
-	taste_description = "berries"
+	taste_description = "ягоды"
 	glass_icon_state = "poisonberryjuice"
-	glass_name = "glass of berry juice"
+	glass_name = "стакан ягодного сока"
 	glass_desc = ""
 
 /datum/reagent/consumable/poisonberryjuice/on_mob_life(mob/living/carbon/M)
@@ -100,7 +100,7 @@
 	..()
 
 /datum/reagent/consumable/watermelonjuice
-	name = "Watermelon Juice"
+	name = "Арбузный сок"
 	description = "Delicious juice made from watermelon."
 	color = "#863333" // rgb: 134, 51, 51
 	taste_description = "juicy watermelon"
@@ -109,19 +109,19 @@
 	glass_desc = ""
 
 /datum/reagent/consumable/lemonjuice
-	name = "Lemon Juice"
+	name = "Лимонный сок"
 	description = "This juice is VERY sour."
 	color = "#863333" // rgb: 175, 175, 0
-	taste_description = "sourness"
+	taste_description = "кислинка"
 	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
 	glass_desc = ""
 
 /datum/reagent/consumable/banana
-	name = "Banana Juice"
+	name = "Банановый сок"
 	description = "The raw essence of a banana. HONK"
 	color = "#863333" // rgb: 175, 175, 0
-	taste_description = "banana"
+	taste_description = "банан"
 	glass_icon_state = "banana"
 	glass_name = "glass of banana juice"
 	glass_desc = ""
@@ -133,9 +133,9 @@
 	..()
 
 /datum/reagent/consumable/nothing
-	name = "Nothing"
+	name = "Ничего"
 	description = "Absolutely nothing."
-	taste_description = "nothing"
+	taste_description = "ничего"
 	glass_icon_state = "nothing"
 	glass_name = "nothing"
 	glass_desc = ""
@@ -149,11 +149,11 @@
 	..()
 
 /datum/reagent/consumable/laughter
-	name = "Laughter"
+	name = "Смех"
 	description = "Some say that this is the best medicine, but recent studies have proven that to be untrue."
 	metabolization_rate = INFINITY
 	color = "#FF4DD2"
-	taste_description = "laughter"
+	taste_description = "смех"
 
 /datum/reagent/consumable/laughter/on_mob_life(mob/living/carbon/M)
 	M.emote("laugh")
@@ -161,21 +161,21 @@
 	..()
 
 /datum/reagent/consumable/superlaughter
-	name = "Super Laughter"
+	name = "Громкий смех"
 	description = "Funny until you're the one laughing."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	color = "#FF4DD2"
-	taste_description = "laughter"
+	taste_description = "смех"
 
 /datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
-		M.visible_message("<span class='danger'>[M] bursts out into a fit of uncontrollable laughter!</span>", "<span class='danger'>I burst out in a fit of uncontrollable laughter!</span>")
+		M.visible_message("<span class='danger'>[M] разражается безудержным смехом!</span>", "<span class='danger'>Я разражаюсь безудержным смехом!</span>")
 		M.Stun(5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
 	..()
 
 /datum/reagent/consumable/potato_juice
-	name = "Potato Juice"
+	name = "Картофельный сок"
 	description = "Juice of the potato. Bleh."
 	nutriment_factor = 2 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
@@ -185,16 +185,16 @@
 	glass_desc = ""
 
 /datum/reagent/consumable/grapejuice
-	name = "Grape Juice"
+	name = "Виноградный сок"
 	description = "The juice of a bunch of grapes. Guaranteed non-alcoholic."
 	color = "#290029" // dark purple
-	taste_description = "grape soda"
+	taste_description = "виноградная газировка"
 
 /datum/reagent/consumable/milk
-	name = "Milk"
+	name = "Молоко"
 	description = "An opaque white liquid produced by the mammary glands of mammals."
 	color = "#DFDFDF" // rgb: 223, 223, 223
-	taste_description = "milk"
+	taste_description = "молоко"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of milk"
 	glass_desc = ""
@@ -213,10 +213,10 @@
 	..()
 
 /datum/reagent/consumable/soymilk
-	name = "Soy Milk"
+	name = "Соевое молоко"
 	description = "An opaque white liquid made from soybeans."
 	color = "#DFDFC7" // rgb: 223, 223, 199
-	taste_description = "soy milk"
+	taste_description = "соевое молоко"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of soy milk"
 	glass_desc = ""
@@ -228,10 +228,10 @@
 	..()
 
 /datum/reagent/consumable/cream
-	name = "Cream"
+	name = "Сливки"
 	description = "The fatty, still liquid part of milk. Why don't you mix this with sum scotch, eh?"
 	color = "#DFD7AF" // rgb: 223, 215, 175
-	taste_description = "creamy milk"
+	taste_description = "сливочное молоко"
 	glass_icon_state  = "glass_white"
 	glass_name = "glass of cream"
 	glass_desc = ""
@@ -243,12 +243,12 @@
 	..()
 
 /datum/reagent/consumable/coffee
-	name = "Coffee"
+	name = "Кофе"
 	description = "Coffee is a brewed drink prepared from roasted seeds, commonly called coffee beans, of the coffee plant."
 	color = "#482000" // rgb: 72, 32, 0
 	nutriment_factor = 0
 	overdose_threshold = 80
-	taste_description = "bitterness"
+	taste_description = "горечь"
 	glass_icon_state = "glass_brown"
 	glass_name = "glass of coffee"
 	glass_desc = ""
@@ -269,7 +269,7 @@
 	. = 1
 
 /datum/reagent/consumable/tea
-	name = "Tea"
+	name = "Чай"
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
 	color = "#101000" // rgb: 16, 16, 0
 	nutriment_factor = 0
@@ -290,7 +290,7 @@
 	. = 1
 
 /datum/reagent/consumable/lemonade
-	name = "Lemonade"
+	name = "Лимонад"
 	description = "Sweet, tangy lemonade. Good for the soul."
 	color = "#FFE978"
 	quality = DRINK_NICE
@@ -305,7 +305,7 @@
 	color = "#FFB766"
 	quality = DRINK_NICE
 	nutriment_factor = 2
-	taste_description = "bitter tea"
+	taste_description = "горький чай"
 	glass_icon_state = "arnold_palmer"
 	glass_name = "Arnold Palmer"
 	glass_desc = ""
@@ -317,7 +317,7 @@
 	. = 1
 
 /datum/reagent/consumable/icecoffee
-	name = "Iced Coffee"
+	name = "Холодный кофе"
 	description = "Coffee and ice, refreshing and cool."
 	color = "#102838" // rgb: 16, 40, 56
 	nutriment_factor = 0
@@ -336,11 +336,11 @@
 	. = 1
 
 /datum/reagent/consumable/icetea
-	name = "Iced Tea"
+	name = "Холодный чай"
 	description = "No relation to a certain rap artist/actor."
 	color = "#104038" // rgb: 16, 64, 56
 	nutriment_factor = 0
-	taste_description = "sweet tea"
+	taste_description = "сладкий чай"
 	glass_icon_state = "icedteaglass"
 	glass_name = "iced tea"
 	glass_desc = ""
@@ -356,10 +356,10 @@
 	. = 1
 
 /datum/reagent/consumable/space_cola
-	name = "Cola"
+	name = "Кола"
 	description = "A refreshing beverage."
 	color = "#100800" // rgb: 16, 8, 0
-	taste_description = "cola"
+	taste_description = "кола"
 	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Space Cola"
 	glass_desc = ""
@@ -370,7 +370,7 @@
 	..()
 
 /datum/reagent/consumable/nuka_cola
-	name = "Nuka Cola"
+	name = "Ядерная кола"
 	description = "Cola, cola never changes."
 	color = "#100800" // rgb: 16, 8, 0
 	quality = DRINK_VERYGOOD
@@ -427,7 +427,7 @@
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."
 	color = "#102000" // rgb: 16, 32, 0
-	taste_description = "sweet citrus soda"
+	taste_description = "сладкая цитрусовая газировка"
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of Space Mountain Wind"
 	glass_desc = ""
@@ -444,7 +444,7 @@
 	name = "Dr. Gibb"
 	description = "A delicious blend of 42 different flavours."
 	color = "#102000" // rgb: 16, 32, 0
-	taste_description = "cherry soda" // FALSE ADVERTISING
+	taste_description = "вишнёвая газировка" // FALSE ADVERTISING
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of Dr. Gibb"
 	glass_desc = ""
@@ -458,7 +458,7 @@
 	name = "Space-Up"
 	description = "Tastes like a hull breach in your mouth."
 	color = "#00FF00" // rgb: 0, 255, 0
-	taste_description = "cherry soda"
+	taste_description = "вишнёвая газировка"
 	glass_icon_state = "space-up_glass"
 	glass_name = "glass of Space-Up"
 	glass_desc = ""
@@ -469,7 +469,7 @@
 	..()
 
 /datum/reagent/consumable/lemon_lime
-	name = "Lemon Lime"
+	name = "Лимон-лайм"
 	description = "A tangy substance made of 0.5% natural citrus!"
 	color = "#8CFF00" // rgb: 135, 255, 0
 	taste_description = "tangy lime and lemon soda"
@@ -508,10 +508,10 @@
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 /datum/reagent/consumable/sodawater
-	name = "Soda Water"
+	name = "Газировка"
 	description = "A can of club soda. Why not make a scotch and soda?"
 	color = "#619494" // rgb: 97, 148, 148
-	taste_description = "carbonated water"
+	taste_description = "газированная вода"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of soda water"
 	glass_desc = ""
@@ -523,7 +523,7 @@
 	..()
 
 /datum/reagent/consumable/tonic
-	name = "Tonic Water"
+	name = "Тоник"
 	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
 	color = "#0064C8" // rgb: 0, 100, 200
 	taste_description = "tart and fresh"
@@ -566,11 +566,11 @@
 	..()
 
 /datum/reagent/consumable/ice
-	name = "Ice"
+	name = "Лёд"
 	description = "Frozen water, your dentist wouldn't like you chewing this."
 	reagent_state = SOLID
 	color = "#619494" // rgb: 97, 148, 148
-	taste_description = "ice"
+	taste_description = "лёд"
 	glass_icon_state = "iceglass"
 	glass_name = "glass of ice"
 	glass_desc = ""
@@ -580,11 +580,11 @@
 	..()
 
 /datum/reagent/consumable/soy_latte
-	name = "Soy Latte"
+	name = "Соевый латте"
 	description = "A nice and tasty beverage while you are reading your hippie books."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
-	taste_description = "creamy coffee"
+	taste_description = "сливочный кофе"
 	glass_icon_state = "soy_latte"
 	glass_name = "soy latte"
 	glass_desc = ""
@@ -601,11 +601,11 @@
 	. = 1
 
 /datum/reagent/consumable/cafe_latte
-	name = "Cafe Latte"
+	name = "Кофейный латте"
 	description = "A nice, strong and tasty beverage while you are reading."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
-	taste_description = "bitter cream"
+	taste_description = "горькие сливки"
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
 	glass_desc = ""
@@ -643,40 +643,40 @@
 	. = 1
 
 /datum/reagent/consumable/chocolatepudding
-	name = "Chocolate Pudding"
+	name = "Шоколадный пудинг"
 	description = "A great dessert for chocolate lovers."
 	color = "#800000"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	taste_description = "sweet chocolate"
+	taste_description = "сладкий шоколад"
 	glass_icon_state = "chocolatepudding"
 	glass_name = "chocolate pudding"
 	glass_desc = ""
 
 /datum/reagent/consumable/vanillapudding
-	name = "Vanilla Pudding"
+	name = "Ванильный пудинг"
 	description = "A great dessert for vanilla lovers."
 	color = "#FAFAD2"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	taste_description = "sweet vanilla"
+	taste_description = "сладкая ваниль"
 	glass_icon_state = "vanillapudding"
 	glass_name = "vanilla pudding"
 	glass_desc = ""
 
 /datum/reagent/consumable/cherryshake
-	name = "Cherry Shake"
+	name = "Вишнёвый коктейль"
 	description = "A cherry flavored milkshake."
 	color = "#FFB6C1"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
+	taste_description = "сливочная вишня"
 	glass_icon_state = "cherryshake"
 	glass_name = "cherry shake"
 	glass_desc = ""
 
 /datum/reagent/consumable/bluecherryshake
-	name = "Blue Cherry Shake"
+	name = "Коктейль из синей вишни"
 	description = "An exotic milkshake."
 	color = "#00F1FF"
 	quality = DRINK_VERYGOOD
@@ -687,7 +687,7 @@
 	glass_desc = ""
 
 /datum/reagent/consumable/pumpkin_latte
-	name = "Pumpkin Latte"
+	name = "Тыквенный латте"
 	description = "A mix of pumpkin juice and coffee."
 	color = "#F4A460"
 	quality = DRINK_VERYGOOD
@@ -703,38 +703,38 @@
 	color = "#B22222"
 	quality = DRINK_NICE
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
+	taste_description = "сливочная вишня"
 	glass_icon_state = "gibbfloats"
 	glass_name = "Gibbfloat"
 	glass_desc = ""
 
 /datum/reagent/consumable/pumpkinjuice
-	name = "Pumpkin Juice"
+	name = "Тыквенный сок"
 	description = "Juiced from real pumpkin."
 	color = "#FFA500"
-	taste_description = "pumpkin"
+	taste_description = "тыква"
 
 /datum/reagent/consumable/blumpkinjuice
-	name = "Blumpkin Juice"
+	name = "Сок блампкина"
 	description = "Juiced from real blumpkin."
 	color = "#00BFFF"
 	taste_description = "a mouthful of pool water"
 
 /datum/reagent/consumable/triple_citrus
-	name = "Triple Citrus"
+	name = "Тройной цитрус"
 	description = "A solution."
 	color = "#EEFF00"
 	quality = DRINK_NICE
-	taste_description = "extreme bitterness"
+	taste_description = "невыносимая горечь"
 	glass_icon_state = "triplecitrus" //needs own sprite mine are trash //your sprite is great tho
 	glass_name = "glass of triple citrus"
 	glass_desc = ""
 
 /datum/reagent/consumable/grape_soda
-	name = "Grape soda"
+	name = "Виноградная газировка"
 	description = "Beloved of children and teetotalers."
 	color = "#E6CDFF"
-	taste_description = "grape soda"
+	taste_description = "виноградная газировка"
 	glass_name = "glass of grape juice"
 	glass_desc = ""
 
@@ -743,17 +743,17 @@
 	..()
 
 /datum/reagent/consumable/milk/chocolate_milk
-	name = "Chocolate Milk"
+	name = "Шоколадное молоко"
 	description = "Milk for cool kids."
 	color = "#7D4E29"
 	quality = DRINK_NICE
-	taste_description = "chocolate milk"
+	taste_description = "шоколадное молоко"
 
 /datum/reagent/consumable/menthol
-	name = "Menthol"
+	name = "Ментол"
 	description = "Alleviates coughing symptoms one might have."
 	color = "#80AF9C"
-	taste_description = "mint"
+	taste_description = "мята"
 	glass_icon_state = "glass_green"
 	glass_name = "glass of menthol"
 	glass_desc = ""
@@ -763,7 +763,7 @@
 	..()
 
 /datum/reagent/consumable/grenadine
-	name = "Grenadine"
+	name = "Гренадин"
 	description = "Not cherry flavored!"
 	color = "#EA1D26"
 	taste_description = "sweet pomegranates"
@@ -771,27 +771,27 @@
 	glass_desc = ""
 
 /datum/reagent/consumable/parsnipjuice
-	name = "Parsnip Juice"
+	name = "Пастернаковый сок"
 	description = "Why..."
 	color = "#FFA500"
 	taste_description = "parsnip"
 	glass_name = "glass of parsnip juice"
 
 /datum/reagent/consumable/peachjuice //Intended to be extremely rare due to being the limiting ingredients in the blazaam drink
-	name = "Peach Juice"
+	name = "Персиковый сок"
 	description = "Just peachy."
 	color = "#E78108"
 	taste_description = "peaches"
 	glass_name = "glass of peach juice"
 
 /datum/reagent/consumable/cream_soda
-	name = "Cream Soda"
+	name = "Кремовая газировка"
 	description = "A classic space-American vanilla flavored soft drink."
 	color = "#dcb137"
 	quality = DRINK_VERYGOOD
 	taste_description = "fizzy vanilla"
 	glass_icon_state = "cream_soda"
-	glass_name = "Cream Soda"
+	glass_name = "Кремовая газировка"
 	glass_desc = ""
 
 /datum/reagent/consumable/cream_soda/on_mob_life(mob/living/carbon/M)
@@ -803,7 +803,7 @@
 	description = "DRINK ME."
 	color = "#e6ddc3"
 	quality = DRINK_GOOD
-	taste_description = "wonder"
+	taste_description = "чудо"
 	glass_icon_state = "red_queen"
 	glass_name = "Red Queen"
 	glass_desc = ""
@@ -826,7 +826,7 @@
 	..()
 
 /datum/reagent/consumable/bungojuice
-	name = "Bungo Juice"
+	name = "Сок бунго"
 	color = "#F9E43D"
 	description = "Exotic! You feel like you are on vactation already."
 	taste_description = "succulent bungo"

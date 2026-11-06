@@ -112,8 +112,8 @@
 
 /datum/antagonist/ninja/greet()
 	SEND_SOUND(owner.current, sound('sound/blank.ogg'))
-	to_chat(owner.current, "I am an elite mercenary assassin of the mighty Spider Clan. A <font color='red'><B>SPACE NINJA</B></font>!")
-	to_chat(owner.current, "Surprise is my weapon. Shadows are my armor. Without them, I am nothing. (//initialize your suit by right clicking on it, to use abilities like stealth)!")
+	to_chat(owner.current, "Ты — элитный наёмный убийца великого клана Паука. <font color='red'><B>КОСМИЧЕСКИЙ НИНДЗЯ</B></font>!")
+	to_chat(owner.current, "Внезапность — твоё оружие. Тени — твоя броня. Без них ты ничто. (//инициализируй костюм правым кликом по нему для использования способностей вроде маскировки)!")
 	to_chat(owner.current, "Officially, [helping_station?"Nanotrasen":"The Syndicate"] are my employer.")
 	owner.announce_objectives()
 	return

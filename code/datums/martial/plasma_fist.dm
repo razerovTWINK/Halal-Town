@@ -36,7 +36,7 @@
 
 /datum/martial_art/plasma_fist/proc/Throwback(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	D.visible_message("<span class='danger'>[A] hits [D] with Plasma Punch!</span>", \
-					"<span class='danger'>You're hit with a Plasma Punch by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+					"<span class='danger'>You're hit with a Plasma Punch by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 	to_chat(A, "<span class='danger'>I hit [D] with Plasma Punch!</span>")
 	playsound(D.loc, 'sound/blank.ogg', 50, TRUE, -1)
 	var/atom/throw_target = get_edge_target_turf(D, get_dir(D, get_step_away(D, A)))
@@ -50,7 +50,7 @@
 	playsound(D.loc, 'sound/blank.ogg', 50, TRUE, -1)
 	A.say("PLASMA FIST!", forced="plasma fist")
 	D.visible_message("<span class='danger'>[A] hits [D] with THE PLASMA FIST TECHNIQUE!</span>", \
-					"<span class='danger'>You're suddenly hit with THE PLASMA FIST TECHNIQUE by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+					"<span class='danger'>You're suddenly hit with THE PLASMA FIST TECHNIQUE by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 	to_chat(A, "<span class='danger'>I hit [D] with THE PLASMA FIST TECHNIQUE!</span>")
 	D.gib()
 	log_combat(A, D, "gibbed (Plasma Fist)")

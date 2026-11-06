@@ -6,7 +6,7 @@
 
 //Food items that aren't eaten normally and leave an empty container behind.
 /obj/item/reagent_containers/food/condiment
-	name = "condiment bottle"
+	name = "бутылка приправы"
 	desc = ""
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "emptycondiment"
@@ -55,7 +55,7 @@
 			desc = possible_states[main_reagent]["desc"]
 			return ..(TRUE) // Don't fill normally
 		else
-			name = "condiment bottle"
+			name = "бутылка приправы"
 			desc = ""
 			icon_state = "emptycondiment"
 
@@ -104,20 +104,20 @@
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty!</span>")
+			to_chat(user, "<span class='warning'>[target] пуст!</span>")
 			return
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src] полон!</span>")
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>I fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Я наполняю [src] [trans] единицами содержимого [target].</span>")
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, "<span class='warning'>[src] пуст!</span>")
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, "<span class='warning'>you can't add anymore to [target]!</span>")
@@ -135,14 +135,14 @@
 	list_reagents = list(/datum/reagent/consumable/enzyme = 50)
 
 /obj/item/reagent_containers/food/condiment/sugar
-	name = "sugar sack"
+	name = "мешок сахара"
 	desc = ""
 	icon_state = "rice"
 	item_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/sugar = 50)
 
 /obj/item/reagent_containers/food/condiment/saltshaker		//Separate from above since it's a small shaker rather then
-	name = "salt shaker"											//	a large one.
+	name = "солонка"											//	a large one.
 	desc = ""
 	icon_state = "saltshakersmall"
 	icon_empty = "emptyshaker"
@@ -166,7 +166,7 @@
 		return*/
 
 /obj/item/reagent_containers/food/condiment/peppermill
-	name = "pepper mill"
+	name = "мельница для перца"
 	desc = ""
 	icon_state = "peppermillsmall"
 	icon_empty = "emptyshaker"
@@ -185,7 +185,7 @@
 	list_reagents = list(/datum/reagent/consumable/milk = 50)
 
 /obj/item/reagent_containers/food/condiment/flour
-	name = "flour sack"
+	name = "мешок муки"
 	desc = ""
 	icon_state = "flour"
 	item_state = "flour"
@@ -201,20 +201,20 @@
 	list_reagents = list(/datum/reagent/consumable/soymilk = 50)
 
 /obj/item/reagent_containers/food/condiment/rice
-	name = "rice sack"
+	name = "мешок риса"
 	desc = ""
 	icon_state = "rice"
 	item_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/rice = 30)
 
 /obj/item/reagent_containers/food/condiment/soysauce
-	name = "soy sauce"
+	name = "соевый соус"
 	desc = ""
 	icon_state = "soysauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 50)
 
 /obj/item/reagent_containers/food/condiment/mayonnaise
-	name = "mayonnaise"
+	name = "майонез"
 	desc = ""
 	icon_state = "mayonnaise"
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
@@ -224,7 +224,7 @@
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
 
 /obj/item/reagent_containers/food/condiment/pack
-	name = "condiment pack"
+	name = "пакетик приправы"
 	desc = ""
 	icon_state = "condi_empty"
 	volume = 10
@@ -285,13 +285,13 @@
 
 //Ketchup
 /obj/item/reagent_containers/food/condiment/pack/ketchup
-	name = "ketchup pack"
+	name = "пакетик кетчупа"
 	originalname = "ketchup"
 	list_reagents = list(/datum/reagent/consumable/ketchup = 10)
 
 //Hot sauce
 /obj/item/reagent_containers/food/condiment/pack/hotsauce
-	name = "hotsauce pack"
+	name = "пакетик острого соуса"
 	originalname = "hotsauce"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 10)
 

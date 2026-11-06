@@ -1,7 +1,7 @@
 /obj/item/organ/lungs
 	var/failed = FALSE
 	var/operated = FALSE	//whether we can still have our damages fixed through surgery
-	name = "lungs"
+	name = "лёгкие"
 	icon_state = "lungs"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_LUNGS
@@ -11,9 +11,9 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	high_threshold_passed = "<span class='warning'>I feel some sort of constriction around my chest as my breathing becomes shallow and rapid.</span>"
-	now_fixed = "<span class='warning'>My lungs seem to once again be able to hold air.</span>"
-	high_threshold_cleared = "<span class='info'>The constriction around my chest loosens as my breathing calms down.</span>"
+	high_threshold_passed = "<span class='warning'>Грудь сдавливает, дыхание становится частым и поверхностным.</span>"
+	now_fixed = "<span class='warning'>Лёгкие снова способны удерживать воздух.</span>"
+	high_threshold_cleared = "<span class='info'>Стеснение в груди отпускает, дыхание успокаивается.</span>"
 
 	//Breath damage
 
@@ -43,7 +43,7 @@
 	var/tox_breath_dam_max = MAX_TOXIC_GAS_DAMAGE
 	var/tox_damage_type = TOX
 
-	var/cold_message = "your face freezing and an icicle forming"
+	var/cold_message = "леденящий холод и морозное покалывание"
 	var/cold_level_1_threshold = 260
 	var/cold_level_2_threshold = 200
 	var/cold_level_3_threshold = 120
@@ -52,7 +52,7 @@
 	var/cold_level_3_damage = COLD_GAS_DAMAGE_LEVEL_3
 	var/cold_damage_type = BURN
 
-	var/hot_message = "your face burning and a searing heat"
+	var/hot_message = "обжигающий жар и удушливый зной"
 	var/heat_level_1_threshold = 360
 	var/heat_level_2_threshold = 400
 	var/heat_level_3_threshold = 1000
@@ -269,12 +269,12 @@
 	// Nitryl
 		var/nitryl_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/nitryl][MOLES])
 		if (prob(nitryl_pp))
-			to_chat(H, "<span class='alert'>My mouth feels like it's burning!</span>")
+			to_chat(H, "<span class='alert'>Рот словно горит огнём!</span>")
 		if (nitryl_pp >40)
 			H.emote("breathgasp")
 			H.adjustFireLoss(10)
 			if (prob(nitryl_pp/2))
-				to_chat(H, "<span class='alert'>My throat closes up!</span>")
+				to_chat(H, "<span class='alert'>Горло перехватывает!</span>")
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustFireLoss(nitryl_pp/4)
@@ -308,22 +308,22 @@
 					// At lower pp, give out a little warning
 					SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "smell")
 					if(prob(5))
-						to_chat(owner, "<span class='notice'>There is an unpleasant smell in the air.</span>")
+						to_chat(owner, "<span class='notice'>В воздухе витает неприятный запах.</span>")
 				if(5 to 15)
 					//At somewhat higher pp, warning becomes more obvious
 					if(prob(15))
-						to_chat(owner, "<span class='warning'>I smell something horribly decayed inside this room.</span>")
+						to_chat(owner, "<span class='warning'>Здесь пахнет чем-то ужасно гнилым.</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 				if(15 to 30)
 					//Small chance to vomit. By now, people have internals on anyway
 					if(prob(5))
-						to_chat(owner, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(owner, "<span class='warning'>Смрад гниющих тел невыносим!</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						owner.vomit()
 				if(30 to INFINITY)
 					//Higher chance to vomit. Let the horror start
 					if(prob(15))
-						to_chat(owner, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(owner, "<span class='warning'>Смрад гниющих тел невыносим!</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						owner.vomit()
 				else
@@ -374,7 +374,7 @@
 			H.apply_damage_type(cold_level_1_damage*cold_modifier, cold_damage_type)
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(20))
-				to_chat(H, "<span class='warning'>I feel [cold_message] in my [name]!</span>")
+				to_chat(H, "<span class='warning'>Ты чувствуешь [cold_message] в [name]!</span>")
 
 	if(!HAS_TRAIT(H, TRAIT_RESISTHEAT)) // HEAT DAMAGE
 		var/heat_modifier = H.dna.species.heatmod
@@ -386,14 +386,14 @@
 			H.apply_damage_type(heat_level_3_damage*heat_modifier, heat_damage_type)
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(20))
-				to_chat(H, "<span class='warning'>I feel [hot_message] in my [name]!</span>")
+				to_chat(H, "<span class='warning'>Ты чувствуешь [hot_message] в [name]!</span>")
 
 /obj/item/organ/lungs/on_life()
 	..()
 	if((!failed) && ((organ_flags & ORGAN_FAILING)))
 		if(owner.stat == CONSCIOUS)
-			owner.visible_message("<span class='danger'>[owner] grabs [owner.p_their()] throat, struggling for breath!</span>", \
-								"<span class='danger'>I suddenly feel like you can't breathe!</span>")
+			owner.visible_message("<span class='danger'>[owner] хватается за горло, задыхаясь!</span>", \
+								"<span class='danger'>Перехватывает дыхание, тебе нечем дышать!</span>")
 		failed = TRUE
 	else if(!(organ_flags & ORGAN_FAILING))
 		failed = FALSE
@@ -405,7 +405,7 @@
 	return S
 
 /obj/item/organ/lungs/plasmaman
-	name = "plasma filter"
+	name = "плазменный фильтр"
 	desc = ""
 	icon_state = "lungs-plasma"
 
@@ -414,7 +414,7 @@
 	safe_toxins_max = 0
 
 /obj/item/organ/lungs/slime
-	name = "vacuole"
+	name = "вакуоль"
 	desc = ""
 
 	safe_toxins_max = 0 //We breathe this to gain POWER.
@@ -426,7 +426,7 @@
 		owner.blood_volume += (0.2 * plasma_pp) // 10/s when breathing literally nothing but plasma, which will suffocate you.
 
 /obj/item/organ/lungs/cybernetic
-	name = "cybernetic lungs"
+	name = "кибернетические лёгкие"
 	desc = ""
 	icon_state = "lungs-c"
 	organ_flags = ORGAN_SYNTHETIC
@@ -441,7 +441,7 @@
 
 
 /obj/item/organ/lungs/cybernetic/upgraded
-	name = "upgraded cybernetic lungs"
+	name = "улучшенные кибернетические лёгкие"
 	desc = ""
 	icon_state = "lungs-c-u"
 	safe_toxins_max = 20

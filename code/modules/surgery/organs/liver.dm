@@ -2,7 +2,7 @@
 #define LIVER_DEFAULT_TOX_LETHALITY 0.01 //lower values lower how harmful toxins are to the liver
 
 /obj/item/organ/liver
-	name = "liver"
+	name = "печень"
 	icon_state = "liver"
 	w_class = WEIGHT_CLASS_SMALL
 	zone = BODY_ZONE_CHEST
@@ -44,7 +44,7 @@
 			C.reagents.metabolize(C, can_overdose=TRUE)
 
 			if(provide_pain_message && damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-				to_chat(C, "<span class='warning'>I feel a dull pain in my abdomen.</span>")
+				to_chat(C, "<span class='warning'>Ты чувствуешь тупую боль в животе.</span>")
 
 		else	//for when our liver's failing
 			C.liver_failure()
@@ -62,25 +62,25 @@
 	return S
 
 /obj/item/organ/liver/fly
-	name = "insectoid liver"
+	name = "печень инсектоида"
 	icon_state = "liver-x" //xenomorph liver? It's just a black liver so it fits.
 	desc = ""
 	alcohol_tolerance = 0.007 //flies eat vomit, so a lower alcohol tolerance is perfect!
 
 /obj/item/organ/liver/plasmaman
-	name = "reagent processing crystal"
+	name = "кристалл переработки реагентов"
 	icon_state = "liver-p"
 	desc = ""
 
 /obj/item/organ/liver/alien
-	name = "alien liver" // doesnt matter for actual aliens because they dont take toxin damage
+	name = "печень ксеноморфа" // doesnt matter for actual aliens because they dont take toxin damage
 	icon_state = "liver-x" // Same sprite as fly-person liver.
 	desc = ""
 	toxLethality = LIVER_DEFAULT_TOX_LETHALITY * 2.5 // rejects its owner early after too much punishment
 	toxTolerance = 15 // complete toxin immunity like xenos have would be too powerful
 
 /obj/item/organ/liver/cybernetic
-	name = "cybernetic liver"
+	name = "кибернетическая печень"
 	icon_state = "liver-c"
 	desc = ""
 	organ_flags = ORGAN_SYNTHETIC
@@ -89,7 +89,7 @@
 	toxLethality = 0.009
 
 /obj/item/organ/liver/cybernetic/upgraded
-	name = "upgraded cybernetic liver"
+	name = "улучшенная кибернетическая печень"
 	icon_state = "liver-c-u"
 	desc = ""
 	alcohol_tolerance = 0.001

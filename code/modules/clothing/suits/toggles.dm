@@ -98,11 +98,11 @@
 				hood.color = color
 			if(slot_flags == ITEM_SLOT_ARMOR)
 				if(H.wear_armor != src)
-					to_chat(H, "<span class='warning'>I should put that on first.</span>")
+					to_chat(H, "<span class='warning'>Сначала это нужно надеть.</span>")
 					return
 			if(slot_flags == ITEM_SLOT_CLOAK)
 				if(H.cloak != src)
-					to_chat(H, "<span class='warning'>I should put that on first.</span>")
+					to_chat(H, "<span class='warning'>Сначала это нужно надеть.</span>")
 					return
 			if(H.head)
 				to_chat(H, "<span class='warning'>I'm already wearing something on my head.</span>")

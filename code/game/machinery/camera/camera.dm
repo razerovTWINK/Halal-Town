@@ -267,19 +267,19 @@
 				if(!user.temporarilyRemoveItemFromInventory(I))
 					return
 				upgradeXRay(FALSE, TRUE)
-				to_chat(user, "<span class='notice'>I attach [I] into [assembly]'s inner circuits.</span>")
+				to_chat(user, "<span class='notice'>Я подключаю [I] к внутренним цепям [assembly].</span>")
 				qdel(I)
 			else
-				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
+				to_chat(user, "<span class='warning'>У [src] уже есть это улучшение!</span>")
 			return
 
 		else if(istype(I, /obj/item/stack/sheet/mineral/plasma))
 			if(!isEmpProof(TRUE)) //don't reveal it was already upgraded if was done via MALF AI Upgrade Camera Network ability
 				if(I.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
-					to_chat(user, "<span class='notice'>I attach [I] into [assembly]'s inner circuits.</span>")
+					to_chat(user, "<span class='notice'>Я подключаю [I] к внутренним цепям [assembly].</span>")
 			else
-				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
+				to_chat(user, "<span class='warning'>У [src] уже есть это улучшение!</span>")
 			return
 
 		else if(istype(I, /obj/item/assembly/prox_sensor))
@@ -287,10 +287,10 @@
 				if(!user.temporarilyRemoveItemFromInventory(I))
 					return
 				upgradeMotion()
-				to_chat(user, "<span class='notice'>I attach [I] into [assembly]'s inner circuits.</span>")
+				to_chat(user, "<span class='notice'>Я подключаю [I] к внутренним цепям [assembly].</span>")
 				qdel(I)
 			else
-				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
+				to_chat(user, "<span class='warning'>У [src] уже есть это улучшение!</span>")
 			return
 
 	// OTHER

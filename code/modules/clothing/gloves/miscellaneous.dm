@@ -26,7 +26,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 30)
 
 /obj/item/clothing/gloves/combat
-	name = "combat gloves"
+	name = "боевые перчатки"
 	desc = ""
 	icon_state = "black"
 	item_state = "blackgloves"

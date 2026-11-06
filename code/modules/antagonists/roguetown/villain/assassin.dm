@@ -7,7 +7,7 @@
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "villain"
 	var/special_role = ROLE_VILLAIN
-	confess_lines = list("I gave the lady no time to squeal.", "I am down on whores.", "I shant quit ripping them.")
+	confess_lines = list("Я не дал дамочке даже взвизгнуть.", "Я покончу со шлюхами.", "Я не перестану потрошить их.")
 
 /datum/antagonist/villain/on_gain()
 	owner.special_role = "Maniac"
@@ -30,7 +30,7 @@
 
 /datum/antagonist/villain/on_removal()
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='danger'>I am no longer a [special_role]!</span>")
+		to_chat(owner.current,"<span class='danger'>Я больше не маньяк!</span>")
 	owner.special_role = null
 	return ..()
 
@@ -61,7 +61,7 @@
 	add_objective(kill_objective)
 
 /datum/antagonist/villain/greet()
-	to_chat(owner.current, "<span class='userdanger'>The worms call me the Maniac. I love my work and want to start again.</span>")
+	to_chat(owner.current, "<span class='userdanger'>Черви зовут меня Маньяком. Я люблю своё ремесло и жажду начать снова.</span>")
 	owner.announce_objectives()
 	..()
 
@@ -79,9 +79,9 @@
 		for(var/datum/objective/objective in objectives)
 			objective.update_explanation_text()
 			if(objective.check_completion())
-				to_chat(world, "<B>Goal #[count]</B>: [objective.explanation_text] <span class='greentext'>TRIUMPH!</span>")
+				to_chat(world, "<B>Цель #[count]</B>: [objective.explanation_text] <span class='greentext'>ТРИУМФ!</span>")
 			else
-				to_chat(world, "<B>Goal #[count]</B>: [objective.explanation_text] <span class='redtext'>Failure.</span>")
+				to_chat(world, "<B>Цель #[count]</B>: [objective.explanation_text] <span class='redtext'>Провал.</span>")
 				traitorwin = FALSE
 			count += objective.triumph_count
 
@@ -94,11 +94,11 @@
 		if(count)
 			if(owner)
 				owner.adjust_triumphs(count)
-		to_chat(world, "<span class='greentext'>The [special_role_text] has TRIUMPHED!</span>")
+		to_chat(world, "<span class='greentext'>[capitalize(special_role_text)] одерживает ТРИУМФ!</span>")
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
-		to_chat(world, "<span class='redtext'>The [special_role_text] has FAILED!</span>")
+		to_chat(world, "<span class='redtext'>[capitalize(special_role_text)] терпит КРАХ!</span>")
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 
@@ -121,8 +121,8 @@
 			H.freak_out()
 			H.add_stress(/datum/stressevent/maniac)
 			user.playsound_local(get_turf(user), 'sound/music/maniac.ogg', 80, FALSE, pressure_affected = FALSE)
-			to_chat(user, "<span class='userdanger'>It's the work of the MANIAC!</span>")
-			to_chat(the_objective.owner, "<span class='info'>[the_objective.people_seen.len]/5 have witnessed my work.</span>")
+			to_chat(user, "<span class='userdanger'>Это дело рук МАНЬЯКА!</span>")
+			to_chat(the_objective.owner, "<span class='info'>[the_objective.people_seen.len]/5 увидели моё творение.</span>")
 
 /mob/living/carbon/human/proc/maniac_mark()
 	set name = "Mark the Flesh"
@@ -131,22 +131,22 @@
 		var/obj/item/bodypart/I = get_active_held_item()
 		var/obj/item/W = get_inactive_held_item()
 		if(!istype(I))
-			to_chat(src, "<span class='warning'>This isn't a trophy.</span>")
+			to_chat(src, "<span class='warning'>Это не трофей.</span>")
 			return
 		if(I.body_gender != "female")
-			to_chat(src, "<span class='warning'>This isn't a trophy.</span>")
+			to_chat(src, "<span class='warning'>Это не трофей.</span>")
 			return
 		if(I.skeletonized)
-			to_chat(src, "<span class='warning'>It's not wet enough for marking.</span>")
+			to_chat(src, "<span class='warning'>Оно недостаточно сырое для клеймения.</span>")
 			return
 		if(!W || (W.wlength != WLENGTH_SHORT))
-			to_chat(src, "<span class='warning'>I need the right tool in my offhand.</span>")
+			to_chat(src, "<span class='warning'>Мне нужен подходящий инструмент во второй руке.</span>")
 			return
 		if(!W.max_blade_int)
-			to_chat(src, "<span class='warning'>I need the right tool in my offhand.</span>")
+			to_chat(src, "<span class='warning'>Мне нужен подходящий инструмент во второй руке.</span>")
 			return
 		for(var/datum/examine_effect/maniac/M in I.examine_effects)
-			to_chat(src, "<span class='warning'>It's already marked.</span>")
+			to_chat(src, "<span class='warning'>Оно уже заклеймено.</span>")
 			return
 		var/datum/examine_effect/maniac/EE = new()
 		for(var/datum/objective/rt_maniac/R in mind.get_all_objectives())
@@ -155,7 +155,7 @@
 		if(EE && EE.the_objective)
 			playsound(src, 'sound/foley/pierce.ogg', 100, FALSE)
 			var/turf/T = get_turf(src)
-			src.visible_message("<span class='warning'>[src] starts carving something wicked into [I] with [W]...</span>")
+			src.visible_message("<span class='warning'>[src] начинает вырезать что-то жуткое на [I] с помощью [W]...</span>")
 			if(do_after(src, 20, target = I))
 				I.examine_effects += EE
 				I.proximity_monitor = new(I, 0)
@@ -163,7 +163,7 @@
 					var/obj/effect/decal/cleanable/blood/B = locate() in T
 					if(!B)
 						B = new /obj/effect/decal/cleanable/blood/splatter(T)
-				to_chat(src, "<span class='danger'>The flesh is marked.</span>")
+				to_chat(src, "<span class='danger'>Плоть заклеймена.</span>")
 				scom_announce("T̵̖̤̎́Ḩ̵̢̛̺̦͖̈́̎̂̄͝Ẻ̵̡̼͇͈̱͒̿͂̕ͅ ̶͓̝͕͑̿F̴͎̉͊͂͋L̸̹̼̰̪̼̆̇͋̅̆E̷̖̹̗̱͑̕̚S̴̡̹̱̏͂͝H̷͍̙͒̍̒͊͝ ̴̛̭̗͇͂͗̂͋̃I̸̖̜͆̎̏͘ͅŚ̶͙͎̻̘͝͠ ̸͍͈̑̄͘̕̚͝M̴̦̮͍͊͗͐̓A̷̝̮̖͛̌͝R̶̠̙̼̿͒̑̿͌K̴̡̭͚̭͆͒̓̏̄̀Ĕ̷͍͍͇Ḑ̵̰̤̜̽̔͑̐̊̇͜")
 
 	proximity_monitor = new(src, 0)

@@ -14,7 +14,7 @@
 	job_rank = ROLE_VAMPIRE
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "vampire"
-	confess_lines = list("I WANT YOUR BLOOD!", "DRINK THE BLOOD!", "CHILD OF KAIN!")
+	confess_lines = list("МНЕ НУЖНА ТВОЯ КРОВЬ!", "ПЕЙ КРОВЬ!", "ДИТЯ КАИНА!")
 	var/disguised = TRUE
 	var/vitae = 1000
 	var/last_transform
@@ -26,20 +26,20 @@
 
 /datum/antagonist/vampire/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampire/lesser))
-		return "<span class='boldnotice'>A child of Kain.</span>"
+		return "<span class='boldnotice'>Дитя Каина.</span>"
 	if(istype(examined_datum, /datum/antagonist/vampire))
-		return "<span class='boldnotice'>An elder Kin.</span>"
+		return "<span class='boldnotice'>Старший сородич.</span>"
 	if(examiner.Adjacent(examined))
 		if(istype(examined_datum, /datum/antagonist/werewolf/lesser))
 			if(!disguised)
-				return "<span class='boldwarning'>I sense a lesser Werewolf.</span>"
+				return "<span class='boldwarning'>Я чувствую низшего оборотня.</span>"
 		if(istype(examined_datum, /datum/antagonist/werewolf))
 			if(!disguised)
-				return "<span class='boldwarning'>THIS IS AN ELDER WEREWOLF! MY ENEMY!</span>"
+				return "<span class='boldwarning'>ЭТО ДРЕВНИЙ ОБОРОТЕНЬ! МОЙ ВРАГ!</span>"
 	if(istype(examined_datum, /datum/antagonist/zombie))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец.</span>"
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return "<span class='boldnotice'>Ещё один мертвец.</span>"
 
 /datum/antagonist/vampire/lesser //le shitcode faec
 	name = "Lesser Vampire"
@@ -88,7 +88,7 @@
 
 /datum/antagonist/vampire/on_removal()
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='danger'>I am no longer a [job_rank]!</span>")
+		to_chat(owner.current,"<span class='danger'>Я больше не вампир!</span>")
 	owner.special_role = null
 	if(!isnull(batform))
 		owner.current.RemoveSpell(batform)
@@ -109,7 +109,7 @@
 		return
 
 /datum/antagonist/vampire/greet()
-	to_chat(owner.current, "<span class='userdanger'>Ever since that bite, I have been a VAMPIRE.</span>")
+	to_chat(owner.current, "<span class='userdanger'>С того самого укуса я — ВАМПИР.</span>")
 	owner.announce_objectives()
 
 
@@ -135,7 +135,7 @@
 					if(T.get_lumcount() > 0.15)
 						if(disguised)
 							vitae -= 8
-							to_chat(H, "<span class='warning'>My silver blood dwindles!</span>")
+							to_chat(H, "<span class='warning'>Моя серебряная кровь иссякает!</span>")
 						else
 							H.fire_act(1,5)
 
@@ -155,11 +155,11 @@
 		H.blood_volume = BLOOD_VOLUME_MAXIMUM
 		if(vitae < 200)
 			if(disguised)
-				to_chat(H, "<span class='warning'>My disguise fails!</span>")
+				to_chat(H, "<span class='warning'>Моя маскировка спадает!</span>")
 				H.vampire_undisguise(src)
 		vitae -= 1
 	else
-		to_chat(H, "<span class='userdanger'>I RAN OUT OF SILVER BLOOD!</span>")
+		to_chat(H, "<span class='userdanger'>У МЕНЯ КОНЧИЛАСЬ СЕРЕБРЯНАЯ КРОВЬ!</span>")
 		var/obj/shapeshift_holder/SS = locate() in H
 		if(SS)
 			SS.shape.dust()
@@ -176,14 +176,14 @@
 		return
 	if(world.time < VD.last_transform + 30 SECONDS)
 		var/timet2 = (VD.last_transform + 30 SECONDS) - world.time
-		to_chat(src, "<span class='warning'>No.. not yet. [round(timet2/10)]s</span>")
+		to_chat(src, "<span class='warning'>Нет... ещё рано. [round(timet2/10)] с.</span>")
 		return
 	if(VD.disguised)
 		VD.last_transform = world.time
 		vampire_undisguise(VD)
 	else
 		if(VD.vitae < 100)
-			to_chat(src, "<span class='warning'>I don't have enough Vitae!</span>")
+			to_chat(src, "<span class='warning'>Мне не хватает витэ!</span>")
 			return
 		VD.last_transform = world.time
 		vampire_disguise(VD)
@@ -226,17 +226,17 @@
 	if(!VD)
 		return
 	if(VD.disguised)
-		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
+		to_chat(src, "<span class='warning'>Моё проклятие скрыто.</span>")
 		return
 	if(VD.vitae < 500)
-		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
+		to_chat(src, "<span class='warning'>Недостаточно витэ.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/bloodstrength))
-		to_chat(src, "<span class='warning'>Already active.</span>")
+		to_chat(src, "<span class='warning'>Уже активно.</span>")
 		return
 	VD.handle_vitae(-500)
 	apply_status_effect(/datum/status_effect/buff/bloodstrength)
-	to_chat(src, "<span class='greentext'>! NIGHT MUSCLES !</span>")
+	to_chat(src, "<span class='greentext'>! НОЧНАЯ МОЩЬ !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/status_effect/buff/bloodstrength
@@ -258,17 +258,17 @@
 	if(!VD)
 		return
 	if(VD.disguised)
-		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
+		to_chat(src, "<span class='warning'>Моё проклятие скрыто.</span>")
 		return
 	if(VD.vitae < 500)
-		to_chat(src, "<span class='warning'>Not enough silver blood.</span>")
+		to_chat(src, "<span class='warning'>Недостаточно серебряной крови.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/celerity))
-		to_chat(src, "<span class='warning'>Already active.</span>")
+		to_chat(src, "<span class='warning'>Уже активно.</span>")
 		return
 	VD.handle_vitae(-500)
 	apply_status_effect(/datum/status_effect/buff/celerity)
-	to_chat(src, "<span class='greentext'>! QUICKENING !</span>")
+	to_chat(src, "<span class='greentext'>! УСКОРЕНИЕ !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/status_effect/buff/celerity
@@ -293,17 +293,17 @@
 	if(!VD)
 		return
 	if(VD.disguised)
-		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
+		to_chat(src, "<span class='warning'>Моё проклятие скрыто.</span>")
 		return
 	if(VD.vitae < 200)
-		to_chat(src, "<span class='warning'>Not enough silver blood.</span>")
+		to_chat(src, "<span class='warning'>Недостаточно серебряной крови.</span>")
 		return
 	if(has_status_effect(/datum/status_effect/buff/fortitude))
-		to_chat(src, "<span class='warning'>Already active.</span>")
+		to_chat(src, "<span class='warning'>Уже активно.</span>")
 		return
 	VD.vitae -= 200
 	apply_status_effect(/datum/status_effect/buff/fortitude)
-	to_chat(src, "<span class='greentext'>! ARMOR OF DARKNESS !</span>")
+	to_chat(src, "<span class='greentext'>! ДОСПЕХ ТЬМЫ !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/status_effect/buff/fortitude
@@ -334,7 +334,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/skin_armor/vampire_fortitude
 	slot_flags = null
-	name = "vampire's skin"
+	name = "кожа вампира"
 	desc = ""
 	icon_state = null
 	body_parts_covered = FULL_BODY
@@ -353,12 +353,12 @@
 	if(!VD)
 		return
 	if(VD.disguised)
-		to_chat(src, "<span class='warning'>My curse is hidden.</span>")
+		to_chat(src, "<span class='warning'>Моё проклятие скрыто.</span>")
 		return
 	if(VD.vitae < 500)
-		to_chat(src, "<span class='warning'>Not enough vitae.</span>")
+		to_chat(src, "<span class='warning'>Недостаточно витэ.</span>")
 		return
-	to_chat(src, "<span class='greentext'>! REGENERATE !</span>")
+	to_chat(src, "<span class='greentext'>! РЕГЕНЕРАЦИЯ !</span>")
 	src.playsound_local(get_turf(src), 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 	VD.handle_vitae(-500)
 	fully_heal()
@@ -376,7 +376,7 @@
 		return
 	mob_timers["becoming_vampire"] = world.time
 	addtimer(CALLBACK(src, .mob/living/carbon/human/proc/vampire_finalize), 2 MINUTES)
-	to_chat(src, "<span class='danger'>I feel sick...</span>")
+	to_chat(src, "<span class='danger'>Меня тошнит...</span>")
 	src.playsound_local(get_turf(src), 'sound/music/horror.ogg', 80, FALSE, pressure_affected = FALSE)
 	flash_fullscreen("redflash3")
 

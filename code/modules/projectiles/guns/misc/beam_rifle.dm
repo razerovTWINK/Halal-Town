@@ -9,7 +9,7 @@
 #define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
 
 /obj/item/gun/energy/beam_rifle
-	name = "particle acceleration rifle"
+	name = "винтовка ускорения частиц"
 	desc = "An energy-based anti material marksman rifle that uses highly charged particle beams moving at extreme velocities to decimate whatever is unfortunate enough to be targeted by one. \
 		<span class='boldnotice'>Hold down left click while scoped to aim, when weapon is fully aimed (Tracer goes from red to green as it charges), release to fire. Moving while aiming or \
 		changing where you're pointing at while aiming will delay the aiming process depending on how much you changed.</span>"
@@ -102,13 +102,13 @@
 			zoom_lock = 0
 		switch(zoom_lock)
 			if(ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-				to_chat(user, "<span class='boldnotice'>I switch [src]'s zooming processor to free directional.</span>")
+				to_chat(user, "<span class='boldnotice'>Ты переключаешь процессор зума [src] в режим свободного направления.</span>")
 			if(ZOOM_LOCK_AUTOZOOM_ANGLELOCK)
-				to_chat(user, "<span class='boldnotice'>I switch [src]'s zooming processor to locked directional.</span>")
+				to_chat(user, "<span class='boldnotice'>Ты переключаешь процессор зума [src] в режим фиксированного направления.</span>")
 			if(ZOOM_LOCK_CENTER_VIEW)
-				to_chat(user, "<span class='boldnotice'>I switch [src]'s zooming processor to center mode.</span>")
+				to_chat(user, "<span class='boldnotice'>Ты переключаешь процессор зума [src] в центральный режим.</span>")
 			if(ZOOM_LOCK_OFF)
-				to_chat(user, "<span class='boldnotice'>I disable [src]'s zooming system.</span>")
+				to_chat(user, "<span class='boldnotice'>Ты отключаешь систему зума [src].</span>")
 		reset_zooming()
 	else
 		..()
@@ -158,7 +158,7 @@
 
 /obj/item/gun/energy/beam_rifle/attack_self(mob/user)
 	projectile_setting_pierce = !projectile_setting_pierce
-	to_chat(user, "<span class='boldnotice'>I set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode.</span>")
+	to_chat(user, "<span class='boldnotice'>Ты переключаешь [src] в режим: [projectile_setting_pierce? "пробивания":"удара"].</span>")
 	aiming_beam()
 
 /obj/item/gun/energy/beam_rifle/proc/update_slowdown()
@@ -329,7 +329,7 @@
 	aiming_time_left = CLAMP(aiming_time_left + amount, 0, aiming_time)
 
 /obj/item/ammo_casing/energy/beam_rifle
-	name = "particle acceleration lens"
+	name = "линза ускорения частиц"
 	desc = ""
 	var/wall_pierce_amount = 0
 	var/wall_devastate = 0
@@ -415,7 +415,7 @@
 	fire_sound = 'sound/blank.ogg'
 
 /obj/projectile/beam/beam_rifle
-	name = "particle beam"
+	name = "пучок частиц"
 	icon = null
 	hitsound = 'sound/blank.ogg'
 	damage = 0				//Handled manually.
@@ -449,7 +449,7 @@
 	new /obj/effect/temp_visual/explosion/fast(epicenter)
 	for(var/mob/living/L in range(aoe_mob_range, epicenter))		//handle aoe mob damage
 		L.adjustFireLoss(aoe_mob_damage)
-		to_chat(L, "<span class='danger'>\The [src] sears you!</span>")
+		to_chat(L, "<span class='danger'>[src] опаляет тебя!</span>")
 	for(var/turf/T in range(aoe_fire_range, epicenter))		//handle aoe fire
 		if(prob(aoe_fire_chance))
 			new /obj/effect/hotspot(T)
@@ -553,7 +553,7 @@
 
 /obj/projectile/beam/beam_rifle/hitscan/aiming_beam
 	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
-	name = "aiming beam"
+	name = "прицельный луч"
 	hitsound = null
 	hitsound_wall = null
 	nodamage = TRUE

@@ -22,7 +22,7 @@
 
 /datum/chemical_reaction/slime/slimespawn/on_reaction(datum/reagents/holder)
 	var/mob/living/simple_animal/slime/S = new(get_turf(holder.my_atom), "grey")
-	S.visible_message("<span class='danger'>Infused with plasma, the core begins to quiver and grow, and a new baby slime emerges from it!</span>")
+	S.visible_message("<span class='danger'>Пропитанное плазмой ядро дрожит и растёт, и из него появляется новый слизень!</span>")
 	..()
 
 /datum/chemical_reaction/slime/slimeinaprov
@@ -115,7 +115,7 @@
 	M.qdel_timer = addtimer(CALLBACK(src, .proc/delete_extract, holder), 55, TIMER_STOPPABLE)
 
 /datum/chemical_reaction/slime/slimemobspawn/proc/summon_mobs(datum/reagents/holder, turf/T)
-	T.visible_message("<span class='danger'>The slime extract begins to vibrate violently!</span>")
+	T.visible_message("<span class='danger'>Экстракт слизня начинает яростно вибрировать!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 5, "Gold Slime", HOSTILE_SPAWN), 50)
 
 /datum/chemical_reaction/slime/slimemobspawn/lesser
@@ -124,7 +124,7 @@
 	required_reagents = list(/datum/reagent/blood = 1)
 
 /datum/chemical_reaction/slime/slimemobspawn/lesser/summon_mobs(datum/reagents/holder, turf/T)
-	T.visible_message("<span class='danger'>The slime extract begins to vibrate violently!</span>")
+	T.visible_message("<span class='danger'>Экстракт слизня начинает яростно вибрировать!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 3, "Lesser Gold Slime", HOSTILE_SPAWN, "neutral"), 50)
 
 /datum/chemical_reaction/slime/slimemobspawn/friendly
@@ -133,7 +133,7 @@
 	required_reagents = list(/datum/reagent/water = 1)
 
 /datum/chemical_reaction/slime/slimemobspawn/friendly/summon_mobs(datum/reagents/holder, turf/T)
-	T.visible_message("<span class='danger'>The slime extract begins to vibrate adorably!</span>")
+	T.visible_message("<span class='danger'>Экстракт слизня начинает умилительно вибрировать!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 1, "Friendly Gold Slime", FRIENDLY_SPAWN, "neutral"), 50)
 
 /datum/chemical_reaction/slime/slimemobspawn/spider
@@ -272,7 +272,7 @@
 
 /datum/chemical_reaction/slime/slimefire/on_reaction(datum/reagents/holder)
 	var/turf/T = get_turf(holder.my_atom)
-	T.visible_message("<span class='danger'>The slime extract begins to vibrate adorably!</span>")
+	T.visible_message("<span class='danger'>Экстракт слизня начинает умилительно вибрировать!</span>")
 	addtimer(CALLBACK(src, .proc/slime_burn, holder), 50)
 	var/obj/item/slime_extract/M = holder.my_atom
 	deltimer(M.qdel_timer)
@@ -654,7 +654,7 @@
 		addtimer(CALLBACK(S, /obj/item/grenade.proc/prime), rand(15,60))
 	else
 		var/mob/living/simple_animal/slime/random/S = new (get_turf(holder.my_atom))
-		S.visible_message("<span class='danger'>Infused with plasma, the core begins to quiver and grow, and a new baby slime emerges from it!</span>")
+		S.visible_message("<span class='danger'>Пропитанное плазмой ядро дрожит и растёт, и из него появляется новый слизень!</span>")
 	..()
 
 /datum/chemical_reaction/slime/slimebomb

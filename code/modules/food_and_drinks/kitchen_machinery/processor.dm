@@ -45,7 +45,7 @@
 
 /obj/machinery/processor/attackby(obj/item/O, mob/user, params)
 	if(processing)
-		to_chat(user, "<span class='warning'>[src] is in the process of processing!</span>")
+		to_chat(user, "<span class='warning'>[src] ещё работает!</span>")
 		return TRUE
 	if(default_deconstruction_screwdriver(user, "processor", "processor1", O))
 		return
@@ -87,11 +87,11 @@
 
 /obj/machinery/processor/interact(mob/user)
 	if(processing)
-		to_chat(user, "<span class='warning'>[src] is in the process of processing!</span>")
+		to_chat(user, "<span class='warning'>[src] ещё работает!</span>")
 		return TRUE
 	if(user.used_intent.type == INTENT_GRAB && ismob(user.pulling) && select_recipe(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, "<span class='warning'>I need a better grip to do that!</span>")
+			to_chat(user, "<span class='warning'>Нужно крепче держать!</span>")
 			return
 		var/mob/living/pushed_mob = user.pulling
 		visible_message("<span class='warning'>[user] stuffs [pushed_mob] into [src]!</span>")
@@ -99,11 +99,11 @@
 		user.stop_pulling()
 		return
 	if(contents.len == 0)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 		return TRUE
 	processing = TRUE
 	user.visible_message("<span class='notice'>[user] turns on [src].</span>", \
-		"<span class='notice'>I turn on [src].</span>", \
+		"<span class='notice'>Я включаю [src].</span>", \
 		"<span class='hear'>I hear a food processor.</span>")
 	playsound(src.loc, 'sound/blank.ogg', 50, TRUE)
 	use_power(500)

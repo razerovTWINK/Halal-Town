@@ -1,5 +1,5 @@
 /datum/surgery/brain_surgery
-	name = "Brain surgery"
+	name = "операция на мозге"
 	steps = list(
 	/datum/surgery_step/incise,
 	/datum/surgery_step/retract_skin,
@@ -13,7 +13,7 @@
 	requires_bodypart_type = 0
 
 /datum/surgery_step/fix_brain
-	name = "fix brain"
+	name = "восстановление мозга"
 	implements = list(TOOL_HEMOSTAT = 85, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15) //don't worry, pouring some alcohol on their open brain will get that chance to 100
 	time = 120 //long and complicated
 
@@ -24,14 +24,14 @@
 	return TRUE
 
 /datum/surgery_step/fix_brain/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I begin to fix [target]'s brain...</span>",
-		"<span class='notice'>[user] begins to fix [target]'s brain.</span>",
-		"<span class='notice'>[user] begins to perform surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь восстанавливать мозг [target]...</span>",
+		"<span class='notice'>[user] начинает восстанавливать мозг [target].</span>",
+		"<span class='notice'>[user] проводит операцию на мозге [target].</span>")
 
 /datum/surgery_step/fix_brain/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I succeed in fixing [target]'s brain.</span>",
-		"<span class='notice'>[user] successfully fixes [target]'s brain!</span>",
-		"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+	display_results(user, target, "<span class='notice'>Ты успешно восстанавливаешь мозг [target].</span>",
+		"<span class='notice'>[user] успешно восстанавливает мозг [target]!</span>",
+		"<span class='notice'>[user] завершает операцию на мозге [target].</span>")
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
 	target.setOrganLoss(ORGAN_SLOT_BRAIN, target.getOrganLoss(ORGAN_SLOT_BRAIN) - 60)	//we set damage in this case in order to clear the "failing" flag
@@ -40,11 +40,11 @@
 
 /datum/surgery_step/fix_brain/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target.getorganslot(ORGAN_SLOT_BRAIN))
-		display_results(user, target, "<span class='warning'>I screw up, causing more damage!</span>",
-			"<span class='warning'>[user] screws up, causing brain damage!</span>",
-			"<span class='notice'>[user] completes the surgery on [target]'s brain.</span>")
+		display_results(user, target, "<span class='warning'>Ты совершаешь ошибку, нанося ещё больше повреждений!</span>",
+			"<span class='warning'>[user] совершает ошибку, нанося повреждения мозгу!</span>",
+			"<span class='notice'>[user] завершает операцию на мозге [target].</span>")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
 		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
 	else
-		user.visible_message("<span class='warning'>[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.</span>", "<span class='warning'>I suddenly notice that the brain you were working on is not there anymore.</span>")
+		user.visible_message("<span class='warning'>[user] вдруг замечает, что оперируемого мозга больше нет на месте.</span>", "<span class='warning'>Ты вдруг замечаешь, что оперируемого мозга больше нет на месте.</span>")
 	return FALSE

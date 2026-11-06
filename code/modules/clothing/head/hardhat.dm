@@ -1,5 +1,5 @@
 /obj/item/clothing/head/hardhat
-	name = "hard hat"
+	name = "каска"
 	desc = ""
 	icon_state = "hardhat0_yellow"
 	item_state = "hardhat0_yellow"

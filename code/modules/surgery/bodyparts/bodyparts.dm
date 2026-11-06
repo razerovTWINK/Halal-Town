@@ -61,13 +61,13 @@
 	var/dmg_overlay_type //the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 
 	//Damage messages used by help_shake_act()
-	var/light_brute_msg = "is a little bruised"
-	var/medium_brute_msg = "is bruised"
-	var/heavy_brute_msg = "is heavily bruised"
+	var/light_brute_msg = "слегка ушиблена"
+	var/medium_brute_msg = "ушиблена"
+	var/heavy_brute_msg = "сильно ушиблена"
 
-	var/light_burn_msg = "is blistered"
-	var/medium_burn_msg = "is burned"
-	var/heavy_burn_msg = "is peeling away"
+	var/light_burn_msg = "покрыта волдырями"
+	var/medium_burn_msg = "обожжена"
+	var/heavy_burn_msg = "обуглена"
 
 	var/add_extra = FALSE
 	var/offset
@@ -99,9 +99,9 @@
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
+		. += "<span class='warning'>На этой части тела [brute_dam > 30 ? "сильные" : "небольшие"] ушибы.</span>"
 	if(burn_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
+		. += "<span class='warning'>На этой части тела [burn_dam > 30 ? "тяжёлые" : "лёгкие"] ожоги.</span>"
 
 /obj/item/bodypart/blob_act()
 	take_damage(max_damage)
@@ -118,8 +118,8 @@
 /obj/item/bodypart/onbite(mob/living/carbon/human/user)
 	if((user.mind && user.mind.has_antag_datum(/datum/species/zombie)) || istype(user.dna.species, /datum/species/werewolf))
 		if(do_after(user, 50, target = src))
-			user.visible_message("<span class='warning'>[user] consumes [src]!</span>",\
-			"<span class='notice'>I consume [src]!</span>")
+			user.visible_message("<span class='warning'>[user] пожирает [src]!</span>",\
+			"<span class='notice'>Ты пожираешь [src]!</span>")
 			playsound(get_turf(user), pick(dismemsound), 100, FALSE, -1)
 			new /obj/effect/gibspawner/generic(get_turf(src), user)
 			user.fully_heal()
@@ -133,11 +133,11 @@
 		if(HAS_TRAIT(C, TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>I force [src] into my empty socket, and it locks into place!</span>")
+					H.visible_message("<span class='warning'>[H] с силой вставляет [src] в пустой сустав!</span>",\
+					"<span class='notice'>Ты вставляешь [src] на место, и конечность встаёт как влитая!</span>")
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into my empty socket, and it locks into place!</span>")
+					H.visible_message("<span class='warning'>[user] с силой вставляет [src] в пустой сустав [H]!</span>",\
+					"<span class='notice'>[user] вставляет [src] в твой пустой сустав, и конечность встаёт как влитая!</span>")
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				attach_limb(C)
 				return
@@ -590,7 +590,7 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE|BODYPART_DISABLED_FALL)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='warning'>I feel a sharp pain in my back!</span>")
+			to_chat(owner, "<span class='warning'>Ты чувствуешь резкую боль в спине!</span>")
 
 /obj/item/bodypart/chest/Destroy()
 	QDEL_NULL(cavity_item)
@@ -657,12 +657,12 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='boldwarning'>I can no longer move my [name]!</span>")
+			to_chat(owner, "<span class='boldwarning'>Ты больше не можешь пошевелить [name]!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не чувствуешь [name].</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -722,12 +722,12 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не можешь пошевелить [name]!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не чувствуешь [name].</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -784,13 +784,13 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не можешь пошевелить [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не чувствуешь [name].</span>")
 
 /obj/item/bodypart/l_leg/digitigrade
-	name = "left digitigrade leg"
+	name = "левая пальцеходящая лапа"
 	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/l_leg/monkey
@@ -842,13 +842,13 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не можешь пошевелить [name]!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, "<span class='danger'>Ты больше не чувствуешь [name].</span>")
 
 /obj/item/bodypart/r_leg/digitigrade
-	name = "right digitigrade leg"
+	name = "правая пальцеходящая лапа"
 	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/r_leg/monkey

@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/internal/boltaction
-	name = "bolt action rifle internal magazine"
+	name = "встроенный магазин винтовки"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = "a762"

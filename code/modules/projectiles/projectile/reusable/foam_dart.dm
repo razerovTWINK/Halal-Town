@@ -1,5 +1,5 @@
 /obj/projectile/bullet/reusable/foam_dart
-	name = "foam dart"
+	name = "мягкий дротик"
 	desc = ""
 	damage = 0 // It's a damn toy.
 	damage_type = OXY
@@ -35,7 +35,7 @@
 	return ..()
 
 /obj/projectile/bullet/reusable/foam_dart/riot
-	name = "riot foam dart"
+	name = "полицейский мягкий дротик"
 	icon_state = "foamdart_riot_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	nodamage = FALSE

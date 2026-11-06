@@ -1,5 +1,5 @@
 /obj/item/organ/heart
-	name = "heart"
+	name = "сердце"
 	desc = ""
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST
@@ -8,10 +8,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = 5 * STANDARD_ORGAN_DECAY		//designed to fail about 5 minutes after death
 
-	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within my chest...</span>"
-	high_threshold_passed = "<span class='warning'>Something inside my chest hurts, and the pain isn't subsiding. You notice myself breathing far faster than before.</span>"
-	now_fixed = "<span class='info'>My heart begins to beat again.</span>"
-	high_threshold_cleared = "<span class='info'>The pain in my chest has died down, and my breathing becomes more relaxed.</span>"
+	low_threshold_passed = "<span class='info'>Колющая боль появляется и затихает в груди...</span>"
+	high_threshold_passed = "<span class='warning'>Что-то в груди сильно болит, и боль не утихает. Дыхание становится частым и поверхностным.</span>"
+	now_fixed = "<span class='info'>Сердце снова начинает биться.</span>"
+	high_threshold_cleared = "<span class='info'>Боль в груди утихла, дыхание успокаивается.</span>"
 
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
@@ -39,8 +39,7 @@
 /obj/item/organ/heart/attack_self(mob/user)
 	..()
 	if(!beating)
-		user.visible_message("<span class='notice'>[user] squeezes [src] to \
-			make it beat again!</span>","<span class='notice'>I squeeze [src] to make it beat again!</span>")
+		user.visible_message("<span class='notice'>[user] сжимает [src], заставляя его снова биться!</span>","<span class='notice'>Ты сжимаешь [src], заставляя его снова биться!</span>")
 		Restart()
 		addtimer(CALLBACK(src, .proc/stop_if_unowned), 80)
 
@@ -98,13 +97,13 @@
 
 	if(organ_flags & ORGAN_FAILING)	//heart broke, stopped beating, death imminent
 		if(owner.stat == CONSCIOUS)
-			owner.visible_message("<span class='danger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>", \
-				"<span class='danger'>I feel a terrible pain in my chest, as if my heart has stopped!</span>")
+			owner.visible_message("<span class='danger'>[owner] хватается за грудь, словно сердце вот-вот остановится!</span>", \
+				"<span class='danger'>Ужасная боль пронзает грудь, словно сердце остановилось!</span>")
 		owner.set_heartattack(TRUE)
 		failed = TRUE
 
 /obj/item/organ/heart/cursed
-	name = "cursed heart"
+	name = "проклятое сердце"
 	desc = ""
 	icon_state = "cursedheart-off"
 	icon_base = "cursedheart"
@@ -135,7 +134,7 @@
 			var/mob/living/carbon/human/H = owner
 			if(H.dna && !(NOBLOOD in H.dna.species.species_traits))
 				H.blood_volume = max(H.blood_volume - blood_loss, 0)
-				to_chat(H, "<span class='danger'>I have to keep pumping my blood!</span>")
+				to_chat(H, "<span class='danger'>Нужно продолжать качать кровь!</span>")
 				if(add_colour)
 					H.add_client_colour(/datum/client_colour/cursed_heart_blood) //bloody screen so real
 					add_colour = FALSE
@@ -145,14 +144,14 @@
 /obj/item/organ/heart/cursed/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if(owner)
-		to_chat(owner, "<span class='danger'>My heart has been replaced with a cursed one, you have to pump this one manually otherwise you'll die!</span>")
+		to_chat(owner, "<span class='danger'>Твоё сердце заменено на проклятое! Придётся качать кровь вручную, иначе смерть!</span>")
 
 /obj/item/organ/heart/cursed/Remove(mob/living/carbon/M, special = 0)
 	..()
 	M.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 
 /datum/action/item_action/organ_action/cursed_heart
-	name = "Pump my blood"
+	name = "Качать кровь"
 
 //You are now brea- pumping blood manually
 /datum/action/item_action/organ_action/cursed_heart/Trigger()
@@ -161,12 +160,12 @@
 		var/obj/item/organ/heart/cursed/cursed_heart = target
 
 		if(world.time < (cursed_heart.last_pump + (cursed_heart.pump_delay-10))) //no spam
-			to_chat(owner, "<span class='danger'>Too soon!</span>")
+			to_chat(owner, "<span class='danger'>Слишком рано!</span>")
 			return
 
 		cursed_heart.last_pump = world.time
 		playsound(owner,'sound/blank.ogg',40,TRUE)
-		to_chat(owner, "<span class='notice'>My heart beats.</span>")
+		to_chat(owner, "<span class='notice'>Сердце бьётся.</span>")
 
 		var/mob/living/carbon/human/H = owner
 		if(istype(H))
@@ -184,7 +183,7 @@
 	colour = "red"
 
 /obj/item/organ/heart/cybernetic
-	name = "cybernetic heart"
+	name = "кибернетическое сердце"
 	desc = ""
 	icon_state = "heart-c"
 	organ_flags = ORGAN_SYNTHETIC
@@ -212,7 +211,7 @@
 	dose_available = FALSE
 
 /obj/item/organ/heart/cybernetic/upgraded
-	name = "upgraded cybernetic heart"
+	name = "улучшенное кибернетическое сердце"
 	desc = ""
 	icon_state = "heart-c-u"
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
@@ -222,7 +221,7 @@
 	addtimer(VARSET_CALLBACK(src, dose_available, TRUE), 5 MINUTES)
 
 /obj/item/organ/heart/freedom
-	name = "heart of freedom"
+	name = "сердце свободы"
 	desc = ""
 	organ_flags = ORGAN_SYNTHETIC //the power of freedom prevents heart attacks
 	var/min_next_adrenaline = 0
@@ -231,7 +230,7 @@
 	. = ..()
 	if(owner.health < 5 && world.time > min_next_adrenaline)
 		min_next_adrenaline = world.time + rand(250, 600) //anywhere from 4.5 to 10 minutes
-		to_chat(owner, "<span class='danger'>I feel myself dying, but you refuse to give up!</span>")
+		to_chat(owner, "<span class='danger'>Силы покидают тебя, но ты отказываешься сдаваться!</span>")
 		owner.heal_overall_damage(15, 15, 0, BODYPART_ORGANIC)
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)

@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork
-	name = "Summon Pitchfork"
+	name = "Призыв вил"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE
@@ -26,15 +26,15 @@
 	invocation_type = "whisper"
 	invocation = "I aint have this much fun since Georgia."
 	action_icon_state = "golden_violin"
-	name = "Summon golden violin"
+	name = "Призыв золотой скрипки"
 	action_icon = 'icons/mob/actions/actions_minor_antag.dmi'
 	action_background_icon_state = "bg_demon"
 
 /obj/effect/proc_holder/spell/targeted/summon_contract
-	name = "Summon infernal contract"
+	name = "Призыв адского контракта"
 	desc = ""
 	invocation_type = "whisper"
-	invocation = "Just sign on the dotted line."
+	invocation = "Просто распишись на пунктире."
 	include_user = FALSE
 	range = 5
 	clothes_req = FALSE
@@ -54,33 +54,33 @@
 					user.put_in_hands(contract)
 			else
 				var/obj/item/paper/contract/infernal/contract  // = new(user.loc, C.mind, contractType, user.mind)
-				var/contractTypeName = input(user, "What type of contract?") in sortList(list("Power", "Wealth", "Prestige", "Magic", "Knowledge", "Friendship"))
+				var/contractTypeName = input(user, "Какой контракт составить?", "Выбор контракта") in sortList(list("Власть", "Богатство", "Престиж", "Магия", "Знания", "Дружба"))
 				switch(contractTypeName)
-					if("Power")
+					if("Власть")
 						contract = new /obj/item/paper/contract/infernal/power(C.loc, C.mind, user.mind)
-					if("Wealth")
+					if("Богатство")
 						contract = new /obj/item/paper/contract/infernal/wealth(C.loc, C.mind, user.mind)
-					if("Prestige")
+					if("Престиж")
 						contract = new /obj/item/paper/contract/infernal/prestige(C.loc, C.mind, user.mind)
-					if("Magic")
+					if("Магия")
 						contract = new /obj/item/paper/contract/infernal/magic(C.loc, C.mind, user.mind)
-					if("Knowledge")
+					if("Знания")
 						contract = new /obj/item/paper/contract/infernal/knowledge(C.loc, C.mind, user.mind)
-					if("Friendship")
+					if("Дружба")
 						contract = new /obj/item/paper/contract/infernal/friend(C.loc, C.mind, user.mind)
 				C.put_in_hands(contract)
 		else
-			to_chat(user, "<span class='warning'>[C] seems to not be sentient. You cannot summon a contract for [C.p_them()].</span>")
+			to_chat(user, "<span class='warning'>[C] не обладает разумом. Нельзя призвать контракт для [C.p_them()].</span>")
 
 
 /obj/effect/proc_holder/spell/aimed/fireball/hellish
-	name = "Hellfire"
+	name = "Адский огонь"
 	desc = ""
 
 	school = "evocation"
 	charge_max = 80
 	clothes_req = FALSE
-	invocation = "Your very soul will catch fire!"
+	invocation = "Твоя душа сгорит дотла!"
 	invocation_type = "shout"
 	range = 2
 
@@ -89,7 +89,7 @@
 	action_background_icon_state = "bg_demon"
 
 /obj/effect/proc_holder/spell/targeted/infernal_jaunt
-	name = "Infernal Jaunt"
+	name = "Адский шаг"
 	desc = ""
 	charge_max = 200
 	clothes_req = FALSE
@@ -106,25 +106,25 @@
 	if(istype(user))
 		if(istype(user.loc, /obj/effect/dummy/phased_mob/slaughter/))
 			if(valid_location(user))
-				to_chat(user, "<span class='warning'>I are now phasing in.</span>")
+				to_chat(user, "<span class='warning'>Я воплощаюсь.</span>")
 				if(do_mob(user,user,150))
 					if(valid_location(user))
 						user.infernalphasein()
 					else
-						to_chat(user, "<span class='warning'>I are no longer near a potential signer.</span>")
+						to_chat(user, "<span class='warning'>Поблизости больше нет потенциальных подписантов.</span>")
 
 			else
-				to_chat(user, "<span class='warning'>I can only re-appear near a potential signer.</span>")
+				to_chat(user, "<span class='warning'>Я могу появиться только рядом с потенциальным подписантом.</span>")
 				revert_cast()
 				return ..()
 		else
 			user.notransform = TRUE
 			user.fakefire()
-			to_chat(src, "<span class='warning'>I begin to phase back into sinful flames.</span>")
+			to_chat(src, "<span class='warning'>Я растворяюсь в греховном пламени.</span>")
 			if(do_mob(user,user,150))
 				user.infernalphaseout()
 			else
-				to_chat(user, "<span class='warning'>I must remain still while exiting.</span>")
+				to_chat(user, "<span class='warning'>Нужно стоять неподвижно при переходе.</span>")
 				user.notransform = FALSE
 				user.fakefireextinguish()
 		start_recharge()
@@ -143,7 +143,7 @@
 /mob/living/proc/infernalphaseout()
 	dust_animation()
 	spawn_dust()
-	visible_message("<span class='warning'>[src] disappears in a flashfire!</span>")
+	visible_message("<span class='warning'>[src] исчезает во вспышке пламени!</span>")
 	playsound(get_turf(src), 'sound/blank.ogg', 100, TRUE, -1)
 	var/obj/effect/dummy/phased_mob/slaughter/holder = new /obj/effect/dummy/phased_mob/slaughter(loc)
 	ExtinguishMob()
@@ -154,17 +154,17 @@
 
 /mob/living/proc/infernalphasein()
 	if(notransform)
-		to_chat(src, "<span class='warning'>You're too busy to jaunt in.</span>")
+		to_chat(src, "<span class='warning'>Ты слишком занят, чтобы переместиться.</span>")
 		return FALSE
 	fakefire()
 	forceMove(drop_location())
 	client.eye = src
-	visible_message("<span class='warning'><B>[src] appears in a fiery blaze!</B></span>")
+	visible_message("<span class='warning'><B>[src] появляется в яростном пламени!</B></span>")
 	playsound(get_turf(src), 'sound/blank.ogg', 100, TRUE, -1)
 	addtimer(CALLBACK(src, .proc/fakefireextinguish), 15, TIMER_UNIQUE)
 
 /obj/effect/proc_holder/spell/targeted/sintouch
-	name = "Sin Touch"
+	name = "Прикосновение греха"
 	desc = ""
 	charge_max = 1800
 	clothes_req = FALSE
@@ -180,11 +180,11 @@
 	random_target = TRUE
 	random_target_priority = TARGET_RANDOM
 	max_targets = 3
-	invocation = "TASTE SIN AND INDULGE!!"
+	invocation = "ВКУСИ ГРЕХ И ПРЕДАЙСЯ ЕМУ!!"
 	invocation_type = "shout"
 
 /obj/effect/proc_holder/spell/targeted/sintouch/ascended
-	name = "Greater sin touch"
+	name = "Великое прикосновение греха"
 	charge_max = 100
 	range = 7
 	max_targets = 10
@@ -202,7 +202,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/summon_dancefloor
-	name = "Summon Dancefloor"
+	name = "Призыв танцпола"
 	desc = ""
 	include_user = TRUE
 	range = -1
@@ -238,7 +238,7 @@
 	else
 		var/list/funky_turfs = RANGE_TURFS(1, user)
 		for(var/turf/closed/solid in funky_turfs)
-			to_chat(user, "<span class='warning'>You're too close to a wall.</span>")
+			to_chat(user, "<span class='warning'>Слишком близко к стене.</span>")
 			return
 		dancefloor_exists = TRUE
 		var/i = 1

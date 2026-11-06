@@ -1,5 +1,5 @@
 /obj/item/organ/tongue
-	name = "tongue"
+	name = "язык"
 	desc = ""
 	icon_state = "tonguenormal"
 	zone = BODY_ZONE_PRECISE_MOUTH
@@ -43,7 +43,7 @@
 	return is_type_in_typecache(dt, languages_possible)
 
 /obj/item/organ/tongue/lizard
-	name = "forked tongue"
+	name = "раздвоенный язык"
 	desc = ""
 	icon_state = "tonguelizard"
 	say_mod = "hisses"
@@ -60,7 +60,7 @@
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/tongue/fly
-	name = "proboscis"
+	name = "хоботок"
 	desc = ""
 	icon_state = "tonguefly"
 	say_mod = "buzzes"
@@ -77,7 +77,7 @@
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/tongue/abductor
-	name = "superlingual matrix"
+	name = "суперлингвальная матрица"
 	desc = ""
 	icon_state = "tongueayylmao"
 	say_mod = "gibbers"
@@ -94,20 +94,20 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as my own.</span>")
+		to_chat(H, "<span class='notice'>[src] уже настроен на твой канал.</span>")
 
-	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>I attempt to modify the attunation of [src].</span>")
+	H.visible_message("<span class='notice'>[H] держит [src] в руках и на мгновение сосредотачивается.</span>", "<span class='notice'>Ты пытаешься изменить настройку [src].</span>")
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span class='notice'>I attune [src] to my own channel.</span>")
+		to_chat(H, "<span class='notice'>Ты настраиваешь [src] на свой канал.</span>")
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_ABDUCTOR_TRAINING) || HAS_TRAIT(M.mind, TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			. += "<span class='notice'>It is not attuned to a specific mothership.</span>"
+			. += "<span class='notice'>Орган не настроен на корабль-носитель.</span>"
 		else
-			. += "<span class='notice'>It is attuned to [mothership].</span>"
+			. += "<span class='notice'>Орган настроен на [mothership].</span>"
 
 /obj/item/organ/tongue/abductor/handle_speech(datum/source, list/speech_args)
 	//Hacks
@@ -129,7 +129,7 @@
 	speech_args[SPEECH_MESSAGE] = ""
 
 /obj/item/organ/tongue/zombie
-	name = "rotting tongue"
+	name = "гниющий язык"
 	desc = ""
 	icon_state = "tonguezombie"
 	say_mod = "moans"
@@ -148,12 +148,12 @@
 			message_list[insertpos] = inserttext + "..."
 
 		if(prob(20) && message_list.len > 3)
-			message_list.Insert(insertpos, "[pick("BRAINS", "Brains", "Braaaiinnnsss", "BRAAAIIINNSSS")]...")
+			message_list.Insert(insertpos, "[pick("МОЗГИ", "Мозги", "Моооозгиии", "МОООЗГИИИ")]...")
 
 	speech_args[SPEECH_MESSAGE] = jointext(message_list, " ")
 
 /obj/item/organ/tongue/alien
-	name = "alien tongue"
+	name = "язык ксеноморфа"
 	desc = ""
 	icon_state = "tonguexeno"
 	say_mod = "hisses"
@@ -173,7 +173,7 @@
 	playsound(owner, "hiss", 25, TRUE, TRUE)
 
 /obj/item/organ/tongue/bone
-	name = "bone \"tongue\""
+	name = "костяной \"язык\""
 	desc = ""
 	icon_state = "tonguebone"
 	say_mod = "rattles"
@@ -198,13 +198,13 @@
 			speech_args[SPEECH_SPANS] |= SPAN_PAPYRUS
 
 /obj/item/organ/tongue/bone/plasmaman
-	name = "plasma bone \"tongue\""
+	name = "плазменный костяной \"язык\""
 	desc = ""
 	icon_state = "tongueplasma"
 	modifies_speech = FALSE
 
 /obj/item/organ/tongue/robot
-	name = "robotic voicebox"
+	name = "голосовой модуль"
 	desc = ""
 	status = ORGAN_ROBOTIC
 	icon_state = "tonguerobot"
@@ -220,7 +220,7 @@
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT
 
 /obj/item/organ/tongue/snail
-	name = "snailtongue"
+	name = "язык улитки"
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)

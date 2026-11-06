@@ -1,5 +1,5 @@
 /datum/surgery/prosthetic_replacement
-	name = "Prosthetic replacement"
+	name = "установка протеза"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/add_prosthetic)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
@@ -16,7 +16,7 @@
 
 
 /datum/surgery_step/add_prosthetic
-	name = "add prosthetic"
+	name = "установить протез"
 	implements = list(/obj/item/bodypart = 100, /obj/item/organ_storage = 100, /obj/item/twohanded/required/chainsaw = 100, /obj/item/melee/synthetic_arm_blade = 100)
 	time = 32
 	var/organ_rejection_dam = 0
@@ -24,42 +24,42 @@
 /datum/surgery_step/add_prosthetic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/organ_storage))
 		if(!tool.contents.len)
-			to_chat(user, "<span class='warning'>There is nothing inside [tool]!</span>")
+			to_chat(user, "<span class='warning'>В [tool] ничего нет!</span>")
 			return -1
 		var/obj/item/I = tool.contents[1]
 		if(!isbodypart(I))
-			to_chat(user, "<span class='warning'>[I] cannot be attached!</span>")
+			to_chat(user, "<span class='warning'>[I] невозможно прикрепить!</span>")
 			return -1
 		tool = I
 	if(istype(tool, /obj/item/bodypart))
 		var/obj/item/bodypart/BP = tool
 		if(ismonkey(target))// monkey patient only accept organic monkey limbs
 			if(BP.status == BODYPART_ROBOTIC || BP.animal_origin != MONKEY_BODYPART)
-				to_chat(user, "<span class='warning'>[BP] doesn't match the patient's morphology.</span>")
+				to_chat(user, "<span class='warning'>[BP] не соответствует анатомии пациента.</span>")
 				return -1
 		if(BP.status != BODYPART_ROBOTIC)
 			organ_rejection_dam = 10
 			if(ishuman(target))
 				if(BP.animal_origin)
-					to_chat(user, "<span class='warning'>[BP] doesn't match the patient's morphology.</span>")
+					to_chat(user, "<span class='warning'>[BP] не соответствует анатомии пациента.</span>")
 					return -1
 				var/mob/living/carbon/human/H = target
 				if(H.dna.species.id != BP.species_id)
 					organ_rejection_dam = 30
 
 		if(target_zone == BP.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
-			display_results(user, target, "<span class='notice'>I begin to replace [target]'s [parse_zone(target_zone)] with [tool]...</span>",
-				"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool].</span>",
-				"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)].</span>")
+			display_results(user, target, "<span class='notice'>Ты начинаешь заменять [parse_zone(target_zone)] [target] на [tool]...</span>",
+				"<span class='notice'>[user] начинает заменять [parse_zone(target_zone)] [target] на [tool].</span>",
+				"<span class='notice'>[user] начинает заменять [parse_zone(target_zone)] [target].</span>")
 		else
-			to_chat(user, "<span class='warning'>[tool] isn't the right type for [parse_zone(target_zone)].</span>")
+			to_chat(user, "<span class='warning'>[tool] не подходит для [parse_zone(target_zone)].</span>")
 			return -1
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
-		display_results(user, target, "<span class='notice'>I begin to attach [tool] onto [target]...</span>",
-			"<span class='notice'>[user] begins to attach [tool] onto [target]'s [parse_zone(target_zone)].</span>",
-			"<span class='notice'>[user] begins to attach something onto [target]'s [parse_zone(target_zone)].</span>")
+		display_results(user, target, "<span class='notice'>Ты начинаешь прикреплять [tool] к [target]...</span>",
+			"<span class='notice'>[user] начинает прикреплять [tool] к [parse_zone(target_zone)] [target].</span>",
+			"<span class='notice'>[user] начинает что-то прикреплять к [parse_zone(target_zone)] [target].</span>")
 	else
-		to_chat(user, "<span class='warning'>[tool] must be installed onto an arm.</span>")
+		to_chat(user, "<span class='warning'>[tool] можно установить только на руку.</span>")
 		return -1
 
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -73,18 +73,18 @@
 		L.attach_limb(target)
 		if(organ_rejection_dam)
 			target.adjustToxLoss(organ_rejection_dam)
-		display_results(user, target, "<span class='notice'>I succeed in replacing [target]'s [parse_zone(target_zone)].</span>",
-			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!</span>",
-			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
+		display_results(user, target, "<span class='notice'>Ты успешно заменяешь [parse_zone(target_zone)] [target].</span>",
+			"<span class='notice'>[user] успешно заменяет [parse_zone(target_zone)] [target] на [tool]!</span>",
+			"<span class='notice'>[user] успешно заменяет [parse_zone(target_zone)] [target]!</span>")
 		return 1
 	else
 		var/obj/item/bodypart/L = target.newBodyPart(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		L.attach_limb(target)
-		user.visible_message("<span class='notice'>[user] finishes attaching [tool]!</span>", "<span class='notice'>I attach [tool].</span>")
-		display_results(user, target, "<span class='notice'>I attach [tool].</span>",
-			"<span class='notice'>[user] finishes attaching [tool]!</span>",
-			"<span class='notice'>[user] finishes the attachment procedure!</span>")
+		user.visible_message("<span class='notice'>[user] заканчивает прикреплять [tool]!</span>", "<span class='notice'>Ты прикрепляешь [tool].</span>")
+		display_results(user, target, "<span class='notice'>Ты прикрепляешь [tool].</span>",
+			"<span class='notice'>[user] заканчивает прикреплять [tool]!</span>",
+			"<span class='notice'>[user] завершает установку протеза!</span>")
 		qdel(tool)
 		if(istype(tool, /obj/item/twohanded/required/chainsaw))
 			var/obj/item/mounted_chainsaw/new_arm = new(target)

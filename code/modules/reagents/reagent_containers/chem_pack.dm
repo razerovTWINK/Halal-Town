@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/chem_pack
-	name = "intravenous medicine bag"
+	name = "пакет для внутривенных вливаний"
 	desc = ""
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "chempack"

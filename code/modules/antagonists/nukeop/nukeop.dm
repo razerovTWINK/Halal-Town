@@ -35,7 +35,7 @@
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/blank.ogg',100,0)
-	to_chat(owner, "<span class='notice'>I are a [nuke_team ? nuke_team.syndicate_name : "syndicate"] agent!</span>")
+	to_chat(owner, "<span class='notice'>Ты — оперативник [nuke_team ? nuke_team.syndicate_name : "Синдиката"]!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()
@@ -89,9 +89,9 @@
 /datum/antagonist/nukeop/proc/memorize_code()
 	if(nuke_team && nuke_team.tracked_nuke && nuke_team.memorized_code)
 		antag_memory += "<B>[nuke_team.tracked_nuke] Code</B>: [nuke_team.memorized_code]<br>"
-		to_chat(owner, "The nuclear authorization code is: <B>[nuke_team.memorized_code]</B>")
+		to_chat(owner, "Код ядерной аутентификации: <B>[nuke_team.memorized_code]</B>")
 	else
-		to_chat(owner, "Unfortunately the syndicate was unable to provide you with nuclear authorization code.")
+		to_chat(owner, "К сожалению, Синдикат не смог предоставить тебе код ядерной аутентификации.")
 
 /datum/antagonist/nukeop/proc/forge_objectives()
 	if(nuke_team)
@@ -177,8 +177,8 @@
 
 /datum/antagonist/nukeop/leader/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/blank.ogg',100,0)
-	to_chat(owner, "<B>I are the Syndicate [title] for this mission. You are responsible for the distribution of telecrystals and your ID is the only one who can open the launch bay doors.</B>")
-	to_chat(owner, "<B>If you feel you are not up to this task, give your ID to another operative.</B>")
+	to_chat(owner, "<B>Ты — [title] Синдиката на этой операции. Ты отвечаешь за раздачу телекристаллов, и только твоя карта может открыть двери пускового ангара.</B>")
+	to_chat(owner, "<B>Если чувствуешь, что не справишься, передай свою карту другому оперативнику.</B>")
 	to_chat(owner, "<B>In your hand you will find a special item capable of triggering a greater challenge for your team. Examine it carefully and consult with your fellow operatives before activating it.</B>")
 	owner.announce_objectives()
 	addtimer(CALLBACK(src, .proc/nuketeam_name_assign), 1)

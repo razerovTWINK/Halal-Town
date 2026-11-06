@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/inflict_handler
-	name = "Inflict Handler"
+	name = "Обработчик воздействий"
 	desc = ""
 
 	var/amt_paralyze = 0

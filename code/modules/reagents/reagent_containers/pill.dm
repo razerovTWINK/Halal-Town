@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/pill
-	name = "pill"
+	name = "таблетка"
 	desc = ""
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "pill"
@@ -39,11 +39,11 @@
 		to_chat(M, "<span class='notice'>I [apply_method] [src].</span>")
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
+		M.visible_message("<span class='danger'>[user] пытается заставить [M] [apply_method] [src].</span>", \
 							"<span class='danger'>[user] attempts to force you to [apply_method] [src].</span>")
 		if(!do_mob(user, M))
 			return FALSE
-		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
+		M.visible_message("<span class='danger'>[user] заставляет [M] [apply_method] [src].</span>", \
 							"<span class='danger'>[user] forces you to [apply_method] [src].</span>")
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
@@ -62,14 +62,14 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, "<span class='warning'>[target] пуст! Растворять [src] не в чем.</span>")
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, "<span class='warning'>[target] полон.</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>", "<span class='notice'>I dissolve [src] in [target].</span>", null, 2)
+	user.visible_message("<span class='warning'>[user] что-то подсыпает в [target]!</span>", "<span class='notice'>Я растворяю [src] в [target].</span>", null, 2)
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 

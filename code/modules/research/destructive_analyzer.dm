@@ -8,7 +8,7 @@ It is used to destroy hand-held objects and advance technological research. Cont
 Note: Must be placed within 3 tiles of the R&D Console
 */
 /obj/machinery/rnd/destructive_analyzer
-	name = "destructive analyzer"
+	name = "деструктивный анализатор"
 	desc = ""
 	icon_state = "d_analyzer"
 	circuit = /obj/item/circuitboard/machine/destructive_analyzer
@@ -37,11 +37,11 @@ Note: Must be placed within 3 tiles of the R&D Console
 		if(!is_insertion_ready(user))
 			return
 		if(!user.transferItemToLoc(O, src))
-			to_chat(user, "<span class='warning'>\The [O] is stuck to your hand, you cannot put it in the [src.name]!</span>")
+			to_chat(user, "<span class='warning'>[O] прилип к твоей руке, ты не можешь поместить это в [src.name]!</span>")
 			return
 		busy = TRUE
 		loaded_item = O
-		to_chat(user, "<span class='notice'>I add the [O.name] to the [src.name]!</span>")
+		to_chat(user, "<span class='notice'>Я помещаю [O.name] в [src.name]!</span>")
 		flick("d_analyzer_la", src)
 		addtimer(CALLBACK(src, .proc/finish_loading), 10)
 		if (linked_console)
@@ -116,8 +116,8 @@ Note: Must be placed within 3 tiles of the R&D Console
 				differences[i] = value
 		if(length(worths) && !length(differences))
 			return FALSE
-		var/choice = input("Are you sure you want to destroy [loaded_item] to [!length(worths) ? "reveal [TN.display_name]" : "boost [TN.display_name] by [json_encode(differences)] point\s"]?") in list("Proceed", "Cancel")
-		if(choice == "Cancel")
+		var/choice = input("Ты действительно хочешь уничтожить [loaded_item], чтобы [!length(worths) ? "открыть [TN.display_name]" : "ускорить исследование «[TN.display_name]» на [json_encode(differences)] очк."]?") in list("Продолжить", "Отмена")
+		if(choice == "Отмена")
 			return FALSE
 		if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
 			return FALSE
@@ -131,11 +131,11 @@ Note: Must be placed within 3 tiles of the R&D Console
 			point_value = list()
 		var/user_mode_string = ""
 		if(length(point_value))
-			user_mode_string = " for [json_encode(point_value)] points"
+			user_mode_string = " за [json_encode(point_value)] очк."
 		else if(loaded_item.custom_materials.len)
-			user_mode_string = " for material reclamation"
-		var/choice = input("Are you sure you want to destroy [loaded_item][user_mode_string]?") in list("Proceed", "Cancel")
-		if(choice == "Cancel")
+			user_mode_string = " ради переработки материалов"
+		var/choice = input("Ты действительно хочешь уничтожить [loaded_item][user_mode_string]?") in list("Продолжить", "Отмена")
+		if(choice == "Отмена")
 			return FALSE
 		if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
 			return FALSE

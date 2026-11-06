@@ -1,5 +1,5 @@
 /obj/item/organ/ears
-	name = "ears"
+	name = "уши"
 	icon_state = "ears"
 	desc = ""
 	zone = BODY_ZONE_HEAD
@@ -9,10 +9,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>My ears begin to resonate with an internal ring sometimes.</span>"
-	now_failing = "<span class='warning'>I are unable to hear at all!</span>"
-	now_fixed = "<span class='info'>Noise slowly begins filling my ears once more.</span>"
-	low_threshold_cleared = "<span class='info'>The ringing in my ears has died down.</span>"
+	low_threshold_passed = "<span class='info'>В ушах начинает периодически звенеть.</span>"
+	now_failing = "<span class='warning'>Ты полностью теряешь слух!</span>"
+	now_fixed = "<span class='info'>Звуки постепенно возвращаются к тебе.</span>"
+	low_threshold_cleared = "<span class='info'>Звон в ушах утихает.</span>"
 
 	// `deaf` measures "ticks" of deafness. While > 0, the person is unable
 	// to hear anything.
@@ -42,7 +42,7 @@
 		if(prob(damage / 20) && (damage > low_threshold))
 			adjustEarDamage(0, 4)
 			SEND_SOUND(C, sound('sound/blank.ogg'))
-			to_chat(C, "<span class='warning'>The ringing in my ears grows louder, blocking out any external noises for a moment.</span>")
+			to_chat(C, "<span class='warning'>Звон в ушах усиливается, заглушая на мгновение все внешние звуки.</span>")
 	else if((organ_flags & ORGAN_FAILING) && (deaf == 0))
 		deaf = 1	//stop being not deaf you deaf idiot
 
@@ -90,7 +90,7 @@
 
 
 /obj/item/organ/ears/cat
-	name = "cat ears"
+	name = "кошачьи ушки"
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "kitty"
 	damage_multiplier = 2
@@ -112,37 +112,37 @@
 		H.update_body()
 
 /obj/item/organ/ears/penguin
-	name = "penguin ears"
+	name = "уши пингвина"
 	desc = ""
 	var/datum/component/waddle
 
 /obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	. = ..()
 	if(istype(H))
-		to_chat(H, "<span class='notice'>I suddenly feel like you've lost my balance.</span>")
+		to_chat(H, "<span class='notice'>Ты внезапно теряешь равновесие.</span>")
 		waddle = H.AddComponent(/datum/component/waddling)
 
 /obj/item/organ/ears/penguin/Remove(mob/living/carbon/human/H,  special = 0)
 	. = ..()
 	if(istype(H))
-		to_chat(H, "<span class='notice'>My sense of balance comes back to you.</span>")
+		to_chat(H, "<span class='notice'>Чувство равновесия возвращается к тебе.</span>")
 		QDEL_NULL(waddle)
 
 /obj/item/organ/ears/bronze
-	name = "tin ears"
+	name = "жестяные уши"
 	desc = ""
 	damage_multiplier = 0.1 //STRONK
 	bang_protect = 1 //Fear me weaklings.
 
 /obj/item/organ/ears/cybernetic
-	name = "cybernetic ears"
+	name = "кибернетические уши"
 	icon_state = "ears-c"
 	desc = ""
 	damage_multiplier = 0.9
 	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/ears/cybernetic/upgraded
-	name = "upgraded cybernetic ears"
+	name = "улучшенные кибернетические уши"
 	icon_state = "ears-c-u"
 	desc = ""
 	damage_multiplier = 0.5

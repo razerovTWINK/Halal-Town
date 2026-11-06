@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/spray
-	name = "spray bottle"
+	name = "бутылка-распылитель"
 	desc = ""
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "sprayer_large"
@@ -34,7 +34,7 @@
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'>[src] полон.</span>")
 			return
 
 		var/trans = A.reagents.trans_to(src, 50, transfered_by = user) //transfer 50u , using the spray's transfer amount would take too long to refill
@@ -127,7 +127,7 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>I heat [name] with [I]!</span>")
+		to_chat(user, "<span class='notice'>Я нагреваю [name] при помощи [I]!</span>")
 	return ..()
 
 /obj/item/reagent_containers/spray/verb/empty()
@@ -160,7 +160,7 @@
 
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
-	name = "space cleaner"
+	name = "космическое чистящее средство"
 	desc = ""
 	icon_state = "cleaner"
 	volume = 100
@@ -184,7 +184,7 @@
 
 //spray tan
 /obj/item/reagent_containers/spray/spraytan
-	name = "spray tan"
+	name = "спрей для загара"
 	volume = 50
 	desc = ""
 	list_reagents = list(/datum/reagent/spraytan = 50)
@@ -192,7 +192,7 @@
 
 //pepperspray
 /obj/item/reagent_containers/spray/pepper
-	name = "pepperspray"
+	name = "перцовый баллончик"
 	desc = ""
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "pepperspray"
@@ -219,7 +219,7 @@
 
 //water flower
 /obj/item/reagent_containers/spray/waterflower
-	name = "water flower"
+	name = "водяной цветок"
 	desc = ""
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "sunflower"

@@ -11,7 +11,7 @@
 //Failure to follow this pattern will cause the hand's icons to be missing due to the way get_limb_icon() works to generate the mob's icons using the aux_zone var.
 
 /obj/item/bodypart/l_arm/robot
-	name = "cyborg left arm"
+	name = "левая киберрука"
 	desc = ""
 	attack_verb = list("slapped", "punched")
 	item_state = "buildpipe"
@@ -32,7 +32,7 @@
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
 /obj/item/bodypart/r_arm/robot
-	name = "cyborg right arm"
+	name = "правая киберрука"
 	desc = ""
 	attack_verb = list("slapped", "punched")
 	item_state = "buildpipe"
@@ -53,7 +53,7 @@
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
 /obj/item/bodypart/l_leg/robot
-	name = "cyborg left leg"
+	name = "левая кибернога"
 	desc = ""
 	attack_verb = list("kicked", "stomped")
 	item_state = "buildpipe"
@@ -74,7 +74,7 @@
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
 /obj/item/bodypart/r_leg/robot
-	name = "cyborg right leg"
+	name = "правая кибернога"
 	desc = ""
 	attack_verb = list("kicked", "stomped")
 	item_state = "buildpipe"
@@ -95,7 +95,7 @@
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
 /obj/item/bodypart/chest/robot
-	name = "cyborg torso"
+	name = "киберторс"
 	desc = ""
 	item_state = "buildpipe"
 	icon = 'icons/mob/augmentation/augments.dmi'
@@ -130,23 +130,23 @@
 /obj/item/bodypart/chest/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))
 		if(cell)
-			to_chat(user, "<span class='warning'>I have already inserted a cell!</span>")
+			to_chat(user, "<span class='warning'>Батарея уже вставлена!</span>")
 			return
 		else
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, "<span class='notice'>I insert the cell.</span>")
+			to_chat(user, "<span class='notice'>Ты вставляешь батарею.</span>")
 	else if(istype(W, /obj/item/stack/cable_coil))
 		if(wired)
-			to_chat(user, "<span class='warning'>I have already inserted wire!</span>")
+			to_chat(user, "<span class='warning'>Провода уже проложены!</span>")
 			return
 		var/obj/item/stack/cable_coil/coil = W
 		if (coil.use(1))
 			wired = TRUE
-			to_chat(user, "<span class='notice'>I insert the wire.</span>")
+			to_chat(user, "<span class='notice'>Ты прокладываешь провода.</span>")
 		else
-			to_chat(user, "<span class='warning'>I need one length of coil to wire it!</span>")
+			to_chat(user, "<span class='warning'>Нужен хотя бы один моток проводов!</span>")
 	else
 		return ..()
 
@@ -156,7 +156,7 @@
 		return
 	. = TRUE
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>I cut the wires out of [src].</span>")
+	to_chat(user, "<span class='notice'>Ты срезаешь провода с [src].</span>")
 	new /obj/item/stack/cable_coil(drop_location(), 1)
 	wired = FALSE
 
@@ -164,10 +164,10 @@
 	..()
 	. = TRUE
 	if(!cell)
-		to_chat(user, "<span class='warning'>There's no power cell installed in [src]!</span>")
+		to_chat(user, "<span class='warning'>В [src] нет установленной батареи!</span>")
 		return
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>Remove [cell] from [src].</span>")
+	to_chat(user, "<span class='notice'>Ты извлекаешь [cell] из [src].</span>")
 	cell.forceMove(drop_location())
 	cell = null
 
@@ -178,12 +178,12 @@
 		. += {"It has a [cell] inserted.\n
 		<span class='info'>I can use a <b>screwdriver</b> to remove [cell].</span>"}
 	else
-		. += "<span class='info'>It has an empty port for a <b>power cell</b>.</span>"
+		. += "<span class='info'>Здесь есть пустой разъём для <b>батареи</b>.</span>"
 	if(wired)
-		. += "Its all wired up[cell ? " and ready for usage" : ""].\n"+\
-		"<span class='info'>I can use <b>wirecutters</b> to remove the wiring.</span>"
+		. += "Проводка полностью проложена[cell ? " и готова к работе" : ""].\n"+\
+		"<span class='info'>Можно использовать <b>кусачки</b>, чтобы срезать проводку.</span>"
 	else
-		. += "<span class='info'>It has a couple spots that still need to be <b>wired</b>.</span>"
+		. += "<span class='info'>Осталось несколько мест, где нужно проложить <b>провода</b>.</span>"
 
 /obj/item/bodypart/chest/robot/drop_organs(mob/user, violent_removal)
 	if(wired)
@@ -196,7 +196,7 @@
 
 
 /obj/item/bodypart/head/robot
-	name = "cyborg head"
+	name = "киберголова"
 	desc = ""
 	item_state = "buildpipe"
 	icon = 'icons/mob/augmentation/augments.dmi'
@@ -234,25 +234,23 @@
 /obj/item/bodypart/head/robot/examine(mob/user)
 	. = ..()
 	if(!flash1 && !flash2)
-		. += "<span class='info'>It has two empty eye sockets for <b>flashes</b>.</span>"
+		. += "<span class='info'>Здесь два пустых разъёма для <b>вспышек</b>.</span>"
 	else
-		var/single_flash = FALSE
 		if(!flash1 || !flash2)
-			single_flash = TRUE
-			. += {"One of its eye sockets is currently occupied by a flash.\n
-			<span class='info'>It has an empty eye socket for another <b>flash</b>.</span>"}
+			. += {"Один из разъёмов занят вспышкой.\n
+			<span class='info'>Второй разъём пуст и готов для ещё одной <b>вспышки</b>.</span>"}
 		else
-			. += "It has two eye sockets occupied by flashes."
-		. += "<span class='notice'>I can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.</span>"
+			. += "В оба разъёма установлены вспышки."
+		. += "<span class='notice'>Можно извлечь установленные вспышки с помощью <b>монтировки</b>.</span>"
 
 /obj/item/bodypart/head/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/assembly/flash/handheld))
 		var/obj/item/assembly/flash/handheld/F = W
 		if(flash1 && flash2)
-			to_chat(user, "<span class='warning'>I have already inserted the eyes!</span>")
+			to_chat(user, "<span class='warning'>Глаза уже установлены!</span>")
 			return
 		else if(F.burnt_out)
-			to_chat(user, "<span class='warning'>I can't use a broken flash!</span>")
+			to_chat(user, "<span class='warning'>Нельзя использовать перегоревшую вспышку!</span>")
 			return
 		else
 			if(!user.transferItemToLoc(F, src))
@@ -261,7 +259,7 @@
 				flash2 = F
 			else
 				flash1 = F
-			to_chat(user, "<span class='notice'>I insert the flash into the eye socket.</span>")
+			to_chat(user, "<span class='notice'>Ты вставляешь вспышку в глазницу.</span>")
 			return
 	return ..()
 
@@ -269,7 +267,7 @@
 	..()
 	if(flash1 || flash2)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>I remove the flash from [src].</span>")
+		to_chat(user, "<span class='notice'>Ты извлекаешь вспышку из [src].</span>")
 		if(flash1)
 			flash1.forceMove(drop_location())
 			flash1 = null
@@ -277,7 +275,7 @@
 			flash2.forceMove(drop_location())
 			flash2 = null
 	else
-		to_chat(user, "<span class='warning'>There is no flash to remove from [src].</span>")
+		to_chat(user, "<span class='warning'>В [src] нет вспышки для извлечения.</span>")
 	return TRUE
 
 
@@ -294,7 +292,7 @@
 
 
 /obj/item/bodypart/l_arm/robot/surplus
-	name = "surplus prosthetic left arm"
+	name = "старый протез левой руки"
 	desc = ""
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
@@ -302,7 +300,7 @@
 	max_damage = 20
 
 /obj/item/bodypart/r_arm/robot/surplus
-	name = "surplus prosthetic right arm"
+	name = "старый протез правой руки"
 	desc = ""
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
@@ -310,7 +308,7 @@
 	max_damage = 20
 
 /obj/item/bodypart/l_leg/robot/surplus
-	name = "surplus prosthetic left leg"
+	name = "старый протез левой ноги"
 	desc = ""
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
@@ -318,7 +316,7 @@
 	max_damage = 20
 
 /obj/item/bodypart/r_leg/robot/surplus
-	name = "surplus prosthetic right leg"
+	name = "старый протез правой ноги"
 	desc = ""
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0

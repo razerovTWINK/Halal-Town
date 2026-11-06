@@ -5,7 +5,7 @@
 	item_flags = NEEDS_PERMIT | NO_MAT_REDEMPTION
 
 /obj/item/gun/magic/staff/change
-	name = "staff of change"
+	name = "посох перемен"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/change
@@ -13,7 +13,7 @@
 	item_state = "staffofchange"
 
 /obj/item/gun/magic/staff/animate
-	name = "staff of animation"
+	name = "посох оживления"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/animate
@@ -21,7 +21,7 @@
 	item_state = "staffofanimation"
 
 /obj/item/gun/magic/staff/healing
-	name = "staff of healing"
+	name = "посох исцеления"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/heal
@@ -32,7 +32,7 @@
 	return
 
 /obj/item/gun/magic/staff/chaos
-	name = "staff of chaos"
+	name = "посох хаоса"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/chaos
@@ -52,7 +52,7 @@
 	. = ..()
 
 /obj/item/gun/magic/staff/door
-	name = "staff of door creation"
+	name = "посох создания дверей"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/door
@@ -63,7 +63,7 @@
 	no_den_usage = 1
 
 /obj/item/gun/magic/staff/honk
-	name = "staff of the honkmother"
+	name = "посох хонкоматери"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/honk
@@ -73,7 +73,7 @@
 	recharge_rate = 8
 
 /obj/item/gun/magic/staff/spellblade
-	name = "spellblade"
+	name = "чародейский клинок"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/spellblade
@@ -98,7 +98,7 @@
 	return ..()
 
 /obj/item/gun/magic/staff/locker
-	name = "staff of the locker"
+	name = "посох шкафчиков"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/locker
@@ -110,7 +110,7 @@
 //yes, they don't have sounds. they're admin staves, and their projectiles will play the chaos bolt sound anyway so why bother?
 
 /obj/item/gun/magic/staff/flying
-	name = "staff of flying"
+	name = "посох полета"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/flying
@@ -118,7 +118,7 @@
 	item_state = "staffofflight"
 
 /obj/item/gun/magic/staff/sapping
-	name = "staff of sapping"
+	name = "посох истощения"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/sapping
@@ -126,7 +126,7 @@
 	item_state = "staffofsapping"
 
 /obj/item/gun/magic/staff/necropotence
-	name = "staff of necropotence"
+	name = "посох некропотенции"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/necropotence
@@ -134,7 +134,7 @@
 	item_state = "staffofnecropotence"
 
 /obj/item/gun/magic/staff/wipe
-	name = "staff of possession"
+	name = "посох вселения"
 	desc = ""
 	fire_sound = 'sound/blank.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/wipe

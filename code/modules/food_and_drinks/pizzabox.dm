@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 
 /obj/item/pizzabox
-	name = "pizza box"
+	name = "коробка для пиццы"
 	desc = ""
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "pizzabox"

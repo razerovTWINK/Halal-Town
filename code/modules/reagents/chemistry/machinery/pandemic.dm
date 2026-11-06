@@ -264,7 +264,7 @@
 			return
 
 		beaker = I
-		to_chat(user, "<span class='notice'>I insert [I] into [src].</span>")
+		to_chat(user, "<span class='notice'>Я вставляю [I] в [src].</span>")
 		update_icon()
 	else
 		return ..()

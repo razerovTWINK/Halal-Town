@@ -680,11 +680,11 @@
 		to_chat(user, "<span class='warning'>Airlock AI control has been blocked. Beginning fault-detection.</span>")
 		sleep(50)
 		if(canAIControl(user))
-			to_chat(user, "<span class='notice'>Alert cancelled. Airlock control has been restored without our assistance.</span>")
+			to_chat(user, "<span class='notice'>Тревога отменена. Управление шлюзом восстановлено без нашей помощи.</span>")
 			aiHacking = FALSE
 			return
 		else if(!canAIHack())
-			to_chat(user, "<span class='warning'>Connection lost! Unable to hack airlock.</span>")
+			to_chat(user, "<span class='warning'>Связь потеряна! Не удаётся взломать шлюз.</span>")
 			aiHacking = FALSE
 			return
 		to_chat(user, "<span class='notice'>Fault confirmed: airlock control wire disabled or cut.</span>")
@@ -692,21 +692,21 @@
 		to_chat(user, "<span class='notice'>Attempting to hack into airlock. This may take some time.</span>")
 		sleep(200)
 		if(canAIControl(user))
-			to_chat(user, "<span class='notice'>Alert cancelled. Airlock control has been restored without our assistance.</span>")
+			to_chat(user, "<span class='notice'>Тревога отменена. Управление шлюзом восстановлено без нашей помощи.</span>")
 			aiHacking = FALSE
 			return
 		else if(!canAIHack())
-			to_chat(user, "<span class='warning'>Connection lost! Unable to hack airlock.</span>")
+			to_chat(user, "<span class='warning'>Связь потеряна! Не удаётся взломать шлюз.</span>")
 			aiHacking = FALSE
 			return
 		to_chat(user, "<span class='notice'>Upload access confirmed. Loading control program into airlock software.</span>")
 		sleep(170)
 		if(canAIControl(user))
-			to_chat(user, "<span class='notice'>Alert cancelled. Airlock control has been restored without our assistance.</span>")
+			to_chat(user, "<span class='notice'>Тревога отменена. Управление шлюзом восстановлено без нашей помощи.</span>")
 			aiHacking = FALSE
 			return
 		else if(!canAIHack())
-			to_chat(user, "<span class='warning'>Connection lost! Unable to hack airlock.</span>")
+			to_chat(user, "<span class='warning'>Связь потеряна! Не удаётся взломать шлюз.</span>")
 			aiHacking = FALSE
 			return
 		to_chat(user, "<span class='notice'>Transfer complete. Forcing airlock to execute program.</span>")
@@ -839,7 +839,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>I cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>I hear welding.</span>")
+										"<span class='hear'>Слышна сварка.</span>")
 						security_level = AIRLOCK_SECURITY_NONE
 						spawn_atom_to_turf(/obj/item/stack/sheet/metal, user.loc, 2)
 						update_icon()
@@ -871,7 +871,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>I cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>I hear welding.</span>")
+										"<span class='hear'>Слышна сварка.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O_S)
@@ -897,7 +897,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>I cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>I hear welding.</span>")
+										"<span class='hear'>Слышна сварка.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL)
@@ -955,7 +955,7 @@
 				return
 			user.visible_message("<span class='notice'>[user] is [welded ? "unwelding":"welding"] the airlock.</span>", \
 							"<span class='notice'>I begin [welded ? "unwelding":"welding"] the airlock...</span>", \
-							"<span class='hear'>I hear welding.</span>")
+							"<span class='hear'>Слышна сварка.</span>")
 			if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 				welded = !welded
 				user.visible_message("<span class='notice'>[user.name] has [welded? "welded shut":"unwelded"] [src].</span>", \
@@ -967,7 +967,7 @@
 					return
 				user.visible_message("<span class='notice'>[user] is welding the airlock.</span>", \
 								"<span class='notice'>I begin repairing the airlock...</span>", \
-								"<span class='hear'>I hear welding.</span>")
+								"<span class='hear'>Слышна сварка.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					stat &= ~BROKEN

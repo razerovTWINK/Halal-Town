@@ -29,11 +29,11 @@
 		QDEL_NULL(D)
 
 /datum/antagonist/monkey/greet()
-	to_chat(owner, "<b>I are a monkey now!</b>")
-	to_chat(owner, "<b>Bite humans to infect them, follow the orders of the monkey leaders, and help fellow monkeys!</b>")
-	to_chat(owner, "<b>Ensure at least one infected monkey escapes on the Emergency Shuttle!</b>")
-	to_chat(owner, "<b><i>As an intelligent monkey, you know how to use technology and how to ventcrawl while wearing things.</i></b>")
-	to_chat(owner, "<b>I can use :k to talk to fellow monkeys!</b>")
+	to_chat(owner, "<b>Теперь ты — обезьяна!</b>")
+	to_chat(owner, "<b>Кусай людей для заражения, следуй приказам вожаков и помогай другим обезьянам!</b>")
+	to_chat(owner, "<b>Убедись, что хотя бы одна заражённая обезьяна спасётся на эвакуационном челноке!</b>")
+	to_chat(owner, "<b><i>Как разумная обезьяна, ты умеешь пользоваться технологиями и лазить по вентиляции в вещах.</i></b>")
+	to_chat(owner, "<b>Используй :k для общения с другими обезьянами!</b>")
 	SEND_SOUND(owner.current, sound('sound/blank.ogg'))
 
 /datum/antagonist/monkey/on_removal()
@@ -115,13 +115,13 @@
 	. = ..()
 
 /datum/antagonist/monkey/leader/greet()
-	to_chat(owner, "<B><span class='notice'>I are the Jungle Fever patient zero!!</B></span>")
-	to_chat(owner, "<b>I have been planted onto this station by the Animal Rights Consortium.</b>")
-	to_chat(owner, "<b>Soon the disease will transform you into an ape. Afterwards, you will be able spread the infection to others with a bite.</b>")
+	to_chat(owner, "<B><span class='notice'>Ты — нулевой пациент лихорадки джунглей!!</B></span>")
+	to_chat(owner, "<b>Тебя внедрили на эту станцию борцы за права животных.</b>")
+	to_chat(owner, "<b>Скоро болезнь обратит тебя в обезьяну, после чего ты сможешь заражать других укусом.</b>")
 	to_chat(owner, "<b>While my infection strain is undetectable by scanners, any other infectees will show up on medical equipment.</b>")
-	to_chat(owner, "<b>My mission will be deemed a success if any of the live infected monkeys reach CentCom.</b>")
-	to_chat(owner, "<b>As an initial infectee, you will be considered a 'leader' by my fellow monkeys.</b>")
-	to_chat(owner, "<b>I can use :k to talk to fellow monkeys!</b>")
+	to_chat(owner, "<b>Миссия увенчается успехом, если хотя бы одна живая заражённая обезьяна доберётся до Центкома.</b>")
+	to_chat(owner, "<b>Как первый заражённый, ты будешь считаться вожаком среди остальных обезьян.</b>")
+	to_chat(owner, "<b>Используй :k для общения с другими обезьянами!</b>")
 	SEND_SOUND(owner.current, sound('sound/blank.ogg'))
 
 /datum/objective/monkey

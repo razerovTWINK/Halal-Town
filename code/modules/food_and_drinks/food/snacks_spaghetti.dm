@@ -1,6 +1,6 @@
 
 /obj/item/reagent_containers/food/snacks/spaghetti
-	name = "spaghetti"
+	name = "спагетти"
 	desc = ""
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "spaghetti"
@@ -29,7 +29,7 @@
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/pasta
 
 /obj/item/reagent_containers/food/snacks/spaghetti/pastatomato
-	name = "spaghetti"
+	name = "спагетти"
 	desc = ""
 	icon_state = "pastatomato"
 	trash = /obj/item/trash/plate

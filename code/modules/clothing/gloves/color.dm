@@ -3,7 +3,7 @@
 
 /obj/item/clothing/gloves/color/yellow
 	desc = ""
-	name = "insulated gloves"
+	name = "изолированные перчатки"
 	icon_state = "yellow"
 	item_state = "ygloves"
 	siemens_coefficient = 0
@@ -33,7 +33,7 @@
 
 /obj/item/clothing/gloves/color/black
 	desc = ""
-	name = "black gloves"
+	name = "чёрные перчатки"
 	icon_state = "black"
 	item_state = "blackgloves"
 	cold_protection = HANDS
@@ -66,7 +66,7 @@
 
 
 /obj/item/clothing/gloves/color/red/insulated
-	name = "insulated gloves"
+	name = "изолированные перчатки"
 	desc = ""
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
@@ -129,7 +129,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
 /obj/item/clothing/gloves/color/latex
-	name = "latex gloves"
+	name = "латексные перчатки"
 	desc = ""
 	icon_state = "latex"
 	item_state = "latex"
@@ -157,7 +157,7 @@
 	carrytrait = TRAIT_QUICKER_CARRY
 
 /obj/item/clothing/gloves/color/white
-	name = "white gloves"
+	name = "белые перчатки"
 	desc = ""
 	icon_state = "white"
 	item_state = "wgloves"

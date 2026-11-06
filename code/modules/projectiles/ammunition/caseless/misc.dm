@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/caseless/laser
-	name = "laser casing"
+	name = "лазерная гильза"
 	desc = ""
 	caliber = "laser"
 	icon_state = "s-casing-live"

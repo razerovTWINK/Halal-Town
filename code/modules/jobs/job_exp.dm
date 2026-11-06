@@ -240,11 +240,11 @@ GLOBAL_PROTECT(exp_to_update)
 			else
 				play_records[EXP_TYPE_GHOST] += minutes
 				if(announce_changes)
-					to_chat(src,"<span class='notice'>I got: [minutes] Ghost EXP!</span>")
+					to_chat(src,"<span class='notice'>Я получил: [minutes] призрачного опыта!</span>")
 	else if(isobserver(mob))
 		play_records[EXP_TYPE_GHOST] += minutes
 		if(announce_changes)
-			to_chat(src,"<span class='notice'>I got: [minutes] Ghost EXP!</span>")
+			to_chat(src,"<span class='notice'>Я получил: [minutes] призрачного опыта!</span>")
 	else if(minutes)	//Let "refresh" checks go through
 		return
 

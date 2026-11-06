@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/telepathy
-	name = "Telepathy"
+	name = "Телепатия"
 	desc = ""
 	charge_max = 0
 	clothes_req = 0
@@ -16,14 +16,14 @@
 
 /obj/effect/proc_holder/spell/targeted/telepathy/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
 	for(var/mob/living/M in targets)
-		var/msg = stripped_input(usr, "What do you wish to tell [M]?", null, "")
+		var/msg = stripped_input(usr, "Что передать [M]?", null, "")
 		if(!msg)
 			charge_counter = charge_max
 			return
 		log_directed_talk(user, M, msg, LOG_SAY, "[name]")
-		to_chat(user, "<span class='[boldnotice]'>I transmit to [M]:</span> <span class='[notice]'>[msg]</span>")
+		to_chat(user, "<span class='[boldnotice]'>Ты передаёшь [M]:</span> <span class='[notice]'>[msg]</span>")
 		if(!M.anti_magic_check(magic_check, holy_check, tinfoil_check, 0)) //hear no evil
-			to_chat(M, "<span class='[boldnotice]'>I hear something behind you talking...</span> <span class='[notice]'>[msg]</span>")
+			to_chat(M, "<span class='[boldnotice]'>Ты слышишь чей-то голос позади...</span> <span class='[notice]'>[msg]</span>")
 		for(var/ded in GLOB.dead_mob_list)
 			if(!isobserver(ded))
 				continue

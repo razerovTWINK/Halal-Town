@@ -1,5 +1,5 @@
 /datum/surgery/lipoplasty
-	name = "Lipoplasty"
+	name = "удаление жира"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/cut_fat, /datum/surgery_step/remove_fat, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 
@@ -11,37 +11,37 @@
 
 //cut fat
 /datum/surgery_step/cut_fat
-	name = "cut excess fat"
+	name = "иссечь лишний жир"
 	implements = list(TOOL_SAW = 100, /obj/item/hatchet = 35, /obj/item/kitchen/knife/butcher = 25)
 	time = 64
 
 /datum/surgery_step/cut_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("<span class='notice'>[user] begins to cut away [target]'s excess fat.</span>", "<span class='notice'>I begin to cut away [target]'s excess fat...</span>")
-	display_results(user, target, "<span class='notice'>I begin to cut away [target]'s excess fat...</span>",
-			"<span class='notice'>[user] begins to cut away [target]'s excess fat.</span>",
-			"<span class='notice'>[user] begins to cut [target]'s [target_zone] with [tool].</span>")
+	user.visible_message("<span class='notice'>[user] начинает срезать лишний жир [target].</span>", "<span class='notice'>Ты начинаешь срезать лишний жир [target]...</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь срезать лишний жир [target]...</span>",
+			"<span class='notice'>[user] начинает срезать лишний жир [target].</span>",
+			"<span class='notice'>[user] делает разрез на [target_zone] [target] с помощью [tool].</span>")
 
 /datum/surgery_step/cut_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I cut [target]'s excess fat loose.</span>",
-			"<span class='notice'>[user] cuts [target]'s excess fat loose!</span>",
-			"<span class='notice'>[user] finishes the cut on [target]'s [target_zone].</span>")
+	display_results(user, target, "<span class='notice'>Ты отделяешь лишний жир [target].</span>",
+			"<span class='notice'>[user] отделяет лишний жир [target]!</span>",
+			"<span class='notice'>[user] завершает разрез на [target_zone] [target].</span>")
 	return 1
 
 //remove fat
 /datum/surgery_step/remove_fat
-	name = "remove loose fat"
+	name = "извлечь отделённый жир"
 	implements = list(TOOL_RETRACTOR = 100, TOOL_SCREWDRIVER = 45, TOOL_WIRECUTTER = 35)
 	time = 32
 
 /datum/surgery_step/remove_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I begin to extract [target]'s loose fat...</span>",
-			"<span class='notice'>[user] begins to extract [target]'s loose fat!</span>",
-			"<span class='notice'>[user] begins to extract something from [target]'s [target_zone].</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь извлекать отделённый жир [target]...</span>",
+			"<span class='notice'>[user] начинает извлекать отделённый жир [target]!</span>",
+			"<span class='notice'>[user] начинает что-то извлекать из [target_zone] [target].</span>")
 
 /datum/surgery_step/remove_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I extract [target]'s fat.</span>",
-			"<span class='notice'>[user] extracts [target]'s fat!</span>",
-			"<span class='notice'>[user] extracts [target]'s fat!</span>")
+	display_results(user, target, "<span class='notice'>Ты извлекаешь жир [target].</span>",
+			"<span class='notice'>[user] извлекает жир [target]!</span>",
+			"<span class='notice'>[user] извлекает жир [target]!</span>")
 	target.overeatduration = 0 //patient is unfatted
 	var/removednutriment = target.nutrition
 	target.set_nutrition(NUTRITION_LEVEL_WELL_FED)
@@ -53,7 +53,7 @@
 		typeofmeat = H.dna.species.meat
 
 	var/obj/item/reagent_containers/food/snacks/meat/slab/human/newmeat = new typeofmeat
-	newmeat.name = "fatty meat"
+	newmeat.name = "жирное мясо"
 	newmeat.desc = ""
 	newmeat.subjectname = H.real_name
 	newmeat.subjectjob = H.job

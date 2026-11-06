@@ -9,19 +9,19 @@
 			j.current_positions--
 		mob_timers["mirrortime"] = world.time
 		var/begin_time = world.time
-		var/new_name = input(src, "What should your [input] name be?", "ROGUETOWN")
+		var/new_name = input(src, "Каким будет твоё имя ([input])?", "РОУГТАУН")
 		if(world.time > begin_time + 60 SECONDS)
-			to_chat(src, "<font color='red'>You waited too long.</font>")
+			to_chat(src, "<font color='red'>Ты ждал слишком долго.</font>")
 			return
 		new_name = reject_bad_name(new_name)
 		if(new_name)
 			if(new_name in GLOB.chosen_names)
-				to_chat(src, "<font color='red'>The name is taken.</font>")
+				to_chat(src, "<font color='red'>Это имя уже занято.</font>")
 				return
 			else
 				real_name = new_name
 		else
-			to_chat(src, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+			to_chat(src, "<font color='red'>Недопустимое имя. Имя должно содержать от 2 до [MAX_NAME_LEN] символов и может состоять только из букв A-Z, a-z, -, ' и .</font>")
 			return
 	GLOB.chosen_names += real_name
 	if(mind.special_role == "Vampire Lord")

@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/proc/regress_blood_lizard()
 	var/mob/living/carbon/true_devil/D = owner.current
-	to_chat(D, "<span class='warning'>My powers weaken, have more contracts be signed to regain power.</span>")
+	to_chat(D, "<span class='warning'>Твои силы иссякают, заключай больше контрактов, чтобы вернуть могущество.</span>")
 	D.oldform.forceMove(D.drop_location())
 	owner.transfer_to(D.oldform)
 	give_appropriate_spells()
@@ -235,7 +235,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 
 /datum/antagonist/devil/proc/increase_blood_lizard()
-	to_chat(owner.current, "<span class='warning'>I feel as though my humanoid form is about to shed. You will soon turn into a blood lizard.</span>")
+	to_chat(owner.current, "<span class='warning'>Человеческий облик готов пасть. Скоро ты обратишься в кровавого ящера.</span>")
 	sleep(50)
 	if(ishuman(owner.current))
 		var/mob/living/carbon/human/H = owner.current
@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 
 /datum/antagonist/devil/proc/increase_true_devil()
-	to_chat(owner.current, "<span class='warning'>I feel as though my current form is about to shed. You will soon turn into a true devil.</span>")
+	to_chat(owner.current, "<span class='warning'>Твой текущий облик готов пасть. Скоро ты обратишься в истинного дьявола.</span>")
 	sleep(50)
 	var/mob/living/carbon/true_devil/A = new /mob/living/carbon/true_devil(owner.current.loc)
 	A.faction |= "hell"
@@ -269,22 +269,22 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	if(!ascendable)
 		return
 	var/mob/living/carbon/true_devil/D = owner.current
-	to_chat(D, "<span class='warning'>I feel as though my form is about to ascend.</span>")
+	to_chat(D, "<span class='warning'>Ты чувствуешь приближение высшего вознесения.</span>")
 	sleep(50)
 	if(!D)
 		return
-	D.visible_message("<span class='warning'>[D]'s skin begins to erupt with spikes.</span>", \
-		"<span class='warning'>My flesh begins creating a shield around myself.</span>")
+	D.visible_message("<span class='warning'>Кожа [D] прорастает острыми шипами.</span>", \
+		"<span class='warning'>Твоя плоть формирует защитный панцирь.</span>")
 	sleep(100)
 	if(!D)
 		return
-	D.visible_message("<span class='warning'>The horns on [D]'s head slowly grow and elongate.</span>", \
-		"<span class='warning'>My body continues to mutate. Your telepathic abilities grow.</span>")
+	D.visible_message("<span class='warning'>Рога на голове [D] удлиняются.</span>", \
+		"<span class='warning'>Твоё тело перерождается. Ментальные силы возрастают.</span>")
 	sleep(90)
 	if(!D)
 		return
-	D.visible_message("<span class='warning'>[D]'s body begins to violently stretch and contort.</span>", \
-		"<span class='warning'>I begin to rend apart the final barriers to ultimate power.</span>")
+	D.visible_message("<span class='warning'>Тело [D] яростно изгибается и удлиняется.</span>", \
+		"<span class='warning'>Ты сокрушаешь последние преграды на пути к безграничной мощи.</span>")
 	sleep(40)
 	if(!D)
 		return
@@ -361,23 +361,23 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/proc/beginResurrectionCheck(mob/living/body)
 	if(SOULVALUE>0)
-		to_chat(owner.current, "<span class='danger'>My body has been damaged to the point that you may no longer use it. At the cost of some of my power, you will return to life soon. Remain in my body.</span>")
+		to_chat(owner.current, "<span class='danger'>Твоё тело разрушено и непригодно для жизни. Ценой части сил ты скоро вернёшься к жизни. Оставайся в теле.</span>")
 		sleep(DEVILRESURRECTTIME)
 		if (!body ||  body.stat == DEAD)
 			if(SOULVALUE>0)
 				if(check_banishment(body))
-					to_chat(owner.current, "<span class='danger'>Unfortunately, the mortals have finished a ritual that prevents my resurrection.</span>")
+					to_chat(owner.current, "<span class='danger'>Смертные завершили ритуал, предотвращающий твоё воскрешение.</span>")
 					return -1
 				else
-					to_chat(owner.current, "<span class='danger'>WE LIVE AGAIN!</span>")
+					to_chat(owner.current, "<span class='danger'>МЫ СНОВА ЖИВЫ!</span>")
 					return hellish_resurrection(body)
 			else
-				to_chat(owner.current, "<span class='danger'>Unfortunately, the power that stemmed from my contracts has been extinguished. You no longer have enough power to resurrect.</span>")
+				to_chat(owner.current, "<span class='danger'>Сила заключённых контрактов иссякла. У тебя не осталось сил для воскрешения.</span>")
 				return -1
 		else
-			to_chat(owner.current, "<span class='danger'>I seem to have resurrected without my hellish powers.</span>")
+			to_chat(owner.current, "<span class='danger'>Ты воскрес, но адские силы покинули тебя.</span>")
 	else
-		to_chat(owner.current, "<span class='danger'>My hellish powers are too weak to resurrect myself.</span>")
+		to_chat(owner.current, "<span class='danger'>Адские силы слишком слабы для воскрешения.</span>")
 
 /datum/antagonist/devil/proc/check_banishment(mob/living/body)
 	switch(banish)
@@ -487,15 +487,15 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 			C.hud_used.devilsouldisplay.update_counter(SOULVALUE)
 
 /datum/antagonist/devil/greet()
-	to_chat(owner.current, "<span class='warning'><b>I remember my link to the infernal. You are [truename], an agent of hell, a devil. And you were sent to the plane of creation for a reason. A greater purpose. Convince the crew to sin, and embroiden Hell's grasp.</b></span>")
-	to_chat(owner.current, "<span class='warning'><b>However, my infernal form is not without weaknesses.</b></span>")
-	to_chat(owner.current, "You may not use violence to coerce someone into selling their soul.")
-	to_chat(owner.current, "You may not directly and knowingly physically harm a devil, other than myself.")
+	to_chat(owner.current, "<span class='warning'><b>Ты вспоминаешь связь с преисподней. Твоё истинное имя — [truename], ты вестник ада, дьявол. Ты послан в этот бренный мир ради высшей цели. Склоняй смертных к греху и укрепляй власть ада.</b></span>")
+	to_chat(owner.current, "<span class='warning'><b>Однако и у дьявольского облика есть уязвимости.</b></span>")
+	to_chat(owner.current, "Запрещено применять прямое насилие для принуждения к продаже души.")
+	to_chat(owner.current, "Запрещено сознательно вредить другим дьяволам.")
 	to_chat(owner.current, GLOB.lawlorify[LAW][bane])
 	to_chat(owner.current, GLOB.lawlorify[LAW][ban])
 	to_chat(owner.current, GLOB.lawlorify[LAW][obligation])
 	to_chat(owner.current, GLOB.lawlorify[LAW][banish])
-	to_chat(owner.current, "<span class='warning'>Remember, the crew can research my weaknesses if they find out my devil name.</span><br>")
+	to_chat(owner.current, "<span class='warning'>Помни: смертные могут узнать твои слабости, если прознают твоё дьявольское имя.</span><br>")
 	.=..()
 
 /datum/antagonist/devil/on_gain()
@@ -515,7 +515,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	.=..()
 
 /datum/antagonist/devil/on_removal()
-	to_chat(owner.current, "<span class='danger'>My infernal link has been severed! You are no longer a devil!</span>")
+	to_chat(owner.current, "<span class='danger'>Адская связь разорвана! Ты больше не дьявол!</span>")
 	.=..()
 
 /datum/antagonist/devil/apply_innate_effects(mob/living/mob_override)
@@ -539,8 +539,8 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/proc/printdevilinfo()
 	var/list/parts = list()
-	parts += "The devil's true name is: [truename]"
-	parts += "The devil's bans were:"
+	parts += "Истинное имя дьявола: [truename]"
+	parts += "Запреты дьявола:"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][ban]]"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][bane]]"
 	parts += "[FOURSPACES][GLOB.lawlorify[LORE][obligation]]"

@@ -90,7 +90,7 @@
 	if(D.stat || D.IsParalyzed())
 		return 0
 	D.visible_message("<span class='warning'>[A] leg sweeps [D]!</span>", \
-					"<span class='danger'>My legs are sweeped by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+					"<span class='danger'>My legs are sweeped by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 	to_chat(A, "<span class='danger'>I leg sweep [D]!</span>")
 	playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 	D.apply_damage(5, BRUTE)
@@ -100,7 +100,7 @@
 
 /datum/martial_art/krav_maga/proc/quick_choke(mob/living/carbon/human/A, mob/living/carbon/human/D)//is actually lung punch
 	D.visible_message("<span class='warning'>[A] pounds [D] on the chest!</span>", \
-					"<span class='danger'>My chest is slammed by [A]! You can't breathe!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>My chest is slammed by [A]! You can't breathe!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I pound [D] on the chest!</span>")
 	playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 	if(D.losebreath <= 10)
@@ -111,7 +111,7 @@
 
 /datum/martial_art/krav_maga/proc/neck_chop(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	D.visible_message("<span class='warning'>[A] karate chops [D]'s neck!</span>", \
-					"<span class='danger'>My neck is karate chopped by [A], rendering you unable to speak!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>My neck is karate chopped by [A], rendering you unable to speak!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I karate chop [D]'s neck, rendering [D.p_them()] unable to speak!</span>")
 	playsound(get_turf(A), 'sound/blank.ogg', 50, TRUE, -1)
 	D.apply_damage(5, A.dna.species.attack_type)
@@ -143,7 +143,7 @@
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		playsound(get_turf(D), 'sound/blank.ogg', 50, TRUE, -1)
 	D.visible_message("<span class='danger'>[A] [picked_hit_type]s [D]!</span>", \
-					"<span class='danger'>You're [picked_hit_type]ed by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>You're [picked_hit_type]ed by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I [picked_hit_type] [D]!</span>")
 	log_combat(A, D, "[picked_hit_type] with [name]")
 	return 1

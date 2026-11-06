@@ -1,5 +1,5 @@
 /datum/surgery/advanced/bioware/vein_threading
-	name = "Vein Threading"
+	name = "Армирование вен"
 	desc = ""
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
@@ -12,24 +12,24 @@
 	bioware_target = BIOWARE_CIRCULATION
 
 /datum/surgery_step/thread_veins
-	name = "thread veins"
+	name = "армировать вены"
 	accept_hand = TRUE
 	time = 125
 
 /datum/surgery_step/thread_veins/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I start weaving [target]'s circulatory system.</span>",
-		"<span class='notice'>[user] starts weaving [target]'s circulatory system.</span>",
-		"<span class='notice'>[user] starts manipulating [target]'s circulatory system.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь укреплять сосуды [target].</span>",
+		"<span class='notice'>[user] начинает укреплять сосуды [target].</span>",
+		"<span class='notice'>[user] начинает манипуляции с кровеносной системой [target].</span>")
 
 /datum/surgery_step/thread_veins/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I weave [target]'s circulatory system into a resistant mesh!</span>",
-		"<span class='notice'>[user] weaves [target]'s circulatory system into a resistant mesh!</span>",
-		"<span class='notice'>[user] finishes manipulating [target]'s circulatory system.</span>")
+	display_results(user, target, "<span class='notice'>Ты сплетаешь сосуды [target] в прочную сетку!</span>",
+		"<span class='notice'>[user] сплетает сосуды [target] в прочную сетку!</span>",
+		"<span class='notice'>[user] заканчивает манипуляции с кровеносной системой [target].</span>")
 	new /datum/bioware/threaded_veins(target)
 	return TRUE
 
 /datum/bioware/threaded_veins
-	name = "Threaded Veins"
+	name = "Армированные вены"
 	desc = ""
 	mod_type = BIOWARE_CIRCULATION
 

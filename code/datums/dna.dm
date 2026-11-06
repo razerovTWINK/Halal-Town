@@ -584,17 +584,17 @@
 			if(2)
 				corgize()
 			if(3)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, "<span class='notice'>О, на самом деле я чувствую себя вполне неплохо!</span>")
 			if(4)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>") //you thought
+				to_chat(src, "<span class='notice'>О, на самом деле я чувствую себя вполне неплохо!</span>") //you thought
 				physiology.damage_resistance = -20000
 			if(5)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, "<span class='notice'>О, на самом деле я чувствую себя вполне неплохо!</span>")
 				reagents.add_reagent(/datum/reagent/aslimetoxin, 10)
 			if(6)
 				apply_status_effect(STATUS_EFFECT_GO_AWAY)
 			if(7)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, "<span class='notice'>О, на самом деле я чувствую себя вполне неплохо!</span>")
 				ForceContractDisease(new/datum/disease/decloning()) //slow acting, non-viral clone damage based GBS
 			if(8)
 				var/list/elligible_organs = list()
@@ -610,7 +610,7 @@
 						O.animate_atom_living()
 			if(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, "<span class='notice'>О, на самом деле я чувствую себя вполне неплохо!</span>")
 	else
 		switch(rand(0,5))
 			if(0)

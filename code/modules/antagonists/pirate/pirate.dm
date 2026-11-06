@@ -6,8 +6,8 @@
 	var/datum/team/pirate/crew
 
 /datum/antagonist/pirate/greet()
-	to_chat(owner, "<span class='boldannounce'>I are a Space Pirate!</span>")
-	to_chat(owner, "<B>The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot.</B>")
+	to_chat(owner, "<span class='boldannounce'>Ты — космический пират!</span>")
+	to_chat(owner, "<B>Станция отказалась платить за защиту: защищай корабль, выкачивай кредиты со станции и грабь её ради богатой добычи.</B>")
 	owner.announce_objectives()
 
 /datum/antagonist/pirate/get_team()

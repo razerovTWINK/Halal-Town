@@ -25,7 +25,7 @@ This file contains the cult dagger and rune list code
 /obj/item/melee/cultblade/dagger/attack(mob/living/M, mob/living/user)
 	if(iscultist(M))
 		if(M.reagents && M.reagents.has_reagent(/datum/reagent/water/holywater)) //allows cultists to be rescued from the clutches of ordained religion
-			to_chat(user, "<span class='cult'>I remove the taint from [M].</span>" )
+			to_chat(user, "<span class='cult'>Ты снимаешь скверну с [M].</span>" )
 			var/holy2unholy = M.reagents.get_reagent_amount(/datum/reagent/water/holywater)
 			M.reagents.del_reagent(/datum/reagent/water/holywater)
 			M.reagents.add_reagent(/datum/reagent/fuel/unholywater,holy2unholy)
@@ -35,7 +35,7 @@ This file contains the cult dagger and rune list code
 
 /obj/item/melee/cultblade/dagger/attack_self(mob/user)
 	if(!iscultist(user))
-		to_chat(user, "<span class='warning'>[src] is covered in unintelligible shapes and markings.</span>")
+		to_chat(user, "<span class='warning'>[src] покрыт непонятными знаками и символами.</span>")
 		return
 	scribe_rune(user)
 
@@ -53,14 +53,14 @@ This file contains the cult dagger and rune list code
 
 	if(!check_rune_turf(Turf, user))
 		return
-	entered_rune_name = input(user, "Choose a rite to scribe.", "Sigils of Power") as null|anything in GLOB.rune_types
+	entered_rune_name = input(user, "Выбери обряд для начертания.", "Знаки силы") as null|anything in GLOB.rune_types
 	if(!src || QDELETED(src) || !Adjacent(user) || user.incapacitated() || !check_rune_turf(Turf, user))
 		return
 	rune_to_scribe = GLOB.rune_types[entered_rune_name]
 	if(!rune_to_scribe)
 		return
 	if(initial(rune_to_scribe.req_keyword))
-		chosen_keyword = stripped_input(user, "Enter a keyword for the new rune.", "Words of Power")
+		chosen_keyword = stripped_input(user, "Введи ключевое слово для новой руны.", "Слова силы")
 		if(!chosen_keyword)
 			scribe_rune(user) //Go back a menu!
 			return
@@ -69,43 +69,43 @@ This file contains the cult dagger and rune list code
 	if(!src || QDELETED(src) || !Adjacent(user) || user.incapacitated() || !check_rune_turf(Turf, user))
 		return
 	if(ispath(rune_to_scribe, /obj/effect/rune/summon) && (!is_station_level(Turf.z) || A.map_name == "Space"))
-		to_chat(user, "<span class='cultitalic'><b>The veil is not weak enough here to summon a cultist, you must be on station!</b></span>")
+		to_chat(user, "<span class='cultitalic'><b>Завеса здесь недостаточно слаба для призыва культиста!</b></span>")
 		return
 	if(ispath(rune_to_scribe, /obj/effect/rune/apocalypse))
 		if((world.time - SSticker.round_start_time) <= 6000)
 			var/wait = 6000 - (world.time - SSticker.round_start_time)
-			to_chat(user, "<span class='cult italic'>The veil is not yet weak enough for this rune - it will be available in [DisplayTimeText(wait)].</span>")
+			to_chat(user, "<span class='cult italic'>Завеса ещё недостаточно слаба для этой руны — она станет доступна через [DisplayTimeText(wait)].</span>")
 			return
 		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
 		if(!(A in summon_objective.summon_spots))
-			to_chat(user, "<span class='cultlarge'>The Apocalypse rune will remove a ritual site (where Nar'Sie can be summoned), it can only be scribed in [english_list(summon_objective.summon_spots)]!</span>")
+			to_chat(user, "<span class='cultlarge'>Руна апокалипсиса уничтожит место ритуала (где можно призвать Нар-Си), её можно начертить только в [english_list(summon_objective.summon_spots)]!</span>")
 			return
 		if(summon_objective.summon_spots.len < 2)
-			to_chat(user, "<span class='cultlarge'>Only one ritual site remains - it must be reserved for the final summoning!</span>")
+			to_chat(user, "<span class='cultlarge'>Осталось лишь одно место для ритуала — его нужно беречь для финального призыва!</span>")
 			return
 	if(ispath(rune_to_scribe, /obj/effect/rune/narsie))
 		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
 		var/datum/objective/sacrifice/sac_objective = locate() in user_antag.cult_team.objectives
 		if(!summon_objective)
-			to_chat(user, "<span class='warning'>Nar'Sie does not wish to be summoned!</span>")
+			to_chat(user, "<span class='warning'>Нар-Си не желает явиться!</span>")
 			return
 		if(sac_objective && !sac_objective.check_completion())
-			to_chat(user, "<span class='warning'>The sacrifice is not complete. The portal would lack the power to open if you tried!</span>")
+			to_chat(user, "<span class='warning'>Жертвоприношение не завершено. Портал не откроется без достаточной силы!</span>")
 			return
 		if(summon_objective.check_completion())
-			to_chat(user, "<span class='cultlarge'>\"I am already here. There is no need to try to summon me now.\"</span>")
+			to_chat(user, "<span class='cultlarge'>«Я уже здесь. Нет нужды призывать меня вновь.»</span>")
 			return
 		if(!(A in summon_objective.summon_spots))
-			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
+			to_chat(user, "<span class='cultlarge'>Геометра можно призвать только там, где завеса слаба — в [english_list(summon_objective.summon_spots)]!</span>")
 			return
-		var/confirm_final = alert(user, "This is the FINAL step to summon Nar'Sie; it is a long, painful ritual and the crew will be alerted to your presence", "Are you prepared for the final battle?", "My life for Nar'Sie!", "No")
+		var/confirm_final = alert(user, "Это ПОСЛЕДНИЙ шаг для призыва Нар-Си. Ритуал долгий и мучительный, и все узнают о нём", "Готов ли ты к финальной битве?", "My life for Nar'Sie!", "No")
 		if(confirm_final == "No")
-			to_chat(user, "<span class='cult'>I decide to prepare further before scribing the rune.</span>")
+			to_chat(user, "<span class='cult'>Ты решаешь подготовиться получше перед начертанием руны.</span>")
 			return
 		Turf = get_turf(user)
 		A = get_area(src)
 		if(!(A in summon_objective.summon_spots))  // Check again to make sure they didn't move
-			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
+			to_chat(user, "<span class='cultlarge'>Геометра можно призвать только там, где завеса слаба — в [english_list(summon_objective.summon_spots)]!</span>")
 			return
 		priority_announce("Figments from an eldritch god are being summoned by [user] into [A.map_name] from an unknown dimension. Disrupt the ritual at all costs!","Central Command Higher Dimensional Affairs", 'sound/blank.ogg')
 		for(var/B in spiral_range_turfs(1, user, 1))
@@ -139,13 +139,13 @@ This file contains the cult dagger and rune list code
 
 /obj/item/melee/cultblade/dagger/proc/check_rune_turf(turf/T, mob/user)
 	if(isspaceturf(T))
-		to_chat(user, "<span class='warning'>I cannot scribe runes in space!</span>")
+		to_chat(user, "<span class='warning'>Нельзя чертить руны в пустоте!</span>")
 		return FALSE
 	if(locate(/obj/effect/rune) in T)
-		to_chat(user, "<span class='cult'>There is already a rune here.</span>")
+		to_chat(user, "<span class='cult'>Здесь уже есть руна.</span>")
 		return FALSE
 	var/area/A = get_area(T)
 	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !(A.flags_1 & CULT_PERMITTED_1)))
-		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
+		to_chat(user, "<span class='warning'>Завеса здесь недостаточно слаба.</span>")
 		return FALSE
 	return TRUE

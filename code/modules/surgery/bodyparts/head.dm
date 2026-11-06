@@ -96,7 +96,7 @@
 
 	if(status == BODYPART_ORGANIC)
 		if(!brain)
-			. += "<span class='info'>The brain is missing.</span>"
+			. += "<span class='info'>Мозг отсутствует.</span>"
 /*		else if(brain.suicided || brainmob?.suiciding)
 			. += "<span class='info'>There's a pretty dumb expression on [real_name]'s face; they must have really hated life. There is no hope of recovery.</span>"
 		else if(brain.brain_death || brainmob?.health <= HEALTH_THRESHOLD_DEAD)
@@ -112,13 +112,13 @@
 			. += "<span class='info'>It seems completely devoid of life.</span>"*/
 
 		if(!eyes)
-			. += "<span class='info'>[real_name]'s eyes appear to have been removed.</span>"
+			. += "<span class='info'>Глаза [real_name], похоже, удалены.</span>"
 
 		if(!ears)
-			. += "<span class='info'>[real_name]'s ears appear to have been removed.</span>"
+			. += "<span class='info'>Уши [real_name], похоже, удалены.</span>"
 
 		if(!tongue)
-			. += "<span class='info'>[real_name]'s tongue appears to have been removed.</span>"
+			. += "<span class='info'>Язык [real_name], похоже, удалён.</span>"
 
 
 /obj/item/bodypart/head/can_dismember(obj/item/I)
@@ -133,14 +133,14 @@
 	for(var/obj/item/I in src)
 		if(I == brain)
 			if(user)
-				user.visible_message("<span class='warning'>[user] saws [src] open and pulls out a brain!</span>", "<span class='notice'>I saw [src] open and pull out a brain.</span>")
+				user.visible_message("<span class='warning'>[user] распиливает [src] и вытаскивает мозг!</span>", "<span class='notice'>Ты распиливаешь [src] и вытаскиваешь мозг.</span>")
 			if(brainmob)
 				brainmob.container = null
 				brainmob.forceMove(brain)
 				brain.brainmob = brainmob
 				brainmob = null
 			if(violent_removal && prob(rand(80, 100))) //ghetto surgery can damage the brain.
-				to_chat(user, "<span class='warning'>[brain] was damaged in the process!</span>")
+				to_chat(user, "<span class='warning'>[brain] повреждается в процессе!</span>")
 				brain.setOrganDamage(brain.maxHealth)
 			brain.forceMove(T)
 			brain = null

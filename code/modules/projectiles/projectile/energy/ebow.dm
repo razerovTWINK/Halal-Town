@@ -1,5 +1,5 @@
 /obj/projectile/energy/bolt //ebow bolts
-	name = "bolt"
+	name = "болт"
 	icon_state = "cbbolt"
 	damage = 15
 	damage_type = TOX
@@ -10,7 +10,7 @@
 	slur = 5
 
 /obj/projectile/energy/bolt/halloween
-	name = "candy corn"
+	name = "леденец"
 	icon_state = "candy_corn"
 
 /obj/projectile/energy/bolt/large

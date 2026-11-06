@@ -334,7 +334,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>I add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>Я добавляю [B] в [src].</span>")
 		updateUsrDialog()
 		update_icon()
 	else if(user.used_intent.type != INTENT_HARM && !istype(I, /obj/item/card/emag))

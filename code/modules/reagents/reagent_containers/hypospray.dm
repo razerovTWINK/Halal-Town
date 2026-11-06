@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/hypospray
-	name = "hypospray"
+	name = "гипоспрей"
 	desc = ""
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypo"
@@ -24,7 +24,7 @@
 ///Handles all injection checks, injection and logging.
 /obj/item/reagent_containers/hypospray/proc/inject(mob/living/M, mob/user)
 	if(!reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 		return FALSE
 	if(!iscarbon(M))
 		return FALSE
@@ -37,7 +37,7 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
-		to_chat(M, "<span class='warning'>I feel a tiny prick!</span>")
+		to_chat(M, "<span class='warning'>Я чувствую лёгкий укол!</span>")
 		to_chat(user, "<span class='notice'>I inject [M] with [src].</span>")
 		var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 		reagents.reaction(M, INJECT, fraction)

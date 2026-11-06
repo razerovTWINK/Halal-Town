@@ -1,5 +1,5 @@
 /obj/item/gun/medbeam
-	name = "Medical Beamgun"
+	name = "медицинский лучемет"
 	desc = ""
 	icon = 'icons/obj/chronos.dmi'
 	icon_state = "chronogun"
@@ -76,7 +76,7 @@
 	if(get_dist(source, current_target)>max_range || !los_check(source, current_target))
 		LoseTarget()
 		if(isliving(source))
-			to_chat(source, "<span class='warning'>I lose control of the beam!</span>")
+			to_chat(source, "<span class='warning'>Ты теряешь контроль над лучом!</span>")
 		return
 
 	if(current_target)
@@ -124,7 +124,7 @@
 	return
 
 /obj/effect/ebeam/medical
-	name = "medical beam"
+	name = "медицинский луч"
 
 //////////////////////////////Mech Version///////////////////////////////
 /obj/item/gun/medbeam/mech

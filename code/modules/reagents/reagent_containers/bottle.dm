@@ -1,8 +1,8 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
 
 /obj/item/reagent_containers/glass/bottle
-	name = "bottle"
-	desc = "A bottle with a cork."
+	name = "бутылка"
+	desc = "Бутылка с пробкой."
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "clear_bottle1"
 	amount_per_transfer_from_this = 6
@@ -52,13 +52,13 @@
 	if(closed)
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
-		desc = "A bottle with a cork."
+		desc = "Бутылка с пробкой."
 		spillable = FALSE
 	else
 		reagent_flags = OPENCONTAINER
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
-		desc = "An open bottle, hopefully a cork is close by."
+		desc = "Открытая бутылка, хорошо бы пробка была рядом."
 		spillable = TRUE
 	update_icon()
 
@@ -409,7 +409,7 @@
 	list_reagents = list(/datum/reagent/uranium/radium = 30)
 
 /obj/item/reagent_containers/glass/bottle/water
-	name = "water bottle"
+	name = "бутылка воды"
 	list_reagents = list(/datum/reagent/water = 30)
 
 /obj/item/reagent_containers/glass/bottle/ethanol

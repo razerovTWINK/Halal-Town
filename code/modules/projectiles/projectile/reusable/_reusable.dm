@@ -1,5 +1,5 @@
 /obj/projectile/bullet/reusable
-	name = "reusable bullet"
+	name = "многоразовая пуля"
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/caseless
 	impact_effect_type = null

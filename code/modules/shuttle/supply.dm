@@ -54,7 +54,12 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	. = ..()
 	SSshuttle.supply = src
 #ifdef MATURESERVER
-	SSshuttle.moveShuttle("supply", "supply_home", TRUE)
+	// Rogue Town maps have no stationary "supply_home" dock. Calling
+	// moveShuttle() unconditionally made getDock() emit a WARNING on every start.
+	for(var/obj/docking_port/stationary/S in SSshuttle.stationary)
+		if(S.id == "supply_home")
+			SSshuttle.moveShuttle("supply", "supply_home", TRUE)
+			break
 #endif
 /obj/docking_port/mobile/supply/canMove()
 	if(is_station_level(z))

@@ -1,43 +1,43 @@
 {
 	"suspicion": [
-		"@pick(add_name)i'm watching you...",
-		"@pick(add_name)i know what you're doing",
-		"@pick(add_name)what are you hiding?",
-		"I saw that"
+		"@pick(add_name)я за тобой наблюдаю...",
+		"@pick(add_name)я знаю, что ты задумал",
+		"@pick(add_name)что ты скрываешь?",
+		"Я это видел"
 	],
 
 	"conversation": [
-		"Yes",
-		"Yeah",
-		"Yup",
-		"No",
-		"Nah",
-		"I doubt it",
-		"Uh...",
-		"Why?",
-		"But...",
-		"Hold on",
-		"Hmm",
-		"Yeah, i know",
-		"Weird"
+		"Да",
+		"Ага",
+		"Угу",
+		"Нет",
+		"Не-а",
+		"Сомневаюсь",
+		"Э-э...",
+		"Зачем?",
+		"Но...",
+		"Погоди",
+		"Хм",
+		"Ага, знаю",
+		"Странно"
 	],
 
 	"greetings": [
 		"",
-		"Hey, ",
-		"Hi ",
-		"Hello ",
-		"Wait, ",
-		"It's "
+		"Эй, ",
+		"Привет, ",
+		"Здравствуй, ",
+		"Подожди, ",
+		"Это "
 	],
 
 	"getout": [
-		"@pick(add_name)get out",
-		"@pick(add_name)get out!",
-		"@pick(add_name)go away",
-		"@pick(add_name)fuck off",
-		"OUT!",
-		"@pick(add_name)out!"
+		"@pick(add_name)убирайся",
+		"@pick(add_name)убирайся!",
+		"@pick(add_name)уходи",
+		"@pick(add_name)отвали",
+		"ВОН!",
+		"@pick(add_name)вон!"
 	],
 
 	"weird": [
@@ -51,9 +51,9 @@
 	],
 
 	"didyouhearthat": [
-		"Did you hear that?",
-		"Did you see that?",
-		"What was that?"
+		"Ты это слышал?",
+		"Ты это видел?",
+		"Что это было?"
 	],
 
 	"add_name": [
@@ -63,56 +63,56 @@
 	],
 
 	"doubt": [
-		"Why?",
-		"What?",
-		"Wait, what?",
-		"@pick(add_name)wait",
-		"@pick(add_name)hold on",
-		"Uh..."
+		"Зачем?",
+		"Что?",
+		"Подожди, что?",
+		"@pick(add_name)подожди",
+		"@pick(add_name)погоди",
+		"Э-э..."
 	],
 
 	"aggressive": [
-		"@pick(add_name)give me that!",
-		"@pick(add_name)stop it!",
-		"@pick(add_name)i'm going to kill you!",
-		"@pick(add_name)fuck you!"
+		"@pick(add_name)дай сюда!",
+		"@pick(add_name)прекрати!",
+		"@pick(add_name)я тебя убью!",
+		"@pick(add_name)пошёл ты!"
 	],
 
 	"help": [
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP ME",
-		"HELP HIM",
-		"HELP HER",
-		"HELP THEM",
-		"HELP US",
-		"HELP YOURSELF"
+		"ПОМОГИТЕ",
+		"ПОМОГИТЕ",
+		"ПОМОГИТЕ",
+		"ПОМОГИТЕ",
+		"ПОМОГИТЕ",
+		"ПОМОГИ МНЕ",
+		"ПОМОГИ ЕМУ",
+		"ПОМОГИ ЕЙ",
+		"ПОМОГИ ИМ",
+		"ПОМОГИ НАМ",
+		"ПОМОГИ СЕБЕ"
 	],
 
 	"escape": [
-		"@pick(add_name)RUN!!",
-		"They're behind me!",
-		"It's here!",
-		"@pick(add_name)follow me!",
-		"@pick(add_name)follow me"
+		"@pick(add_name)БЕГИ!!",
+		"Они за мной!",
+		"Оно здесь!",
+		"@pick(add_name)за мной!",
+		"@pick(add_name)иди за мной"
 	],
 
 	"infection_advice": [
-		"@pick(add_name)stay away",
-		"@pick(add_name)don't get close",
-		"@pick(add_name)be careful",
-		"@pick(add_name)help me",
-		"@pick(add_name)kill me"
+		"@pick(add_name)не подходи",
+		"@pick(add_name)не приближайся",
+		"@pick(add_name)осторожнее",
+		"@pick(add_name)помоги мне",
+		"@pick(add_name)убей меня"
 	],
 
 	"people": [
-		"Captain",
-		"Hos",
-		"Cmo",
-		"Rd",
+		"Капитан",
+		"Начальник охраны",
+		"Главврач",
+		"Начальник исследований",
 		"Ce",
 		"Hop",
 		"Janitor",
@@ -148,7 +148,7 @@
 		"Swarmers",
 		"Spiders",
 		"Xenos",
-		"Revenant",
+		"Возвращенец",
 		"Traitor",
 		"Harm",
 		"Blue APC",
@@ -161,8 +161,8 @@
 		"space near @pick(sublocation)",
 		"the bridge",
 		"the armory",
-		"sec",
-		"security",
+		"охрана",
+		"охрана",
 		"science",
 		"xenobio",
 		"engineering",
@@ -186,8 +186,8 @@
 	"sublocation": [
 		"the bridge",
 		"the armory",
-		"sec",
-		"security",
+		"охрана",
+		"охрана",
 		"science",
 		"xenobio",
 		"engineering",
@@ -239,7 +239,7 @@
 		"Infinity",
 		"Electronics",
 		"Time",
-		"Space",
+		"Космос",
 		"Pain",
 		"Guts",
 		"Life",

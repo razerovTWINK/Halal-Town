@@ -8,7 +8,7 @@
 	resistance_flags = NONE
 
 /obj/item/clothing/ears/earmuffs
-	name = "earmuffs"
+	name = "наушники"
 	desc = ""
 	icon_state = "earmuffs"
 	item_state = "earmuffs"
@@ -23,7 +23,7 @@
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_HEAD))
 
 /obj/item/clothing/ears/headphones
-	name = "headphones"
+	name = "наушники"
 	desc = ""
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "headphones"

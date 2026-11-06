@@ -143,10 +143,10 @@ God bless America.
 			return
 	else if(user.pulling && user.used_intent.type == INTENT_GRAB && iscarbon(user.pulling) && reagents.total_volume)
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, "<span class='warning'>I need a better grip to do that!</span>")
+			to_chat(user, "<span class='warning'>Нужно крепче держать!</span>")
 			return
 		var/mob/living/carbon/C = user.pulling
-		user.visible_message("<span class='danger'>[user] dunks [C]'s face in [src]!</span>")
+		user.visible_message("<span class='danger'>[user] окунает лицо [C] в [src]!</span>")
 		reagents.reaction(C, TOUCH)
 		var/permeability = 1 - C.get_permeability_protection(list(HEAD))
 		C.apply_damage(min(30 * permeability, reagents.total_volume), BURN, BODY_ZONE_HEAD)

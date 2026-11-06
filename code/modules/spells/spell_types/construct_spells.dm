@@ -12,7 +12,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/area_conversion
-	name = "Area Conversion"
+	name = "Обращение области"
 	desc = ""
 
 	school = "transmutation"
@@ -32,7 +32,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/floor
-	name = "Summon Cult Floor"
+	name = "Призыв культового пола"
 	desc = ""
 
 	school = "conjuration"
@@ -48,7 +48,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/wall
-	name = "Summon Cult Wall"
+	name = "Призыв культовой стены"
 	desc = ""
 
 	school = "conjuration"
@@ -65,7 +65,7 @@
 
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/wall/reinforced
-	name = "Greater Construction"
+	name = "Великое созидание"
 	desc = ""
 
 	school = "conjuration"
@@ -78,7 +78,7 @@
 	summon_type = list(/turf/closed/wall/r_wall)
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/soulstone
-	name = "Summon Soulstone"
+	name = "Призыв камня душ"
 	desc = ""
 
 	school = "conjuration"
@@ -104,7 +104,7 @@
 	summon_type = list(/obj/item/soulstone/anybody/purified)
 
 /obj/effect/proc_holder/spell/targeted/forcewall/cult
-	name = "Shield"
+	name = "Щит"
 	desc = ""
 	school = "transmutation"
 	charge_max = 400
@@ -119,7 +119,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift
-	name = "Phase Shift"
+	name = "Фазовый сдвиг"
 	desc = ""
 
 	school = "transmutation"
@@ -141,7 +141,7 @@
 	return
 
 /obj/effect/proc_holder/spell/targeted/projectile/magic_missile/lesser
-	name = "Lesser Magic Missile"
+	name = "Малая магическая стрела"
 	desc = ""
 
 	school = "evocation"
@@ -159,7 +159,7 @@
 	range = 10
 
 /obj/effect/proc_holder/spell/targeted/smoke/disable
-	name = "Paralysing Smoke"
+	name = "Парализующий дым"
 	desc = ""
 
 	school = "conjuration"
@@ -178,7 +178,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/abyssal_gaze
-	name = "Abyssal Gaze"
+	name = "Взор бездны"
 	desc = ""
 
 	charge_max = 750
@@ -197,22 +197,22 @@
 
 /obj/effect/proc_holder/spell/targeted/abyssal_gaze/cast(list/targets, mob/user = usr)
 	if(!LAZYLEN(targets))
-		to_chat(user, "<span class='warning'>No target found in range!</span>")
+		to_chat(user, "<span class='warning'>В пределах досягаемости нет цели!</span>")
 		revert_cast()
 		return
 
 	var/mob/living/carbon/target = targets[1]
 
 	if(!(target in oview(range)))
-		to_chat(user, "<span class='warning'>[target] is too far away!</span>")
+		to_chat(user, "<span class='warning'>[target] слишком далеко!</span>")
 		revert_cast()
 		return
 
 	if(target.anti_magic_check(TRUE, TRUE))
-		to_chat(target, "<span class='warning'>I feel a freezing darkness closing in on you, but it rapidly dissipates.</span>")
+		to_chat(target, "<span class='warning'>Ты чувствуешь, как леденящая тьма подступает к тебе, но быстро рассеивается.</span>")
 		return
 
-	to_chat(target, "<span class='danger'>A freezing darkness surrounds you...</span>")
+	to_chat(target, "<span class='danger'>Леденящая тьма окружает тебя...</span>")
 	target.playsound_local(get_turf(target), 'sound/blank.ogg', 50, 1)
 	user.playsound_local(get_turf(user), 'sound/blank.ogg', 50, 1)
 	target.become_blind(ABYSSAL_GAZE_BLIND)
@@ -225,7 +225,7 @@
 		L.cure_blind(ABYSSAL_GAZE_BLIND)
 
 /obj/effect/proc_holder/spell/targeted/dominate
-	name = "Dominate"
+	name = "Подчинение"
 	desc = ""
 
 	charge_max = 600
@@ -244,29 +244,29 @@
 
 /obj/effect/proc_holder/spell/targeted/dominate/cast(list/targets, mob/user = usr)
 	if(!LAZYLEN(targets))
-		to_chat(user, "<span class='notice'>No target found in range.</span>")
+		to_chat(user, "<span class='notice'>В пределах досягаемости нет цели.</span>")
 		revert_cast()
 		return
 
 	var/mob/living/simple_animal/S = targets[1]
 
 	if(S.ckey)
-		to_chat(user, "<span class='warning'>[S] is too intelligent to dominate!</span>")
+		to_chat(user, "<span class='warning'>[S] слишком разумен, чтобы подчинить его!</span>")
 		revert_cast()
 		return
 
 	if(S.stat)
-		to_chat(user, "<span class='warning'>[S] is dead!</span>")
+		to_chat(user, "<span class='warning'>[S] мёртв!</span>")
 		revert_cast()
 		return
 
 	if(S.sentience_type != SENTIENCE_ORGANIC)
-		to_chat(user, "<span class='warning'>[S] cannot be dominated!</span>")
+		to_chat(user, "<span class='warning'>[S] нельзя подчинить!</span>")
 		revert_cast()
 		return
 
 	if(!(S in oview(range)))
-		to_chat(user, "<span class='warning'>[S] is too far away!</span>")
+		to_chat(user, "<span class='warning'>[S] слишком далеко!</span>")
 		revert_cast()
 		return
 
@@ -289,7 +289,7 @@
 
 
 /obj/effect/proc_holder/spell/targeted/projectile/dumbfire/juggernaut
-	name = "Gauntlet Echo"
+	name = "Эхо латной рукавицы"
 	desc = ""
 	proj_type = /obj/projectile/magic/spell/juggernaut
 	charge_max = 350
@@ -300,7 +300,7 @@
 	sound = 'sound/blank.ogg'
 
 /obj/projectile/magic/spell/juggernaut
-	name = "Gauntlet Echo"
+	name = "Эхо латной рукавицы"
 	icon_state = "cultfist"
 	alpha = 180
 	damage = 30

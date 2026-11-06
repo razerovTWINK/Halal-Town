@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/aoe_turf/conjure
-	name = "Conjure"
+	name = "Сотворение"
 	desc = ""
 
 	var/list/summon_type = list() //determines what exactly will be summoned
@@ -48,15 +48,15 @@
 	return
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/summonEdSwarm //test purposes - Also a lot of fun
-	name = "Dispense Wizard Justice"
+	name = "Вершить правосудие мага"
 	desc = ""
 	summon_type = list(/mob/living/simple_animal/bot/secbot/ed209)
 	summon_amt = 10
 	range = 3
-	newVars = list("emagged" = 2, "remote_disabled" = 1,"shoot_sound" = 'sound/blank.ogg',"projectile" = /obj/projectile/beam/laser, "declare_arrests" = 0,"name" = "Wizard's Justicebot")
+	newVars = list("emagged" = 2, "remote_disabled" = 1,"shoot_sound" = 'sound/blank.ogg',"projectile" = /obj/projectile/beam/laser, "declare_arrests" = 0,"name" = "Бот правосудия мага")
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/linkWorlds
-	name = "Link Worlds"
+	name = "Связь миров"
 	desc = ""
 	invocation = "WTF"
 	clothes_req = FALSE
@@ -68,7 +68,7 @@
 	cast_sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/conjure_item
-	name = "Summon weapon"
+	name = "Призыв оружия"
 	desc = ""
 	invocation_type = "none"
 	include_user = TRUE

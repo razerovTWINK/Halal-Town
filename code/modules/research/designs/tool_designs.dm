@@ -4,7 +4,7 @@
 /////////////////////////////////////////
 
 /datum/design/handdrill
-	name = "Hand Drill"
+	name = "Ручная дрель"
 	desc = ""
 	id = "handdrill"
 	build_type = PROTOLATHE
@@ -14,7 +14,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/jawsoflife
-	name = "Jaws of Life"
+	name = "Челюсти жизни"
 	desc = ""
 	id = "jawsoflife" // added one more requirment since the Jaws of Life are a bit OP
 	build_path = /obj/item/crowbar/power
@@ -24,7 +24,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/exwelder
-	name = "Experimental Welding Tool"
+	name = "Экспериментальный сварочный аппарат"
 	desc = ""
 	id = "exwelder"
 	build_type = PROTOLATHE
@@ -35,7 +35,7 @@
 
 
 /datum/design/rcd_loaded
-	name = "Rapid Construction Device"
+	name = "Быстрое строительное устройство"
 	desc = ""
 	id = "rcd_loaded"
 	build_type = PROTOLATHE
@@ -46,7 +46,7 @@
 
 
 /datum/design/rcd_upgrade/frames
-	name = "RCD frames designs upgrade"
+	name = "Улучшение РСД: конструкции"
 	desc = ""
 	id = "rcd_upgrade_frames"
 	build_type = PROTOLATHE
@@ -56,7 +56,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/rcd_upgrade/simple_circuits
-	name = "RCD simple circuits designs upgrade"
+	name = "Улучшение РСД: простые цепи"
 	desc = ""
 	id = "rcd_upgrade_simple_circuits"
 	build_type = PROTOLATHE
@@ -66,7 +66,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/rcd_upgrade/silo_link
-	name = "Advanced RCD silo link upgrade"
+	name = "Улучшение продвинутого РСД: связь с хранилищем"
 	desc = ""
 	id = "rcd_upgrade_silo_link"
 	build_type = PROTOLATHE
@@ -80,7 +80,7 @@
 /////////////////////////////////////////
 
 /datum/design/alienwrench
-	name = "Alien Wrench"
+	name = "Инопланетный гаечный ключ"
 	desc = ""
 	id = "alien_wrench"
 	build_path = /obj/item/wrench/abductor
@@ -90,7 +90,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwirecutters
-	name = "Alien Wirecutters"
+	name = "Инопланетные кусачки"
 	desc = ""
 	id = "alien_wirecutters"
 	build_path = /obj/item/wirecutters/abductor
@@ -100,7 +100,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienscrewdriver
-	name = "Alien Screwdriver"
+	name = "Инопланетная отвёртка"
 	desc = ""
 	id = "alien_screwdriver"
 	build_path = /obj/item/screwdriver/abductor
@@ -110,7 +110,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/aliencrowbar
-	name = "Alien Crowbar"
+	name = "Инопланетный лом"
 	desc = ""
 	id = "alien_crowbar"
 	build_path = /obj/item/crowbar/abductor
@@ -120,7 +120,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwelder
-	name = "Alien Welding Tool"
+	name = "Инопланетный сварочный аппарат"
 	desc = ""
 	id = "alien_welder"
 	build_path = /obj/item/weldingtool/abductor
@@ -130,7 +130,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienmultitool
-	name = "Alien Multitool"
+	name = "Инопланетный мультитул"
 	desc = ""
 	id = "alien_multitool"
 	build_path = /obj/item/multitool/abductor
@@ -144,7 +144,7 @@
 /////////////////////////////////////////
 
 /datum/design/alienscalpel
-	name = "Alien Scalpel"
+	name = "Инопланетный скальпель"
 	desc = ""
 	id = "alien_scalpel"
 	build_path = /obj/item/scalpel/alien
@@ -154,7 +154,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/alienhemostat
-	name = "Alien Hemostat"
+	name = "Инопланетный гемостат"
 	desc = ""
 	id = "alien_hemostat"
 	build_path = /obj/item/hemostat/alien
@@ -164,7 +164,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/alienretractor
-	name = "Alien Retractor"
+	name = "Инопланетный расширитель"
 	desc = ""
 	id = "alien_retractor"
 	build_path = /obj/item/retractor/alien
@@ -174,7 +174,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliensaw
-	name = "Alien Circular Saw"
+	name = "Инопланетная циркулярная пила"
 	desc = ""
 	id = "alien_saw"
 	build_path = /obj/item/circular_saw/alien
@@ -184,7 +184,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliendrill
-	name = "Alien Drill"
+	name = "Инопланетная хирургическая дрель"
 	desc = ""
 	id = "alien_drill"
 	build_path = /obj/item/surgicaldrill/alien
@@ -194,7 +194,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliencautery
-	name = "Alien Cautery"
+	name = "Инопланетный прижигатель"
 	desc = ""
 	id = "alien_cautery"
 	build_path = /obj/item/cautery/alien

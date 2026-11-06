@@ -1,6 +1,6 @@
 
 /obj/effect/proc_holder/spell/aimed
-	name = "aimed projectile spell"
+	name = "прицельное заклинание снаряда"
 	var/projectile_type = /obj/projectile/magic/teleport
 	var/deactive_msg = null
 	var/active_msg = null
@@ -22,7 +22,7 @@
 		return
 	var/msg
 	if(!can_cast(user))
-		msg = "<span class='warning'>I can no longer cast [name]!</span>"
+		msg = "<span class='warning'>Я больше не могу сотворить [name]!</span>"
 		remove_ranged_ability(msg)
 		return
 	if(active)
@@ -37,7 +37,7 @@
 		on_deactivation(user)
 	else
 		if(active_msg)
-			msg = "<span class='notice'>[active_msg] <B>Left-click to shoot it at a target!</B></span>"
+			msg = "<span class='notice'>[active_msg] <B>ЛКМ, чтобы выстрелить в цель!</B></span>"
 		current_amount = projectile_amount
 		active = TRUE
 		add_ranged_ability(user, msg, TRUE)
@@ -97,7 +97,7 @@
 	return
 
 /obj/effect/proc_holder/spell/aimed/lightningbolt
-	name = "Lightning Bolt"
+	name = "Молния"
 	desc = ""
 	school = "evocation"
 	charge_max = 200
@@ -110,12 +110,12 @@
 	sound = 'sound/blank.ogg'
 	active = FALSE
 	projectile_var_overrides = list("tesla_range" = 15, "tesla_power" = 20000, "tesla_flags" = TESLA_MOB_DAMAGE)
-	active_msg = "You energize your hand with arcane lightning!"
-	deactive_msg = "You let the energy flow out of your hands back into myself..."
+	active_msg = "Ты наполняешь ладонь чародейской молнией!"
+	deactive_msg = "Ты позволяешь энергии вернуться обратно в своё тело..."
 	projectile_type = /obj/projectile/magic/aoe/lightning
 
 /obj/effect/proc_holder/spell/aimed/fireball
-	name = "Fireball"
+	name = "Огненный шар"
 	desc = ""
 	school = "evocation"
 	charge_max = 60
@@ -128,8 +128,8 @@
 	base_icon_state = "fireball"
 	action_icon_state = "fireball0"
 	sound = 'sound/blank.ogg'
-	active_msg = "You prepare to cast your fireball spell!"
-	deactive_msg = "You extinguish your fireball... for now."
+	active_msg = "Ты готовишься метнуть огненный шар!"
+	deactive_msg = "Ты гасишь огненный шар... пока что."
 	active = FALSE
 	charge_invocation = list("inthe name","of god","st michael","and st george")
 	releasedrain = 500
@@ -145,7 +145,7 @@
 	return ..()
 
 /obj/effect/proc_holder/spell/aimed/spell_cards
-	name = "Spell Cards"
+	name = "Карты заклинаний"
 	desc = ""
 	school = "evocation"
 	charge_max = 50

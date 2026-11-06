@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/forcewall
-	name = "Forcewall"
+	name = "Силовая стена"
 	desc = ""
 	school = "transmutation"
 	charge_max = 100

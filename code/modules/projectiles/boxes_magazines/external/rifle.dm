@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/m10mm/rifle
-	name = "rifle magazine (10mm)"
+	name = "винтовочный магазин (10мм)"
 	desc = ""
 	icon_state = "75-8"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -14,7 +14,7 @@
 		icon_state = "75-0"
 
 /obj/item/ammo_box/magazine/m556
-	name = "toploader magazine (5.56mm)"
+	name = "верхний магазин (5.56мм)"
 	icon_state = "5.56m"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"

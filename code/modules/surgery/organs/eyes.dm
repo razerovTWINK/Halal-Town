@@ -1,5 +1,5 @@
 /obj/item/organ/eyes
-	name = "eye"
+	name = "глаза"
 	icon_state = "eye1"
 	desc = ""
 	zone = BODY_ZONE_PRECISE_R_EYE
@@ -12,12 +12,12 @@
 	high_threshold = 0.3 * STANDARD_ORGAN_THRESHOLD	//threshold at 30
 	low_threshold = 0.2 * STANDARD_ORGAN_THRESHOLD	//threshold at 20
 
-	low_threshold_passed = "<span class='info'>Distant objects become somewhat less tangible.</span>"
-	high_threshold_passed = "<span class='info'>Everything starts to look a lot less clear.</span>"
-	now_failing = "<span class='warning'>Darkness envelopes you, as my eyes go blind!</span>"
-	now_fixed = "<span class='info'>Color and shapes are once again perceivable.</span>"
-	high_threshold_cleared = "<span class='info'>My vision functions passably once more.</span>"
-	low_threshold_cleared = "<span class='info'>My vision is cleared of any ailment.</span>"
+	low_threshold_passed = "<span class='info'>Далёкие предметы кажутся менее чёткими.</span>"
+	high_threshold_passed = "<span class='info'>Всё вокруг начинает сильно расплываться.</span>"
+	now_failing = "<span class='warning'>Тьма окутывает тебя, зрение полностью пропадает!</span>"
+	now_fixed = "<span class='info'>Цвета и очертания снова различимы.</span>"
+	high_threshold_cleared = "<span class='info'>Зрение снова работает сносно.</span>"
+	low_threshold_cleared = "<span class='info'>Зрение полностью восстановилось.</span>"
 
 	var/sight_flags = 0
 	var/see_in_dark = 8
@@ -85,7 +85,7 @@
 
 
 /obj/item/organ/eyes/night_vision
-	name = "shadow eyes"
+	name = "теневые глаза"
 	desc = ""
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
@@ -107,31 +107,31 @@
 	owner.update_sight()
 
 /obj/item/organ/eyes/night_vision/alien
-	name = "alien eyes"
+	name = "глаза ксеноморфа"
 	desc = ""
 	sight_flags = SEE_MOBS
 
 /obj/item/organ/eyes/night_vision/zombie
-	name = "undead eyes"
+	name = "глаза нежити"
 	desc = ""
 
 /obj/item/organ/eyes/night_vision/werewolf
-	name = "moonlight eyes"
+	name = "лунные глаза"
 	desc = ""
 
 /obj/item/organ/eyes/night_vision/nightmare
-	name = "burning red eyes"
+	name = "пылающие красные глаза"
 	desc = ""
 	icon_state = "burning_eyes"
 
 /obj/item/organ/eyes/night_vision/mushroom
-	name = "fung-eye"
+	name = "грибные глаза"
 	desc = ""
 
 ///Robotic
 
 /obj/item/organ/eyes/robotic
-	name = "robotic eyes"
+	name = "кибернетические глаза"
 	icon_state = "cybernetic_eyeballs"
 	desc = ""
 	status = ORGAN_ROBOTIC
@@ -143,18 +143,18 @@
 		return
 	if(prob(10 * severity))
 		return
-	to_chat(owner, "<span class='warning'>Static obfuscates my vision!</span>")
+	to_chat(owner, "<span class='warning'>Помехи застилают зрение!</span>")
 	owner.flash_act(visual = 1)
 
 /obj/item/organ/eyes/robotic/xray
-	name = "\improper X-ray eyes"
+	name = "\improper рентгеновские глаза"
 	desc = ""
 	eye_color = "000"
 	see_in_dark = 8
 	sight_flags = SEE_MOBS | SEE_OBJS | SEE_TURFS
 
 /obj/item/organ/eyes/robotic/thermals
-	name = "thermal eyes"
+	name = "тепловизорные глаза"
 	desc = ""
 	eye_color = "FC0"
 	sight_flags = SEE_MOBS
@@ -163,7 +163,7 @@
 	see_in_dark = 8
 
 /obj/item/organ/eyes/robotic/flashlight
-	name = "flashlight eyes"
+	name = "глаза-фонари"
 	desc = ""
 	eye_color ="fee5a3"
 	icon = 'icons/obj/lighting.dmi'
@@ -194,7 +194,7 @@
 
 // Welding shield implant
 /obj/item/organ/eyes/robotic/shield
-	name = "shielded robotic eyes"
+	name = "экранированные киберглаза"
 	desc = ""
 	flash_protect = FLASH_PROTECTION_WELDER
 
@@ -204,7 +204,7 @@
 #define RGB2EYECOLORSTRING(definitionvar) ("[copytext(definitionvar,2,3)][copytext(definitionvar,4,5)][copytext(definitionvar,6,7)]")
 
 /obj/item/organ/eyes/robotic/glow
-	name = "High Luminosity Eyes"
+	name = "прожекторные киберглаза"
 	desc = ""
 	eye_color = "000"
 	actions_types = list(/datum/action/item_action/organ_action/use, /datum/action/item_action/organ_action/toggle)
@@ -301,14 +301,14 @@
 /obj/item/organ/eyes/robotic/glow/proc/activate(silent = FALSE)
 	start_visuals()
 	if(!silent)
-		to_chat(owner, "<span class='warning'>My [src] clicks and makes a whining noise, before shooting out a beam of light!</span>")
+		to_chat(owner, "<span class='warning'>[src] щёлкает и с жужжанием испускает яркий луч света!</span>")
 	active = TRUE
 	cycle_mob_overlay()
 
 /obj/item/organ/eyes/robotic/glow/proc/deactivate(silent = FALSE)
 	clear_visuals()
 	if(!silent)
-		to_chat(owner, "<span class='warning'>My [src] shuts off!</span>")
+		to_chat(owner, "<span class='warning'>[src] гаснет!</span>")
 	active = FALSE
 	remove_mob_overlay()
 
@@ -381,12 +381,12 @@
 		return INITIALIZE_HINT_QDEL
 
 /obj/item/organ/eyes/moth
-	name = "moth eyes"
+	name = "глаза мотылька"
 	desc = ""
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
 /obj/item/organ/eyes/snail
-	name = "snail eyes"
+	name = "глаза улитки"
 	desc = ""
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"

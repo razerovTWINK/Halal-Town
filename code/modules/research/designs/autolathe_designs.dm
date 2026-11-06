@@ -3,7 +3,7 @@
 ///////////////////////////////////
 
 /datum/design/bucket
-	name = "Bucket"
+	name = "Ведро"
 	id = "bucket"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 200)
@@ -12,7 +12,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/mop
-	name = "Mop"
+	name = "Швабра"
 	id = "mop"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 1000)
@@ -21,7 +21,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/crowbar
-	name = "Pocket Crowbar"
+	name = "Карманный лом"
 	id = "crowbar"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50)
@@ -30,7 +30,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/flashlight
-	name = "Flashlight"
+	name = "Фонарик"
 	id = "flashlight"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
@@ -38,7 +38,7 @@
 	category = list("initial","Tools")
 
 /datum/design/extinguisher
-	name = "Fire Extinguisher"
+	name = "Огнетушитель"
 	id = "extinguisher"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 90)
@@ -46,7 +46,7 @@
 	category = list("initial","Tools")
 
 /datum/design/pocketfireextinguisher
-	name = "Pocket Fire Extinguisher"
+	name = "Карманный огнетушитель"
 	id = "pocketfireextinguisher"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 40)
@@ -54,7 +54,7 @@
 	category = list("initial","Tools")
 
 /datum/design/multitool
-	name = "Multitool"
+	name = "Мультитул"
 	id = "multitool"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
@@ -63,7 +63,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/analyzer
-	name = "Analyzer"
+	name = "Газоанализатор"
 	id = "analyzer"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 20)
@@ -72,7 +72,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/tscanner
-	name = "T-Ray Scanner"
+	name = "Т-лучевой сканер"
 	id = "tscanner"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 150)
@@ -81,7 +81,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/weldingtool
-	name = "Welding Tool"
+	name = "Сварочный аппарат"
 	id = "welding_tool"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 70, /datum/material/glass = 20)
@@ -90,7 +90,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/mini_weldingtool
-	name = "Emergency Welding Tool"
+	name = "Аварийный сварочный аппарат"
 	id = "mini_welding_tool"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 10)
@@ -98,7 +98,7 @@
 	category = list("initial","Tools")
 
 /datum/design/screwdriver
-	name = "Screwdriver"
+	name = "Отвёртка"
 	id = "screwdriver"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 75)
@@ -107,7 +107,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wirecutters
-	name = "Wirecutters"
+	name = "Кусачки"
 	id = "wirecutters"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 80)
@@ -116,7 +116,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wrench
-	name = "Wrench"
+	name = "Гаечный ключ"
 	id = "wrench"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 150)
@@ -125,7 +125,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/plunger
-	name = "Plunger"
+	name = "Вантуз"
 	id = "plunger"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 150)
@@ -134,7 +134,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/welding_helmet
-	name = "Welding Helmet"
+	name = "Сварочный шлем"
 	id = "welding_helmet"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1750, /datum/material/glass = 400)
@@ -142,7 +142,7 @@
 	category = list("initial","Tools")
 
 /datum/design/cable_coil
-	name = "Cable Coil"
+	name = "Моток кабеля"
 	id = "cable_coil"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
@@ -152,7 +152,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/toolbox
-	name = "Toolbox"
+	name = "Ящик для инструментов"
 	id = "tool_box"
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 500)
@@ -160,7 +160,7 @@
 	category = list("initial","Tools")
 
 /datum/design/apc_board
-	name = "APC Module"
+	name = "Модуль ЛКП"
 	id = "power control"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
@@ -169,7 +169,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/airlock_board
-	name = "Airlock Electronics"
+	name = "Электроника шлюза"
 	id = "airlock_board"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
@@ -178,7 +178,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/firelock_board
-	name = "Firelock Circuitry"
+	name = "Цепи противопожарного шлюза"
 	id = "firelock_board"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
@@ -187,7 +187,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/airalarm_electronics
-	name = "Air Alarm Electronics"
+	name = "Электроника воздушной сигнализации"
 	id = "airalarm_electronics"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
@@ -196,7 +196,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/firealarm_electronics
-	name = "Fire Alarm Electronics"
+	name = "Электроника пожарной сигнализации"
 	id = "firealarm_electronics"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
@@ -205,7 +205,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/camera
-	name = "Camera"
+	name = "Фотоаппарат"
 	id = "camera"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 100)
@@ -213,7 +213,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/camera_film
-	name = "Camera Film Cartridge"
+	name = "Картридж с фотоплёнкой"
 	id = "camera_film"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 10)
@@ -221,7 +221,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/earmuffs
-	name = "Earmuffs"
+	name = "Наушники"
 	id = "earmuffs"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
@@ -229,7 +229,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/pipe_painter
-	name = "Pipe Painter"
+	name = "Покрасчик труб"
 	id = "pipe_painter"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
@@ -238,7 +238,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/airlock_painter
-	name = "Airlock Painter"
+	name = "Покрасчик шлюзов"
 	id = "airlock_painter"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
@@ -247,7 +247,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/emergency_oxygen
-	name = "Emergency Oxygen Tank"
+	name = "Аварийный баллон кислорода"
 	id = "emergency_oxygen"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -255,7 +255,7 @@
 	category = list("initial","Misc","Equipment")
 
 /datum/design/emergency_oxygen_engi
-	name = "Extended-Capacity Emergency Oxygen Tank"
+	name = "Увеличенный аварийный баллон кислорода"
 	id = "emergency_oxygen_engi"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 750)
@@ -264,7 +264,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/plasmaman_tank_belt
-	name = "Plasmaman Belt Tank"
+	name = "Поясной баллон плазмолюда"
 	id = "plasmaman_tank_belt"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 800)
@@ -273,7 +273,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/generic_gas_tank
-	name = "Generic Gas Tank"
+	name = "Универсальный газовый баллон"
 	id = "generic_tank"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 1000)
@@ -281,7 +281,7 @@
 	category = list("initial","Misc","Equipment")
 
 /datum/design/metal
-	name = "Metal"
+	name = "Металл"
 	id = "metal"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
@@ -290,7 +290,7 @@
 	maxstack = 50
 
 /datum/design/glass
-	name = "Glass"
+	name = "Стекло"
 	id = "glass"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
@@ -299,7 +299,7 @@
 	maxstack = 50
 
 /datum/design/rglass
-	name = "Reinforced Glass"
+	name = "Бронестекло"
 	id = "rglass"
 	build_type = AUTOLATHE | SMELTER | PROTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
@@ -308,7 +308,7 @@
 	maxstack = 50
 
 /datum/design/rods
-	name = "Metal Rod"
+	name = "Металлический прут"
 	id = "rods"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
@@ -317,7 +317,7 @@
 	maxstack = 50
 
 /datum/design/rcd_ammo
-	name = "Compressed Matter Cartridge"
+	name = "Картридж сжатой материи"
 	id = "rcd_ammo"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000, /datum/material/glass = 8000)
@@ -325,7 +325,7 @@
 	category = list("initial","Construction")
 
 /datum/design/kitchen_knife
-	name = "Kitchen Knife"
+	name = "Кухонный нож"
 	id = "kitchen_knife"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
@@ -333,7 +333,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_knife
-	name = "Plastic Knife"
+	name = "Пластиковый нож"
 	id = "plastic_knife"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 100)
@@ -341,7 +341,7 @@
 	category = list("initial", "Tool Designs","Dinnerware")
 
 /datum/design/fork
-	name = "Fork"
+	name = "Вилка"
 	id = "fork"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 80)
@@ -349,7 +349,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/plastic_fork
-	name = "Plastic Fork"
+	name = "Пластиковая вилка"
 	id = "plastic_fork"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 80)
@@ -358,7 +358,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/plastic_spoon
-	name = "Plastic Spoon"
+	name = "Пластиковая ложка"
 	id = "plastic_spoon"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/plastic = 120)
@@ -367,7 +367,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/tray
-	name = "Tray"
+	name = "Поднос"
 	id = "tray"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 3000)
@@ -375,7 +375,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/bowl
-	name = "Bowl"
+	name = "Миска"
 	id = "bowl"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 500)
@@ -383,7 +383,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/drinking_glass
-	name = "Drinking Glass"
+	name = "Стакан"
 	id = "drinking_glass"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 500)
@@ -391,7 +391,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/shot_glass
-	name = "Shot Glass"
+	name = "Стопка"
 	id = "shot_glass"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 100)
@@ -399,7 +399,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/shaker
-	name = "Shaker"
+	name = "Шейкер"
 	id = "shaker"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1500)
@@ -407,7 +407,7 @@
 	category = list("initial","Dinnerware")
 
 /datum/design/cultivator
-	name = "Cultivator"
+	name = "Культиватор"
 	id = "cultivator"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron=50)
@@ -416,7 +416,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/plant_analyzer
-	name = "Plant Analyzer"
+	name = "Анализатор растений"
 	id = "plant_analyzer"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 20)
@@ -425,7 +425,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/shovel
-	name = "Shovel"
+	name = "Лопата"
 	id = "shovel"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50)
@@ -434,7 +434,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/spade
-	name = "Spade"
+	name = "Совок"
 	id = "spade"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50)
@@ -443,7 +443,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/hatchet
-	name = "Hatchet"
+	name = "Топорик"
 	id = "hatchet"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -452,7 +452,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/foilhat
-	name = "Tinfoil Hat"
+	name = "Шапочка из фольги"
 	id = "tinfoil_hat"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 5500)
@@ -460,7 +460,7 @@
 	category = list("hacked", "Misc")
 
 /datum/design/scalpel
-	name = "Scalpel"
+	name = "Скальпель"
 	id = "scalpel"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000)
@@ -469,7 +469,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/circular_saw
-	name = "Circular Saw"
+	name = "Циркулярная пила"
 	id = "circular_saw"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
@@ -478,7 +478,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/surgicaldrill
-	name = "Surgical Drill"
+	name = "Хирургическая дрель"
 	id = "surgicaldrill"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
@@ -487,7 +487,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/retractor
-	name = "Retractor"
+	name = "Расширитель"
 	id = "retractor"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000)
@@ -496,7 +496,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cautery
-	name = "Cautery"
+	name = "Прижигатель"
 	id = "cautery"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 2500, /datum/material/glass = 750)
@@ -505,7 +505,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/hemostat
-	name = "Hemostat"
+	name = "Гемостат"
 	id = "hemostat"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500)
@@ -514,7 +514,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/beaker
-	name = "Beaker"
+	name = "Мензурка"
 	id = "beaker"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/glass = 500)
@@ -523,7 +523,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/large_beaker
-	name = "Large Beaker"
+	name = "Большая мензурка"
 	id = "large_beaker"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/glass = 2500)
@@ -532,7 +532,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/pillbottle
-	name = "Pill Bottle"
+	name = "Баночка для таблеток"
 	id = "pillbottle"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20, /datum/material/glass = 100)
@@ -541,7 +541,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/beanbag_slug
-	name = "Beanbag Slug"
+	name = "Травматический патрон"
 	id = "beanbag_slug"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 2000)
@@ -549,7 +549,7 @@
 	category = list("initial", "Security")
 
 /datum/design/rubbershot
-	name = "Rubber Shot"
+	name = "Резиновая дробь"
 	id = "rubber_shot"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -557,7 +557,7 @@
 	category = list("initial", "Security")
 
 /datum/design/c38
-	name = "Speed Loader (.38)"
+	name = "Спидлоадер (.38)"
 	id = "c38"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
@@ -565,7 +565,7 @@
 	category = list("initial", "Security")
 
 /datum/design/recorder
-	name = "Universal Recorder"
+	name = "Универсальный диктофон"
 	id = "recorder"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 60, /datum/material/glass = 30)
@@ -573,7 +573,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/tape
-	name = "Tape"
+	name = "Кассета"
 	id = "tape"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20, /datum/material/glass = 5)
@@ -581,7 +581,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/igniter
-	name = "Igniter"
+	name = "Воспламенитель"
 	id = "igniter"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -589,7 +589,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/signaler
-	name = "Remote Signaling Device"
+	name = "Дистанционный сигнализатор"
 	id = "signaler"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 400, /datum/material/glass = 120)
@@ -597,7 +597,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/radio_headset
-	name = "Radio Headset"
+	name = "Радиогарнитура"
 	id = "radio_headset"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75)
@@ -605,7 +605,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Station Bounced Radio"
+	name = "Станционная рация"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
@@ -613,7 +613,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/intercom_frame
-	name = "Intercom Frame"
+	name = "Корпус интеркома"
 	id = "intercom_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
@@ -621,7 +621,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/infrared_emitter
-	name = "Infrared Emitter"
+	name = "Инфракрасный излучатель"
 	id = "infrared_emitter"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)
@@ -629,7 +629,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/health_sensor
-	name = "Health Sensor"
+	name = "Датчик здоровья"
 	id = "health_sensor"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 800, /datum/material/glass = 200)
@@ -637,7 +637,7 @@
 	category = list("initial", "Medical")
 
 /datum/design/timer
-	name = "Timer"
+	name = "Таймер"
 	id = "timer"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -645,7 +645,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/voice_analyser
-	name = "Voice Analyser"
+	name = "Анализатор голоса"
 	id = "voice_analyser"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -653,7 +653,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/light_tube
-	name = "Light Tube"
+	name = "Люминесцентная лампа"
 	id = "light_tube"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 100)
@@ -661,7 +661,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/light_bulb
-	name = "Light Bulb"
+	name = "Лампа накаливания"
 	id = "light_bulb"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 100)
@@ -669,7 +669,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/camera_assembly
-	name = "Camera Assembly"
+	name = "Корпус камеры"
 	id = "camera_assembly"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 400, /datum/material/glass = 250)
@@ -677,7 +677,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/newscaster_frame
-	name = "Newscaster Frame"
+	name = "Корпус новостной ленты"
 	id = "newscaster_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
@@ -685,7 +685,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/syringe
-	name = "Syringe"
+	name = "Шприц"
 	id = "syringe"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 20)
@@ -694,7 +694,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/prox_sensor
-	name = "Proximity Sensor"
+	name = "Датчик движения"
 	id = "prox_sensor"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 800, /datum/material/glass = 200)
@@ -702,7 +702,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/foam_dart
-	name = "Box of Foam Darts"
+	name = "Коробка мягких дротиков"
 	id = "foam_dart"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -711,7 +711,7 @@
 
 //hacked autolathe recipes
 /datum/design/flamethrower
-	name = "Flamethrower"
+	name = "Огнемёт"
 	id = "flamethrower"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -719,7 +719,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/rpd
-	name = "Rapid Pipe Dispenser (RPD)"
+	name = "Трубоукладчик (РПД)"
 	id = "rpd"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500)
@@ -727,7 +727,7 @@
 	category = list("hacked", "Construction")
 
 /datum/design/electropack
-	name = "Electropack"
+	name = "Электроранец"
 	id = "electropack"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2500)
@@ -735,7 +735,7 @@
 	category = list("hacked", "Tools")
 
 /datum/design/large_welding_tool
-	name = "Industrial Welding Tool"
+	name = "Промышленный сварочный аппарат"
 	id = "large_welding_tool"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 70, /datum/material/glass = 60)
@@ -743,7 +743,7 @@
 	category = list("hacked", "Tools")
 
 /datum/design/handcuffs
-	name = "Handcuffs"
+	name = "Наручники"
 	id = "handcuffs"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -751,7 +751,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/receiver
-	name = "Modular Receiver"
+	name = "Модульная ствольная коробка"
 	id = "receiver"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -759,7 +759,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/shotgun_slug
-	name = "Shotgun Slug"
+	name = "Ружейная пуля"
 	id = "shotgun_slug"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -767,7 +767,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/buckshot_shell
-	name = "Buckshot Shell"
+	name = "Картечь"
 	id = "buckshot_shell"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -775,7 +775,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/shotgun_dart
-	name = "Shotgun Dart"
+	name = "Ружейный дротик"
 	id = "shotgun_dart"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -783,7 +783,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/incendiary_slug
-	name = "Incendiary Slug"
+	name = "Зажигательная пуля для дробовика"
 	id = "incendiary_slug"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -791,7 +791,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/riot_dart
-	name = "Foam Riot Dart"
+	name = "Мягкий полицейский дротик"
 	id = "riot_dart"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000) //Discount for making individually - no box = less metal!
@@ -799,7 +799,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/riot_darts
-	name = "Foam Riot Dart Box"
+	name = "Коробка мягких полицейских дротиков"
 	id = "riot_darts"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50000) //Comes with 40 darts
@@ -807,7 +807,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/a357
-	name = ".357 Casing"
+	name = "Гильза .357"
 	id = "a357"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
@@ -815,7 +815,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/c10mm
-	name = "Ammo Box (10mm)"
+	name = "Коробка патронов (10 мм)"
 	id = "c10mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30000)
@@ -823,7 +823,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/c45
-	name = "Ammo Box (.45)"
+	name = "Коробка патронов (.45)"
 	id = "c45"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30000)
@@ -831,7 +831,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/c9mm
-	name = "Ammo Box (9mm)"
+	name = "Коробка патронов (9 мм)"
 	id = "c9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30000)
@@ -839,7 +839,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/cleaver
-	name = "Butcher's Cleaver"
+	name = "Тесак мясника"
 	id = "cleaver"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 18000)
@@ -847,7 +847,7 @@
 	category = list("hacked", "Dinnerware")
 
 /datum/design/spraycan
-	name = "Spraycan"
+	name = "Баллончик с краской"
 	id = "spraycan"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
@@ -855,7 +855,7 @@
 	category = list("initial", "Tools")
 
 /datum/design/desttagger
-	name = "Destination Tagger"
+	name = "Маркиратор посылок"
 	id = "desttagger"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 250, /datum/material/glass = 125)
@@ -863,7 +863,7 @@
 	category = list("initial", "Electronics")
 
 /datum/design/handlabeler
-	name = "Hand Labeler"
+	name = "Ручной этикетировщик"
 	id = "handlabel"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 150, /datum/material/glass = 125)
@@ -871,7 +871,7 @@
 	category = list("initial", "Electronics")
 
 /datum/design/geiger
-	name = "Geiger Counter"
+	name = "Счётчик Гейгера"
 	id = "geigercounter"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
@@ -879,7 +879,7 @@
 	category = list("initial", "Tools")
 
 /datum/design/turret_control_frame
-	name = "Turret Control Frame"
+	name = "Корпус управления турелью"
 	id = "turret_control"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 12000)
@@ -887,7 +887,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/conveyor_belt
-	name = "Conveyor Belt"
+	name = "Конвейерная лента"
 	id = "conveyor_belt"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 5000)
@@ -895,7 +895,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/conveyor_switch
-	name = "Conveyor Belt Switch"
+	name = "Переключатель конвейера"
 	id = "conveyor_switch"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 450, /datum/material/glass = 190)
@@ -903,7 +903,7 @@
 	category = list("initial", "Construction")
 
 /datum/design/laptop
-	name = "Laptop Frame"
+	name = "Корпус ноутбука"
 	id = "laptop"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 1000)
@@ -911,7 +911,7 @@
 	category = list("initial","Misc")
 
 /datum/design/tablet
-	name = "Tablet Frame"
+	name = "Корпус планшета"
 	id = "tablet"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
@@ -919,7 +919,7 @@
 	category = list("initial","Misc")
 
 /datum/design/slime_scanner
-	name = "Slime Scanner"
+	name = "Сканер слизи"
 	id = "slime_scanner"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 200)
@@ -927,7 +927,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/pet_carrier
-	name = "Pet Carrier"
+	name = "Переноска для животных"
 	id = "pet_carrier"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 7500, /datum/material/glass = 100)
@@ -935,7 +935,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/miniature_power_cell
-	name = "Light Fixture Battery"
+	name = "Батарея светильника"
 	id = "miniature_power_cell"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 20)
@@ -943,7 +943,7 @@
 	category = list("initial", "Electronics")
 
 /datum/design/packageWrap
-	name = "Package Wrapping"
+	name = "Упаковочная бумага"
 	id = "packagewrap"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
@@ -952,7 +952,7 @@
 	maxstack = 30
 
 /datum/design/holodisk
-	name = "Holodisk"
+	name = "Голодиск"
 	id = "holodisk"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
@@ -960,7 +960,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/circuit
-	name = "Blue Circuit Tile"
+	name = "Синяя микросхемная плитка"
 	id = "circuit"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
@@ -969,7 +969,7 @@
 	maxstack = 50
 
 /datum/design/circuitgreen
-	name = "Green Circuit Tile"
+	name = "Зелёная микросхемная плитка"
 	id = "circuitgreen"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
@@ -978,7 +978,7 @@
 	maxstack = 50
 
 /datum/design/circuitred
-	name = "Red Circuit Tile"
+	name = "Красная микросхемная плитка"
 	id = "circuitred"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
@@ -987,7 +987,7 @@
 	maxstack = 50
 
 /datum/design/price_tagger
-	name = "Price Tagger"
+	name = "Ценник-маркер"
 	id = "price_tagger"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1500, /datum/material/glass = 500)
@@ -995,7 +995,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/custom_vendor_refill
-	name = "Custom Vendor Refill"
+	name = "Настраиваемое пополнение автомата"
 	id = "custom_vendor_refill"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
@@ -1003,7 +1003,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/ducts
-	name = "Fluid Ducts"
+	name = "Трубопровод жидкостей"
 	id = "fluid_ducts"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -1012,7 +1012,7 @@
 	maxstack = 50
 
 /datum/design/toygun
-	name = "Cap Gun"
+	name = "Пистолет с пистонами"
 	id = "toygun"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
@@ -1020,7 +1020,7 @@
 	category = list("hacked", "Misc")
 
 /datum/design/capbox
-	name = "Box of Cap Gun Shots"
+	name = "Коробка пистонов"
 	id = "capbox"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20, /datum/material/glass = 5)

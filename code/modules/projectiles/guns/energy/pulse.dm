@@ -1,5 +1,5 @@
 /obj/item/gun/energy/pulse
-	name = "pulse rifle"
+	name = "импульсная винтовка"
 	desc = ""
 	icon_state = "pulse"
 	item_state = null
@@ -35,7 +35,7 @@
 	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/carbine
-	name = "pulse carbine"
+	name = "импульсный карабин"
 	desc = ""
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
@@ -50,7 +50,7 @@
 	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/pistol
-	name = "pulse pistol"
+	name = "импульсный пистолет"
 	desc = ""
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
@@ -62,16 +62,16 @@
 	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/destroyer
-	name = "pulse destroyer"
+	name = "импульсный разрушитель"
 	desc = ""
 	cell_type = "/obj/item/stock_parts/cell/infinite"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
-	to_chat(user, "<span class='danger'>[src.name] has three settings, and they are all DESTROY.</span>")
+	to_chat(user, "<span class='danger'>У [src.name] три режима, и все три — УНИЧТОЖЕНИЕ.</span>")
 
 /obj/item/gun/energy/pulse/pistol/m1911
-	name = "\improper M1911-P"
+	name = "\improper пистолет M1911-P"
 	desc = ""
 	icon_state = "m1911"
 	item_state = "gun"

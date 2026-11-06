@@ -124,7 +124,7 @@ GLOBAL_VAR_INIT(summon_magic_triggered, FALSE)
 
 	var/in_hand = H.put_in_hands(G) // not always successful
 
-	to_chat(H, "<span class='warning'>\A [G] appears [in_hand ? "in your hand" : "at your feet"]!</span>")
+	to_chat(H, "<span class='warning'>[G] появляется [in_hand ? "в твоей руке" : "у твоих ног"]!</span>")
 
 /proc/give_magic(mob/living/carbon/human/H)
 	if(H.stat == DEAD || !(H.client))
@@ -148,14 +148,14 @@ GLOBAL_VAR_INIT(summon_magic_triggered, FALSE)
 
 	var/in_hand = H.put_in_hands(M)
 
-	to_chat(H, "<span class='warning'>\A [M] appears [in_hand ? "in your hand" : "at your feet"]!</span>")
+	to_chat(H, "<span class='warning'>[M] появляется [in_hand ? "в твоей руке" : "у твоих ног"]!</span>")
 	if(lucky)
-		to_chat(H, "<span class='notice'>I feel incredibly lucky.</span>")
+		to_chat(H, "<span class='notice'>Тебе невероятно повезло.</span>")
 
 
 /proc/rightandwrong(summon_type, mob/user, survivor_probability)
 	if(user) //in this case either someone holding a spellbook or a badmin
-		to_chat(user, "<span class='warning'>I summoned [summon_type]!</span>")
+		to_chat(user, "<span class='warning'>Ты призываешь [summon_type]!</span>")
 		message_admins("[ADMIN_LOOKUPFLW(user)] summoned [summon_type]!")
 		log_game("[key_name(user)] summoned [summon_type]!")
 

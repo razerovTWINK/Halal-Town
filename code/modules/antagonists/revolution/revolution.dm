@@ -45,7 +45,7 @@
 	. = ..()
 
 /datum/antagonist/rev/greet()
-	to_chat(owner, "<span class='danger'>I are now a revolutionary! Help your cause. Do not harm your fellow freedom fighters. You can identify your comrades by the red \"R\" icons, and your leaders by the blue \"R\" icons. Help them kill the heads to win the revolution!</span>")
+	to_chat(owner, "<span class='danger'>Ты — революционер! Помогай общему делу и не вреди братьям по оружию. Твои соратники отмечены красной буквой «R», а лидеры — синей. Помоги им устранить глав, чтобы революция победила!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/rev/create_team(datum/team/revolution/new_team)
@@ -84,7 +84,7 @@
 	new_revhead.silent = TRUE
 	old_owner.add_antag_datum(new_revhead,old_team)
 	new_revhead.silent = FALSE
-	to_chat(old_owner, "<span class='danger'>I have proved your devotion to revolution! You are a head revolutionary now!</span>")
+	to_chat(old_owner, "<span class='danger'>Ты доказал преданность делу революции! Теперь ты — глава революционеров!</span>")
 
 /datum/antagonist/rev/get_admin_commands()
 	. = ..()
@@ -103,7 +103,7 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has head-rev'ed [key_name_admin(new_owner)].")
 	log_admin("[key_name(admin)] has head-rev'ed [key_name(new_owner)].")
-	to_chat(new_owner.current, "<span class='danger'>I are a member of the revolutionaries' leadership now!</span>")
+	to_chat(new_owner.current, "<span class='danger'>Ты вошёл в руководство революции!</span>")
 
 /datum/antagonist/rev/head/get_admin_commands()
 	. = ..()
@@ -190,12 +190,12 @@
 	new_rev.silent = TRUE
 	old_owner.add_antag_datum(new_rev,old_team)
 	new_rev.silent = FALSE
-	to_chat(old_owner, "<span class='danger'>Revolution has been disappointed of your leader traits! You are a regular revolutionary now!</span>")
+	to_chat(old_owner, "<span class='danger'>Революция разочарована твоими лидерскими качествами! Теперь ты рядовой революционер!</span>")
 
 /datum/antagonist/rev/farewell()
 	if(ishuman(owner.current) || ismonkey(owner.current))
 		owner.current.visible_message("<span class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just remembered [owner.current.p_their()] real allegiance!</span>", null, null, null, owner.current)
-		to_chat(owner, "<span class ='deconversion_message bold'>I are no longer a brainwashed revolutionary! Your memory is hazy from the time you were a rebel...the only thing you remember is the name of the one who brainwashed you....</span>")
+		to_chat(owner, "<span class ='deconversion_message bold'>Твой разум больше не одурманен революцией! Воспоминания о бунте туманны... ты помнишь лишь имя того, кто внушил тебе это...</span>")
 	else if(issilicon(owner.current))
 		owner.current.visible_message("<span class='deconversion_message'>The frame beeps contentedly, purging the hostile memory engram from the MMI before initalizing it.</span>", null, null, null, owner.current)
 		to_chat(owner, "<span class='danger'>The frame's firmware detects and deletes your neural reprogramming! You remember nothing but the name of the one who flashed you.</span>")
@@ -204,9 +204,9 @@
 	if((ishuman(owner.current) || ismonkey(owner.current)))
 		if(owner.current.stat != DEAD)
 			owner.current.visible_message("<span class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just remembered [owner.current.p_their()] real allegiance!</span>", null, null, null, owner.current)
-			to_chat(owner, "<span class ='deconversion_message bold'>I have given up your cause of overthrowing the command staff. You are no longer a Head Revolutionary.</span>")
+			to_chat(owner, "<span class ='deconversion_message bold'>Ты отказался от восстания. Ты больше не глава революции.</span>")
 		else
-			to_chat(owner, "<span class ='deconversion_message bold'>The sweet release of death. You are no longer a Head Revolutionary.</span>")
+			to_chat(owner, "<span class ='deconversion_message bold'>Сладкое освобождение смертью. Ты больше не глава революции.</span>")
 	else if(issilicon(owner.current))
 		owner.current.visible_message("<span class='deconversion_message'>The frame beeps contentedly, suppressing the disloyal personality traits from the MMI before initalizing it.</span>", null, null, null, owner.current)
 		to_chat(owner, "<span class='danger'>The frame's firmware detects and suppresses your unwanted personality traits! You feel more content with the leadership around these parts.</span>")

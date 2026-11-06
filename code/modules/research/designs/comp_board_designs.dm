@@ -1,13 +1,13 @@
 ///////////////////Computer Boards///////////////////////////////////
 
 /datum/design/board
-	name = "Computer Design ( NULL ENTRY )"
+	name = "Проект компьютера (ПУСТАЯ ЗАПИСЬ)"
 	desc = ""
 	build_type = IMPRINTER
 	materials = list(/datum/material/glass = 1000)
 
 /datum/design/board/arcade_battle
-	name = "Computer Design (Battle Arcade Machine)"
+	name = "Проект компьютера (боевой аркадный автомат)"
 	desc = ""
 	id = "arcade_battle"
 	build_path = /obj/item/circuitboard/computer/arcade/battle
@@ -15,7 +15,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/orion_trail
-	name = "Computer Design (Orion Trail Arcade Machine)"
+	name = "Проект компьютера (аркадный автомат «Тропа Ориона»)"
 	desc = ""
 	id = "arcade_orion"
 	build_path = /obj/item/circuitboard/computer/arcade/orion_trail
@@ -23,7 +23,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/seccamera
-	name = "Computer Design (Security Camera)"
+	name = "Проект компьютера (камеры наблюдения)"
 	desc = ""
 	id = "seccamera"
 	build_path = /obj/item/circuitboard/computer/security
@@ -31,7 +31,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/rdcamera
-	name = "Computer Design (Research Monitor)"
+	name = "Проект компьютера (монитор исследований)"
 	desc = ""
 	id = "rdcamera"
 	build_path = /obj/item/circuitboard/computer/research
@@ -39,7 +39,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/xenobiocamera
-	name = "Computer Design (Xenobiology Console)"
+	name = "Проект компьютера (консоль ксенобиологии)"
 	desc = ""
 	id = "xenobioconsole"
 	build_path = /obj/item/circuitboard/computer/xenobiology
@@ -47,7 +47,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/aiupload
-	name = "Computer Design (AI Upload)"
+	name = "Проект компьютера (загрузка законов ИИ)"
 	desc = ""
 	id = "aiupload"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000)
@@ -56,7 +56,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/borgupload
-	name = "Computer Design (Cyborg Upload)"
+	name = "Проект компьютера (загрузка законов киборгов)"
 	desc = ""
 	id = "borgupload"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000)
@@ -65,7 +65,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/med_data
-	name = "Computer Design (Medical Records)"
+	name = "Проект компьютера (медицинские карты)"
 	desc = ""
 	id = "med_data"
 	build_path = /obj/item/circuitboard/computer/med_data
@@ -73,7 +73,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/operating
-	name = "Computer Design (Operating Computer)"
+	name = "Проект компьютера (операционный компьютер)"
 	desc = ""
 	id = "operating"
 	build_path = /obj/item/circuitboard/computer/operating
@@ -81,7 +81,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/pandemic
-	name = "Computer Design (PanD.E.M.I.C. 2200)"
+	name = "Проект компьютера (ПанД.Е.М.И.Я. 2200)"
 	desc = ""
 	id = "pandemic"
 	build_path = /obj/item/circuitboard/computer/pandemic
@@ -89,7 +89,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/scan_console
-	name = "Computer Design (DNA Machine)"
+	name = "Проект компьютера (модификатор ДНК)"
 	desc = ""
 	id = "scan_console"
 	build_path = /obj/item/circuitboard/computer/scan_consolenew
@@ -97,7 +97,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/comconsole
-	name = "Computer Design (Communications)"
+	name = "Проект компьютера (консоль связи)"
 	desc = ""
 	id = "comconsole"
 	build_path = /obj/item/circuitboard/computer/communications
@@ -105,7 +105,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/idcardconsole
-	name = "Computer Design (ID Console)"
+	name = "Проект компьютера (консоль ID-карт)"
 	desc = ""
 	id = "idcardconsole"
 	build_path = /obj/item/circuitboard/computer/card
@@ -113,7 +113,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/crewconsole
-	name = "Computer Design (Crew monitoring computer)"
+	name = "Проект компьютера (мониторинг экипажа)"
 	desc = ""
 	id = "crewconsole"
 	build_path = /obj/item/circuitboard/computer/crew
@@ -121,7 +121,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/secdata
-	name = "Computer Design (Security Records Console)"
+	name = "Проект компьютера (дела службы безопасности)"
 	desc = ""
 	id = "secdata"
 	build_path = /obj/item/circuitboard/computer/secure_data
@@ -129,7 +129,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/atmosalerts
-	name = "Computer Design (Atmosphere Alert)"
+	name = "Проект компьютера (атмосферная тревога)"
 	desc = ""
 	id = "atmosalerts"
 	build_path = /obj/item/circuitboard/computer/atmos_alert
@@ -137,7 +137,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/atmos_control
-	name = "Computer Design (Atmospheric Monitor)"
+	name = "Проект компьютера (атмосферный монитор)"
 	desc = ""
 	id = "atmos_control"
 	build_path = /obj/item/circuitboard/computer/atmos_control
@@ -145,7 +145,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/robocontrol
-	name = "Computer Design (Robotics Control Console)"
+	name = "Проект компьютера (управление робототехникой)"
 	desc = ""
 	id = "robocontrol"
 	build_path = /obj/item/circuitboard/computer/robotics
@@ -153,7 +153,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/slot_machine
-	name = "Computer Design (Slot Machine)"
+	name = "Проект компьютера (игровой автомат)"
 	desc = ""
 	id = "slotmachine"
 	build_path = /obj/item/circuitboard/computer/slot_machine
@@ -161,7 +161,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/powermonitor
-	name = "Computer Design (Power Monitor)"
+	name = "Проект компьютера (мониторинг электросети)"
 	desc = ""
 	id = "powermonitor"
 	build_path = /obj/item/circuitboard/computer/powermonitor
@@ -169,7 +169,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/solarcontrol
-	name = "Computer Design (Solar Control)"
+	name = "Проект компьютера (управление солнечными панелями)"
 	desc = ""
 	id = "solarcontrol"
 	build_path = /obj/item/circuitboard/computer/solar_control
@@ -177,7 +177,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/prisonmanage
-	name = "Computer Design (Prisoner Management Console)"
+	name = "Проект компьютера (управление заключёнными)"
 	desc = ""
 	id = "prisonmanage"
 	build_path = /obj/item/circuitboard/computer/prisoner
@@ -185,7 +185,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/mechacontrol
-	name = "Computer Design (Exosuit Control Console)"
+	name = "Проект компьютера (управление экзоскелетами)"
 	desc = ""
 	id = "mechacontrol"
 	build_path = /obj/item/circuitboard/computer/mecha_control
@@ -193,7 +193,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechapower
-	name = "Computer Design (Mech Bay Power Control Console)"
+	name = "Проект компьютера (питание ангара экзоскелетов)"
 	desc = ""
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
@@ -201,7 +201,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/rdconsole
-	name = "Computer Design (R&D Console)"
+	name = "Проект компьютера (консоль исследований и разработок)"
 	desc = ""
 	id = "rdconsole"
 	build_path = /obj/item/circuitboard/computer/rdconsole
@@ -209,7 +209,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/cargo
-	name = "Computer Design (Supply Console)"
+	name = "Проект компьютера (консоль снабжения)"
 	desc = ""
 	id = "cargo"
 	build_path = /obj/item/circuitboard/computer/cargo
@@ -217,7 +217,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/cargorequest
-	name = "Computer Design (Supply Request Console)"
+	name = "Проект компьютера (запросы снабжения)"
 	desc = ""
 	id = "cargorequest"
 	build_path = /obj/item/circuitboard/computer/cargo/request
@@ -225,7 +225,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/bounty
-	name = "Computer Design (Bounty Console)"
+	name = "Проект компьютера (консоль наград)"
 	desc = ""
 	id = "bounty"
 	build_path = /obj/item/circuitboard/computer/bounty
@@ -233,7 +233,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mining
-	name = "Computer Design (Outpost Status Display)"
+	name = "Проект компьютера (статус аванпоста)"
 	desc = ""
 	id = "mining"
 	build_path = /obj/item/circuitboard/computer/mining
@@ -241,7 +241,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/comm_monitor
-	name = "Computer Design (Telecommunications Monitoring Console)"
+	name = "Проект компьютера (мониторинг телекоммуникаций)"
 	desc = ""
 	id = "comm_monitor"
 	build_path = /obj/item/circuitboard/computer/comm_monitor
@@ -249,7 +249,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/comm_server
-	name = "Computer Design (Telecommunications Server Monitoring Console)"
+	name = "Проект компьютера (мониторинг серверов связи)"
 	desc = ""
 	id = "comm_server"
 	build_path = /obj/item/circuitboard/computer/comm_server
@@ -257,7 +257,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/message_monitor
-	name = "Computer Design (Messaging Monitor Console)"
+	name = "Проект компьютера (мониторинг сообщений)"
 	desc = ""
 	id = "message_monitor"
 	build_path = /obj/item/circuitboard/computer/message_monitor
@@ -265,7 +265,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/aifixer
-	name = "Computer Design (AI Integrity Restorer)"
+	name = "Проект компьютера (восстановитель целостности ИИ)"
 	desc = ""
 	id = "aifixer"
 	build_path = /obj/item/circuitboard/computer/aifixer
@@ -273,7 +273,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/libraryconsole
-	name = "Computer Design (Library Console)"
+	name = "Проект компьютера (библиотечная консоль)"
 	desc = ""
 	id = "libraryconsole"
 	build_path = /obj/item/circuitboard/computer/libraryconsole
@@ -281,7 +281,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/apc_control
-	name = "Computer Design (APC Control)"
+	name = "Проект компьютера (управление ЛКП)"
 	desc = ""
 	id = "apc_control"
 	build_path = /obj/item/circuitboard/computer/apc_control
@@ -289,7 +289,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/nanite_chamber_control
-	name = "Computer Design (Nanite Chamber Control)"
+	name = "Проект компьютера (управление нанитной камерой)"
 	desc = ""
 	id = "nanite_chamber_control"
 	build_path = /obj/item/circuitboard/computer/nanite_chamber_control
@@ -297,7 +297,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/nanite_cloud_control
-	name = "Computer Design (Nanite Cloud Control)"
+	name = "Проект компьютера (облачное управление нанитами)"
 	desc = ""
 	id = "nanite_cloud_control"
 	build_path = /obj/item/circuitboard/computer/nanite_cloud_controller
@@ -305,7 +305,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/advanced_camera
-	name = "Computer Design (Advanced Camera Console)"
+	name = "Проект компьютера (улучшенная консоль камер)"
 	desc = ""
 	id = "advanced_camera"
 	build_path = /obj/item/circuitboard/computer/advanced_camera

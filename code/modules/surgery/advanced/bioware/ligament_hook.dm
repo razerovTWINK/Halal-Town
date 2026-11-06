@@ -1,5 +1,5 @@
 /datum/surgery/advanced/bioware/ligament_hook
-	name = "Ligament Hook"
+	name = "Связочный крюк"
 	desc = "A surgical procedure which reshapes the connections between torso and limbs, making it so limbs can be attached manually if severed. \
 	However this weakens the connection, making them easier to detach as well."
 	steps = list(/datum/surgery_step/incise,
@@ -13,24 +13,24 @@
 	bioware_target = BIOWARE_LIGAMENTS
 
 /datum/surgery_step/reshape_ligaments
-	name = "reshape ligaments"
+	name = "придать форму связкам"
 	accept_hand = TRUE
 	time = 125
 
 /datum/surgery_step/reshape_ligaments/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I start reshaping [target]'s ligaments into a hook-like shape.</span>",
-		"<span class='notice'>[user] starts reshaping [target]'s ligaments into a hook-like shape.</span>",
-		"<span class='notice'>[user] starts manipulating [target]'s ligaments.</span>")
+	display_results(user, target, "<span class='notice'>Ты начинаешь придавать связкам [target] форму крюка.</span>",
+		"<span class='notice'>[user] начинает придавать связкам [target] форму крюка.</span>",
+		"<span class='notice'>[user] начинает перебирать связки [target].</span>")
 
 /datum/surgery_step/reshape_ligaments/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>I reshape [target]'s ligaments into a connective hook!</span>",
-		"<span class='notice'>[user] reshapes [target]'s ligaments into a connective hook!</span>",
-		"<span class='notice'>[user] finishes manipulating [target]'s ligaments.</span>")
+	display_results(user, target, "<span class='notice'>Ты переделываешь связки [target] в соединительный крюк!</span>",
+		"<span class='notice'>[user] переделывает связки [target] в соединительный крюк!</span>",
+		"<span class='notice'>[user] заканчивает перебирать связки [target].</span>")
 	new /datum/bioware/hooked_ligaments(target)
 	return TRUE
 
 /datum/bioware/hooked_ligaments
-	name = "Hooked Ligaments"
+	name = "Крючковидные связки"
 	desc = ""
 	mod_type = BIOWARE_LIGAMENTS
 

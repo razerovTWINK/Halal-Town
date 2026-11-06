@@ -47,7 +47,7 @@
 
 /datum/action/slam/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>I can't WRESTLE while you're OUT FOR THE COUNT.</span>")
+		to_chat(owner, "<span class='warning'>Я не могу БОРОТЬСЯ, пока ты в нокауте.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to BODY SLAM!</span>", "<b><i>My next attack will be a BODY SLAM.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -59,7 +59,7 @@
 
 /datum/action/throw_wrassle/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>I can't WRESTLE while you're OUT FOR THE COUNT.</span>")
+		to_chat(owner, "<span class='warning'>Я не могу БОРОТЬСЯ, пока ты в нокауте.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to THROW!</span>", "<b><i>My next attack will be a THROW.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -71,7 +71,7 @@
 
 /datum/action/kick/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>I can't WRESTLE while you're OUT FOR THE COUNT.</span>")
+		to_chat(owner, "<span class='warning'>Я не могу БОРОТЬСЯ, пока ты в нокауте.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to KICK!</span>", "<b><i>My next attack will be a KICK.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -83,7 +83,7 @@
 
 /datum/action/strike/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>I can't WRESTLE while you're OUT FOR THE COUNT.</span>")
+		to_chat(owner, "<span class='warning'>Я не могу БОРОТЬСЯ, пока ты в нокауте.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to STRIKE!</span>", "<b><i>My next attack will be a STRIKE.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -95,7 +95,7 @@
 
 /datum/action/drop/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>I can't WRESTLE while you're OUT FOR THE COUNT.</span>")
+		to_chat(owner, "<span class='warning'>Я не могу БОРОТЬСЯ, пока ты в нокауте.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to LEG DROP!</span>", "<b><i>My next attack will be a LEG DROP.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -136,7 +136,7 @@
 
 	D.Stun(80)
 	D.visible_message("<span class='danger'>[A] starts spinning around with [D]!</span>", \
-					"<span class='danger'>You're spun around by [A]!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", null, A)
+					"<span class='danger'>You're spun around by [A]!</span>", "<span class='hear'>Слышно агрессивное шарканье!</span>", null, A)
 	to_chat(A, "<span class='danger'>I start spinning around with [D]!</span>")
 	A.emote("scream")
 
@@ -219,7 +219,7 @@
 	D.setDir(get_dir(D, A))
 
 	D.visible_message("<span class='danger'>[A] lifts [D] up!</span>", \
-					"<span class='danger'>You're lifted up by [A]!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", null, A)
+					"<span class='danger'>You're lifted up by [A]!</span>", "<span class='hear'>Слышно агрессивное шарканье!</span>", null, A)
 	to_chat(A, "<span class='danger'>I lift [D] up!</span>")
 
 	FlipAnimation()
@@ -291,7 +291,7 @@
 				fluff = "atomic [fluff]"
 
 		D.visible_message("<span class='danger'>[A] [fluff] [D]!</span>", \
-						"<span class='danger'>You're [fluff]ed by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+						"<span class='danger'>You're [fluff]ed by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 		to_chat(A, "<span class='danger'>I [fluff] [D]!</span>")
 		playsound(A.loc, "swing_hit", 50, TRUE)
 		if (!D.stat)
@@ -336,7 +336,7 @@
 		addtimer(CALLBACK(src, .proc/CheckStrikeTurf, A, T), 4)
 
 		D.visible_message("<span class='danger'>[A] headbutts [D]!</span>", \
-						"<span class='danger'>You're headbutted by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+						"<span class='danger'>You're headbutted by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 		to_chat(A, "<span class='danger'>I headbutt [D]!</span>")
 		D.adjustBruteLoss(rand(10,20))
 		playsound(A.loc, "swing_hit", 50, TRUE)
@@ -351,7 +351,7 @@
 	A.setDir(turn(A.dir, 90))
 
 	D.visible_message("<span class='danger'>[A] roundhouse-kicks [D]!</span>", \
-					"<span class='danger'>You're roundhouse-kicked by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>You're roundhouse-kicked by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I roundhouse-kick [D]!</span>")
 	playsound(A.loc, "swing_hit", 50, TRUE)
 	D.adjustBruteLoss(rand(10,20))
@@ -417,7 +417,7 @@
 		A.forceMove(D.loc)
 
 		D.visible_message("<span class='danger'>[A] leg-drops [D]!</span>", \
-						"<span class='danger'>You're leg-dropped by [A]!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", null, A)
+						"<span class='danger'>You're leg-dropped by [A]!</span>", "<span class='hear'>Слышен отвратительный звук плоти, бьющейся о плоть!</span>", null, A)
 		to_chat(A, "<span class='danger'>I leg-drop [D]!</span>")
 		playsound(A.loc, "swing_hit", 50, TRUE)
 		A.emote("scream")
@@ -453,7 +453,7 @@
 		return 1
 	A.start_pulling(D)
 	D.visible_message("<span class='danger'>[A] gets [D] in a cinch!</span>", \
-					"<span class='danger'>You're put into a cinch by [A]!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, A)
+					"<span class='danger'>You're put into a cinch by [A]!</span>", "<span class='hear'>Слышно агрессивное шарканье!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>I get [D] in a cinch!</span>")
 	D.Stun(rand(60,100))
 	log_combat(A, D, "cinched")

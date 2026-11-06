@@ -3,7 +3,7 @@
 ////////////////////////////////////////
 
 /datum/design/board/smes
-	name = "Machine Design (SMES Board)"
+	name = "Проект оборудования (плата СМЭС)"
 	desc = ""
 	id = "smes"
 	build_path = /obj/item/circuitboard/machine/smes
@@ -11,7 +11,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/circulator
-	name = "Machine Design (Circulator Board)"
+	name = "Проект оборудования (плата циркулятора)"
 	desc = ""
 	id = "circulator"
 	build_path = /obj/item/circuitboard/machine/circulator
@@ -19,7 +19,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/teg
-	name = "Machine Design (TEG Board)"
+	name = "Проект оборудования (плата ТЭГ)"
 	desc = ""
 	id = "teg"
 	build_path = /obj/item/circuitboard/machine/generator
@@ -27,7 +27,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/announcement_system
-	name = "Machine Design (Automated Announcement System Board)"
+	name = "Проект оборудования (плата системы оповещений)"
 	desc = ""
 	id = "automated_announcement"
 	build_path = /obj/item/circuitboard/machine/announcement_system
@@ -35,7 +35,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/turbine_computer
-	name = "Computer Design (Power Turbine Console Board)"
+	name = "Проект компьютера (консоль силовой турбины)"
 	desc = ""
 	id = "power_turbine_console"
 	build_path = /obj/item/circuitboard/computer/turbine_computer
@@ -43,7 +43,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/emitter
-	name = "Machine Design (Emitter Board)"
+	name = "Проект оборудования (плата эмиттера)"
 	desc = ""
 	id = "emitter"
 	build_path = /obj/item/circuitboard/machine/emitter
@@ -51,7 +51,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/power_compressor
-	name = "Machine Design (Power Compressor Board)"
+	name = "Проект оборудования (плата компрессора)"
 	desc = ""
 	id = "power_compressor"
 	build_path = /obj/item/circuitboard/machine/power_compressor
@@ -59,7 +59,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/power_turbine
-	name = "Machine Design (Power Turbine Board)"
+	name = "Проект оборудования (плата турбины)"
 	desc = ""
 	id = "power_turbine"
 	build_path = /obj/item/circuitboard/machine/power_turbine
@@ -67,7 +67,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/thermomachine
-	name = "Machine Design (Freezer/Heater Board)"
+	name = "Проект оборудования (плата охладителя/нагревателя)"
 	desc = ""
 	id = "thermomachine"
 	build_path = /obj/item/circuitboard/machine/thermomachine
@@ -75,7 +75,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/space_heater
-	name = "Machine Design (Space Heater Board)"
+	name = "Проект оборудования (плата обогревателя)"
 	desc = ""
 	id = "space_heater"
 	build_path = /obj/item/circuitboard/machine/space_heater
@@ -83,7 +83,7 @@
 	departmental_flags = ALL
 
 /datum/design/board/teleport_station
-	name = "Machine Design (Teleportation Station Board)"
+	name = "Проект оборудования (плата станции телепортации)"
 	desc = ""
 	id = "tele_station"
 	build_path = /obj/item/circuitboard/machine/teleporter_station
@@ -91,7 +91,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/teleport_hub
-	name = "Machine Design (Teleportation Hub Board)"
+	name = "Проект оборудования (плата узла телепортации)"
 	desc = ""
 	id = "tele_hub"
 	build_path = /obj/item/circuitboard/machine/teleporter_hub
@@ -99,7 +99,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/quantumpad
-	name = "Machine Design (Quantum Pad Board)"
+	name = "Проект оборудования (плата квантовой платформы)"
 	desc = ""
 	id = "quantumpad"
 	build_path = /obj/item/circuitboard/machine/quantumpad
@@ -107,7 +107,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/launchpad
-	name = "Machine Design (Bluespace Launchpad Board)"
+	name = "Проект оборудования (плата блюспейс-катапульты)"
 	desc = ""
 	id = "launchpad"
 	build_path = /obj/item/circuitboard/machine/launchpad
@@ -115,7 +115,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/launchpad_console
-	name = "Machine Design (Bluespace Launchpad Console Board)"
+	name = "Проект оборудования (консоль блюспейс-катапульты)"
 	desc = ""
 	id = "launchpad_console"
 	build_path = /obj/item/circuitboard/computer/launchpad_console
@@ -123,7 +123,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/teleconsole
-	name = "Computer Design (Teleporter Console)"
+	name = "Проект компьютера (консоль телепортатора)"
 	desc = ""
 	id = "teleconsole"
 	build_path = /obj/item/circuitboard/computer/teleporter
@@ -131,7 +131,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/cryotube
-	name = "Machine Design (Cryotube Board)"
+	name = "Проект оборудования (плата криокапсулы)"
 	desc = ""
 	id = "cryotube"
 	build_path = /obj/item/circuitboard/machine/cryo_tube
@@ -139,7 +139,7 @@
 	category = list ("Medical Machinery")
 
 /datum/design/board/chem_dispenser
-	name = "Machine Design (Portable Chem Dispenser Board)"
+	name = "Проект оборудования (плата портативного химического раздатчика)"
 	desc = ""
 	id = "chem_dispenser"
 	build_path = /obj/item/circuitboard/machine/chem_dispenser
@@ -147,7 +147,7 @@
 	category = list ("Medical Machinery")
 
 /datum/design/board/chem_master
-	name = "Machine Design (Chem Master Board)"
+	name = "Проект оборудования (плата Мастер-Хим)"
 	desc = ""
 	id = "chem_master"
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
@@ -155,7 +155,7 @@
 	category = list ("Medical Machinery")
 
 /datum/design/board/chem_heater
-	name = "Machine Design (Chemical Heater Board)"
+	name = "Проект оборудования (плата химического нагревателя)"
 	desc = ""
 	id = "chem_heater"
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
@@ -163,7 +163,7 @@
 	category = list ("Medical Machinery")
 
 /datum/design/board/smoke_machine
-	name = "Machine Design (Smoke Machine)"
+	name = "Проект оборудования (дымовая машина)"
 	desc = ""
 	id = "smoke_machine"
 	build_path = /obj/item/circuitboard/machine/smoke_machine
@@ -171,7 +171,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/reagentgrinder
-	name = "Machine Design (All-In-One Grinder)"
+	name = "Проект оборудования (универсальный измельчитель)"
 	desc = ""
 	id = "reagentgrinder"
 	build_path = /obj/item/circuitboard/machine/reagentgrinder
@@ -179,7 +179,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/clonecontrol
-	name = "Computer Design (Cloning Machine Console)"
+	name = "Проект компьютера (консоль клонирования)"
 	desc = ""
 	id = "clonecontrol"
 	build_path = /obj/item/circuitboard/computer/cloning
@@ -187,7 +187,7 @@
 	category = list("Medical Machinery")
 
 /datum/design/board/clonepod
-	name = "Machine Design (Clone Pod)"
+	name = "Проект оборудования (капсула клонирования)"
 	desc = ""
 	id = "clonepod"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -195,7 +195,7 @@
 	category = list("Medical Machinery")
 
 /datum/design/board/clonescanner
-	name = "Machine Design (Cloning Scanner)"
+	name = "Проект оборудования (сканер клонирования)"
 	desc = ""
 	id = "clonescanner"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -203,7 +203,7 @@
 	category = list("Medical Machinery")
 
 /datum/design/board/biogenerator
-	name = "Machine Design (Biogenerator Board)"
+	name = "Проект оборудования (плата биогенератора)"
 	desc = ""
 	id = "biogenerator"
 	build_path = /obj/item/circuitboard/machine/biogenerator
@@ -211,7 +211,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/hydroponics
-	name = "Machine Design (Hydroponics Tray Board)"
+	name = "Проект оборудования (плата гидропонной ванны)"
 	desc = ""
 	id = "hydro_tray"
 	build_path = /obj/item/circuitboard/machine/hydroponics
@@ -219,7 +219,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/destructive_analyzer
-	name = "Machine Design (Destructive Analyzer Board)"
+	name = "Проект оборудования (плата деструктивного анализатора)"
 	desc = ""
 	id = "destructive_analyzer"
 	build_path = /obj/item/circuitboard/machine/destructive_analyzer
@@ -227,7 +227,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/experimentor
-	name = "Machine Design (E.X.P.E.R.I-MENTOR Board)"
+	name = "Проект оборудования (плата Э.К.С.П.Е.Р.И-МЕНТОР)"
 	desc = ""
 	id = "experimentor"
 	build_path = /obj/item/circuitboard/machine/experimentor
@@ -235,7 +235,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/protolathe
-	name = "Machine Design (Protolathe Board)"
+	name = "Проект оборудования (плата протолата)"
 	desc = ""
 	id = "protolathe"
 	build_path = /obj/item/circuitboard/machine/protolathe
@@ -243,7 +243,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/circuit_imprinter
-	name = "Machine Design (Circuit Imprinter Board)"
+	name = "Проект оборудования (плата принтера плат)"
 	desc = ""
 	id = "circuit_imprinter"
 	build_path = /obj/item/circuitboard/machine/circuit_imprinter
@@ -251,7 +251,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/rdservercontrol
-	name = "Computer Design (R&D Server Control Console Board)"
+	name = "Проект компьютера (консоль серверов исследований)"
 	desc = ""
 	id = "rdservercontrol"
 	build_path = /obj/item/circuitboard/computer/rdservercontrol
@@ -259,7 +259,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/rdserver
-	name = "Machine Design (R&D Server Board)"
+	name = "Проект оборудования (плата сервера исследований)"
 	desc = ""
 	id = "rdserver"
 	build_path = /obj/item/circuitboard/machine/rdserver
@@ -267,7 +267,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab
-	name = "Machine Design (Exosuit Fabricator Board)"
+	name = "Проект оборудования (плата фабрикатора экзоскелетов)"
 	desc = ""
 	id = "mechfab"
 	build_path = /obj/item/circuitboard/machine/mechfab
@@ -275,7 +275,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/cyborgrecharger
-	name = "Machine Design (Cyborg Recharger Board)"
+	name = "Проект оборудования (плата станции зарядки киборгов)"
 	desc = ""
 	id = "cyborgrecharger"
 	build_path = /obj/item/circuitboard/machine/cyborgrecharger
@@ -283,7 +283,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mech_recharger
-	name = "Machine Design (Mechbay Recharger Board)"
+	name = "Проект оборудования (плата зарядки экзоскелетов)"
 	desc = ""
 	id = "mech_recharger"
 	build_path = /obj/item/circuitboard/machine/mech_recharger
@@ -291,7 +291,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/nanite_chamber
-	name = "Machine Design (Nanite Chamber Board)"
+	name = "Проект оборудования (плата нанитной камеры)"
 	desc = ""
 	id = "nanite_chamber"
 	build_path = /obj/item/circuitboard/machine/nanite_chamber
@@ -299,7 +299,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/public_nanite_chamber
-	name = "Machine Design (Public Nanite Chamber Board)"
+	name = "Проект оборудования (плата общественной нанитной камеры)"
 	desc = ""
 	id = "public_nanite_chamber"
 	build_path = /obj/item/circuitboard/machine/public_nanite_chamber
@@ -307,7 +307,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/nanite_programmer
-	name = "Machine Design (Nanite Programmer Board)"
+	name = "Проект оборудования (плата программатора нанитов)"
 	desc = ""
 	id = "nanite_programmer"
 	build_path = /obj/item/circuitboard/machine/nanite_programmer
@@ -315,7 +315,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/nanite_program_hub
-	name = "Machine Design (Nanite Program Hub Board)"
+	name = "Проект оборудования (плата хаба программ нанитов)"
 	desc = ""
 	id = "nanite_program_hub"
 	build_path = /obj/item/circuitboard/machine/nanite_program_hub
@@ -323,7 +323,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/microwave
-	name = "Machine Design (Microwave Board)"
+	name = "Проект оборудования (плата микроволновки)"
 	desc = ""
 	id = "microwave"
 	build_path = /obj/item/circuitboard/machine/microwave
@@ -331,7 +331,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/gibber
-	name = "Machine Design (Gibber Board)"
+	name = "Проект оборудования (плата расчленителя)"
 	desc = ""
 	id = "gibber"
 	build_path = /obj/item/circuitboard/machine/gibber
@@ -339,7 +339,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/smartfridge
-	name = "Machine Design (Smartfridge Board)"
+	name = "Проект оборудования (плата смарт-холодильника)"
 	desc = ""
 	id = "smartfridge"
 	build_path = /obj/item/circuitboard/machine/smartfridge
@@ -347,7 +347,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/monkey_recycler
-	name = "Machine Design (Monkey Recycler Board)"
+	name = "Проект оборудования (плата утилизатора обезьян)"
 	desc = ""
 	id = "monkey_recycler"
 	build_path = /obj/item/circuitboard/machine/monkey_recycler
@@ -355,7 +355,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/seed_extractor
-	name = "Machine Design (Seed Extractor Board)"
+	name = "Проект оборудования (плата экстрактора семян)"
 	desc = ""
 	id = "seed_extractor"
 	build_path = /obj/item/circuitboard/machine/seed_extractor
@@ -363,7 +363,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/processor
-	name = "Machine Design (Food/Slime Processor Board)"
+	name = "Проект оборудования (плата процессора еды/слизи)"
 	desc = ""
 	id = "processor"
 	build_path = /obj/item/circuitboard/machine/processor
@@ -371,7 +371,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/soda_dispenser
-	name = "Machine Design (Portable Soda Dispenser Board)"
+	name = "Проект оборудования (плата портативного раздатчика газировки)"
 	desc = ""
 	id = "soda_dispenser"
 	build_path = /obj/item/circuitboard/machine/chem_dispenser/drinks
@@ -379,7 +379,7 @@
 	category = list ("Misc. Machinery")
 
 /datum/design/board/beer_dispenser
-	name = "Machine Design (Portable Booze Dispenser Board)"
+	name = "Проект оборудования (плата портативного раздатчика выпивки)"
 	desc = ""
 	id = "beer_dispenser"
 	build_path = /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
@@ -387,7 +387,7 @@
 	category = list ("Misc. Machinery")
 
 /datum/design/board/recycler
-	name = "Machine Design (Recycler Board)"
+	name = "Проект оборудования (плата утилизатора)"
 	desc = ""
 	id = "recycler"
 	build_path = /obj/item/circuitboard/machine/recycler
@@ -395,7 +395,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/scanner_gate
-	name = "Machine Design (Scanner Gate)"
+	name = "Проект оборудования (сканирующая рамка)"
 	desc = ""
 	id = "scanner_gate"
 	build_path = /obj/item/circuitboard/machine/scanner_gate
@@ -403,7 +403,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/holopad
-	name = "Machine Design (AI Holopad Board)"
+	name = "Проект оборудования (плата голографической платформы ИИ)"
 	desc = ""
 	id = "holopad"
 	build_path = /obj/item/circuitboard/machine/holopad
@@ -411,7 +411,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/autolathe
-	name = "Machine Design (Autolathe Board)"
+	name = "Проект оборудования (плата автолата)"
 	desc = ""
 	id = "autolathe"
 	build_path = /obj/item/circuitboard/machine/autolathe
@@ -419,7 +419,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL		//Lets be honest here half the maps have public ones.
 
 /datum/design/board/recharger
-	name = "Machine Design (Weapon Recharger Board)"
+	name = "Проект оборудования (плата зарядника оружия)"
 	desc = ""
 	id = "recharger"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000)
@@ -428,7 +428,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/vendor
-	name = "Machine Design (Vendor Board)"
+	name = "Проект оборудования (плата торгового автомата)"
 	desc = ""
 	id = "vendor"
 	build_path = /obj/item/circuitboard/machine/vendor
@@ -436,7 +436,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/ore_redemption
-	name = "Machine Design (Ore Redemption Board)"
+	name = "Проект оборудования (плата переработки руды)"
 	desc = ""
 	id = "ore_redemption"
 	build_path = /obj/item/circuitboard/machine/ore_redemption
@@ -444,7 +444,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/mining_equipment_vendor
-	name = "Machine Design (Mining Rewards Vendor Board)"
+	name = "Проект оборудования (плата шахтёрских наград)"
 	desc = ""
 	id = "mining_equipment_vendor"
 	build_path = /obj/item/circuitboard/machine/mining_equipment_vendor
@@ -452,7 +452,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/tesla_coil
-	name = "Machine Design (Tesla Coil Board)"
+	name = "Проект оборудования (плата катушки Теслы)"
 	desc = ""
 	id = "tesla_coil"
 	build_path = /obj/item/circuitboard/machine/tesla_coil
@@ -460,7 +460,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/rad_collector
-	name = "Machine Design (Radiation Collector Board)"
+	name = "Проект оборудования (плата коллектора радиации)"
 	desc = ""
 	id = "rad_collector"
 	build_path = /obj/item/circuitboard/machine/rad_collector
@@ -468,7 +468,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/grounding_rod
-	name = "Machine Design (Grounding Rod Board)"
+	name = "Проект оборудования (плата заземлителя)"
 	desc = ""
 	id = "grounding_rod"
 	build_path = /obj/item/circuitboard/machine/grounding_rod
@@ -476,7 +476,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/plantgenes
-	name = "Machine Design (Plant DNA Manipulator Board)"
+	name = "Проект оборудования (плата модификатора ДНК растений)"
 	desc = ""
 	id = "plantgenes"
 	build_path = /obj/item/circuitboard/machine/plantgenes
@@ -484,7 +484,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/ntnet_relay
-	name = "Machine Design (NTNet Relay Board)"
+	name = "Проект оборудования (плата реле NTNet)"
 	desc = ""
 	id = "ntnet_relay"
 	build_path = /obj/item/circuitboard/machine/ntnet_relay
@@ -492,7 +492,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/limbgrower
-	name = "Machine Design (Limb Grower Board)"
+	name = "Проект оборудования (плата инкубатора конечностей)"
 	desc = ""
 	id = "limbgrower"
 	build_path = /obj/item/circuitboard/machine/limbgrower
@@ -500,7 +500,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/harvester
-	name = "Machine Design (Organ Harvester Board)"
+	name = "Проект оборудования (плата извлекателя органов)"
 	desc = ""
 	id = "harvester"
 	build_path = /obj/item/circuitboard/machine/harvester
@@ -508,7 +508,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/deepfryer
-	name = "Machine Design (Deep Fryer)"
+	name = "Проект оборудования (фритюрница)"
 	desc = ""
 	id = "deepfryer"
 	build_path = /obj/item/circuitboard/machine/deep_fryer
@@ -516,7 +516,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/donksofttoyvendor
-	name = "Machine Design (Donksoft Toy Vendor Board)"
+	name = "Проект оборудования (плата автомата Donksoft)"
 	desc = ""
 	id = "donksofttoyvendor"
 	build_path = /obj/item/circuitboard/machine/vending/donksofttoyvendor
@@ -524,7 +524,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL			//Toys!!
 
 /datum/design/board/cell_charger
-	name = "Machine Design (Cell Charger Board)"
+	name = "Проект оборудования (плата зарядника батарей)"
 	desc = ""
 	id = "cell_charger"
 	build_path = /obj/item/circuitboard/machine/cell_charger
@@ -532,7 +532,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/dish_drive
-	name = "Machine Design (Dish Drive)"
+	name = "Проект оборудования (посудоприёмник)"
 	desc = ""
 	id = "dish_drive"
 	build_path = /obj/item/circuitboard/machine/dish_drive
@@ -540,7 +540,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/stacking_unit_console
-	name = "Machine Design (Stacking Machine Console)"
+	name = "Проект оборудования (консоль штабелёра)"
 	desc = ""
 	id = "stack_console"
 	build_path = /obj/item/circuitboard/machine/stacking_unit_console
@@ -548,7 +548,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/stacking_machine
-	name = "Machine Design (Stacking Machine)"
+	name = "Проект оборудования (штабелёр)"
 	desc = ""
 	id = "stack_machine"
 	build_path = /obj/item/circuitboard/machine/stacking_machine
@@ -556,7 +556,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/ore_silo
-	name = "Machine Design (Ore Silo)"
+	name = "Проект оборудования (рудный силос)"
 	desc = ""
 	id = "ore_silo"
 	build_path = /obj/item/circuitboard/machine/ore_silo
@@ -564,7 +564,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/paystand
-	name = "Machine Design (Pay Stand)"
+	name = "Проект оборудования (платёжная стойка)"
 	desc = ""
 	id = "paystand"
 	build_path = /obj/item/circuitboard/machine/paystand
@@ -572,7 +572,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
+	name = "Проект оборудования (экстрактор липидов)"
 	desc = ""
 	id = "fat_sucker"
 	build_path = /obj/item/circuitboard/machine/fat_sucker
@@ -580,7 +580,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/stasis
-	name = "Machine Design (Lifeform Stasis Unit)"
+	name = "Проект оборудования (камера стазиса форм жизни)"
 	desc = ""
 	id = "stasis"
 	build_path = /obj/item/circuitboard/machine/stasis
@@ -588,7 +588,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/spaceship_navigation_beacon
-	name = "Machine Design (Bluespace Navigation Gigabeacon)"
+	name = "Проект оборудования (блюспейс-гигамаяк навигации)"
 	desc = ""
 	id = "spaceship_navigation_beacon"
 	build_path = /obj/item/circuitboard/machine/spaceship_navigation_beacon
@@ -596,7 +596,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/medical_kiosk
-	name = "Machine Design (Medical Kiosk)"
+	name = "Проект оборудования (медицинский киоск)"
 	desc = ""
 	id = "medical_kiosk"
 	build_path = /obj/item/circuitboard/machine/medical_kiosk

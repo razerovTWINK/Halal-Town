@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/turf_teleport
-	name = "Turf Teleport"
+	name = "Телепортация на клетку"
 	desc = ""
 	nonabstract_req = TRUE
 

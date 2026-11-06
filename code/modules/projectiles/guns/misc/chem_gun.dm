@@ -1,7 +1,7 @@
 //his isn't a subtype of the syringe gun because the syringegun subtype is made to hold syringes
 //this is meant to hold reagents/obj/item/gun/syringe
 /obj/item/gun/chem
-	name = "reagent gun"
+	name = "реагентный распылитель"
 	desc = ""
 	icon_state = "chemgun"
 	item_state = "chemgun"
@@ -39,7 +39,7 @@
 		return
 	if(world.time < last_synth+time_per_syringe)
 		return
-	to_chat(loc, "<span class='warning'>I hear a click as [src] synthesizes a new dart.</span>")
+	to_chat(loc, "<span class='warning'>Слышен щелчок: [src] синтезирует новый дротик.</span>")
 	syringes_left++
 	if(chambered && !chambered.BB)
 		chambered.newshot()

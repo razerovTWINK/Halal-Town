@@ -1,0 +1,68 @@
+{
+  "purpose": "Карта зон, чтобы WorkBuddy и параллельно работающий Claude Code не перетирали правки друг друга",
+  "updated": "2026-11-04 21:22",
+  "workbuddy_note": "Пакетные подагенты WorkBuddy НЕ запустились (HTTP 429 лимит частоты). Зоны workbuddy_batch_items/modules/messages отменены; весь code/ остаётся за Claude Code и Antigravity. WorkBuddy переводит только данные: strings/, config/motd.txt, config/silicon_laws.txt.",
+  "owners": {
+    "claude_code": {
+      "paths": ["code/modules/roguetown/**", "roguetown.dme", "roguetown.int"],
+      "status": "in_progress",
+      "note": "Claude Code переводит code/modules/roguetown/roguemachine/ (ATM, vendor, scomm, merchant, stockpile, drugmachine, mail). Не трогать."
+    },
+    "workbuddy_batch_strings": {
+      "paths": ["strings/*.txt", "strings/*.json", "strings/books/**"],
+      "status": "in_progress"
+    },
+    "workbuddy_coordinator": {
+      "paths": ["strings/rt/**", "config/motd.txt", "config/silicon_laws.txt", "tools/i18n/**"],
+      "status": "in_progress"
+    },
+    "workbuddy_batch_items": {
+      "paths": ["code/game/objects/items/**", "code/game/objects/structures/**"],
+      "status": "cancelled_rate_limit",
+      "note": "Агент не запустился. Зона свободна для Claude Code / Antigravity."
+    },
+    "workbuddy_batch_modules": {
+      "paths": ["code/modules/food_and_drinks/**", "code/modules/clothing/**", "code/modules/reagents/**", "code/modules/jobs/**", "code/modules/mob/living/**"],
+      "status": "cancelled_rate_limit",
+      "note": "Агент не запустился. Зона свободна."
+    },
+    "workbuddy_batch_messages": {
+      "paths": ["code/game/**", "code/controllers/**", "code/datums/**"],
+      "status": "cancelled_rate_limit",
+      "note": "Агент не запустился. Зона свободна."
+    },
+    "workbuddy_data_done": {
+      "paths": ["strings/rt/**", "config/motd.txt", "config/silicon_laws.txt", "strings/*.txt", "strings/*.json"],
+      "status": "in_progress",
+      "note": "Переведено: 13 файлов целиком + ~1170 словарных замен; strings/ 1973 -> 999 непереведённых уникальных строк. Конвейер: scan.py -> next_batch.py -> ru-dict-N.json -> apply.py."
+    },
+    "antigravity": {
+      "paths": [
+        "code/modules/spells/**",
+        "code/modules/antagonists/**",
+        "code/modules/surgery/**",
+        "code/modules/projectiles/**",
+        "code/modules/research/**"
+      ],
+      "status": "in_progress",
+      "note": "Antigravity переводит заклинания, антагонистов, хирургию, снаряды и исследования."
+    }
+  },
+  "handoff": {
+    "note": "В общем списке задач другие агенты заявили #22/#23 (книги strings/books/**), #24 (strings/*.txt), #25 (strings/*.json), #26 (проверка). #24 уже выполнена WorkBuddy и помечена completed; #25 выполнена частично. Книги WorkBuddy НЕ трогал — они остаются за тем агентом.",
+    "workbuddy_finished": ["strings/rt/**", "strings/*.txt (кроме roundid.txt)", "config/motd.txt", "config/silicon_laws.txt", "strings/*.json (частично)"],
+    "leave_to_other_agent": ["strings/books/**"],
+    "if_other_agent_does_not_run": "продолжить через next_batch.py --zone strings/ -> заполнить шаблон -> ru-dict-N.json -> apply.py"
+  },
+  "shared_rules": [
+    "не коммитить, не пересобирать roguetown.dme/dmb во время перевода",
+    "не редактировать файлы вне своей зоны",
+    "переводить только видимый игроку текст; идентификаторы, ключи и пути оставлять",
+    "стиль и термины: tools/i18n/glossary.json",
+    "прогресс проверять: python tools/i18n/scan.py",
+    "следующий пакет: python tools/i18n/next_batch.py --zone <путь> --limit 200, заполнить значения, сохранить как ru-dict-N.json",
+    "применить пакет: python tools/i18n/apply.py (объединяет все ru-dict*.json, только зона данных)",
+    "проверить JSON: python tools/i18n/scan.py --json-check",
+    "не переписывать скрипты другой стороны в tools/i18n/ (у Claude Code свои localize_*.py)"
+  ]
+}

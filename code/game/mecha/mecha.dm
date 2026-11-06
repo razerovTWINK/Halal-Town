@@ -499,13 +499,13 @@
 	if(!Adjacent(target))
 		if(selected && selected.is_ranged())
 			if(HAS_TRAIT(L, TRAIT_PACIFISM) && selected.harmful)
-				to_chat(user, "<span class='warning'>I don't want to harm other living beings!</span>")
+				to_chat(user, "<span class='warning'>Я не хочу причинять вред другим живым существам!</span>")
 				return
 			if(selected.action(target,params))
 				selected.start_cooldown()
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
-			to_chat(user, "<span class='warning'>I don't want to harm other living beings!</span>")
+			to_chat(user, "<span class='warning'>Я не хочу причинять вред другим живым существам!</span>")
 			return
 		if(selected.action(target,params))
 			selected.start_cooldown()

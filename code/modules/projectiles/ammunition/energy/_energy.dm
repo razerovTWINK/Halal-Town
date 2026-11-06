@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/energy
-	name = "energy weapon lens"
+	name = "линза энергетического оружия"
 	desc = ""
 	caliber = "energy"
 	projectile_type = /obj/projectile/energy

@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/targeted/charge
-	name = "Charge"
+	name = "Зарядка"
 	desc = ""
 
 	school = "transmutation"
@@ -26,26 +26,26 @@
 				if(M.mind)
 					for(var/obj/effect/proc_holder/spell/S in M.mind.spell_list)
 						S.charge_counter = S.charge_max
-				to_chat(M, "<span class='notice'>I feel raw magic flowing through you. It feels good!</span>")
+				to_chat(M, "<span class='notice'>Ты чувствуешь, как чистая магия струится по твоим жилам. Приятное ощущение!</span>")
 			else
-				to_chat(M, "<span class='notice'>I feel very strange for a moment, but then it passes.</span>")
+				to_chat(M, "<span class='notice'>На миг накатывает странное чувство, но вскоре проходит.</span>")
 				burnt_out = TRUE
 			charged_item = M
 			break
 		for(var/obj/item in hand_items)
 			if(istype(item, /obj/item/spellbook))
-				to_chat(L, "<span class='danger'>Glowing red letters appear on the front cover...</span>")
-				to_chat(L, "<span class='warning'>[pick("NICE TRY BUT NO!","CLEVER BUT NOT CLEVER ENOUGH!", "SUCH FLAGRANT CHEESING IS WHY WE ACCEPTED YOUR APPLICATION!", "CUTE! VERY CUTE!", "YOU DIDN'T THINK IT'D BE THAT EASY, DID YOU?")]</span>")
+				to_chat(L, "<span class='danger'>На обложке вспыхивают алые буквы...</span>")
+				to_chat(L, "<span class='warning'>[pick("ХОРОШАЯ ПОПЫТКА, НО НЕТ!", "ХИТРО, НО НЕДОСТАТОЧНО!", "ВОТ ЗА ТАКИЕ УЛОВКИ МЫ ТЕБЯ И ВЗЯЛИ!", "МИЛО! ОЧЕНЬ МИЛО!", "НЕУЖЕЛИ ТЫ ДУМАЛ, ЧТО ВСЁ ТАК ПРОСТО?")]</span>")
 				burnt_out = TRUE
 			else if(istype(item, /obj/item/book/granter/spell))
 				var/obj/item/book/granter/spell/I = item
 				if(!I.oneuse)
-					to_chat(L, "<span class='notice'>This book is infinite use and can't be recharged, yet the magic has improved the book somehow...</span>")
+					to_chat(L, "<span class='notice'>Эта книга бесконечна и не нуждается в перезарядке, но магия каким-то образом её улучшила...</span>")
 					burnt_out = TRUE
 					I.pages_to_mastery--
 					break
 				if(prob(80))
-					L.visible_message("<span class='warning'>[I] catches fire!</span>")
+					L.visible_message("<span class='warning'>[I] загорается!</span>")
 					qdel(I)
 				else
 					I.used = FALSE
@@ -95,9 +95,9 @@
 						charged_item = item
 						break
 		if(!charged_item)
-			to_chat(L, "<span class='notice'>I feel magical power surging through your hands, but the feeling rapidly fades...</span>")
+			to_chat(L, "<span class='notice'>Ты чувствуешь прилив магии в руках, но ощущение быстро угасает...</span>")
 		else if(burnt_out)
-			to_chat(L, "<span class='warning'>[charged_item] doesn't seem to be reacting to the spell!</span>")
+			to_chat(L, "<span class='warning'>Кажется, [charged_item] никак не реагирует на заклинание!</span>")
 		else
 			playsound(get_turf(L), 'sound/blank.ogg', 50, TRUE)
-			to_chat(L, "<span class='notice'>[charged_item] suddenly feels very warm!</span>")
+			to_chat(L, "<span class='notice'>[charged_item] вдруг становится очень тёплым!</span>")
